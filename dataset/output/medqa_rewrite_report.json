@@ -1,0 +1,29 @@
+{
+  "rewrite_total": 250,
+  "by_split": {
+    "calibration": 90,
+    "train": 160
+  },
+  "density": {
+    "low": 123,
+    "medium": 127
+  },
+  "difficulty": {
+    "medium": 208,
+    "hard": 42
+  },
+  "combined_total": 930,
+  "combined_density": {
+    "medium": 686,
+    "low": 165,
+    "high": 79
+  },
+  "filter_stats": {
+    "accept_calibration": 90,
+    "reject_filter": 816,
+    "reject_tail": 52,
+    "reject_no_quasi": 12,
+    "accept_train": 160,
+    "reject_dup": 1
+  }
+}

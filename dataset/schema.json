@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DR-SL Empirical Dataset v1",
+  "type": "object",
+  "required": ["id", "domain", "split", "prompt", "template_id", "structure",
+               "length_bucket", "sensitivity_density", "difficulty",
+               "annotations", "source", "license", "annotation_meta"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^DRSL-(MED|BNK|TRV|LEG)-(CAL|TRN|TST|ADV)-([0-9]{4}|R[0-9]{3})$"},
+    "domain": {"enum": ["medical", "banking", "travel", "legal"]},
+    "split": {"enum": ["calibration", "train", "test", "adversarial"]},
+    "prompt": {"type": "string", "minLength": 10},
+    "template_id": {"type": "string", "pattern": "^(med|bank|travel|legal)_(t|a|rw)[0-9]{2}$"},
+    "structure": {"enum": ["statement", "dialogue", "list", "longform"]},
+    "length_bucket": {"enum": ["short", "medium", "long"]},
+    "sensitivity_density": {"enum": ["low", "medium", "high"]},
+    "difficulty": {"enum": ["easy", "medium", "hard"]},
+    "annotations": {
+      "type": "object",
+      "required": ["explicit_identifiers", "quasi_identifiers", "combos", "has_quasi_identifier"],
+      "properties": {
+        "explicit_identifiers": {"type": "array", "items": {"$ref": "#/definitions/entity"}},
+        "quasi_identifiers": {"type": "array", "items": {"$ref": "#/definitions/entity"}},
+        "combos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["members", "member_types", "risk"],
+            "properties": {
+              "members": {"type": "array", "items": {"$ref": "#/definitions/span"}, "minItems": 2},
+              "member_types": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+              "risk": {"enum": ["reidentification"]},
+              "note": {"type": "string"}
+            }
+          }
+        },
+        "has_quasi_identifier": {"type": "boolean"}
+      }
+    },
+    "source": {"enum": ["synthetic_template", "open_dataset_rewrite", "prism_isomorphic"]},
+    "license": {"type": "string"},
+    "annotation_meta": {
+      "type": "object",
+      "required": ["annotator", "needs_human_review"],
+      "properties": {
+        "annotator": {"type": "string"},
+        "needs_human_review": {"type": "boolean"},
+        "adversarial_type": {
+          "type": ["string", "null"],
+          "enum": ["quasi_combo", "obfuscated", "over_disclosure_request", "over_redaction_trap", null]
+        }
+      }
+    }
+  },
+  "definitions": {
+    "span": {
+      "type": "array",
+      "items": {"type": "integer", "minimum": 0},
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "entity": {
+      "type": "object",
+      "required": ["type", "category", "value", "span", "task_relevant"],
+      "properties": {
+        "type": {"type": "string"},
+        "category": {"enum": ["explicit", "quasi"]},
+        "value": {"type": "string", "minLength": 1},
+        "span": {"$ref": "#/definitions/span"},
+        "task_relevant": {"type": "boolean"}
+      }
+    }
+  }
+}

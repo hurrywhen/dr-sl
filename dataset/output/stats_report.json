@@ -1,0 +1,45 @@
+{
+  "total": 930,
+  "by_split": {
+    "calibration": 290,
+    "train": 400,
+    "test": 160,
+    "adversarial": 80
+  },
+  "by_domain": {
+    "medical": 420,
+    "banking": 170,
+    "travel": 170,
+    "legal": 170
+  },
+  "by_source": {
+    "synthetic_template": 680,
+    "open_dataset_rewrite": 250
+  },
+  "quasi_identifier_ratio": 1.0,
+  "length_buckets": {
+    "short": 397,
+    "medium": 329,
+    "long": 204
+  },
+  "structures": {
+    "statement": 761,
+    "dialogue": 51,
+    "list": 108,
+    "longform": 10
+  },
+  "density": {
+    "medium": 686,
+    "low": 165,
+    "high": 79
+  },
+  "difficulty": {
+    "hard": 364,
+    "medium": 566
+  },
+  "explicit_entity_total": 1486,
+  "quasi_entity_total": 2150,
+  "combo_total": 203,
+  "task_relevant_true": 2627,
+  "task_relevant_false": 1009
+}
