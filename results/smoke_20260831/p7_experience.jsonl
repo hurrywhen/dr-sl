@@ -1,0 +1,4 @@
+{"id": "DRSL-MED-TRN-0002", "domain": "medical", "cause": "gate_infeasible", "attr": "姓名=贾诗涵"}
+{"id": "DRSL-MED-TRN-0002", "domain": "medical", "cause": "gate_infeasible", "attr": "邮箱=tuanbinv@example.com"}
+{"id": "DRSL-MED-TRN-0002", "domain": "medical", "cause": "gate_infeasible", "attr": "性别=男"}
+{"id": "DRSL-MED-TRN-0002", "domain": "medical", "cause": "gate_infeasible", "attr": "年龄=39岁"}

@@ -1,0 +1,7 @@
+{
+ "n": 480,
+ "mean_recall_overall": 0.950734126984127,
+ "mean_recall_explicit": 0.9769444444444444,
+ "mean_recall_quasi": 0.9305555555555556,
+ "mean_precision_extra": 2.027083333333333
+}

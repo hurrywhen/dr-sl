@@ -1,0 +1,19 @@
+{
+  "total": 480,
+  "by_split": {
+    "test_ext": 240,
+    "tnew": 240
+  },
+  "by_domain": {
+    "medical": 120,
+    "banking": 120,
+    "travel": 120,
+    "legal": 120
+  },
+  "transform_types": {
+    "t3_format": 80,
+    "t1_lexical": 80,
+    "t2_type_inject": 80
+  },
+  "quasi_ratio_test_ext": 1.0
+}

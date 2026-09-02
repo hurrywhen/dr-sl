@@ -1,0 +1,32 @@
+{
+ "n_instances": 480,
+ "explicit_recall_overall": 0.46058879392212726,
+ "explicit_recall_regexable": 0.9738955823293173,
+ "per_type_regex": {
+  "bank_card": {
+   "gold": 31,
+   "tp": 31
+  },
+  "case_no": {
+   "gold": 31,
+   "tp": 26
+  },
+  "id_card": {
+   "gold": 206,
+   "tp": 206
+  },
+  "medical_record_no": {
+   "gold": 23,
+   "tp": 23
+  },
+  "passport": {
+   "gold": 30,
+   "tp": 26
+  },
+  "phone": {
+   "gold": 177,
+   "tp": 173
+  }
+ },
+ "note": "name/address/card_tail 等需 LLM 层；此处仅正则层"
+}

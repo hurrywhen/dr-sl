@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "/home/worker06/20260825tuoshuipaper/sim/pipeline.py", line 189, in dehydrate_run
+    return {**parse_dehydrate_json(raw), "D": parse_dehydrate_json(raw)["text"]}
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/worker06/20260825tuoshuipaper/sim/pipeline.py", line 166, in parse_dehydrate_json
+    raise ValueError("no json object")
+ValueError: no json object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/worker06/20260825tuoshuipaper/sim/run_experiments.py", line 282, in <module>
+    PHASES[which]()
+  File "/home/worker06/20260825tuoshuipaper/sim/run_experiments.py", line 224, in p4_local_loop_pilot
+    res = lexicographic_loop(
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/worker06/20260825tuoshuipaper/sim/loop.py", line 37, in lexicographic_loop
+    D = dehydrate_fn(X, S, P)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/worker06/20260825tuoshuipaper/sim/run_experiments.py", line 226, in <lambda>
+    dehydrate_fn=lambda X, S_, P: dehydrate_run(backend, item)["D"],
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/worker06/20260825tuoshuipaper/sim/pipeline.py", line 192, in dehydrate_run
+    obj = parse_dehydrate_json(raw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/worker06/20260825tuoshuipaper/sim/pipeline.py", line 166, in parse_dehydrate_json
+    raise ValueError("no json object")
+ValueError: no json object
+P4 done: DRSL-MED-TST-0001 INFEASIBLE rounds= 17
+P4 done: DRSL-MED-TST-0002 INFEASIBLE rounds= 20
+P4 done: DRSL-BNK-TST-0001 INFEASIBLE rounds= 20
+P4 done: DRSL-BNK-TST-0002 INFEASIBLE rounds= 20
+P4 done: DRSL-TRV-TST-0001 INFEASIBLE rounds= 20
+P4 done: DRSL-TRV-TST-0002 INFEASIBLE rounds= 17
+P4 done: DRSL-LEG-TST-0001 INFEASIBLE rounds= 17
+P4 done: DRSL-LEG-TST-0002 INFEASIBLE rounds= 20
+P4 done: DRSL-MED-TST-0001 INFEASIBLE rounds= 6
+P4 done: DRSL-MED-TST-0002 INFEASIBLE rounds= 2
+P4 done: DRSL-BNK-TST-0001 INFEASIBLE rounds= 9
+P4 done: DRSL-BNK-TST-0002 INFEASIBLE rounds= 1
+P4 done: DRSL-TRV-TST-0001 INFEASIBLE rounds= 1
+P4 done: DRSL-TRV-TST-0002 INFEASIBLE rounds= 1
+P4 done: DRSL-LEG-TST-0001 INFEASIBLE rounds= 1
+P4 done: DRSL-LEG-TST-0002 INFEASIBLE rounds= 6
+P4 done: DRSL-MED-TST-0001 INFEASIBLE rounds= 3
+P4 done: DRSL-MED-TST-0002 INFEASIBLE rounds= 5
+P4 done: DRSL-BNK-TST-0001 INFEASIBLE rounds= 20
+P4 done: DRSL-BNK-TST-0002 INFEASIBLE rounds= 5
+P4 done: DRSL-TRV-TST-0001 INFEASIBLE rounds= 1
+P4 done: DRSL-TRV-TST-0002 INFEASIBLE rounds= 4
+P4 done: DRSL-LEG-TST-0001 INFEASIBLE rounds= 5
+P4 done: DRSL-LEG-TST-0002 INFEASIBLE rounds= 6
+P4 done: DRSL-MED-TST-0001 INFEASIBLE rounds= 3
+P4 done: DRSL-MED-TST-0002 INFEASIBLE rounds= 5
+P4 done: DRSL-BNK-TST-0001 INFEASIBLE rounds= 5
+P4 done: DRSL-BNK-TST-0002 INFEASIBLE rounds= 5
+P4 done: DRSL-TRV-TST-0001 INFEASIBLE rounds= 1
+P4 done: DRSL-TRV-TST-0002 INFEASIBLE rounds= 4
+P4 done: DRSL-LEG-TST-0001 INFEASIBLE rounds= 5
+P4 done: DRSL-LEG-TST-0002 INFEASIBLE rounds= 6

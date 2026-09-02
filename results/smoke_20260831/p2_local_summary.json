@@ -1,0 +1,10 @@
+{
+ "local_ornith/A_0": {
+  "mean_L": 0.9,
+  "n": 2
+ },
+ "local_ornith/A_1": {
+  "mean_L": 0.16,
+  "n": 2
+ }
+}

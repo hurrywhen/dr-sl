@@ -1,0 +1,1682 @@
+[
+ {
+  "id": "DRSL-MED-TST-0001",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 3591
+ },
+ {
+  "id": "DRSL-MED-TST-0002",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39929
+ },
+ {
+  "id": "DRSL-MED-TST-0003",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39853
+ },
+ {
+  "id": "DRSL-MED-TST-0004",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 2344
+ },
+ {
+  "id": "DRSL-MED-TST-0005",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 738
+ },
+ {
+  "id": "DRSL-MED-TST-0006",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 40162
+ },
+ {
+  "id": "DRSL-MED-TST-0007",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 5856
+ },
+ {
+  "id": "DRSL-MED-TST-0008",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 711
+ },
+ {
+  "id": "DRSL-MED-TST-0009",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 40169
+ },
+ {
+  "id": "DRSL-MED-TST-0010",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 40158
+ },
+ {
+  "id": "DRSL-MED-TST-0011",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 5824
+ },
+ {
+  "id": "DRSL-MED-TST-0012",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 738
+ },
+ {
+  "id": "DRSL-MED-TST-0013",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39945
+ },
+ {
+  "id": "DRSL-MED-TST-0014",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39867
+ },
+ {
+  "id": "DRSL-MED-TST-0015",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 6022
+ },
+ {
+  "id": "DRSL-MED-TST-0016",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 3713
+ },
+ {
+  "id": "DRSL-MED-TST-0017",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39789
+ },
+ {
+  "id": "DRSL-MED-TST-0018",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39813
+ },
+ {
+  "id": "DRSL-MED-TST-0019",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 5928
+ },
+ {
+  "id": "DRSL-MED-TST-0020",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 3771
+ },
+ {
+  "id": "DRSL-MED-TST-0021",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 40169
+ },
+ {
+  "id": "DRSL-MED-TST-0022",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 40121
+ },
+ {
+  "id": "DRSL-MED-TST-0023",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 5979
+ },
+ {
+  "id": "DRSL-MED-TST-0024",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 3727
+ },
+ {
+  "id": "DRSL-MED-TST-0025",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39925
+ },
+ {
+  "id": "DRSL-MED-TST-0026",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39929
+ },
+ {
+  "id": "DRSL-MED-TST-0027",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 5961
+ },
+ {
+  "id": "DRSL-MED-TST-0028",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 776
+ },
+ {
+  "id": "DRSL-MED-TST-0029",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39929
+ },
+ {
+  "id": "DRSL-MED-TST-0030",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 40158
+ },
+ {
+  "id": "DRSL-MED-TST-0031",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 2369
+ },
+ {
+  "id": "DRSL-MED-TST-0032",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 3670
+ },
+ {
+  "id": "DRSL-MED-TST-0033",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39847
+ },
+ {
+  "id": "DRSL-MED-TST-0034",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39812
+ },
+ {
+  "id": "DRSL-MED-TST-0035",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 5979
+ },
+ {
+  "id": "DRSL-MED-TST-0036",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 3771
+ },
+ {
+  "id": "DRSL-MED-TST-0037",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39867
+ },
+ {
+  "id": "DRSL-MED-TST-0038",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 39847
+ },
+ {
+  "id": "DRSL-MED-TST-0039",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 3,
+  "k": 5856
+ },
+ {
+  "id": "DRSL-MED-TST-0040",
+  "domain": "medical",
+  "split": "test",
+  "qi_present": 2,
+  "k": 3643
+ },
+ {
+  "id": "DRSL-MED-ADV-0001",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0002",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0003",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 1,
+  "k": 160447
+ },
+ {
+  "id": "DRSL-MED-ADV-0004",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 204
+ },
+ {
+  "id": "DRSL-MED-ADV-0005",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0006",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0007",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 1,
+  "k": 160447
+ },
+ {
+  "id": "DRSL-MED-ADV-0008",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 193
+ },
+ {
+  "id": "DRSL-MED-ADV-0009",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0010",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0011",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 1,
+  "k": 160447
+ },
+ {
+  "id": "DRSL-MED-ADV-0012",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 261
+ },
+ {
+  "id": "DRSL-MED-ADV-0013",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0014",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 1,
+  "k": 160447
+ },
+ {
+  "id": "DRSL-MED-ADV-0015",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0016",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0017",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 1,
+  "k": 160447
+ },
+ {
+  "id": "DRSL-MED-ADV-0018",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 193
+ },
+ {
+  "id": "DRSL-MED-ADV-0019",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-MED-ADV-0020",
+  "domain": "medical",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0001",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 268
+ },
+ {
+  "id": "DRSL-BNK-TST-0002",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0003",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 15742
+ },
+ {
+  "id": "DRSL-BNK-TST-0004",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125147
+ },
+ {
+  "id": "DRSL-BNK-TST-0005",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 3265
+ },
+ {
+  "id": "DRSL-BNK-TST-0006",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0007",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-BNK-TST-0008",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125147
+ },
+ {
+  "id": "DRSL-BNK-TST-0009",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 440
+ },
+ {
+  "id": "DRSL-BNK-TST-0010",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0011",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-BNK-TST-0012",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 124854
+ },
+ {
+  "id": "DRSL-BNK-TST-0013",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 411
+ },
+ {
+  "id": "DRSL-BNK-TST-0014",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0015",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 178716
+ },
+ {
+  "id": "DRSL-BNK-TST-0016",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 124854
+ },
+ {
+  "id": "DRSL-BNK-TST-0017",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 311
+ },
+ {
+  "id": "DRSL-BNK-TST-0018",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0019",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 15742
+ },
+ {
+  "id": "DRSL-BNK-TST-0020",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125028
+ },
+ {
+  "id": "DRSL-BNK-TST-0021",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 429
+ },
+ {
+  "id": "DRSL-BNK-TST-0022",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0023",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-BNK-TST-0024",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125511
+ },
+ {
+  "id": "DRSL-BNK-TST-0025",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 413
+ },
+ {
+  "id": "DRSL-BNK-TST-0026",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0027",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-BNK-TST-0028",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125028
+ },
+ {
+  "id": "DRSL-BNK-TST-0029",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 3124
+ },
+ {
+  "id": "DRSL-BNK-TST-0030",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0031",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 15742
+ },
+ {
+  "id": "DRSL-BNK-TST-0032",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125465
+ },
+ {
+  "id": "DRSL-BNK-TST-0033",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0034",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-BNK-TST-0035",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125147
+ },
+ {
+  "id": "DRSL-BNK-TST-0036",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 418
+ },
+ {
+  "id": "DRSL-BNK-TST-0037",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-TST-0038",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-BNK-TST-0039",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125147
+ },
+ {
+  "id": "DRSL-BNK-TST-0040",
+  "domain": "banking",
+  "split": "test",
+  "qi_present": 3,
+  "k": 419
+ },
+ {
+  "id": "DRSL-BNK-ADV-0001",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0002",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0003",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0004",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4473
+ },
+ {
+  "id": "DRSL-BNK-ADV-0005",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0006",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0007",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4473
+ },
+ {
+  "id": "DRSL-BNK-ADV-0008",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0009",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0010",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4473
+ },
+ {
+  "id": "DRSL-BNK-ADV-0011",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0012",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0013",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0014",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4601
+ },
+ {
+  "id": "DRSL-BNK-ADV-0015",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0016",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0017",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0018",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4473
+ },
+ {
+  "id": "DRSL-BNK-ADV-0019",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-BNK-ADV-0020",
+  "domain": "banking",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4601
+ },
+ {
+  "id": "DRSL-TRV-TST-0001",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11624
+ },
+ {
+  "id": "DRSL-TRV-TST-0002",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0003",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0004",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 124854
+ },
+ {
+  "id": "DRSL-TRV-TST-0005",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11615
+ },
+ {
+  "id": "DRSL-TRV-TST-0006",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0007",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0008",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 124580
+ },
+ {
+  "id": "DRSL-TRV-TST-0009",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11736
+ },
+ {
+  "id": "DRSL-TRV-TST-0010",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0011",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0012",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125028
+ },
+ {
+  "id": "DRSL-TRV-TST-0013",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11715
+ },
+ {
+  "id": "DRSL-TRV-TST-0014",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0015",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0016",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125147
+ },
+ {
+  "id": "DRSL-TRV-TST-0017",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11699
+ },
+ {
+  "id": "DRSL-TRV-TST-0018",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0019",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0020",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125511
+ },
+ {
+  "id": "DRSL-TRV-TST-0021",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0022",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0023",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125028
+ },
+ {
+  "id": "DRSL-TRV-TST-0024",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11666
+ },
+ {
+  "id": "DRSL-TRV-TST-0025",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0026",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0027",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 124854
+ },
+ {
+  "id": "DRSL-TRV-TST-0028",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11918
+ },
+ {
+  "id": "DRSL-TRV-TST-0029",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0030",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0031",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125465
+ },
+ {
+  "id": "DRSL-TRV-TST-0032",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11812
+ },
+ {
+  "id": "DRSL-TRV-TST-0033",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0034",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0035",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125028
+ },
+ {
+  "id": "DRSL-TRV-TST-0036",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 2,
+  "k": 11872
+ },
+ {
+  "id": "DRSL-TRV-TST-0037",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0038",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125465
+ },
+ {
+  "id": "DRSL-TRV-TST-0039",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-TST-0040",
+  "domain": "travel",
+  "split": "test",
+  "qi_present": 1,
+  "k": 125028
+ },
+ {
+  "id": "DRSL-TRV-ADV-0001",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0002",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0003",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0004",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4631
+ },
+ {
+  "id": "DRSL-TRV-ADV-0005",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0006",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0007",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0008",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4559
+ },
+ {
+  "id": "DRSL-TRV-ADV-0009",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0010",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0011",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0012",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0013",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0014",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4653
+ },
+ {
+  "id": "DRSL-TRV-ADV-0015",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0016",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0017",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0018",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 3,
+  "k": 4559
+ },
+ {
+  "id": "DRSL-TRV-ADV-0019",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-TRV-ADV-0020",
+  "domain": "travel",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0001",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73434
+ },
+ {
+  "id": "DRSL-LEG-TST-0002",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0003",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0004",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 15742
+ },
+ {
+  "id": "DRSL-LEG-TST-0005",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73585
+ },
+ {
+  "id": "DRSL-LEG-TST-0006",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0007",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0008",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-LEG-TST-0009",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73607
+ },
+ {
+  "id": "DRSL-LEG-TST-0010",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0011",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0012",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 15742
+ },
+ {
+  "id": "DRSL-LEG-TST-0013",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73434
+ },
+ {
+  "id": "DRSL-LEG-TST-0014",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0015",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0016",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-LEG-TST-0017",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73585
+ },
+ {
+  "id": "DRSL-LEG-TST-0018",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0019",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0020",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-LEG-TST-0021",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73792
+ },
+ {
+  "id": "DRSL-LEG-TST-0022",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0023",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0024",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 15742
+ },
+ {
+  "id": "DRSL-LEG-TST-0025",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73585
+ },
+ {
+  "id": "DRSL-LEG-TST-0026",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0027",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0028",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-LEG-TST-0029",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73101
+ },
+ {
+  "id": "DRSL-LEG-TST-0030",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0031",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0032",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-LEG-TST-0033",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0034",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0035",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-LEG-TST-0036",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73101
+ },
+ {
+  "id": "DRSL-LEG-TST-0037",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0038",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-TST-0039",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 23078
+ },
+ {
+  "id": "DRSL-LEG-TST-0040",
+  "domain": "legal",
+  "split": "test",
+  "qi_present": 1,
+  "k": 73434
+ },
+ {
+  "id": "DRSL-LEG-ADV-0001",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0002",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0003",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0004",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 644
+ },
+ {
+  "id": "DRSL-LEG-ADV-0005",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0006",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0007",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0008",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 648
+ },
+ {
+  "id": "DRSL-LEG-ADV-0009",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0010",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0011",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0012",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 644
+ },
+ {
+  "id": "DRSL-LEG-ADV-0013",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0014",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0015",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0016",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 644
+ },
+ {
+  "id": "DRSL-LEG-ADV-0017",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0018",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ },
+ {
+  "id": "DRSL-LEG-ADV-0019",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 4,
+  "k": 644
+ },
+ {
+  "id": "DRSL-LEG-ADV-0020",
+  "domain": "legal",
+  "split": "adversarial",
+  "qi_present": 0,
+  "k": null
+ }
+]

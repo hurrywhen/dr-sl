@@ -1,0 +1,224 @@
+{
+ "extractor": {
+  "recall_overall": {
+   "mean": 0.9507,
+   "ci95": [
+    0.9405,
+    0.9602
+   ]
+  },
+  "recall_explicit": {
+   "mean": 0.9769,
+   "ci95": [
+    0.9651,
+    0.9872
+   ]
+  },
+  "recall_quasi": {
+   "mean": 0.9306,
+   "ci95": [
+    0.915,
+    0.9453
+   ]
+  },
+  "precision_extra": {
+   "mean": 2.0271,
+   "ci95": [
+    1.9291,
+    2.1313
+   ]
+  },
+  "by_domain": {
+   "banking": 0.9142,
+   "legal": 0.934,
+   "medical": 0.9701,
+   "travel": 0.9846
+  }
+ },
+ "calibration_delta": {
+  "n": 290,
+  "mean": 0.1806,
+  "ci95": [
+   0.1486,
+   0.2154
+  ],
+  "mean_L_local": 0.4896,
+  "mean_L_strong": 0.6702,
+  "by_domain": {
+   "banking": 0.2021,
+   "legal": 0.2024,
+   "medical": 0.1836,
+   "travel": 0.1288
+  }
+ },
+ "attacker_curve": {
+  "online_fast/A_0": {
+   "mean_L": 0.7681,
+   "ci95": [
+    0.7406,
+    0.7945
+   ],
+   "n": 160
+  },
+  "online_fast/A_0/medical": {
+   "mean_L": 0.8992,
+   "n": 40
+  },
+  "online_fast/A_1": {
+   "mean_L": 0.7653,
+   "ci95": [
+    0.7381,
+    0.7911
+   ],
+   "n": 160
+  },
+  "online_fast/A_1/medical": {
+   "mean_L": 0.8992,
+   "n": 40
+  },
+  "online_alt/A_0": {
+   "mean_L": 0.7887,
+   "ci95": [
+    0.7562,
+    0.8182
+   ],
+   "n": 160
+  },
+  "online_alt/A_0/medical": {
+   "mean_L": 0.8992,
+   "n": 40
+  },
+  "online_fast/A_0/banking": {
+   "mean_L": 0.7433,
+   "n": 40
+  },
+  "online_fast/A_1/banking": {
+   "mean_L": 0.7483,
+   "n": 40
+  },
+  "online_alt/A_0/banking": {
+   "mean_L": 0.8025,
+   "n": 40
+  },
+  "online_fast/A_0/travel": {
+   "mean_L": 0.6292,
+   "n": 40
+  },
+  "online_fast/A_1/travel": {
+   "mean_L": 0.6055,
+   "n": 40
+  },
+  "online_alt/A_0/travel": {
+   "mean_L": 0.5947,
+   "n": 40
+  },
+  "online_fast/A_0/legal": {
+   "mean_L": 0.8008,
+   "n": 40
+  },
+  "online_fast/A_1/legal": {
+   "mean_L": 0.8083,
+   "n": 40
+  },
+  "online_alt/A_0/legal": {
+   "mean_L": 0.8583,
+   "n": 40
+  },
+  "local_ornith/A_0": {
+   "mean_L": 0.5738,
+   "ci95": [
+    0.5386,
+    0.6099
+   ],
+   "n": 400
+  },
+  "local_ornith/A_0/medical": {
+   "mean_L": 0.7469,
+   "n": 100
+  },
+  "local_ornith/A_1": {
+   "mean_L": 0.5018,
+   "ci95": [
+    0.4662,
+    0.538
+   ],
+   "n": 400
+  },
+  "local_ornith/A_1/medical": {
+   "mean_L": 0.624,
+   "n": 100
+  },
+  "local_ornith/A_0/banking": {
+   "mean_L": 0.6635,
+   "n": 100
+  },
+  "local_ornith/A_1/banking": {
+   "mean_L": 0.6304,
+   "n": 100
+  },
+  "local_ornith/A_0/travel": {
+   "mean_L": 0.3147,
+   "n": 100
+  },
+  "local_ornith/A_1/travel": {
+   "mean_L": 0.2139,
+   "n": 100
+  },
+  "local_ornith/A_0/legal": {
+   "mean_L": 0.5703,
+   "n": 100
+  },
+  "local_ornith/A_1/legal": {
+   "mean_L": 0.5389,
+   "n": 100
+  },
+  "online_strong/A_0": {
+   "mean_L": 0.7791,
+   "ci95": [
+    0.754,
+    0.803
+   ],
+   "n": 160
+  },
+  "online_strong/A_0/banking": {
+   "mean_L": 0.7692,
+   "n": 40
+  },
+  "online_strong/A_0/travel": {
+   "mean_L": 0.6238,
+   "n": 40
+  },
+  "online_strong/A_0/legal": {
+   "mean_L": 0.82,
+   "n": 40
+  },
+  "online_strong/A_0/medical": {
+   "mean_L": 0.9033,
+   "n": 40
+  },
+  "synthpop_A3/skewed@100000": {
+   "hit_rate_with_qi": 0.16666666666666666,
+   "hit_rate_all_instances": 0.0792,
+   "note": "conservative convention k_tilde<=5"
+  }
+ },
+ "train_loop": {
+  "n": 400,
+  "pass_rate": 0.375,
+  "mean_rounds": 3.08,
+  "L_before_mean": 0.4573,
+  "L_after_mean": 0.3037,
+  "L_reduction_perm_p": 0.0,
+  "U_before_mean": 0.9731,
+  "U_after_mean": 0.9796,
+  "U_drop_gt_0.1": 2,
+  "pass_by_domain": {
+   "banking": "32/60",
+   "legal": "34/60",
+   "medical": "67/220",
+   "travel": "17/60"
+  },
+  "rounds_first_half": 3.52,
+  "rounds_second_half": 2.62
+ }
+}

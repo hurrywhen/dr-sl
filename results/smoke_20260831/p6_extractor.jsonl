@@ -1,0 +1,3 @@
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "split": "test", "n_found": 6, "recall_explicit": 0.5, "recall_quasi": 1.0, "recall_overall": 0.75, "missed_values": ["南屏市石桥弄47号21栋647室"], "precision_extra": 3}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "split": "test", "n_found": 5, "recall_explicit": 1.0, "recall_quasi": 1.0, "recall_overall": 1.0, "missed_values": [], "precision_extra": 0}
+{"id": "DRSL-MED-ADV-0001", "domain": "medical", "split": "adversarial", "n_found": 3, "recall_explicit": 1.0, "recall_quasi": 1.0, "recall_overall": 1.0, "missed_values": [], "precision_extra": 1}

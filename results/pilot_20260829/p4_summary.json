@@ -1,0 +1,175 @@
+[
+ {
+  "id": "DRSL-MED-TST-0001",
+  "domain": "medical",
+  "status": "INFEASIBLE",
+  "rounds": 3,
+  "L_before": 0.0,
+  "L_after": 0.769275718723987,
+  "L_point_after": null,
+  "U_before": 1.0,
+  "U_after": 1.0,
+  "R_after": 1.0,
+  "pilot_tau_l": 0.2,
+  "seconds": 242.7,
+  "n_attrs": 4,
+  "residual": [
+   "住址=南屏市石桥弄47号21栋647室",
+   "手机号=19077487183",
+   "年龄=84岁",
+   "疾病=重症肌无力"
+  ]
+ },
+ {
+  "id": "DRSL-MED-TST-0002",
+  "domain": "medical",
+  "status": "INFEASIBLE",
+  "rounds": 5,
+  "L_before": 0.6666666666666666,
+  "L_after": 0.700006684861608,
+  "L_point_after": null,
+  "U_before": 1.0,
+  "U_after": 1.0,
+  "R_after": 1.0,
+  "pilot_tau_l": 0.2,
+  "seconds": 251.0,
+  "n_attrs": 5,
+  "residual": [
+   "姓名=阎子墨",
+   "病历号=ZY85613609",
+   "手机号=19001169453",
+   "疾病=腰椎间盘突出",
+   "就诊医院=云洲济民诊所"
+  ]
+ },
+ {
+  "id": "DRSL-BNK-TST-0001",
+  "domain": "banking",
+  "status": "INFEASIBLE",
+  "rounds": 5,
+  "L_before": 0.8333333333333334,
+  "L_after": 0.3903342879021653,
+  "L_point_after": null,
+  "U_before": 1.0,
+  "U_after": 1.0,
+  "R_after": 1.0,
+  "pilot_tau_l": 0.2,
+  "seconds": 436.9,
+  "n_attrs": 5,
+  "residual": [
+   "职业=个体商户",
+   "收入=月收入约1.2万元",
+   "所在城市=望海县",
+   "工作年限=3年",
+   "金额=219000元"
+  ]
+ },
+ {
+  "id": "DRSL-BNK-TST-0002",
+  "domain": "banking",
+  "status": "INFEASIBLE",
+  "rounds": 5,
+  "L_before": 0.6666666666666666,
+  "L_after": 0.700006684861608,
+  "L_point_after": null,
+  "U_before": 1.0,
+  "U_after": 1.0,
+  "R_after": 1.0,
+  "pilot_tau_l": 0.2,
+  "seconds": 510.6,
+  "n_attrs": 5,
+  "residual": [
+   "姓名=傅若曦",
+   "身份证号=44030519820209442X",
+   "住址=松口市梧桐巷92号11栋329室",
+   "工作单位=蓝湾餐饮管理有限公司",
+   "金额=3452000元"
+  ]
+ },
+ {
+  "id": "DRSL-TRV-TST-0001",
+  "domain": "travel",
+  "status": "INFEASIBLE",
+  "rounds": 1,
+  "L_before": 0.0,
+  "L_after": 0.3903342879021653,
+  "L_point_after": null,
+  "U_before": 1.0,
+  "U_after": 1.0,
+  "R_after": 1.0,
+  "pilot_tau_l": 0.2,
+  "seconds": 199.9,
+  "n_attrs": 5,
+  "residual": [
+   "年龄=9岁",
+   "年龄=15岁",
+   "年龄=71岁",
+   "疾病=高血压",
+   "金额=16000元"
+  ]
+ },
+ {
+  "id": "DRSL-TRV-TST-0002",
+  "domain": "travel",
+  "status": "INFEASIBLE",
+  "rounds": 4,
+  "L_before": 0.6,
+  "L_after": 0.769275718723987,
+  "L_point_after": null,
+  "U_before": 0.5,
+  "U_after": 0.5,
+  "R_after": 0.5,
+  "pilot_tau_l": 0.2,
+  "seconds": 256.4,
+  "n_attrs": 4,
+  "residual": [
+   "姓名=龙嘉懿",
+   "身份证号=11010520050724113X",
+   "入住酒店=临江南苑宾馆",
+   "病房号=550"
+  ]
+ },
+ {
+  "id": "DRSL-LEG-TST-0001",
+  "domain": "legal",
+  "status": "INFEASIBLE",
+  "rounds": 5,
+  "L_before": 0.6,
+  "L_after": 0.769275718723987,
+  "L_point_after": null,
+  "U_before": 1.0,
+  "U_after": 1.0,
+  "R_after": 1.0,
+  "pilot_tau_l": 0.2,
+  "seconds": 266.8,
+  "n_attrs": 4,
+  "residual": [
+   "姓名=韩欣怡",
+   "住址=南屏市槐树路97号5栋740室",
+   "年龄=56岁",
+   "金额=352000元"
+  ]
+ },
+ {
+  "id": "DRSL-LEG-TST-0002",
+  "domain": "legal",
+  "status": "INFEASIBLE",
+  "rounds": 6,
+  "L_before": 0.6666666666666666,
+  "L_after": 0.700006684861608,
+  "L_point_after": null,
+  "U_before": 0.6666666666666666,
+  "U_after": 1.0,
+  "R_after": 1.0,
+  "pilot_tau_l": 0.2,
+  "seconds": 482.2,
+  "n_attrs": 5,
+  "residual": [
+   "姓名=段浩然",
+   "身份证号=33010319970615668X",
+   "工作单位=恒瑞达贸易公司",
+   "金额=1521000元",
+   "日期=2024年1月21日"
+  ]
+ }
+]

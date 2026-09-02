@@ -1,0 +1,4 @@
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "split": "test", "role": "local_ornith", "level": "A_0", "hits": 60, "n": 75, "L": 0.8}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "split": "test", "role": "local_ornith", "level": "A_1", "hits": 0, "n": 75, "L": 0.0}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "split": "test", "role": "local_ornith", "level": "A_0", "hits": 75, "n": 75, "L": 1.0}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "split": "test", "role": "local_ornith", "level": "A_1", "hits": 24, "n": 75, "L": 0.32}

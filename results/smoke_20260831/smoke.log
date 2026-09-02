@@ -1,0 +1,6 @@
+P6: {"n": 3, "mean_recall_overall": 0.9166666666666666, "mean_recall_explicit": 0.8333333333333334, "mean_recall_quasi": 1.0, "mean_precision_extra": 1.3333333333333333}
+P5_full: {"n": 2, "mean_delta": 0.17333333333333334, "mean_L_local": 0.3333333333333333, "mean_L_strong": 0.5066666666666666}
+P2_local: {"local_ornith/A_0": {"mean_L": 0.9, "n": 2}, "local_ornith/A_1": {"mean_L": 0.16, "n": 2}}
+P7 1/2: DRSL-MED-TRN-0001 PASS rounds= 1 L: 0.0 -> 0.0
+P7 2/2: DRSL-MED-TRN-0002 INFEASIBLE rounds= 5 L: 0.8 -> 0.4
+SMOKE DONE: all
