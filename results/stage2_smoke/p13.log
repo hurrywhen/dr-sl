@@ -1,0 +1,5 @@
+P13 distill stream done: 1
+P13 rules: 0 accepted, 0 rejected
+P13 v0 done
+P13 v1 done
+P13: {"n_pairs": 1, "mean_rounds_v0": 5.0, "mean_rounds_v1": 3.0, "rounds_delta": -2.0, "perm_p": null, "pass_v0": 0.0, "pass_v1": 0.0}

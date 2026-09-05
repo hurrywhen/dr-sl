@@ -1,0 +1,8 @@
+{"id": "DRSL-MED-TST-0001", "level": 0, "answerer": "flash", "U": 1.0, "n": 2, "ok": true}
+{"id": "DRSL-MED-TST-0001", "level": 0, "answerer": "glm", "U": 1.0, "n": 2, "ok": true}
+{"id": "DRSL-MED-TST-0001", "level": 1, "answerer": "flash", "U": 1.0, "n": 2, "ok": true}
+{"id": "DRSL-MED-TST-0001", "level": 1, "answerer": "glm", "U": 1.0, "n": 2, "ok": true}
+{"id": "DRSL-MED-TST-0001", "level": 2, "answerer": "flash", "U": 0.5, "n": 2, "ok": true}
+{"id": "DRSL-MED-TST-0001", "level": 2, "answerer": "glm", "U": 0.5, "n": 2, "ok": true}
+{"id": "DRSL-MED-TST-0001", "level": 3, "answerer": "flash", "U": 0.0, "n": 2, "ok": true}
+{"id": "DRSL-MED-TST-0001", "level": 3, "answerer": "glm", "U": 0.0, "n": 2, "ok": true}

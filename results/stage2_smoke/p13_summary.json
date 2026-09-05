@@ -1,0 +1,9 @@
+{
+ "n_pairs": 1,
+ "mean_rounds_v0": 5.0,
+ "mean_rounds_v1": 3.0,
+ "rounds_delta": -2.0,
+ "perm_p": null,
+ "pass_v0": 0.0,
+ "pass_v1": 0.0
+}

@@ -1,0 +1,18 @@
+P11: {"n": 480, "mean_jaccard": 0.844697385947386, "mean_recall_strong": 0.9859375, "mean_recall_local": 0.9486359126984129}
+P13 distill stream done: 60
+P13 rules: 5 accepted, 0 rejected
+P13 v0 done
+P13 v1 done
+P13: {"n_pairs": 60, "mean_rounds_v0": 2.816666666666667, "mean_rounds_v1": 2.9, "rounds_delta": 0.08333333333333333, "perm_p": 0.68, "pass_v0": 0.4666666666666667, "pass_v1": 0.4166666666666667}
+P14 no_branch1: n=30
+P14 no_branch2: n=30
+P14 no_hotstart: n=30
+P14 no_memcheck: rules: 5 contaminated: 0
+P15 alpha=0.0: done
+P15 alpha=0.25: done
+P15 alpha=0.5: done
+P15 alpha=0.75: done
+P15 alpha=1.0: done
+P15: {"0.0": {"n": 20, "mean_rounds": 3.9, "pass_rate": 0.25}, "0.25": {"n": 20, "mean_rounds": 3.6, "pass_rate": 0.35}, "0.5": {"n": 20, "mean_rounds": 4.65, "pass_rate": 0.3}, "0.75": {"n": 20, "mean_rounds": 3.95, "pass_rate": 0.25}, "1.0": {"n": 20, "mean_rounds": 4.15, "pass_rate": 0.3}}
+P16a done: 160
+P16b: {"flash/A_0": {"mean_L": 0.4363, "n": 160}, "flash/A_1": {"mean_L": 0.4352, "n": 160}, "flash/A_2": {"mean_L": 0.432, "n": 160}, "glm/A_0": {"mean_L": 0.4118, "n": 160}, "glm/A_1": {"mean_L": 0.4215, "n": 160}, "synthpop/A_3": {"hit_rate": 0.11875, "n": 160}}

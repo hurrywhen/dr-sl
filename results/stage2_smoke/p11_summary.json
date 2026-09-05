@@ -1,0 +1,6 @@
+{
+ "n": 1,
+ "mean_jaccard": 0.7142857142857143,
+ "mean_recall_strong": 1.0,
+ "mean_recall_local": 0.75
+}

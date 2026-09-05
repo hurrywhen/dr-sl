@@ -1,0 +1,1 @@
+{"id": "DRSL-MED-S2-0001", "domain": "medical", "status": "PASS", "rounds": 2, "refined": false, "U_after": 1.0, "L_wilson_after": 0.04872384248280587, "L_point_after": null, "seconds": 109.9, "residual": [], "D_final": "您好，我是〔已移除〕，身份证号〔证件号〕，联系电话〔联系方式〕。我想预约云洲济民诊所的复查，上次就诊日期是2023年11月10日，病历号〔就诊编号〕。", "ok": true}

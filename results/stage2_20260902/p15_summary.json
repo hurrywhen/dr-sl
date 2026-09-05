@@ -1,0 +1,27 @@
+{
+ "0.0": {
+  "n": 20,
+  "mean_rounds": 3.9,
+  "pass_rate": 0.25
+ },
+ "0.25": {
+  "n": 20,
+  "mean_rounds": 3.6,
+  "pass_rate": 0.35
+ },
+ "0.5": {
+  "n": 20,
+  "mean_rounds": 4.65,
+  "pass_rate": 0.3
+ },
+ "0.75": {
+  "n": 20,
+  "mean_rounds": 3.95,
+  "pass_rate": 0.25
+ },
+ "1.0": {
+  "n": 20,
+  "mean_rounds": 4.15,
+  "pass_rate": 0.3
+ }
+}

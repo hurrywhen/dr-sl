@@ -1,0 +1,6 @@
+{
+ "n": 480,
+ "mean_jaccard": 0.844697385947386,
+ "mean_recall_strong": 0.9859375,
+ "mean_recall_local": 0.9486359126984129
+}
