@@ -1,0 +1,1 @@
+{"id": "DRSL-MED-TSE-0001", "domain": "medical", "recall_quasi_v0": 1.0, "recall_quasi_v1": 1.0, "recall_overall_v0": 1.0, "recall_overall_v1": 0.75, "extra_v0": 2, "extra_v1": 3, "missed_v0": [], "missed_v1": ["临江市梧桐巷142号15栋2056室"], "ok": true}

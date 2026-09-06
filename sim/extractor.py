@@ -47,15 +47,21 @@ def parse_extraction_json(raw, text):
     return out
 
 
-def llm_layer(backend, text):
+def _with_rules(system, rules):
+    if not rules:
+        return system
+    return system + "\n抽取改进规则：\n" + "\n".join(f"- {r}" for r in rules)
+
+
+def llm_layer(backend, text, rules=None):
     try:
-        raw1 = backend.complete(EXTRACT_SYSTEM, "材料：\n" + text)
+        raw1 = backend.complete(_with_rules(EXTRACT_SYSTEM, rules), "材料：\n" + text)
     except RuntimeError:
         raw1 = "[]"
     first = parse_extraction_json(raw1, text)
     known = "、".join(sorted({e["value"] for e in first})) or "（暂无）"
     try:
-        raw2 = backend.complete(CRITIC_SYSTEM,
+        raw2 = backend.complete(_with_rules(CRITIC_SYSTEM, rules),
                                 f"已抽取：{known}\n\n材料：\n{text}")
     except RuntimeError:
         raw2 = "[]"
@@ -72,10 +78,10 @@ def llm_layer(backend, text):
     return merged
 
 
-def cascade_extract(backend, text):
+def cascade_extract(backend, text, rules=None):
     ents = extract_explicit(text)
     seen = {e["value"] for e in ents}
-    for e in llm_layer(backend, text):
+    for e in llm_layer(backend, text, rules=rules):
         if e["value"] in seen:
             continue
         seen.add(e["value"])

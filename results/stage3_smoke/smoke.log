@@ -1,0 +1,2 @@
+P22: {"n": 1, "mean_recall_quasi_v0": 1.0, "mean_recall_quasi_v1": 1.0, "delta_quasi": 0.0, "perm_p_one_sided_quasi": 1.0, "mean_recall_overall_v0": 1.0, "mean_recall_overall_v1": 0.75, "delta_overall": -0.25, "perm_p_one_sided_overall": 1.0, "delta_precision_extra": 1.0}
+P23: {"n_pairs": 1, "L_system_v0": 0.4, "L_system_v1": 0.4, "delta": 0.0, "perm_p_one_sided_reduction": null, "blind_hits_v0": 0.0, "blind_hits_v1": 0.0, "recall_of_gold_v0": 1.0, "recall_of_gold_v1": 0.75}

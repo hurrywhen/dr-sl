@@ -1,0 +1,2 @@
+{"id": "DRSL-MED-TSE-0001", "domain": "medical", "version": "v0", "n_extracted": 6, "recall_of_gold": 1.0, "status": "INFEASIBLE", "rounds": 2, "L_system": 0.4, "blind_hits": 0, "refined": false, "ok": true}
+{"id": "DRSL-MED-TSE-0001", "domain": "medical", "version": "v1", "n_extracted": 7, "recall_of_gold": 0.75, "status": "INFEASIBLE", "rounds": 3, "L_system": 0.4, "blind_hits": 0, "refined": false, "ok": true}

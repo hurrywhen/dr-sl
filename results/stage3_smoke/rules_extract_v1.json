@@ -1,0 +1,39 @@
+{
+ "accepted": [
+  {
+   "rule": "针对高频漏检属性类型，应扩展其识别模式库，覆盖更多上下文变体与表达形式",
+   "reason": "pass"
+  },
+  {
+   "rule": "建立跨领域通用敏感属性的统一检测机制，避免相同属性在不同业务场景下重复漏检",
+   "reason": "pass"
+  },
+  {
+   "rule": "引入基于语义上下文的推断策略，弥补仅依赖字面匹配导致的隐蔽属性漏检",
+   "reason": "pass"
+  },
+  {
+   "rule": "构建按失败频次排序的属性优先级监控体系，驱动脱敏规则持续迭代优化",
+   "reason": "pass"
+  }
+ ],
+ "rejected": [
+  {
+   "rule": "对数值类、标识类及日期时间类属性实施专项特征增强，提升其在复杂语境中的召回率",
+   "reason": "gen_score"
+  }
+ ],
+ "n_misses": 55,
+ "missed_type_counts": {
+  "visit_date": 1,
+  "address": 7,
+  "income": 28,
+  "amount": 6,
+  "date": 3,
+  "city": 2,
+  "name": 2,
+  "age": 2,
+  "case_no": 3,
+  "case_type": 1
+ }
+}

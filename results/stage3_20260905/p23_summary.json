@@ -1,0 +1,11 @@
+{
+ "n_pairs": 30,
+ "L_system_v0": 0.42000000000000004,
+ "L_system_v1": 0.39822222222222226,
+ "delta": -0.021777777777777778,
+ "perm_p_one_sided_reduction": 0.6935,
+ "blind_hits_v0": 0.0,
+ "blind_hits_v1": 0.0,
+ "recall_of_gold_v0": 0.975,
+ "recall_of_gold_v1": 0.9916666666666667
+}

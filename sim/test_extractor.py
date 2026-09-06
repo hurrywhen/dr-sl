@@ -86,9 +86,30 @@ def test_eval_extraction():
     print("test_eval_extraction OK")
 
 
+def test_llm_layer_rules_injected():
+    class CaptureBackend:
+        def __init__(self):
+            self.systems = []
+
+        def complete(self, system, user):
+            self.systems.append(system)
+            return '[{"type": "age", "value": "31岁"}]'
+
+    b = CaptureBackend()
+    text = "我今年31岁。"
+    ents = llm_layer(b, text, rules=["特别注意年龄的邻域表述。"])
+    assert all("抽取改进规则" in s and "特别注意年龄的邻域表述。" in s for s in b.systems)
+    assert len(ents) == 1
+    b2 = CaptureBackend()
+    llm_layer(b2, text, rules=None)
+    assert all("抽取改进规则" not in s for s in b2.systems)
+    print("test_llm_layer_rules_injected OK")
+
+
 if __name__ == "__main__":
     test_parse_extraction_json()
     test_llm_layer_two_pass_and_merge()
+    test_llm_layer_rules_injected()
     test_cascade_dedup_and_spans()
     test_eval_extraction()
     print("ALL EXTRACTOR TESTS PASSED")
