@@ -1,0 +1,17 @@
+Creative Commons Attribution 4.0 International (CC-BY-4.0)
+
+适用于本目录（dataset/）下由生成器产出的全部合成数据：
+- output/dr_sl_dataset_v1.jsonl / dr_sl_dataset_v2.jsonl
+- output/dr_sl_expansion_v1.jsonl
+- output/dr_sl_stage2_stream.jsonl
+- output/medqa_rewrite.jsonl
+
+说明：
+1. 全部显式敏感值（姓名、证件号、卡号、电话、地址、机构名等）为程序合成的虚构值，
+   不包含任何真实个人信息；发布本数据集不构成个人信息处理。
+2. MedQA 改写样本的底本为医师资格考试题干（MIT 许可，Jin et al. 2020，
+   https://github.com/jind11/MedQA）；源数据文件 data_raw/ 不随仓库分发，
+   使用者须遵守 MedQA 原许可条款。
+3. 再分发时请保留本许可声明与 dataset/README.md 中的合规声明。
+
+许可全文：https://creativecommons.org/licenses/by/4.0/legalcode

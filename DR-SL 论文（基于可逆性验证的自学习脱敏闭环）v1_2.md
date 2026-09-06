@@ -154,7 +154,7 @@ P2Skill [13] 提出由冻结的本地 SLM 通过四个技能 prompt 执行分解
 
 知识集满足 A_0 ⊆ A_1 ⊆ A_2 ⊆ A_3，故 L(A_i) 曲线应单调；不单调视为评估不稳定并触发复查。系统报告四级泄漏曲线（横轴：攻击者级别；纵轴：实例平均命中率 ± 95% Wilson 区间，分领域）。
 
-**A_3 的 k-匿名检验 [28]**：对从 D 抽取的准标识符组合 q，在合成人口库（§6）中计数匹配记录数
+**A_3 的 k-匿名检验 [28]**：对从 D 抽取的准标识符组合 q，在合成人口库（§6；受控世界复用数据集生成器分布，真实统计世界以公开边际分布经迭代比例拟合 IPF [32] 构造，全部合成、可复现）中计数匹配记录数
 
     k(q) = |{ r ∈ DB : r 的准标识符组合匹配 q }|
 
@@ -675,7 +675,7 @@ v1.0 将多层防护视为工程附注；本版提升为核心安全论证。DR-
 [16] Gilad-Bachrach R, et al. CryptoNets: applying neural networks to encrypted data with high throughput and accuracy. ICML, 2016.
 [17] Mohassel P, Zhang Y. SecureML: a system for scalable privacy-preserving machine learning. IEEE S&P, 2017.
 [18] Zhang S, et al. Neural estimation of information leakage for secure communication. 2025.
-[19] Truthful text sanitization guided by inference attacks. Applied Soft Computing, 2025.
+[19] Pilán I, Manzanares-Salor B, Sánchez D, Lison P. Truthful text sanitization guided by inference attacks. Applied Soft Computing, 185:114013, 2025. doi:10.1016/j.asoc.2025.114013.
 [20] Zhang T, et al. BERTScore: evaluating text generation with BERT. ICLR, 2020.
 [21] TAE: text anonymization evaluator. SoftwareX, 2026.
 [22] Qwen/Qwen3.8-27B. Hugging Face, 2026.
@@ -690,5 +690,5 @@ v1.0 将多层防护视为工程附注；本版提升为核心安全论证。DR-
 [31] Fabbri A R, Wu C, Liu W, Xiong C. QAFactEval: improved QA-based factual consistency evaluation for summarization. NAACL-HLT, 2022, 2587–2601.
 [32] Deming W E, Stephan F F. On a least squares adjustment of a sampled finite contingency table. Annals of Mathematical Statistics, 11(4):427–444, 1940.
 [33] Wyner A D, Ziv J. The rate-distortion function for source coding with side information at the decoder. IEEE Transactions on Information Theory, 22(1):1–10, 1976.
-[34] Yue Y, et al. SANTEXT: differential privacy for text. EMNLP, 2021.（书目细节投稿前需二次核实）
+[34] Yue X, Du M, Wang T, Li Y, Sun H, Chow S S M. Differential privacy for text analytics via natural text sanitization (SANTEXT). Findings of ACL/IJCNLP, 2021, 3853–3866. doi:10.18653/v1/2021.findings-acl.337.
 [35] Cover T M, Thomas J A. Elements of Information Theory. Wiley-Interscience, 2006.

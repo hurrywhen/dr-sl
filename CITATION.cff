@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "DR-SL: Dehydrate-Rehydrate with Reversibility-Guided Self-Learning Loop"
+message: "If you use this software or dataset, please cite it as below."
+type: software
+authors:
+  - name: "DR-SL authors (see paper)"
+version: "1.2"
+date-released: 2026-09-05
+license: MIT
+repository-code: "https://github.com/(TO-BE-SET)/dr-sl"
+keywords:
+  - privacy
+  - anonymization
+  - large-language-models
+  - pufferfish-privacy
+  - k-anonymity
+  - cloud-local-inference
