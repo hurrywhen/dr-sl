@@ -1,0 +1,6 @@
+{
+ "n": 480,
+ "mean_recall_glm": 0.9828,
+ "jaccard_glm_vs_qwenmax": 0.8169,
+ "jaccard_glm_vs_ornith": 0.7852
+}

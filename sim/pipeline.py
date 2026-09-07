@@ -258,7 +258,20 @@ def det_dehydrate(item, removed_types=frozenset()):
             rep = GENERIC_TOKENS.get(e["type"], "〔敏感信息〕")
         text = text[:s] + rep + text[t:]
         applied.append({"type": e["type"], "from": v, "to": rep})
+    for a in applied:
+        if a["from"] in text:
+            text = text.replace(a["from"], a["to"])
     return {"text": text, "D": text, "applied": applied, "fallback": False}
+
+
+def hard_line_scrub(D, item):
+    text = D
+    removed = []
+    for e in det_policy_entities(item):
+        if e["value"] and e["value"] in text:
+            text = text.replace(e["value"], "〔已移除〕")
+            removed.append(e["value"])
+    return {"D": text, "removed": removed}
 
 
 def det_strengthen(D, item, attr_desc, state):

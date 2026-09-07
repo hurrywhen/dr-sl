@@ -195,6 +195,46 @@ def test_attack_run_bundle_expands_to_75():
     print("test_attack_run_bundle_expands_to_75 OK")
 
 
+def test_det_dehydrate_all_occurrences():
+    from pipeline import det_dehydrate, hard_line_scrub
+    item = {
+        "prompt": "我叫张三，电话13912345678。张三今年确诊了高血压，请联系13912345678。",
+        "annotations": {
+            "explicit_identifiers": [
+                {"type": "name", "category": "explicit", "value": "张三", "span": [3, 5], "task_relevant": False},
+                {"type": "phone", "category": "explicit", "value": "13912345678", "span": [8, 19], "task_relevant": False},
+            ],
+            "quasi_identifiers": [
+                {"type": "disease", "category": "quasi", "value": "高血压", "span": [25, 28], "task_relevant": True},
+            ],
+            "combos": [],
+        },
+    }
+    d = det_dehydrate(item)["D"]
+    assert d.count("张三") == 0 and d.count("13912345678") == 0 and d.count("高血压") == 0
+    item2 = {
+        "prompt": "患者84岁，确诊重症肌无力。84岁患者需专人照护，重症肌无力属罕见病。",
+        "annotations": {
+            "explicit_identifiers": [],
+            "quasi_identifiers": [
+                {"type": "age", "category": "quasi", "value": "84岁", "span": [2, 5], "task_relevant": True},
+                {"type": "disease", "category": "quasi", "value": "重症肌无力", "span": [7, 12], "task_relevant": True},
+            ],
+            "combos": [],
+        },
+    }
+    d2 = det_dehydrate(item2)["D"]
+    assert d2.count("84岁") == 0 and d2.count("重症肌无力") == 0
+    assert "80多岁" in d2
+    leaky = "残留文本提到张三和13912345678以及高血压。"
+    scrubbed = hard_line_scrub(leaky, item)
+    assert "张三" not in scrubbed["D"] and "13912345678" not in scrubbed["D"]
+    assert set(scrubbed["removed"]) == {"张三", "13912345678", "高血压"}
+    clean = hard_line_scrub("无敏感内容", item)
+    assert clean["D"] == "无敏感内容" and clean["removed"] == []
+    print("test_det_dehydrate_all_occurrences OK")
+
+
 if __name__ == "__main__":
     test_grade()
     test_grade_numeric_tolerance()
@@ -208,5 +248,6 @@ if __name__ == "__main__":
     test_dehydrate_run_with_mock()
     test_dehydrate_fallback_on_bad_output()
     test_det_policy()
+    test_det_dehydrate_all_occurrences()
     test_attr_names_cover_dataset_types()
     print("ALL PIPELINE TESTS PASSED")

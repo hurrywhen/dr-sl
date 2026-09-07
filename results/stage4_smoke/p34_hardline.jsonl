@@ -1,0 +1,4 @@
+{"id": "DRSL-MED-TST-0001", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "status": "INFEASIBLE", "n_scrubbed": 2, "ok": true}
+{"id": "DRSL-MED-TST-0001", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "status": "INFEASIBLE", "n_scrubbed": 2, "ok": true}
+{"id": "DRSL-MED-TST-0002", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "status": "PASS", "n_scrubbed": 3, "ok": true}
+{"id": "DRSL-MED-TST-0002", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "status": "PASS", "n_scrubbed": 3, "ok": true}

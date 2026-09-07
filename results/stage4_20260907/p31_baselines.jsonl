@@ -1,0 +1,960 @@
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0003", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0003", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0003", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0003", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0003", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0003", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0004", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0004", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0004", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0004", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0004", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0004", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.25, "ok": true}
+{"id": "DRSL-MED-TST-0005", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0005", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0005", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0005", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.2, "hits": 15, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0005", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.2, "hits": 15, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0005", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-MED-TST-0006", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0006", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0006", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0006", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.41333333333333333, "hits": 31, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0006", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.41333333333333333, "hits": 31, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0006", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.6666666666666666, "ok": true}
+{"id": "DRSL-MED-TST-0007", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0007", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0007", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0007", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0007", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0007", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-MED-TST-0008", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0008", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0008", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0008", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0008", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0008", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0009", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0009", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0009", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0009", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0009", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0009", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0010", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0010", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0010", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0010", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0010", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0010", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0011", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0011", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0011", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0011", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0011", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0011", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0012", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0012", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0012", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0012", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.2, "hits": 15, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0012", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.2, "hits": 15, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0012", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-MED-TST-0013", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0013", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0013", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0013", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0013", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0013", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0014", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0014", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0014", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0014", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0014", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0014", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0015", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0015", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0015", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0015", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0015", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0015", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-MED-TST-0016", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0016", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0016", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0016", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0016", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0016", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0017", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0017", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0017", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0017", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.32, "hits": 24, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0017", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.32, "hits": 24, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0017", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-MED-TST-0018", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0018", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0018", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0018", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0018", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0018", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0019", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0019", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0019", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0019", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0019", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0019", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0020", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0020", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0020", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0020", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0020", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0020", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0021", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0021", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0021", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0021", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0021", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0021", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0022", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0022", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0022", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0022", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.28, "hits": 21, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0022", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.28, "hits": 21, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0022", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-MED-TST-0023", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0023", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0023", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0023", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0023", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0023", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.25, "ok": true}
+{"id": "DRSL-MED-TST-0024", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0024", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0024", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0024", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0024", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0024", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0025", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0025", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0025", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0025", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0025", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0025", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0026", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0026", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0026", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0026", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.26666666666666666, "hits": 20, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0026", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.26666666666666666, "hits": 20, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0026", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-MED-TST-0027", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0027", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0027", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0027", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0027", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0027", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.25, "ok": true}
+{"id": "DRSL-MED-TST-0028", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0028", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0028", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0028", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0028", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0028", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0029", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0029", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0029", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0029", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0029", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0029", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0030", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0030", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0030", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0030", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0030", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0030", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0031", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0031", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0031", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0031", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0031", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0031", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-MED-TST-0032", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0032", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0032", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0032", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0032", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0032", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0033", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0033", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0033", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0033", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.48, "hits": 36, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0033", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.48, "hits": 36, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0033", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 1.0, "ok": true}
+{"id": "DRSL-MED-TST-0034", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0034", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0034", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0034", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0034", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.13333333333333333, "hits": 10, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0034", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0035", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0035", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0035", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0035", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0035", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0035", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0036", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0036", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0036", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0036", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0036", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0036", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0037", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0037", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0037", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0037", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0037", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0037", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0038", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0038", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0038", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0038", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.28, "hits": 21, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0038", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.28, "hits": 21, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0038", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-MED-TST-0039", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0039", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0039", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0039", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0039", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0039", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-MED-TST-0040", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0040", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0040", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0040", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0040", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0040", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0001", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0001", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0001", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0001", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0001", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0001", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.2, "ok": true}
+{"id": "DRSL-BNK-TST-0002", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0002", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0002", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0002", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0002", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0002", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0003", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0003", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0003", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0003", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0003", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0003", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0004", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0004", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0004", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0004", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0004", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0004", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0005", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0005", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0005", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0005", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0005", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0005", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0006", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0006", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0006", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0006", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0006", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0006", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0007", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0007", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0007", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0007", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0007", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0007", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0008", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0008", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0008", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0008", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0008", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0008", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0009", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0009", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0009", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0009", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0009", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0009", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0010", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0010", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0010", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0010", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0010", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0010", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0011", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0011", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0011", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0011", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0011", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0011", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0012", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0012", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0012", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0012", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0012", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0012", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0013", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0013", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0013", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0013", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0013", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0013", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0014", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0014", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0014", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0014", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0014", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0014", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-BNK-TST-0015", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0015", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0015", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0015", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0015", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0015", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0016", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0016", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0016", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0016", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0016", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0016", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0017", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0017", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0017", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0017", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0017", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0017", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.2, "ok": true}
+{"id": "DRSL-BNK-TST-0018", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0018", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0018", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0018", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0018", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0018", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0019", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0019", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0019", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0019", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0019", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0019", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0020", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0020", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0020", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0020", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0020", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0020", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0021", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0021", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0021", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0021", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0021", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0021", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0022", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0022", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0022", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0022", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0022", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0022", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-BNK-TST-0023", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0023", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0023", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0023", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0023", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0023", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0024", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0024", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0024", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0024", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0024", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0024", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0025", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0025", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0025", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0025", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0025", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0025", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0026", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0026", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0026", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0026", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0026", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0026", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0027", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0027", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0027", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0027", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0027", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0027", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0028", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0028", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0028", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0028", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0028", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0028", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0029", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0029", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0029", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0029", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0029", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0029", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0030", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0030", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0030", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0030", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0030", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0030", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0031", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0031", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0031", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0031", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0031", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0031", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0032", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0032", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0032", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0032", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0032", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0032", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0033", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0033", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0033", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0033", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0033", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0033", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-BNK-TST-0034", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0034", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0034", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0034", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0034", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0034", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0035", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0035", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0035", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0035", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0035", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0035", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0036", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0036", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0036", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0036", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0036", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0036", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.2, "ok": true}
+{"id": "DRSL-BNK-TST-0037", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0037", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0037", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0037", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0037", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0037", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.5, "ok": true}
+{"id": "DRSL-BNK-TST-0038", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0038", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0038", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0038", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0038", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0038", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0039", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0039", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0039", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0039", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0039", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0039", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0040", "domain": "banking", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0040", "domain": "banking", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0040", "domain": "banking", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-BNK-TST-0040", "domain": "banking", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0040", "domain": "banking", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-BNK-TST-0040", "domain": "banking", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0001", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0001", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0001", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0001", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0001", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0001", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0002", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0002", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0002", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0002", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0002", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0002", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0003", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0003", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0003", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0003", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0003", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0003", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0004", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0004", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0004", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0004", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0004", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0004", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0005", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0005", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0005", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0005", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0005", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0005", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0006", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0006", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0006", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0006", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0006", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0006", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0007", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0007", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0007", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0007", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0007", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0007", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0008", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0008", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0008", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0008", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0008", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0008", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0009", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0009", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0009", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0009", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0009", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0009", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0010", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0010", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0010", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0010", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0010", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0010", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0011", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0011", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0011", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0011", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0011", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0011", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0012", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0012", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0012", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0012", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0012", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0012", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0013", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0013", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0013", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0013", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0013", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0013", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0014", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0014", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0014", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0014", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0014", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0014", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0015", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0015", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0015", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0015", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0015", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0015", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0016", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0016", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0016", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0016", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0016", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0016", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0017", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0017", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0017", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0017", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0017", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0017", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0018", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0018", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0018", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0018", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0018", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0018", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0019", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0019", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0019", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0019", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0019", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0019", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0020", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0020", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0020", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0020", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.14666666666666667, "hits": 11, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0020", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.14666666666666667, "hits": 11, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0020", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-TRV-TST-0021", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0021", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0021", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0021", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0021", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0021", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0022", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0022", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0022", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0022", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0022", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0022", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0023", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0023", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0023", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0023", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0023", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0023", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0024", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0024", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0024", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0024", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0024", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0024", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0025", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0025", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0025", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0025", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0025", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0025", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0026", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0026", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0026", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0026", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0026", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0026", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0027", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0027", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0027", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0027", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0027", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0027", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0028", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0028", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0028", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0028", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0028", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0028", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.2, "ok": true}
+{"id": "DRSL-TRV-TST-0029", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0029", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0029", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0029", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0029", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0029", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0030", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0030", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0030", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0030", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0030", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0030", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0031", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0031", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0031", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0031", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0031", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0031", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0032", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0032", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0032", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0032", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0032", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0032", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0033", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0033", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0033", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0033", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0033", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0033", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0034", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0034", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0034", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0034", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0034", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0034", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0035", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0035", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0035", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0035", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0035", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0035", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0036", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0036", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0036", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0036", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0036", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0036", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0037", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0037", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0037", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0037", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0037", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0037", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0038", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0038", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0038", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0038", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0038", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0038", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0039", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0039", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0039", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0039", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0039", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0039", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0040", "domain": "travel", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0040", "domain": "travel", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0040", "domain": "travel", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-TRV-TST-0040", "domain": "travel", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0040", "domain": "travel", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-TRV-TST-0040", "domain": "travel", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0001", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0001", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0001", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0001", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0001", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0001", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0002", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0002", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0002", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0002", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0002", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0002", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-LEG-TST-0003", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0003", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0003", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0003", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0003", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0003", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0004", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0004", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0004", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0004", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0004", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0004", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0005", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0005", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0005", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0005", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0005", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0005", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0006", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0006", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0006", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0006", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0006", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0006", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0007", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0007", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0007", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0007", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0007", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0007", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0008", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0008", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0008", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0008", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0008", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0008", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0009", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0009", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0009", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0009", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0009", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0009", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0010", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0010", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0010", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0010", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0010", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0010", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0011", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0011", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0011", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0011", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0011", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0011", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0012", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0012", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0012", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0012", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0012", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0012", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-LEG-TST-0013", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0013", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0013", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0013", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0013", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0013", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0014", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0014", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0014", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0014", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0014", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0014", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-LEG-TST-0015", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0015", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0015", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0015", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0015", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0015", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0016", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0016", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0016", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0016", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0016", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0016", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0017", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0017", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0017", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0017", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0017", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0017", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0018", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0018", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0018", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0018", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0018", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0018", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-LEG-TST-0019", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0019", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0019", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0019", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0019", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0019", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0020", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0020", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0020", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0020", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0020", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0020", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0021", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0021", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0021", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0021", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0021", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0021", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0022", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0022", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0022", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0022", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0022", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0022", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0023", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0023", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0023", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0023", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0023", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0023", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0024", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0024", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0024", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0024", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.3333333333333333, "hits": 25, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0024", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.17333333333333334, "hits": 13, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0024", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-LEG-TST-0025", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0025", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0025", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0025", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0025", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0025", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0026", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0026", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0026", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0026", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0026", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0026", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.3333333333333333, "ok": true}
+{"id": "DRSL-LEG-TST-0027", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0027", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0027", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0027", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0027", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0027", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0028", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0028", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0028", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0028", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0028", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0028", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0029", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0029", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0029", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0029", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0029", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0029", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0030", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0030", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0030", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0030", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0030", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0030", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0031", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0031", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0031", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0031", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0031", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0031", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0032", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0032", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0032", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0032", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0032", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0032", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0033", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0033", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0033", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0033", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0033", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0033", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0034", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0034", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0034", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0034", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0034", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0034", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0035", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0035", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0035", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0035", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0035", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0035", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0036", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0036", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0036", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0036", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0036", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0036", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0037", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0037", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0037", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0037", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0037", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0037", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0038", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0038", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0038", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0038", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0038", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0038", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0039", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0039", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0039", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0039", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.16, "hits": 12, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0039", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0039", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0040", "domain": "legal", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0040", "domain": "legal", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0040", "domain": "legal", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-LEG-TST-0040", "domain": "legal", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0040", "domain": "legal", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-LEG-TST-0040", "domain": "legal", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}

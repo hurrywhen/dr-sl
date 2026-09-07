@@ -1,0 +1,31 @@
+{
+ "flash/INFEASIBLE": {
+  "mean_L": 0.0,
+  "n": 1
+ },
+ "flash/PASS": {
+  "mean_L": 0.0,
+  "n": 1
+ },
+ "flash/all": {
+  "mean_L": 0.0,
+  "n": 2
+ },
+ "glm/INFEASIBLE": {
+  "mean_L": 0.0,
+  "n": 1
+ },
+ "glm/PASS": {
+  "mean_L": 0.0,
+  "n": 1
+ },
+ "glm/all": {
+  "mean_L": 0.0,
+  "n": 2
+ },
+ "scrub": {
+  "instances_with_residual_literals": 2,
+  "total": 2,
+  "mean_removed": 2.5
+ }
+}

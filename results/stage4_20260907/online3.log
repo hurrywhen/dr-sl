@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/worker06/20260825tuoshuipaper/sim/stage4.py", line 321, in <module>
+    PHASES["p36"] = p36
+    ^^^^^^
+NameError: name 'PHASES' is not defined
+P36: {"n": 160, "L_flash": 0.0, "L_glm": 0.0, "U_flash": 0.0334}

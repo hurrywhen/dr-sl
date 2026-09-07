@@ -1,0 +1,6 @@
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "placeholder", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "placeholder", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "placeholder", "role": "U", "U": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "selective_ldp", "role": "flash", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "selective_ldp", "role": "glm", "L": 0.0, "hits": 0, "n": 75, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "method": "selective_ldp", "role": "U", "U": 0.0, "ok": true}

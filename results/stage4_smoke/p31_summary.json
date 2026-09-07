@@ -1,0 +1,26 @@
+{
+ "placeholder/U": {
+  "mean": 0.0,
+  "n": 1
+ },
+ "placeholder/flash": {
+  "mean": 0.0,
+  "n": 1
+ },
+ "placeholder/glm": {
+  "mean": 0.0,
+  "n": 1
+ },
+ "selective_ldp/U": {
+  "mean": 0.0,
+  "n": 1
+ },
+ "selective_ldp/flash": {
+  "mean": 0.0,
+  "n": 1
+ },
+ "selective_ldp/glm": {
+  "mean": 0.0,
+  "n": 1
+ }
+}

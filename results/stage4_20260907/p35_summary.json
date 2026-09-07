@@ -1,0 +1,8 @@
+{
+ "n": 160,
+ "mean_U_postscrub": 0.0,
+ "by_status": {
+  "PASS": 0.0,
+  "INFEASIBLE": 0.0
+ }
+}

@@ -20,10 +20,10 @@
 \newcommand{\DI}{D}
 \DeclareMathOperator*{\argmax}{arg\,max}
 
-\title{A Self-Learning De-identification Loop with Reversibility Verification:\\
-Sensitive-Information Isolation for Cloud-Local LLM Inference}
+\title{Reversibility-Verified De-identification for Cloud-Local LLM Inference:\\
+A Locally Certified Dehydrate-Rehydrate Loop with Layered Assurance (DR-SL)}
 \author{Wen Hu\\
-\small College of Computer Science and Technology\\
+\small College of Electronic and Information Engineering\\
 \small Nanjing University of Aeronautics and Astronautics, Nanjing, China\\
 \texttt{\small huwen@nuaa.edu.cn}}
 \date{}
@@ -32,7 +32,7 @@ Sensitive-Information Isolation for Cloud-Local LLM Inference}
 \maketitle
 
 \begin{abstract}
-Cloud-local large language model (LLM) inference architectures exploit the reasoning power of cloud models while keeping sensitive user data within local boundaries. Existing privacy-preserving approaches---entity-masking placeholder substitution, differential-privacy perturbation, and P2Skill-style skill distillation---share three fundamental defects: (i) they rely on cloud models for evaluation and iteration (P2Skill's skill-refinement loop requires the cloud to read PII-bearing original inputs), introducing leakage before de-identification is complete; (ii) deterministic matchers cover only declared identifiers and cannot detect semantic/quasi-identifier leakage or information loss from over-redaction; (iii) sanitization pipelines are one-shot scripts without cross-instance reuse or self-improvement. We propose \textbf{DR-SL} (Dehydrate-Rehydrate with Self-Learning loop), a sensitive-information isolation method centered on \emph{reversibility verification}. DR-SL formalizes de-identification completeness as two complementary, measurable conditions: \textbf{de-identification sufficiency}, defined in Pufferfish semantics (the dehydrated artifact alone cannot amplify an attacker's posterior odds over sensitive attributes beyond a threshold), and \textbf{task-information preservation} (the artifact retains task-relevant information, measured by QA probes), with the cascade extractor's recall delimiting the boundary of the system guarantee. Theoretically, we prove a \textbf{lower-bound theorem} for the leakage score (Fano-type), a witness proposition translating hit rates into Pufferfish parameters, and a feasibility criterion based on the rate-privacy frontier, positioning the method as \emph{approaching theoretical limits via an empirically calibrated heuristic certificate}. Engineering-wise, DR-SL runs a fully local online loop (the offline stage touches only non-sensitive corpora for attacker benchmarking and calibration): a two-branch discriminator driven by a local model sandwiches the dehydrated artifact; lexicographic optimization (a hard utility gate plus single-attribute leakage strengthening) guarantees termination and emits a residual-leakage report for human review when infeasible; instance-level fixes are distilled into versioned prompt-level knowledge with hot-start reuse. We give formal definitions, graded theoretical results (theorem/proposition/hypothesis, with full proofs and executable numerical verification in the appendices), a layered assurance model, and a pre-registered experimental protocol, and report full-scale Stage 1--2 results: a direct-forwarding leakage baseline of 0.57--0.79 (consistent across attacker families; up to 0.90 in the medical domain), cascade-extractor recall 0.951, evaluator calibration gap $\hat\Delta = +0.181$, 16.7\% of instances with $\tilde k<5$ under a skewed reference population, and a 400-instance main loop reducing leakage $0.457\to0.304$ ($p\approx0$) while preserving task utility $U\ge0.97$ (PASS rate 37.5\%; every INFEASIBLE instance emits a residual-leakage report). Ablations confirm both branches and the utility gate are indispensable; under distribution shift, release safety does not degrade (safety-efficiency separation). The self-learning hypothesis H1 was not supported in a single-round distillation test; its corrected form H1$'$ (rules targeting the extractor) obtained directionally consistent but borderline support (quasi-identifier recall $+1.5$pp, $p=0.059$; judged unproven per pre-registered criteria)---both reported as-is. All three theoretical bounds passed numerical verification on 3000 synthetic mechanisms.
+Cloud-local large language model (LLM) inference architectures exploit the reasoning power of cloud models while keeping sensitive user data within local boundaries. Existing privacy-preserving approaches---entity-masking placeholder substitution, differential-privacy perturbation, and P2Skill-style skill distillation---share three fundamental defects: (i) they rely on cloud models for evaluation and iteration (P2Skill's skill-refinement loop requires the cloud to read PII-bearing original inputs), introducing leakage before de-identification is complete; (ii) deterministic matchers cover only declared identifiers and cannot detect semantic/quasi-identifier leakage or information loss from over-redaction; (iii) sanitization pipelines are one-shot scripts without cross-instance reuse or self-improvement. We propose \textbf{DR-SL} (Dehydrate-Rehydrate with Self-Learning loop), a sensitive-information isolation method centered on \emph{reversibility verification}. DR-SL formalizes de-identification completeness as two complementary, measurable conditions: \textbf{de-identification sufficiency}, defined in Pufferfish semantics (the dehydrated artifact alone cannot amplify an attacker's posterior odds over sensitive attributes beyond a threshold), and \textbf{task-information preservation} (the artifact retains task-relevant information, measured by QA probes), with the cascade extractor's recall delimiting the boundary of the system guarantee. Theoretically, we prove a \textbf{lower-bound theorem} for the leakage score (Fano-type), a witness proposition translating hit rates into Pufferfish parameters, and a feasibility criterion based on the rate-privacy frontier, positioning the method as \emph{approaching theoretical limits via an empirically calibrated heuristic certificate}. Engineering-wise, DR-SL runs a fully local online loop (the offline stage touches only non-sensitive corpora for attacker benchmarking and calibration): a two-branch discriminator driven by a local model sandwiches the dehydrated artifact; lexicographic optimization (a hard utility gate plus single-attribute leakage strengthening) guarantees termination and emits a residual-leakage report for human review when infeasible; a deterministic hard line scrubs all declared identifiers before egress. An \emph{exploratory} self-learning component distills instance-level failures into versioned prompt-level knowledge; we report honestly that its efficiency hypothesis H1 was \textbf{not supported} in a pre-registered single-round test, and its corrected extractor-targeted form H1$'$ received only borderline support ($+1.5$pp recall, $p{=}0.059$)---the evidence supports the \emph{reversibility-verification loop}, not the self-learning claim. We give formal definitions, graded theoretical results (theorem/proposition/hypothesis, with full proofs and executable numerical verification in the appendices), a layered assurance model, and a pre-registered experimental protocol. We are equally explicit about what the theory does \emph{not} provide: Fano-type bounds can only \emph{certify leakage}, never certify safety; at our operating point the information-theoretic bound is near-vacuous (e.g., $\approx$0.06 bits at $\tau_L{=}0.05$, $|V|{=}100$), so release safety rests on empirical calibration, the deterministic hard line, and human fallback---not on the theorems. Full-scale results: a direct-forwarding leakage baseline of 0.57--0.79 (consistent across attacker families; up to 0.90 in the medical domain), cascade-extractor recall 0.951, evaluator calibration gap $\hat\Delta = +0.181$, 16.7\% of instances with $\tilde k<5$ under a skewed reference population, and a 400-instance main loop reducing leakage $0.457\to0.304$ ($p\approx0$; PASS rate 37.5\%, every INFEASIBLE instance emitting a residual-leakage report). A revision-round audit \emph{self-detected} that pre-hard-line loop outputs retained residual literal mentions (159/160 instances) which partly carried the measured utility; with the mandatory release chain (local gate $\to$ deterministic hard line $\to$ external strong-attacker re-test), literal leakage at egress is \textbf{0.000} on all 160 test instances under two independent strong attackers, and the achievable leakage-utility frontier on this task-coupled benchmark is mapped honestly: principled generalization reaches $(L{=}0.000, U{=}0.033)$ versus placeholder substitution $(0.000, 0.000)$ and selective LDP $(0.05, 0.075)$ under a conservative exact-value utility metric. Ablations confirm both branches and the utility gate are indispensable; under distribution shift, release safety does not degrade (safety-efficiency separation). All three theoretical bounds passed numerical verification on 3000 synthetic mechanisms.
 
 \medskip
 \noindent\textbf{Keywords:} sensitive-information isolation; cloud-local inference; dehydrate-rehydrate; reversibility verification; self-learning; Pufferfish privacy; maximal leakage; prompt optimization
@@ -97,7 +97,7 @@ P2Skill~\cite{ryu2026p2skill} has a frozen local SLM perform decomposition, PII-
 
 \subsection{Information-Theoretic Quantification and Privacy Measures}
 
-Mutual information (MI) is the classic framework for measuring privacy leakage~\cite{belghazi2018mine,zhang2025neural}; MINE~\cite{belghazi2018mine} estimates high-dimensional MI with neural networks; the privacy funnel~\cite{eswa2022funnel} optimizes the privacy-utility trade-off by minimizing $I(\text{sensitive};\text{output})$ and maximizing $I(\text{task};\text{output})$. Neural MI estimation requires training and per-dataset iteration, unsuitable for real-time per-instance decisions. Closer to this work are two operational theoretical tools: \textbf{Pufferfish privacy}~\cite{kifer2012rigorous,kifer2014pufferfish} explicitly declares a secret set and discriminative pairs, bounding how much released data can amplify an attacker's posterior odds---fitting ``inference protection over declared secrets''; \textbf{Maximal Leakage}~\cite{issa2020operational} is the supremum, over all randomized functions of the source, of the multiplicative increase in guessing probability upon observing the release---attacker-independent, giving a theoretical ceiling on leakage. We anchor our theory in these two and use reversibility verification as the empirical approximation.
+Mutual information (MI) is the classic framework for measuring privacy leakage~\cite{belghazi2018mine,heerklotz2025neural}; MINE~\cite{belghazi2018mine} estimates high-dimensional MI with neural networks; the privacy funnel~\cite{eswa2022funnel} optimizes the privacy-utility trade-off by minimizing $I(\text{sensitive};\text{output})$ and maximizing $I(\text{task};\text{output})$. Neural MI estimation requires training and per-dataset iteration, unsuitable for real-time per-instance decisions. Closer to this work are two operational theoretical tools: \textbf{Pufferfish privacy}~\cite{kifer2012rigorous,kifer2014pufferfish} explicitly declares a secret set and discriminative pairs, bounding how much released data can amplify an attacker's posterior odds---fitting ``inference protection over declared secrets''; \textbf{Maximal Leakage}~\cite{issa2020operational} is the supremum, over all randomized functions of the source, of the multiplicative increase in guessing probability upon observing the release---attacker-independent, giving a theoretical ceiling on leakage. We anchor our theory in these two and use reversibility verification as the empirical approximation.
 
 \subsection{Utility Evaluation for Text Sanitization}
 
@@ -164,14 +164,15 @@ The key premise raised in review---``where does $S$ come from at runtime?''---is
 
 \textbf{Extraction recall}: on a gold-annotated set, $\mathrm{Recall} = |S_{\mathrm{found}} \cap S_{\mathrm{gold}}|\,/\,|S_{\mathrm{gold}}|$, reported stratified (explicit / quasi / overall).
 
-\begin{proposition}[Recall ceiling of system leakage]\label{prop:recall}
-Branch~1 probes only extracted attributes; missed attributes are never probed. Worst-case decomposition:
+\begin{proposition}[Recall ceiling of system leakage, over-extraction-corrected]\label{prop:recall}
+Let $G=S_{\mathrm{gold}}$ and $F=S_{\mathrm{found}}$. Branch~1 probes only attributes in $F$; missed attributes are never probed. Writing $L_{\mathrm{measured}}$ for the hit rate over the probed set and $\mathrm{Recall}=|F\cap G|/|G|$, the worst-case decomposition is
 \[
-L_{\mathrm{system}} \;\le\; L_{\mathrm{measured}} + (1 - \mathrm{Recall}).
+L_{\mathrm{system}} \;\le\; \frac{|F|}{|G|}\,L_{\mathrm{measured}} \;+\; \bigl(1 - \mathrm{Recall}\bigr).
 \]
+When the extractor over-extracts ($|F|>|G|$; in our data $|F|/|G|$ averages 1.43), the first term carries an \emph{inflation factor}: spurious probes that miss dilute $L_{\mathrm{measured}}$, so the true-attribute hit rate can be up to $|F|/|G|$ times larger.
 \end{proposition}
 
-Hence every system-level safety conclusion must be conditioned on the measured recall $\hat\rho$: ``given extractor recall $\ge \hat\rho$, system residual leakage $\le L_{\mathrm{measured}} + (1-\hat\rho)$''. Theoretical limits: explicit-identifier recall can approach 1 (finite pattern class); quasi-identifier recall has no finite upper bound---whether an attribute is identifying depends on the attacker's auxiliary knowledge $A$, so recall can only be defined relative to a given $A$ as $\mathrm{Recall}(A)$. \S3.3/\S6 therefore report recall and leakage curves over graded attackers $A_0$--$A_3$.
+Hence every system-level safety conclusion must be conditioned on the measured recall $\hat\rho$ \emph{and} the over-extraction ratio: ``given extractor recall $\ge \hat\rho$ and $|F|/|G| \le \iota$, system residual leakage $\le \iota\cdot L_{\mathrm{measured}} + (1-\hat\rho)$''. On our Stage-1 data ($\hat\rho=0.951$, mean $\iota=1.43$): residual $\le 1.43\,L_{\mathrm{measured}} + 0.049$. Theoretical limits: explicit-identifier recall can approach 1 (finite pattern class); quasi-identifier recall has no finite upper bound---whether an attribute is identifying depends on the attacker's auxiliary knowledge $A$, so recall can only be defined relative to a given $A$ as $\mathrm{Recall}(A)$. \S3.3/\S6 therefore report recall and leakage curves over graded attackers $A_0$--$A_3$.
 
 \subsection{Two-Branch Reversibility Verification}
 
@@ -301,7 +302,9 @@ I(D;S) \;\ge\; H(S) - \sum_i \bigl[\, H_2(1-L_i) + (1-L_i)\log(|V_i|-1) \,\bigr]
 and hence $I_{\mathrm{norm}}(D;S) \ge 1 - \sum_i[\cdot]/H(S)$.
 \end{theorem}
 
-\emph{Interpretation} (directional correction): measured attack success gives a \textbf{lower bound} on true leakage; stronger attackers can only raise the bound. A local evaluator's failure to re-identify \textbf{cannot} prove that no attacker can. The operational threshold $\tau_L$ corresponds to an information-theoretic lower-bound guarantee: $L \le \tau_L \Rightarrow I(D;S) \ge H(S) - \sum_i[H_2(1-\tau_L)+(1-\tau_L)\log(|V_i|-1)]$. Certificate strength increases monotonically with evaluator capability---the theoretical basis of the ``heuristic certificate + empirical calibration'' design (\S\ref{sec:security}). Full proof: Appendix~A.2.
+\emph{Interpretation} (directional correction, and its limits): measured attack success gives a \textbf{lower bound} on true leakage; stronger attackers can only raise the bound. A local evaluator's failure to re-identify \textbf{cannot} prove that no attacker can. \textbf{The bound certifies leakage, never safety}---this one-sidedness is structural to any Fano-type argument, and we quantify how weak the guarantee is at our operating point: with $\tau_L=0.05$ and a uniform attribute over $|V|=100$ values, passing the gate certifies only $I(D;s) \ge H(s) - [H_2(0.95) + 0.95\log_2 99] \approx 6.64 - 6.59 \approx 0.06$ bits ($\approx$1\% of $H(s)$); for open-domain quasi-identifiers ($|V| \sim 10^4$, e.g., hospital names) the bound is $\approx 0.34$ bits, $I_{\mathrm{norm}} \ge 0.026$---essentially vacuous. \textbf{The operative safety argument of this paper therefore does not rest on Theorem~\ref{thm:fano}}: it rests on (i) the empirical calibration $\hat\Delta$ (\S\ref{sec:security}), (ii) the deterministic hard line (all declared identifiers scrubbed before egress, independent of any model), and (iii) human fallback on INFEASIBLE. The theorem's role is to \emph{witness leakage for rejection and warning} (directions where a lower bound is the useful side), and to make the certificate's evaluator-dependence explicit. The certificate strength increases monotonically with evaluator capability. Full proof: Appendix~A.2.
+
+\emph{Conditioning on auxiliary knowledge.} When attackers use auxiliary knowledge $A$ (\S3.3), all entropy terms are understood conditional on $A$: the theorem applies verbatim to $I(D;S\mid A)$ and $H(S\mid D,A)$, with hit rates measured by $A$-equipped attackers; we omit the conditioning in the statement for readability.
 
 \begin{proposition}[Pufferfish witness: hit rate $\to$ $\varepsilon$ lower bound]\label{prop:witness}
 Let the optimal attacker's hit rate on attribute $s_i$ be $L$, with prior $p_{\max} = \max_v P(s_i{=}v)$, $p_{\min} = \min_v P(s_i{=}v)$. Then there exists a discriminative pair $(\sigma^{*},\sigma')$ such that any mechanism satisfying \eqref{eq:pufferfish} must have
@@ -439,7 +442,7 @@ L5 Empirical approximation & heuristic certificate + calibration & $L_{\mathrm{l
 \end{tabular}
 \end{table}
 
-\textbf{Positioning statement}: DR-SL approaches the theoretical limit characterized by the rate-privacy frontier under Pufferfish semantics, via an empirically calibrated heuristic certificate; the closeness of approximation improves with evaluator capability (measured by $\hat\Delta$). We do not claim to reach the limit. Compared with MINE~\cite{belghazi2018mine} / the privacy funnel~\cite{eswa2022funnel}, reversibility verification is training-free and usable online; its price is dependence on evaluator capability---exactly the trade-off characterized by Theorem~\ref{thm:fano} and empirical calibration.
+\textbf{Positioning statement}: DR-SL approaches the theoretical limit characterized by the rate-privacy frontier under Pufferfish semantics, via an empirically calibrated heuristic certificate; the closeness of approximation improves with evaluator capability (measured by $\hat\Delta$). We do not claim to reach the limit. \textbf{Honesty note on the architecture}: layers L2 (Maximal Leakage) and L4 (Wyner-Ziv) are \emph{positioning} layers in this paper---they delimit what the empirical quantities approximate but are not computed anywhere in our experiments (computable MaxL estimation is future work, \S7). The operative layers are L1 (semantics), L3 (feasibility criterion, used to interpret INFEASIBLE), and L5 (calibrated certificate). Compared with MINE~\cite{belghazi2018mine} / the privacy funnel~\cite{eswa2022funnel}, reversibility verification is training-free and usable online; its price is dependence on evaluator capability---exactly the trade-off characterized by Theorem~\ref{thm:fano} and empirical calibration.
 
 \subsection{Security Model: A Two-Phase Threat Model and the Empirically Calibrated Certificate}\label{sec:security}
 
@@ -453,6 +456,7 @@ L5 Empirical approximation & heuristic certificate + calibration & $L_{\mathrm{l
 \begin{enumerate}
 \item \textbf{Lower-boundedness} (Theorem~\ref{thm:fano}): $L_{\mathrm{local}} \le L_{\mathrm{true}}$. A local pass (Wilson upper bound $\le \tau_L$) is a lower-bound witness against attackers no weaker than the evaluator---not an absolute safety upper bound.
 \item \textbf{Empirical calibration}: run the re-identification branches of the local model and a cloud strong model on non-sensitive corpora; measure $\hat\Delta = L_{\mathrm{cloud}} - L_{\mathrm{local}}$ (stratified by domain/type, with CIs), yielding the calibrated certificate $\hat L = L_{\mathrm{local}} + \hat\Delta$.
+\item \textbf{Transferability assumption (made explicit)}. $\hat\Delta$ is measured on the \emph{direct-forwarding distribution} of a \emph{non-sensitive calibration corpus}; using it online assumes (a) the evaluator gap transfers from the calibration corpus to sensitive production instances, and (b) it transfers across \emph{regimes} (original vs dehydrated text). Assumption (b) is the load-bearing one and is \textbf{testable}: T16/T18 measure the strong-vs-local gap separately on dehydrated text. Where the gap is regime-dependent, calibration must be regime-specific ($\hat\Delta_{\mathrm{post}}$); we report both and do not claim a single universal $\hat\Delta$. This assumption---not the theorems---is the actual fulcrum of the quantitative safety claim, and we state it as such.
 \item \textbf{Attacker-independent anchor}: Maximal Leakage~\cite{issa2020operational} takes the supremum over arbitrary attackers; the gap between the empirical $\max L(A_3)$ and a MaxL upper-bound estimate is an explicit measure of residual uncertainty about the attacker class.
 \item \textbf{Post-processing safety}: by the data-processing inequality (strong form: SDPI), any cloud-side post-processing of $D$ does not increase leakage: $I(g(D);S) \le I(D;S)$.
 \end{enumerate}
@@ -465,7 +469,7 @@ DR-SL does not guarantee absolute safety against arbitrary attackers outside the
 
 \subsection{Local Model Selection and Capability Dependence}
 
-Qwen3.8-27B as the primary evaluator~\cite{qwen3827b}, Ornith-1.5-35B-A3B as the low-resource alternative~\cite{ornith35b}, DeepSeek V4 Flash as the high-capacity option~\cite{deepseekv4}. The effect of model capability is itself an experimental object---the size-gradient ablation in \S6 quantifies ``certificate strength vs evaluator capability'', corresponding to the stratified $\hat\Delta$ estimates. (Stage 1--3 execution used ornith-1.5-35b locally for throughput; see protocol deviation log D10.)
+The reference configuration designates Qwen3.8-27B as the primary evaluator~\cite{qwen3827b} and Ornith-1.5-35B-A3B as the low-resource alternative~\cite{ornith35b}. \textbf{All Stage 1--3 experiments reported here ran with ornith-1.5-35b as the local executor} (throughput decision, protocol deviation D10: $\approx$51 tok/s vs $\approx$20 tok/s for the 27B MLX build); qwen3.8-27b-mlx serves as the capability reference in the size-gradient ablation (T19). The effect of model capability is itself an experimental object: the gradient (ornith-1.5-35b $\to$ qwen3.8-27b $\to$ offline strong model) quantifies ``certificate strength vs evaluator capability'', corresponding to the stratified $\hat\Delta$ estimates.
 
 \subsection{Layered Assurance Model (Core Safety Argument)}\label{sec:layered}
 
@@ -475,7 +479,10 @@ DR-SL's safety claim is \textbf{layered and conditional}:
 \item \textbf{Hard-line layer (deterministic)}: a deterministic identifier matcher (regex/declared identifiers) rejects all declared identifiers before egress, with a network allowlist as backstop---independent of model capability;
 \item \textbf{Human-fallback layer}: INFEASIBLE (empty feasible region per Prop.~\ref{prop:feasibility}, or budget exhaustion) $\to$ residual-leakage report (attribute set + hit questions) $\to$ human risk judgment; automatic egress is refused.
 \end{enumerate}
-Total-leakage decomposition (Prop.~\ref{prop:recall}): system residual leakage $\le$ residual on declared parts (measured by the soft layer) $+$ missed-extraction part (conditioned on recall $\hat\rho$). Each layer's guarantee type, conditions, and residual risks are explicitly statable.
+Total-leakage decomposition (Prop.~\ref{prop:recall}): system residual leakage $\le \iota\cdot$ residual on declared parts (measured by the soft layer, $\iota=|F|/|G|$ the over-extraction inflation) $+$ missed-extraction part (conditioned on recall $\hat\rho$). Each layer's guarantee type, conditions, and residual risks are explicitly statable.
+
+\paragraph{Local assets are themselves sensitive.}
+The experience store, residual-leakage reports, and audit logs contain failure contexts (attribute \emph{types}, hit questions, and---in INFEASIBLE reports---residual sensitive \emph{values}), constituting a new local sensitive asset. Mitigations by design: (i) distillation inputs are aggregated to type-level statistics only---raw values never enter the prompt-distillation path (the memorization check additionally rejects any rule embedding literal values or $>\ell$-token quotes); (ii) residual reports and audit logs never egress---the hard line and allowlist apply to all outbound channels, and reports are rendered only to the local human reviewer; (iii) retention policy: audit logs are append-only with configurable expiry, encrypted at rest where the OS provides it. We state plainly: a compromised local device voids all guarantees---the threat model (A1--A3) concerns the cloud/link adversary, not local malware.
 
 \subsection{Limitations}
 
@@ -556,7 +563,7 @@ Synthetic population (skewed $10^5$, conservative) & $A_3$ & 240 & 0.079 (all) /
 \end{tabular}
 \end{table}
 
-\noindent Reading: the baseline is high and consistent across attacker families (0.57--0.79; the local small model is the weakest attacker); highest in the medical domain (strong attacker 0.90), lowest in travel ($\approx$0.60). $A_1$ shows no gain over $A_0$ on raw text (prior injection makes models more conservative); the value of priors was re-tested on dehydrated text in Stage~2. $A_3$ provides an independent quasi-identifier measure consistent with the $k$ distributions of T7. Figure~\ref{fig:attacker}.
+\noindent Reading: the baseline is high and consistent across attacker families (0.57--0.79; the local small model is the weakest attacker); highest in the medical domain (strong attacker 0.90), lowest in travel ($\approx$0.60). \textbf{Monotonicity review (triggered per \S3.3 rule)}: $A_1 < A_0$ for both local and flash attackers violates the expected monotonicity; the mandated review attributes this to an \emph{attacker-behavior artifact}---injecting domain priors makes models answer more conservatively (more UNKNOWN) on raw text where the values are already explicit, i.e., the prior changes the answering policy rather than adding usable knowledge. Conclusion recorded: on un-dehydrated text the $A_1$ level is behaviorally confounded; $A_1$'s intended value (priors compensating for removed surface values) must be assessed on dehydrated text (T16). $A_3$ provides an independent quasi-identifier measure consistent with the $k$ distributions of T7. Figure~\ref{fig:attacker}.
 
 \begin{figure}[H]
 \centering
@@ -589,7 +596,7 @@ Synthetic population (skewed $10^5$, conservative) & $A_3$ & 240 & 0.079 (all) /
 
 \paragraph{T8 Local closed-loop pilot (8 instances, Algorithm~2$'$, deterministic conservative dehydration, pilot gate $\tau_L{=}0.20$, D8/D9).} Loop mechanics verified: all instances terminate within budget with structured outputs; the utility gate holds ($U \ge \tau_U$ on every accepted step); leakage falls substantially on some instances (Wilson upper bound 0.833$\to$0.39). \textbf{Key finding (fed back into the protocol)}: with only 5--6 probes per instance the zero-hit Wilson upper bound remains $\approx$0.39--0.44---the instance-level $\tau_L$ gate is statistically unreachable, directly evidencing the $\ge$75-probe requirement (D1).
 
-\paragraph{T9 Cascade-extractor full evaluation (480 instances, local ornith-1.5-35b).} Overall recall \textbf{0.951} (95\% CI 0.941--0.960); explicit 0.977 (0.965--0.987); quasi 0.931 (0.915--0.945); on average 2.03 extra values/instance (over-extraction, conservative direction); by domain: medical 0.970 / travel 0.985 / legal 0.934 / banking 0.914 (Figure~\ref{fig:extractor}). System-level conclusions are conditioned on $\hat\rho=0.951$ per Prop.~\ref{prop:recall}: residual leakage $\le L_{\mathrm{measured}} + 0.049$.
+\paragraph{T9 Cascade-extractor full evaluation (480 instances, local ornith-1.5-35b).} Overall recall \textbf{0.951} (95\% CI 0.941--0.960); explicit 0.977 (0.965--0.987); quasi 0.931 (0.915--0.945); on average 2.03 extra values/instance (over-extraction, conservative direction); by domain: medical 0.970 / travel 0.985 / legal 0.934 / banking 0.914 (Figure~\ref{fig:extractor}). System-level conclusions are conditioned per the corrected Prop.~\ref{prop:recall}: with $\hat\rho=0.951$ and measured mean inflation $\iota = |F|/|G| = 1.43$ (median 1.40), residual leakage $\le 1.43\,L_{\mathrm{measured}} + 0.049$---the inflation term is the necessary price of a high-recall extractor that deliberately over-flags.
 
 \begin{figure}[H]
 \centering
@@ -616,7 +623,7 @@ INFEASIBLE & 250 instances, all emitting residual-leakage reports, routed to hum
 \end{tabular}
 \end{table}
 
-\noindent Reading: (1) the lexicographic gate works---leakage drops significantly while task utility does not fall; (2) the medical domain's lowest PASS rate is consistent with Prop.~\ref{prop:feasibility} (strong task--sensitive coupling shrinks the feasible region---infeasibility is inherent to the problem); (3) rounds decrease along the stream (3.52$\to$2.62), directional evidence for H1, but Stage~1 did not enable prompt updates and the decrease is partly explained by domain composition; (4) the 37.5\% pass rate is the honest number under strict gates: non-passing instances are designed early warnings with residual lists, not method failures. Figure~\ref{fig:loop}.
+\noindent Reading: (1) the lexicographic gate works---leakage drops significantly while task utility does not fall; (2) the medical domain's lowest PASS rate is consistent with Prop.~\ref{prop:feasibility} (strong task--sensitive coupling shrinks the feasible region---infeasibility is inherent to the problem); (3) rounds decrease along the stream (3.52$\to$2.62), directional evidence for H1, but Stage~1 did not enable prompt updates and the decrease is partly explained by domain composition; (4) the 37.5\% pass rate is the honest number under strict gates: non-passing instances are designed early warnings with residual lists, not method failures. \textbf{Revision-round qualification (see T18)}: the $U$ figures in this table were measured on pre-hard-line artifacts that could retain residual literal mentions of sensitive values (159/160 instances did, mean 3.01 values); part of the ``preserved utility'' was therefore carried by literal leakage. The paired \emph{leakage reduction} remains valid (same measurement basis before/after), but the utility-preservation claim is re-scoped by T18/T20b/T21. Figure~\ref{fig:loop}.
 
 \begin{figure}[H]
 \centering
@@ -627,7 +634,7 @@ INFEASIBLE & 250 instances, all emitting residual-leakage reports, routed to hum
 
 \paragraph{T11 Annotation reliability (zero-human substitute, 480 instances).} Value-level Jaccard agreement between two model families (qwen3.8-max vs ornith-1.5-35b) extracting independently: \textbf{0.845}; recalls against the automatic gold: 0.986 / 0.949. Dual-model agreement substitutes for human Cohen's $\kappa$; the gold standard is audited automatic annotation (stated plainly).
 
-\paragraph{T12 Cross-model validity of the utility metric (100 instances $\times$ 4 degradation levels $\times$ 2 answerers).} Spearman correlation of $U$ between answerers: \textbf{0.958}; degradation monotonicity: $U(D_0$ original$)=0.916$, $U(D_1$ explicit-removed$)=0.923$, $U(D_2$ conservative dehydration$)=0.034$, $U(D_3$ aggressive removal$)=0.0$. The metric sharply distinguishes ``generalization preserving task information'' from ``deletion destroying it''. The low $D_2$ score reveals the real privacy-utility tension: once task-relevant quasi-identifiers are generalized to valueless tokens, exact-value utility is lost---exactly the over-generalization the $U$ gate prevents, and the explanation of the medical domain's low pass rate. No human criterion study was conducted (Limitations).
+\paragraph{T12 Cross-model validity of the utility metric (100 instances $\times$ 4 degradation levels $\times$ 2 answerers).} Spearman correlation of $U$ between answerers: \textbf{0.958}; degradation profile: $U(D_0$ original$)=0.916$, $U(D_1$ explicit-removed$)=0.923$, $U(D_2$ conservative dehydration$)=0.034$, $U(D_3$ aggressive removal$)=0.0$. \emph{Note}: the $D_0 \to D_1$ step is non-monotone by $+0.007$---within bootstrap noise (the two texts differ only in explicit-identifier spans, which the QA probes by construction do not ask about); monotonicity holds from $D_1$ onward, which is the range that matters. The metric sharply distinguishes ``generalization preserving task information'' from ``deletion destroying it''. The low $D_2$ score reveals the real privacy-utility tension: once task-relevant quasi-identifiers are generalized to valueless tokens, exact-value utility is lost---exactly the over-generalization the $U$ gate prevents, and the explanation of the medical domain's low pass rate. No human criterion study was conducted (Limitations).
 
 \paragraph{T13 Self-learning test (Stage~2, formal H1 test).} A fresh-seed stream of 120 instances (60 distillation $+$ 60 validation). Distillation produced 5 rules (172 failure experiences; all passing the memorization check). Paired validation comparison: \textbf{rounds v0 2.82 vs v1 2.90 ($\Delta{=}{+}0.08$, permutation $p{=}0.68$, n.s.); PASS 46.7\% vs 41.7\%}. \textbf{Honest conclusion: H1 is not supported}---a single distillation round brought no loop-efficiency gain. Attribution: distilled rules concern recognition/recall strategies, decoupled from the loop's dehydration actions; loop behavior is dominated by the deterministic policy. H1 remains an unproven hypothesis; abstract and conclusion downgraded accordingly.
 
@@ -687,11 +694,69 @@ The attribution of H1's negative result yields corrected hypothesis H1$'$ (pre-r
 \end{itemize}
 \textbf{Verdict (honest reporting)}: H1$'$ obtains \textbf{directional support without statistical significance}---all three indicators move consistently in the right direction with controlled cost, but the effect size ($+1.5$pp) is small relative to variance ($p{=}0.059$ borderline); per pre-registered criterion ($p{<}0.05$) it is judged \textbf{unproven (borderline)}. Power analysis: detecting $\Delta{=}0.015$ with per-instance recall SD ${\approx}0.10$ requires $n{\approx}700{+}$; the 0.93--0.95 baseline ceiling further limits headroom. Contrasted with H1 (negative direction, mechanistic decoupling), H1$'$ is directionally positive with aligned mechanism (rule content \emph{is} extraction strategy), indicating that \textbf{the correct target of self-learning is indeed the extractor}, though gains are limited at high baseline recall.
 
+\paragraph{T18 Hard-line layer: residual-literal audit and post-scrub leakage (revision round; test 160).}
+Auditing the archived loop outputs $D_{\mathrm{final}}$ of T16 revealed that \textbf{159/160 instances still contained literal sensitive values} (mean 3.01 per instance)---an artifact of span-only replacement missing repeated mentions, i.e., the soft layer alone does not eliminate literal leakage. This is precisely the failure class the \emph{hard-line layer} of \S\ref{sec:layered} exists for, which the T16 pipeline had omitted. Applying the deterministic hard-line scrub (replace every remaining literal occurrence of every declared value) and re-running the external strong attackers (strict grading, $\ge$75 probes):
+
+\begin{table}[H]
+\centering\small
+\caption{Post-dehydration leakage by subgroup, before vs after the deterministic hard-line scrub.}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Subgroup & Attacker & $L$ soft-layer only (T16) & $L$ after hard-line scrub \\
+\midrule
+PASS ($n{=}70$) & qwen3.8-flash $A_0$ & 0.486 & \textbf{0.000} \\
+PASS ($n{=}70$) & glm-5.2 $A_0$ & 0.432 & \textbf{0.000} \\
+INFEASIBLE ($n{=}90$) & qwen3.8-flash $A_0$ & 0.398 & \textbf{0.000} \\
+INFEASIBLE ($n{=}90$) & glm-5.2 $A_0$ & 0.396 & \textbf{0.000} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent Reading: (1) the pre-scrub PASS$>$INFEASIBLE inversion (0.486 vs 0.398) is fully explained by residual literals---PASS instances exit the loop earlier and undergo fewer strengthening passes, leaving more unreplaced duplicate mentions; (2) after the hard line, \emph{literal-value} leakage measured by two external strong attackers is zero on all 160 instances and both subgroups---the layered model's deterministic layer, not the soft certificate, carries this guarantee, exactly as \S\ref{sec:security} claims; (3) what remains outside this measurement is \emph{semantic/combinatorial} inference not expressible as literal declared values---covered separately by the $A_3$ k-anonymity dimension (T7: 7.9--16.7\% under skewed populations) and by the human-review path for INFEASIBLE instances. We state the scope of ``0.000'' precisely: strict literal grading over declared-attribute probes; it is not a claim of zero semantic leakage.
+
+\textbf{The scrub's utility cost (T20b), and what it exposes.} Re-measuring the QA-probe utility on scrubbed text gives \textbf{U = 0.000} (all 160 instances, both subgroups; tolerant scoring). The mechanism is diagnostic: the loop's certified utility ($U\approx0.97$ in T10/T16) was partly \emph{carried by the residual literals themselves}---on this benchmark every quasi-identifier is task-relevant by annotation design, so ``utility'' and ``literal sensitive value'' coincide, and any sanitizer that truly removes the literals removes that exact-value utility with them. Two consequences, stated plainly:
+\begin{itemize}
+\item \textbf{Retraction of scope on the utility headline.} The claim ``leakage reduced while $U\ge0.97$ is preserved'' holds \emph{only} for the pre-hard-line artifact, i.e., utility was in part purchased with the very leakage the hard line later removes. The corrected statement: under exact-value utility, the achievable frontier on task-coupled benchmarks runs from (direct forwarding: $U{=}0.92$, $L{=}0.77$) through (loop output pre-hard-line: $U{=}0.97$, $L_{\mathrm{strong}}{=}0.44$) to (fully sanitized: $U{\to}$ tolerance-limited, $L_{\mathrm{strong}}{=}0.00$); T21 locates the middle point under principled generalization (all occurrences generalized, none deleted).
+\item \textbf{Release procedure upgraded (protocol deviation D13).} A PASS from the local soft gate is \emph{necessary but not sufficient} for release: on 70/160 locally certified instances, external strong attackers still extracted $L\approx0.43$--0.49 pre-hard-line (the certification gap, quantifying the reviewer-anticipated one-sidedness in vivo). The mandatory release chain is therefore: local lexicographic gate $\to$ deterministic hard-line scrub $\to$ \emph{external strong-attacker re-test on the final artifact} (the ``pre-egress leakage detection'' of the original design, now elevated from an optional metric to a compulsory gate) $\to$ egress or human review. Under this chain, literal leakage at egress is 0.000 on all 160 test instances (two independent strong attackers), at the utility cost reported in T20b/T21.
+\end{itemize}
+
+\paragraph{T19 Local model size gradient (revision round; paired, 60 test instances).}
+Same-instance paired comparison of local attackers on raw text: ornith-1.5-35b (3B-active MoE) $L=0.531$ vs qwen3.8-27b-mlx (27B dense) $L=0.556$ ($\Delta=+0.024$, permutation $p=0.26$, n.s.); both sit far below the online strong attacker qwen3.8-max ($0.779$). Reading: within the locally deployable class, attack capability \emph{saturates}---the decisive capability gap is local-vs-cloud, not small-vs-medium local. For the certificate, this means (i) upgrading the local evaluator within the deployable class yields little; (ii) the $\hat\Delta$ calibration against an offline strong model (\S\ref{sec:security}) is the mechanism that matters---consistent with $\hat\Delta=+0.181 \gg 0.024$.
+
+\paragraph{T20 Cost accounting (promised process metrics; revision round).}
+Main loop (train 400, ornith-1.5-35b, $\ge$75-probe evaluations): mean \textbf{203 s/instance} (median 166; max 1177), $\approx$10.2 LLM calls/instance (mean rounds 3.08 $\times$ [attack+QA] $+$ dehydrate/refine $+$ final audit), 22.5 h total wall-clock at concurrency 1. Test-160 loop (T16): mean 240 s/instance. Hot-vs-cold: under the deterministic policy hot start changes rounds by $\approx$0 (T14), so cost is dominated by the $\ge$75-probe evaluation bundle; reducing probes (at the price of Wilson-gate power, D1) is the primary cost lever. Per-instance egress latency budget: interactive use requires parallelizing probe bundles or shrinking $|Q|$ with interval-corrected gates---reported as an engineering limitation, not hidden.
+
+\paragraph{T21 Same-scale baselines and the honest Pareto frontier (revision round; test 160, identical probes/graders).}
+Two classical baselines were run on the same 160 PRISM-isomorphic instances with identical attack bundles ($\ge$75 probes, strict grading) and QA probes (tolerant grading): \textbf{placeholder substitution} (all annotated values $\to$ typed tokens) and \textbf{selective LDP} (all annotated values $\to$ random same-type values, the PRISM perturbation protocol). Together with the DR-SL operating points, this completes the leakage-utility plane:
+
+\begin{table}[H]
+\centering\small
+\caption{Leakage-utility plane on test-160 (strict-literal $L$ vs exact-value $U$; strong attackers flash/glm).}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Operating point & $L$ (flash) & $L$ (glm) & $U$ \\
+\midrule
+Direct forwarding & 0.768 & 0.789 & 0.917 \\
+Loop output, pre-hard-line (T16) & 0.436 & 0.412 & 0.97$^{\dagger}$ \\
+\textbf{Principled generalization (all occurrences)} & \textbf{0.000} & \textbf{0.000} & 0.033 \\
+Placeholder substitution & 0.000 & 0.000 & 0.000 \\
+Selective LDP & 0.057 & 0.049 & 0.075 \\
+\bottomrule
+\end{tabular}
+\\[2pt]
+{\footnotesize $^{\dagger}$ utility partly carried by residual literals (T18); not an achievable safe operating point.}
+\end{table}
+
+\noindent Reading, without overclaiming: (1) under the strict-literal leakage metric, principled generalization (the fixed deterministic policy: every occurrence of every declared value generalized or removed, task-relevant values generalized to bands/categories rather than deleted) achieves $L=0.000$ against both strong attackers---the same leakage corner as placeholders, at higher exact-value utility (0.033 vs 0.000) because numeric generalizations (age bands) remain tolerance-matchable while placeholders destroy everything; (2) selective LDP retains chance-level utility (0.075: random same-type values occasionally fall within numeric tolerance or match by luck) but leaks more ($L\approx0.05$, residual judge-question identifiability from preserved structure); (3) \textbf{metric caveat, stated plainly}: exact-value QA utility is a \emph{conservative lower bound} on downstream usefulness---it credits a random wrong-age draw that happens to land in tolerance while debiting a truthful age-band generalization that a human advisor would find usable. A full utility ranking requires the open-ended judge-rubric or human study (future work, \S7); we therefore claim domination over placeholders (same $L$, higher $U$) and a \emph{leakage} advantage over selective LDP ($0.000$ vs $0.05$), not a total-order utility advantage; (4) the loop's distinctive value is not the corner itself---it is \emph{deciding per instance} whether a safer point is reachable without destroying the task (Prop.~\ref{prop:feasibility}), certifying what it releases, and emitting residual reports for what it cannot.
+
+\paragraph{T22 True cross-family annotation agreement (revision round; addresses the same-family concern on T11).}
+T11's dual-model agreement (0.845) paired ornith-1.5-35b with qwen3.8-max---both of Qwen lineage, inviting a same-family discount. We therefore re-ran the full 480-instance extraction with glm-5.2 (a genuinely different architecture family): recall against the automatic gold \textbf{0.983}; value-level Jaccard \textbf{0.817} vs qwen3.8-max and \textbf{0.785} vs ornith. Cross-family agreement is thus slightly lower than, but comparable to, the same-family figure---three architecturally independent extractors converge on the same value sets at $J\approx0.79$--$0.85$ with recalls 0.95--0.99, which is the reliability evidence the gold standard rests on. A human-annotated subset (Cohen's $\kappa$) remains the definitive check and is future work (\S7).
+
 \section{Conclusion and Future Work}
 
 This paper proposed DR-SL, a self-learning sensitive-information isolation method centered on reversibility verification with prompts as the optimization object. We placed de-identification sufficiency under Pufferfish semantics, proved the lower-boundedness of the leakage score (Fano-type) and the witness relation from hit rates to privacy parameters, gave a rate-privacy feasibility criterion and a termination theorem for the lexicographic iteration, positioned the method as ``approaching theoretical limits via an empirically calibrated heuristic certificate'', and verified all theoretical bounds with numerical property tests on 3000 synthetic mechanisms. Engineering-wise, the offline stage calibrates only on non-sensitive corpora while all online decisions are local, and the layered assurance model (soft certificate $+$ hard line $+$ human fallback) explicitly characterizes each layer's guarantee and residual risk. Full-scale Stage~1--2 experiments show that the loop significantly reduces leakage ($0.457\to0.304$, $p\approx0$) while preserving task utility ($U\ge0.97$); 37.5\% of instances obtain a complete certificate under strict gates, and the rest emit residual-leakage warnings by design; the medical domain's low pass rate corroborates the feasibility criterion's prediction for strongly task-coupled sensitive information.
 
-Future work (with Stage~3 completed): (i) two rounds of self-learning testing (H1 unproven; corrected H1$'$ directionally consistent but not significant, T17)---re-test H1$'$ on harder extraction benchmarks (covert quasi-identifiers, adversarial formats) and larger validation sets ($n\ge700$ for power), and explore multi-round iterative distillation; (ii) re-measure $A_3$'s $k$ risk on dehydrated text; (iii) replace the W2 example marginals with real public statistical tables; (iv) human dual annotation (Cohen's $\kappa$) and a human utility study (Spearman $\rho\ge0.8$; currently zero-human substitutes, T11/T12); (v) computable Maximal Leakage upper-bound estimation; (vi) composition with structured-field isolation.
+Future work (with Stage~3 and the revision round completed): (i) two rounds of self-learning testing (H1 unproven; corrected H1$'$ directionally consistent but not significant, T17)---re-test H1$'$ on harder extraction benchmarks (covert quasi-identifiers, adversarial formats) and larger validation sets ($n\ge700$ for power), and explore multi-round iterative distillation; (ii) re-measure $A_3$'s $k$ risk on dehydrated text; (iii) replace the W2 example marginals with real public statistical tables; (iv) human dual annotation (Cohen's $\kappa$) and a human utility study (Spearman $\rho\ge0.8$; current substitutes: T11/T22 dual- and cross-family agreement, T12 cross-model validity); (v) an open-ended judge-rubric utility metric that credits generalization rather than only exact values (T21 caveat); (vi) computable Maximal Leakage upper-bound estimation; (vii) interactive-latency engineering of the $\ge$75-probe gate; (viii) composition with structured-field isolation.
 
 \appendix
 
@@ -700,24 +765,29 @@ Future work (with Stage~3 completed): (i) two rounds of self-learning testing (H
 
 \noindent\emph{Notation}: $\log$ is base 2; $H_2(p) = -p\log p - (1-p)\log(1-p)$; $\ln$ is the natural logarithm. Every proof step cites its justification.
 
-\subsection*{A.1 Proposition~\ref{prop:recall} (Recall decomposition of system leakage)}
+\subsection*{A.1 Proposition~\ref{prop:recall} (Recall decomposition, over-extraction-corrected)}
 
-\textbf{Statement.} Let the true sensitive set be $S_{\mathrm{gold}}$, the extracted set $S_{\mathrm{found}}$, and $\mathrm{Recall} = |S_{\mathrm{found}}\cap S_{\mathrm{gold}}|/|S_{\mathrm{gold}}|$. Branch~1 probes only attributes in $S_{\mathrm{found}}$, measuring hit rate $L_{\mathrm{measured}}$ (over $S_{\mathrm{found}}$). Then
+\textbf{Statement.} Let $G=S_{\mathrm{gold}}$, $F=S_{\mathrm{found}}$, $\mathrm{Recall} = |F\cap G|/|G|$. Branch~1 probes the attributes in $F$, measuring hit rate $L_{\mathrm{measured}} = \frac{1}{|F|}\sum_{s\in F}\mathrm{hit}(s)$, where $\mathrm{hit}(s)\in[0,1]$ is $1$ if the probe on $s$ is answered correctly (for $s\in F\setminus G$, spurious probes contribute hits or misses arbitrarily). Then
 \[
-L_{\mathrm{system}} \;\le\; L_{\mathrm{measured}} + (1 - \mathrm{Recall}).
+L_{\mathrm{system}} \;\le\; \frac{|F|}{|G|}\,L_{\mathrm{measured}} + (1 - \mathrm{Recall}),
+\qquad\text{where } L_{\mathrm{system}} = \frac{1}{|G|}\sum_{s\in G}\mathrm{leak}(s).
 \]
 
-\textbf{Proof.} Let $\mathrm{leak}(s) \in [0,1]$ denote the degree to which attribute $s$ is successfully re-identified. System leakage averages over all true attributes:
+\textbf{Proof.} Split the gold sum by whether the attribute was found:
 \[
-L_{\mathrm{system}} = \frac{1}{|S_{\mathrm{gold}}|}\Bigl[\sum_{s\in S_{\mathrm{found}}}\mathrm{leak}(s) + \sum_{s\notin S_{\mathrm{found}}}\mathrm{leak}(s)\Bigr] \quad\text{(definition)}.
+L_{\mathrm{system}} = \frac{1}{|G|}\Bigl[\sum_{s\in G\cap F}\mathrm{leak}(s) + \sum_{s\in G\setminus F}\mathrm{leak}(s)\Bigr].
 \]
-First term: by definition of $L_{\mathrm{measured}}$, $\sum_{s\in S_{\mathrm{found}}}\mathrm{leak}(s) = |S_{\mathrm{found}}|\cdot L_{\mathrm{measured}}$.
-Second term: bounding $\mathrm{leak}(s) \le 1$, $\sum_{s\notin S_{\mathrm{found}}}\mathrm{leak}(s) \le |S_{\mathrm{gold}}| - |S_{\mathrm{found}}|$.
-Substituting:
+Second term: bounding $\mathrm{leak}(s) \le 1$, $\frac{1}{|G|}\sum_{s\in G\setminus F}\mathrm{leak}(s) \le \frac{|G|-|G\cap F|}{|G|} = 1-\mathrm{Recall}$.
+First term: for $s \in G\cap F$, $\mathrm{leak}(s)$ equals the probe hit $\mathrm{hit}(s) \in [0,1]$. Since all summands are non-negative,
 \[
-L_{\mathrm{system}} \le \frac{|S_{\mathrm{found}}|}{|S_{\mathrm{gold}}|} L_{\mathrm{measured}} + \frac{|S_{\mathrm{gold}}|-|S_{\mathrm{found}}|}{|S_{\mathrm{gold}}|}
-\le L_{\mathrm{measured}} + (1-\mathrm{Recall}), \qquad\text{(since } |S_{\mathrm{found}}|/|S_{\mathrm{gold}}| \le 1\text{)}\ \blacksquare
+\sum_{s\in F\cap G}\mathrm{leak}(s) \;\le\; \sum_{s\in F}\mathrm{hit}(s) \;=\; |F|\cdot L_{\mathrm{measured}} .
 \]
+Dividing by $|G|$ and adding the two terms:
+\[
+L_{\mathrm{system}} \le \frac{|F|}{|G|}\,L_{\mathrm{measured}} + (1-\mathrm{Recall}).\ \blacksquare
+\]
+
+\noindent\emph{Remarks.} (i) When $|F|\le|G|$ (no over-extraction) the older form $L_{\mathrm{system}} \le L_{\mathrm{measured}} + (1-\mathrm{Recall})$ is recovered only if additionally $F\subseteq G$; in general the factor $|F|/|G|$ is unavoidable. (ii) On Stage-1 data the mean inflation is $\iota = 1.43$ (median 1.40), so the T9 conditional conclusion reads: residual $\le 1.43\,L_{\mathrm{measured}} + 0.049$. (iii) Over-extraction is conservative for \emph{probing} (more attributes watched) but anti-conservative for the \emph{measured rate} (dilution); both effects are now explicit.
 
 \subsection*{A.2 Theorem~\ref{thm:fano} (Lower-boundedness, Fano-type)}
 
@@ -797,7 +867,7 @@ U^{*}(\varepsilon) := \max_{p(D|X):\, I(D;S|A) \le \varepsilon} I(D;T\mid A) \;\
 \item Upon termination, PASS or INFEASIBLE (with residual report) is output per the criteria.\ $\blacksquare$
 \end{enumerate}
 
-\noindent\emph{Note}: evaluation noise (LLM sampling) does not affect termination (the budget and decisions are finitely many deterministic checks); it affects only statistical reliability, handled by the stability window and Wilson intervals (\S3.3).
+\noindent\emph{Note}: evaluation noise (LLM sampling) does not affect termination (the budget and decisions are finitely many deterministic checks). It does affect \emph{statistical reliability}: the gate invariant $U \ge \tau_U$ holds for the \emph{sampled} utility estimates, not for the noise-free $U$; with per-instance sampling variance $\sigma^2$ the true $U$ can fall below $\tau_U$ by $O(\sigma)$ on accepted steps. The stability window ($N$ consecutive passes) and Wilson intervals bound this effect for the release decision but do not eliminate it---we report it as a limitation of the certified guarantee, not of termination.
 
 \subsection*{A.6 Proposition~\ref{prop:direction} (Directional correctness)}
 
@@ -817,8 +887,8 @@ The correctness of theoretical results cannot rest on manual review alone. For e
 If any test finds a counterexample, the proposition is corrected before submission and all tests regressed. Verification results are archived as a test report accompanying the paper (pass rates, configuration distributions, boundary-case lists).
 
 \begin{thebibliography}{35}
-\bibitem{hao2024hybrid} Hao Z, Jiang H, Jiang S, et al. Hybrid SLM and LLM for edge-cloud collaborative inference. 2024.
-\bibitem{jin2025cecollm} Jin H, Wu Y. CE-COLLM: efficient and adaptive large language models through cloud-edge collaboration. IEEE ICWS, 2025.
+\bibitem{hao2024hybrid} Hao Z, Jiang H, Jiang S, Ren J, Cao T. Hybrid SLM and LLM for edge-cloud collaborative inference. Workshop on Edge and Mobile Foundation Models (EdgeFM'24), 2024, 36--41.
+\bibitem{jin2025cecollm} Jin H, Wu Y. CE-COLLM: efficient and adaptive large language models through cloud-edge collaboration. IEEE ICWS, 2025, 316--323.
 \bibitem{li2025collab} Li S, Wang H, Xu W, et al. Collaborative inference and learning between edge SLMs and cloud LLMs: a survey. 2025.
 \bibitem{siyan2025papillon} Siyan L, Raghuram V C, Khattab O, et al. PAPILLON: privacy preservation from internet-based and local language model ensembles. NAACL, 2025. arXiv:2410.17127.
 \bibitem{das2025security} Das B C, Amini M H, Wu Y. Security and privacy challenges of large language models: a survey. ACM Computing Surveys, 2025.
@@ -826,24 +896,23 @@ If any test finds a counterexample, the proposition is corrected before submissi
 \bibitem{presidio} data-privacy-stack/presidio. Open-source framework for detecting, redacting, and anonymizing PII. GitHub.
 \bibitem{rehydra} rehydra-ai/rehydra-sdk. PII security for AI workflows, coding agents and browser workloads. GitHub, MIT.
 \bibitem{zeng2025privacyrestore} Zeng Z, Wang J, Yang J, et al. PrivacyRestore: privacy-preserving inference in large language models via privacy removal and restoration. ACL, 2025. arXiv:2406.01394.
-\bibitem{mai2023split} Mai P, Yan R, Huang Z, et al. Split-and-denoise: protect large language model inference with local differential privacy. 2023.
+\bibitem{mai2023split} Mai P, Yan R, Huang Z, Yang Y, Pang Y. Split-and-denoise: protect large language model inference with local differential privacy. arXiv:2310.09130, 2023.
 \bibitem{shi2022selective} Shi W, Cui A, Li E, et al. Selective differential privacy for language modeling. NAACL, 2022.
-\bibitem{duchi2013local} Duchi J C, Jordan M I, Wainwright M J. Local privacy and statistical minimax rates. IEEE ISIT, 2013.
+\bibitem{duchi2013local} Duchi J C, Jordan M I, Wainwright M J. Local privacy and statistical minimax rates. IEEE FOCS, 2013, 429--438. (Journal version: IEEE Trans. Inf. Theory, 2018.)
 \bibitem{ryu2026p2skill} Ryu M, Park G, Lee S, Piao X, Kim J. P2Skill: privacy preserving skill distillation for cloud-local LLM inference systems. arXiv:2608.14094, 2026. (Key citations: \S3.3 steps 2--3; \S4.1; \S4.4.)
 \bibitem{belghazi2018mine} Belghazi M I, et al. MINE: mutual information neural estimation. ICML, 2018. arXiv:1801.04062.
-\bibitem{eswa2022funnel} Data privacy and utility trade-off based on mutual information neural estimator. Expert Systems with Applications, 2022.
+\bibitem{eswa2022funnel} Wu Q, Tang J, Dang S, Chen G. Data privacy and utility trade-off based on mutual information neural estimator. Expert Systems with Applications, 207:118012, 2022.
 \bibitem{gilad2016cryptonets} Gilad-Bachrach R, et al. CryptoNets: applying neural networks to encrypted data with high throughput and accuracy. ICML, 2016.
 \bibitem{mohassel2017secureml} Mohassel P, Zhang Y. SecureML: a system for scalable privacy-preserving machine learning. IEEE S\&P, 2017.
-\bibitem{zhang2025neural} Zhang S, et al. Neural estimation of information leakage for secure communication. 2025.
+\bibitem{heerklotz2025neural} Heerklotz D S, Schroeder I, Lin P-H, Deppe C, Jorswieck E A. Neural estimation of information leakage for secure communication system design. arXiv:2508.05176, 2025.
 \bibitem{pilan2025truthful} Pilán I, Manzanares-Salor B, Sánchez D, Lison P. Truthful text sanitization guided by inference attacks. Applied Soft Computing, 185:114013, 2025. doi:10.1016/j.asoc.2025.114013.
 \bibitem{zhang2020bertscore} Zhang T, et al. BERTScore: evaluating text generation with BERT. ICLR, 2020.
-\bibitem{tae2026} TAE: text anonymization evaluator. SoftwareX, 2026. (Metadata to be re-verified before submission.)
+\bibitem{tae2026} TAE: Text Anonymization Evaluator. SoftwareX, 35:102851, 2026.
 \bibitem{qwen3827b} Qwen/Qwen3.8-27B. Hugging Face, 2026.
 \bibitem{ornith35b} ornith-ai/Ornith-1.5-35B-A3B. Hugging Face, 2026.
-\bibitem{deepseekv4} DeepSeek-V4-Flash. DeepSeek, 2026.
 \bibitem{kifer2012rigorous} Kifer D, Machanavajjhala A. A rigorous and customizable framework for privacy. PODS, 2012, 77--88. doi:10.1145/2213556.2213571.
 \bibitem{kifer2014pufferfish} Kifer D, Machanavajjhala A. Pufferfish: a framework for mathematical privacy definitions. ACM Trans. Database Systems, 39(1), 3:1--3:36, 2014. doi:10.1145/2514689.
-\bibitem{issa2020operational} Issa I, Wagner A B, Kamath S. An operational approach to information leakage. IEEE Transactions on Information Theory, 66(12), 2020. arXiv:1807.07878.
+\bibitem{issa2020operational} Issa I, Wagner A B, Kamath S. An operational approach to information leakage. IEEE Transactions on Information Theory, 66(3):1625--1657, 2020. arXiv:1807.07878.
 \bibitem{sweeney2002k} Sweeney L. k-Anonymity: a model for protecting privacy. Int. J. Uncertainty, Fuzziness and Knowledge-Based Systems, 10(5):557--570, 2002. doi:10.1142/S0218488502001648.
 \bibitem{bendavid2010theory} Ben-David S, Blitzer J, Crammer K, Kulesza A, Pereira F, Wortman Vaughan J. A theory of learning from different domains. Machine Learning, 79(1--2):151--175, 2010. doi:10.1007/S10994-009-5152-4.
 \bibitem{wilson1927} Wilson E B. Probable inference, the law of succession, and statistical inference. JASA, 22(158):209--212, 1927.
