@@ -158,6 +158,8 @@ def test_grade_numeric_tolerance():
     assert grade("大约30多岁", "31岁", "value") == 1
     assert grade("大约40多岁", "31岁", "value") == 0
     assert grade("收入约29万元", "年收入约30万元", "value") == 1
+    assert grade("收入30万至35万元左右", "年收入约30万元", "value") == 1
+    assert grade("金额约40000至50000", "转账金额48500元", "value") == 1
     print("test_grade_numeric_tolerance OK")
 
 

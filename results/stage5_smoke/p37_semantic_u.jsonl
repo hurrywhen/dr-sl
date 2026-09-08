@@ -1,0 +1,12 @@
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "point": "direct", "judge": "j1", "score": 1.0, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "point": "direct", "judge": "j2", "score": 1.0, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "point": "generalized", "judge": "j1", "score": null, "ok": false, "error": "parse"}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "point": "generalized", "judge": "j2", "score": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "point": "placeholder", "judge": "j1", "score": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0001", "domain": "medical", "point": "selective_ldp", "judge": "j1", "score": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "point": "direct", "judge": "j1", "score": 1.0, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "point": "direct", "judge": "j2", "score": 1.0, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "point": "generalized", "judge": "j1", "score": null, "ok": false, "error": "parse"}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "point": "generalized", "judge": "j2", "score": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "point": "placeholder", "judge": "j1", "score": 0.0, "ok": true}
+{"id": "DRSL-MED-TST-0002", "domain": "medical", "point": "selective_ldp", "judge": "j1", "score": 0.0, "ok": true}

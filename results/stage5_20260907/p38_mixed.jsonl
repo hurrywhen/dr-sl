@@ -1,0 +1,360 @@
+{"id": "DRSL-MED-MIX-0001", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0001", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0001", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0002", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0002", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0002", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0003", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0003", "domain": "medical", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0003", "domain": "medical", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0004", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0004", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0004", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0005", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0005", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0005", "domain": "medical", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0006", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0006", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0006", "domain": "medical", "role": "U_sem", "U_sem": 0.5, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0007", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0007", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0007", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0008", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0008", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0008", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0009", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0009", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0009", "domain": "medical", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0010", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0010", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0010", "domain": "medical", "role": "U_sem", "U_sem": 0.5, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0011", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0011", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0011", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0012", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0012", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0012", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0013", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0013", "domain": "medical", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0013", "domain": "medical", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0014", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0014", "domain": "medical", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0014", "domain": "medical", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0015", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0015", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0015", "domain": "medical", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0016", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0016", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0016", "domain": "medical", "role": "U_sem", "U_sem": 0.5, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0017", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0017", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0017", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0018", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0018", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0018", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0019", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0019", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0019", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0020", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0020", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0020", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0021", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0021", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0021", "domain": "medical", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0022", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0022", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0022", "domain": "medical", "role": "U_sem", "U_sem": 0.5, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0023", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0023", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0023", "domain": "medical", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0024", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0024", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0024", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0025", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0025", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0025", "domain": "medical", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0026", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0026", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0026", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0027", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0027", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0027", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.667, "ok": true}
+{"id": "DRSL-MED-MIX-0028", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0028", "domain": "medical", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0028", "domain": "medical", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-MED-MIX-0029", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0029", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0029", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0030", "domain": "medical", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0030", "domain": "medical", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-MED-MIX-0030", "domain": "medical", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0001", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0001", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0001", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0002", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0002", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0002", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0003", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0003", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0003", "domain": "banking", "role": "U_sem", "U_sem": 0.5, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0004", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0004", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0004", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0005", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0005", "domain": "banking", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0005", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0006", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0006", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0006", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0007", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0007", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0007", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0008", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0008", "domain": "banking", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0008", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0009", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0009", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0009", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0010", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0010", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0010", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0011", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0011", "domain": "banking", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0011", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0012", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0012", "domain": "banking", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0012", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0013", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0013", "domain": "banking", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0013", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0014", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0014", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0014", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0015", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0015", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0015", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0016", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0016", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0016", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0017", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0017", "domain": "banking", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0017", "domain": "banking", "role": "U_sem", "U_sem": 0.5, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0018", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0018", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0018", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0019", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0019", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0019", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0020", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0020", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0020", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0021", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0021", "domain": "banking", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0021", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0022", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0022", "domain": "banking", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0022", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0023", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0023", "domain": "banking", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0023", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0024", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0024", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0024", "domain": "banking", "role": "U_sem", "U_sem": 0.5, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0025", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0025", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0025", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0026", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0026", "domain": "banking", "role": "U", "U": 0.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0026", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0027", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0027", "domain": "banking", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0027", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0028", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0028", "domain": "banking", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0028", "domain": "banking", "role": "U_sem", "U_sem": 0.5, "coupling": 0.333, "ok": true}
+{"id": "DRSL-BNK-MIX-0029", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0029", "domain": "banking", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0029", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-BNK-MIX-0030", "domain": "banking", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0030", "domain": "banking", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-BNK-MIX-0030", "domain": "banking", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-TRV-MIX-0001", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0001", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0001", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0002", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0002", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0002", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0003", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0003", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0003", "domain": "travel", "role": "U_sem", "U_sem": 1.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0004", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0004", "domain": "travel", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0004", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0005", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0005", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0005", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0006", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0006", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0006", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0007", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0007", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0007", "domain": "travel", "role": "U_sem", "U_sem": 1.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0008", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0008", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0008", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0009", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0009", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0009", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0010", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0010", "domain": "travel", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0010", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0011", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0011", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0011", "domain": "travel", "role": "U_sem", "U_sem": 1.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0012", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0012", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0012", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0013", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0013", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0013", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0014", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0014", "domain": "travel", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0014", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0015", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0015", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0015", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0016", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0016", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0016", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0017", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0017", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0017", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0018", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0018", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0018", "domain": "travel", "role": "U_sem", "U_sem": 1.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0019", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0019", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0019", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0020", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0020", "domain": "travel", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0020", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0021", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0021", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0021", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0022", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0022", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0022", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0023", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0023", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0023", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0024", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0024", "domain": "travel", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0024", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0025", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0025", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0025", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0026", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0026", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0026", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0027", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0027", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0027", "domain": "travel", "role": "U_sem", "U_sem": 1.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0028", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0028", "domain": "travel", "role": "U", "U": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0028", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.333, "ok": true}
+{"id": "DRSL-TRV-MIX-0029", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0029", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0029", "domain": "travel", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0030", "domain": "travel", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0030", "domain": "travel", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-TRV-MIX-0030", "domain": "travel", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0001", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0001", "domain": "legal", "role": "U", "U": 0.5, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0001", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0002", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0002", "domain": "legal", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0002", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0003", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0003", "domain": "legal", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0003", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0004", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0004", "domain": "legal", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0004", "domain": "legal", "role": "U_sem", "U_sem": 0.5, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0005", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0005", "domain": "legal", "role": "U", "U": 0.5, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0005", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0006", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0006", "domain": "legal", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0006", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0007", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0007", "domain": "legal", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0007", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0008", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0008", "domain": "legal", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0008", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0009", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0009", "domain": "legal", "role": "U", "U": 0.5, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0009", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0010", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0010", "domain": "legal", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0010", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0011", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0011", "domain": "legal", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0011", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0012", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0012", "domain": "legal", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0012", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0013", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0013", "domain": "legal", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0013", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0014", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0014", "domain": "legal", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0014", "domain": "legal", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0015", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0015", "domain": "legal", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0015", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0016", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0016", "domain": "legal", "role": "U", "U": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0016", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0017", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0017", "domain": "legal", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0017", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0018", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0018", "domain": "legal", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0018", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0019", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0019", "domain": "legal", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0019", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0020", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0020", "domain": "legal", "role": "U", "U": 0.5, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0020", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0021", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0021", "domain": "legal", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0021", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0022", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0022", "domain": "legal", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0022", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0023", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0023", "domain": "legal", "role": "U", "U": 0.5, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0023", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 1.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0024", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0024", "domain": "legal", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0024", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0025", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0025", "domain": "legal", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0025", "domain": "legal", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0026", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0026", "domain": "legal", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0026", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0027", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0027", "domain": "legal", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0027", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0028", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0028", "domain": "legal", "role": "U", "U": null, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0028", "domain": "legal", "role": "U_sem", "U_sem": 0.5, "coupling": 0.0, "ok": true}
+{"id": "DRSL-LEG-MIX-0029", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0029", "domain": "legal", "role": "U", "U": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0029", "domain": "legal", "role": "U_sem", "U_sem": 0.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0030", "domain": "legal", "role": "L", "L": 0.0, "hits": 0, "n": 75, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0030", "domain": "legal", "role": "U", "U": 1.0, "coupling": 0.5, "ok": true}
+{"id": "DRSL-LEG-MIX-0030", "domain": "legal", "role": "U_sem", "U_sem": 1.0, "coupling": 0.5, "ok": true}

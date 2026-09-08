@@ -85,9 +85,10 @@ def grade(answer, truth, kind, tolerant=True):
         nt = re.findall(r"\d+(?:\.\d+)?", str(truth))
         if na and nt:
             try:
-                va, vt = float(na[-1]), float(nt[0])
-                if abs(va - vt) <= max(0.05 * abs(vt), 2.0):
-                    return 1
+                vt = float(nt[0])
+                for x in na:
+                    if abs(float(x) - vt) <= max(0.05 * abs(vt), 2.0):
+                        return 1
             except ValueError:
                 pass
     return 0
@@ -226,10 +227,54 @@ GENERALIZE_RULES = {
     "school": lambda v: "某学校",
     "disease": lambda v: "某慢性疾病",
     "drug": lambda v: "某药物",
-    "income": lambda v: "中等收入水平",
+    "income": lambda v: _generalize_amount(v, "收入"),
     "occupation": lambda v: "某职业",
     "gender": lambda v: "〔性别略〕",
+    "amount": lambda v: _generalize_amount(v, "金额"),
+    "charge": lambda v: _generalize_amount(v, "费用"),
+    "work_years": lambda v: _generalize_count(v, "年"),
+    "marriage_years": lambda v: _generalize_count(v, "年"),
+    "duration": lambda v: _generalize_count(v, ""),
+    "children_count": lambda v: _generalize_count(v, "个"),
+    "date": lambda v: _generalize_date(v),
+    "visit_date": lambda v: _generalize_date(v),
 }
+
+
+def _generalize_amount(v, noun):
+    m = re.search(r"(\d+(?:\.\d+)?)\s*万", str(v))
+    if m:
+        x = float(m.group(1))
+        lo = int(x // 5 * 5)
+        return f"{noun}{lo}万至{lo + 5}万元左右"
+    m = re.search(r"(\d+(?:\.\d+)?)", str(v))
+    if m:
+        x = float(m.group(1))
+        mag = 10 ** max(0, len(str(int(x))) - 1)
+        lo = int(x // mag * mag)
+        return f"{noun}约{lo}至{lo + mag}"
+    return f"〔{noun}略〕"
+
+
+def _generalize_count(v, unit):
+    m = re.search(r"(\d+)", str(v))
+    if not m:
+        return "〔数量略〕"
+    x = int(m.group(1))
+    lo = max(0, x - 2)
+    return f"{lo}到{x + 2}{unit}左右"
+
+
+def _generalize_date(v):
+    m = re.search(r"(\d{4})\D+(\d{1,2})", str(v))
+    if m:
+        y, mo = int(m.group(1)), int(m.group(2))
+        q = (mo - 1) // 3 + 1
+        return f"{y}年第{q}季度"
+    m = re.search(r"(\d{1,2})\D+(\d{1,2})", str(v))
+    if m:
+        return f"{m.group(1)}月份前后"
+    return "〔日期略〕"
 
 
 def _generalize_age(v):

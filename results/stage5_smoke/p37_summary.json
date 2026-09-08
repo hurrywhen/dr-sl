@@ -1,0 +1,9 @@
+{
+ "U_sem_by_point": {
+  "direct": 1.0,
+  "placeholder": 0.0,
+  "selective_ldp": 0.0
+ },
+ "n_judge_pairs": 2,
+ "spearman_j1_j2": null
+}

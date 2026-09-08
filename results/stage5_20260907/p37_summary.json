@@ -1,0 +1,10 @@
+{
+ "U_sem_by_point": {
+  "direct": 1.0,
+  "generalized": 0.4313,
+  "placeholder": 0.2281,
+  "selective_ldp": 0.1875
+ },
+ "n_judge_pairs": 160,
+ "spearman_j1_j2": 0.7565070901207078
+}
