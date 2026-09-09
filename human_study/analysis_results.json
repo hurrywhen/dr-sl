@@ -1,0 +1,64 @@
+{
+  "utility": {
+    "n": 160,
+    "alpha_inter_rater": 0.78,
+    "rho_row_level": 0.839,
+    "rho_operating_points": 1.0,
+    "by_variant": {
+      "direct": {
+        "n": 40,
+        "human_mean": 0.988,
+        "auto_mean": 1.0,
+        "rho_within": NaN
+      },
+      "generalized": {
+        "n": 40,
+        "human_mean": 0.487,
+        "auto_mean": 0.406,
+        "rho_within": 0.661
+      },
+      "placeholder": {
+        "n": 40,
+        "human_mean": 0.144,
+        "auto_mean": 0.175,
+        "rho_within": 0.784
+      },
+      "ldp": {
+        "n": 40,
+        "human_mean": 0.181,
+        "auto_mean": 0.2,
+        "rho_within": 0.626
+      }
+    },
+    "criterion": "rho>=0.8",
+    "passed": true
+  },
+  "annotation": {
+    "n": 50,
+    "kappa_inter_rater": 1.0,
+    "kappa_rater1_auto": -0.083,
+    "kappa_rater2_auto": -0.083,
+    "kappa_consensus_auto": -0.083,
+    "n_consensus": 50,
+    "human_coupled_rate": 0.86,
+    "auto_hold_rate": 0.22,
+    "disagreement_rows": [],
+    "criterion": "kappa>=0.8",
+    "passed": false,
+    "broad_gold": {
+      "kappa_rater1": 0.696,
+      "kappa_rater2": 0.696,
+      "y_rate": 0.92
+    },
+    "item_level": {
+      "rater1": {
+        "precision": 0.959,
+        "recall": 1.0
+      },
+      "rater2": {
+        "precision": 0.991,
+        "recall": 0.987
+      }
+    }
+  }
+}
