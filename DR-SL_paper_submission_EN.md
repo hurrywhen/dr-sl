@@ -4,6 +4,10 @@
 
 *(Author list and affiliations to be added at submission.)*
 
+Wen Hu¹, Ya Yu¹, Xutong Wang¹
+¹ College of Electronic and Information Engineering, Nanjing University of Aeronautics and Astronautics, Nanjing, China
+huwen@nuaa.edu.cn · 15949116139@163.com · wsgxt@outlook.com
+
 *(Submission version v1.2-EN. The Chinese working version with full revision history is maintained in the companion repository.)*
 
 * * *

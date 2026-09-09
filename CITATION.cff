@@ -3,11 +3,22 @@ title: "DR-SL: Dehydrate-Rehydrate with Reversibility-Guided Self-Learning Loop"
 message: "If you use this software or dataset, please cite it as below."
 type: software
 authors:
-  - name: "DR-SL authors (see paper)"
+  - family-names: Hu
+    given-names: Wen
+    email: huwen@nuaa.edu.cn
+    affiliation: "Nanjing University of Aeronautics and Astronautics"
+  - family-names: Yu
+    given-names: Ya
+    email: 15949116139@163.com
+    affiliation: "Nanjing University of Aeronautics and Astronautics"
+  - family-names: Wang
+    given-names: Xutong
+    email: wsgxt@outlook.com
+    affiliation: "Nanjing University of Aeronautics and Astronautics"
 version: "1.2"
 date-released: 2026-09-05
 license: MIT
-repository-code: "https://github.com/(TO-BE-SET)/dr-sl"
+repository-code: "https://github.com/hurrywhen/dr-sl"
 keywords:
   - privacy
   - anonymization
