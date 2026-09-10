@@ -11,6 +11,8 @@
 \usepackage{caption}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{verbatim}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\renewcommand{\thealgocf}{2$'$}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
@@ -244,50 +246,47 @@ Fully decoupled from restoring the original text; directly measures ``task-infor
 
 The bidirectional same-round update of v1.0 could oscillate without termination guarantees. We switch to \textbf{lexicographic optimization}: utility as a hard gate, leakage as a soft objective, single-attribute strengthening, single-step rollback.
 
-\begin{figure}[H]
-\centering
-\scriptsize
-\begin{verbatim}
-Input: original material X, sensitive set S (extractor output, recall rho_hat),
-       thresholds tau_L, tau_U, round budget B = 3|S|+5, stability window N,
-       prompt library P, local evaluator M
-Output: PASS(D*) or INFEASIBLE(residual_leak_report)
-
- 1: P_init <- HotStart(P, S)                      // type-matched hot start
- 2: D <- Dehydrate(X, S, P_init)
- 3: Q <- QuestionSetGen(S)                         // Algorithm 1
- 4: (L, CI, U) <- Evaluate(M, D, Q, S, X)          // L with Wilson interval; U = QA probe
- 5: while U < tau_U and t < B do                   // Phase 1: satisfy the utility gate first
- 6:     D <- LoosenDehydrate(D, X, S, P)           // loosen only; no leakage strengthening
- 7:     exit phase if two consecutive loosens fail to improve U (no-progress)
- 8:     (L, CI, U) <- Evaluate(M, D, Q, S, X)
- 9: end while
-10: skipped <- {}; triedLoosen <- {}
-11: while not Pass(L, CI, tau_L, U, tau_U) and t < B do  // Pass := Wilson upper <= tau_L and U >= tau_U
-12:     s* <- argmax_{s_i in S \ skipped} LeakContrib(s_i, D)
-13:     D' <- StrengthenAttribute(D, s*, X, S, P)        // single-attribute step
-14:     (L', CI', U') <- Evaluate(M, D', Q, S, X)
-15:     if U' >= tau_U then                             // hard gate: utility never regresses
-16:         D <- D'; accept; update stability window
-17:     else if s* not in triedLoosen then               // compensatory loosen (one chance)
-18:         triedLoosen <- triedLoosen U {s*}
-19:         D'' <- LoosenDehydrate(D, X, S, P)
-20:         if U(D'') > U then D <- D''; triedLoosen <- {}; continue
-21:         end if
-22:         skipped <- skipped U {s*}                    // not strengthenable within gate -> residual
-23:     else
-24:         skipped <- skipped U {s*}; attribute failure -> experience store
-25:     end if
-26:     t <- t + 1
-27: end while
-28: if Pass(L, CI, tau_L, U, tau_U) and window stable then
-29:     return PASS(D)                                  // egress (audit log retained)
-30: else
-31:     return INFEASIBLE(skipped U failing attributes, with hit-question details)
-                                                        // to human review; egress refused
-\end{verbatim}
-\caption{Algorithm 2$'$: DR-SL per-instance main loop (lexicographic).}
-\end{figure}
+\begin{algorithm}[H]
+\caption{DR-SL per-instance main loop (lexicographic).}
+\label{alg:main}
+\KwIn{original material $X$, sensitive set $S$ (extractor output, recall $\hat\rho$), thresholds $\tau_L,\tau_U$, round budget $B=3|S|+5$, stability window $N$, prompt library $P$, local evaluator $M$}
+\KwOut{PASS($D^{*}$) or INFEASIBLE(residual-leak report)}
+$P_{\mathrm{init}} \leftarrow \mathrm{HotStart}(P,S)$\tcp*{type-matched hot start}
+$D \leftarrow \mathrm{Dehydrate}(X,S,P_{\mathrm{init}})$\;
+$Q \leftarrow \mathrm{QuestionSetGen}(S)$\tcp*{Algorithm~1}
+$(L,CI,U) \leftarrow \mathrm{Evaluate}(M,D,Q,S,X)$\tcp*{$L$ with Wilson interval; $U$ = QA probe}
+\While(\tcp*[h]{Phase 1: satisfy the utility gate first}){$U<\tau_U$ \textbf{and} $t<B$}{
+  $D \leftarrow \mathrm{LoosenDehydrate}(D,X,S,P)$\tcp*{loosen only; no leakage strengthening}
+  exit phase if two consecutive loosens fail to improve $U$ (no-progress)\;
+  $(L,CI,U) \leftarrow \mathrm{Evaluate}(M,D,Q,S,X)$\;
+}
+$\mathrm{skipped}\leftarrow\emptyset$;\quad $\mathrm{triedLoosen}\leftarrow\emptyset$\;
+\While(\tcp*[h]{Pass := Wilson upper $\le\tau_L$ and $U\ge\tau_U$}){$\neg\mathrm{Pass}(L,CI,\tau_L,U,\tau_U)$ \textbf{and} $t<B$}{
+  $s^{*} \leftarrow \argmax_{s_i\in S\setminus\mathrm{skipped}} \mathrm{LeakContrib}(s_i,D)$\;
+  $D' \leftarrow \mathrm{StrengthenAttribute}(D,s^{*},X,S,P)$\tcp*{single-attribute step}
+  $(L',CI',U') \leftarrow \mathrm{Evaluate}(M,D',Q,S,X)$\;
+  \uIf(\tcp*[h]{hard gate: utility never regresses}){$U'\ge\tau_U$}{
+    $D\leftarrow D'$; accept; update stability window\;
+  }
+  \uElseIf(\tcp*[h]{compensatory loosen, one chance}){$s^{*}\notin\mathrm{triedLoosen}$}{
+    $\mathrm{triedLoosen}\leftarrow\mathrm{triedLoosen}\cup\{s^{*}\}$\;
+    $D'' \leftarrow \mathrm{LoosenDehydrate}(D,X,S,P)$\;
+    \If{$U(D'')>U$}{
+      $D\leftarrow D''$; $\mathrm{triedLoosen}\leftarrow\emptyset$; \textbf{continue}\;
+    }
+    $\mathrm{skipped}\leftarrow\mathrm{skipped}\cup\{s^{*}\}$\tcp*{not strengthenable within gate $\to$ residual}
+  }
+  \Else{
+    $\mathrm{skipped}\leftarrow\mathrm{skipped}\cup\{s^{*}\}$; attribute failure $\to$ experience store\;
+  }
+  $t\leftarrow t+1$\;
+}
+\eIf{$\mathrm{Pass}(L,CI,\tau_L,U,\tau_U)$ \textbf{and} window stable}{
+  \Return PASS($D$)\tcp*{egress; audit log retained}
+}{
+  \Return INFEASIBLE($\mathrm{skipped}\cup{}$failing attributes, with hit-question details)\tcp*{to human review; egress refused}
+}
+\end{algorithm}
 
 Key points: every accepted step maintains $U \ge \tau_U$ (gate invariant; the fidelity criterion \emph{is} task-information preservation, with the rehydration score $R$ diagnostic only); after a successful compensatory loosen, \texttt{triedLoosen} resets (new headroom available); skipped attributes permanently enter the residual set, avoiding infinite retries; consecutive no-improvement loosens terminate Phase~1; the hard round budget $B$ guarantees termination (Theorem~\ref{thm:termination}).
 
@@ -380,7 +379,7 @@ A layered prompt system: \emph{global baseline prompts} (universal rules), \emph
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.85\textwidth,trim={25.2pt 148.8pt 24.8pt 149.2pt},clip]{figures/fig2.pdf}
-\caption{Self-learning loop architecture (decision exits per Algorithm~2$'$): instance failures are attributed, accumulated in the experience store, periodically distilled into rules, gated by the memorization check, and committed as versioned prompt-library updates that hot-start subsequent instances.}
+\caption{Self-learning loop architecture: instance failures are attributed, accumulated in the experience store, periodically distilled into rules, gated by the memorization check, and committed as versioned prompt-library updates that hot-start subsequent instances. The per-instance main loop and its PASS/INFEASIBLE decision exits are specified in Algorithm~\ref{alg:main}.}
 \label{fig:looparch}
 \end{figure}
 
