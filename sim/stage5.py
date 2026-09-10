@@ -319,7 +319,74 @@ def p40():
     return summary
 
 
-PHASES = {"p36b": p36b, "p37": p37, "p38": p38, "p39": p39, "p40": p40}
+def p41():
+    """Baselines (placeholder, selective LDP) on the mixed-coupling benchmark,
+    same release rule as P38: L<=tau_L and U>=threshold (0.7 strict / 0.5 sem)."""
+    mixed = load_dataset(str(ROOT / "dataset" / "output" / "dr_sl_mixed.jsonl"))
+    if SMOKE_N:
+        mixed = mixed[:SMOKE_N]
+    flash = make_backend("online_fast", timeout=120, retries=1)
+    judge = make_backend("online_strong", timeout=120, retries=1)
+    path = OUT / "p41_mixed_baselines.jsonl"
+    done = resume(path, lambda r: (r["id"], r["variant"], r["role"]))
+    for item in mixed:
+        for variant in ("placeholder", "selective_ldp"):
+            D = (placeholder_D(item) if variant == "placeholder"
+                 else ldp_D(item, seed=20260907))
+            for role in ("L", "U", "U_sem"):
+                key = (item["id"], variant, role)
+                if key in done:
+                    continue
+                try:
+                    if role == "L":
+                        res = attack_run_bundle(flash, D, item, min_questions=75, level="A_0")
+                        rec = {"id": item["id"], "domain": item["domain"], "variant": variant,
+                               "role": role, "L": res["L"], "hits": res["hits"], "n": res["n"],
+                               "coupling": item.get("coupling_ratio"), "ok": True}
+                    elif role == "U":
+                        u = qa_probe_run(flash, D, item)
+                        rec = {"id": item["id"], "domain": item["domain"], "variant": variant,
+                               "role": role, "U": u["U"], "coupling": item.get("coupling_ratio"),
+                               "ok": True}
+                    else:
+                        sc = judge_semantic_U(judge, D, X=item["prompt"])
+                        rec = {"id": item["id"], "domain": item["domain"], "variant": variant,
+                               "role": role, "U_sem": sc, "coupling": item.get("coupling_ratio"),
+                               "ok": sc is not None}
+                        if sc is None:
+                            rec["error"] = "parse"
+                except Exception as e:
+                    rec = {"id": item["id"], "variant": variant, "role": role,
+                           "error": str(e)[:200]}
+                done[key] = rec
+                append(path, rec)
+                time.sleep(0.1)
+    by = defaultdict(dict)
+    for r in done.values():
+        if r.get("ok"):
+            by[(r["id"], r["variant"])].update(
+                {r["role"]: r.get("L", r.get("U", r.get("U_sem"))), "domain": r["domain"]})
+    summary = {}
+    for variant in ("placeholder", "selective_ldp"):
+        comp = [v for (i, var), v in by.items()
+                if var == variant and all(k in v for k in ("L", "U", "U_sem"))]
+        rel_strict = sum(1 for v in comp if v["L"] <= 0.05 and (v["U"] or 0) >= 0.7)
+        rel_sem = sum(1 for v in comp if v["L"] <= 0.05 and (v["U_sem"] or 0) >= 0.5)
+        summary[variant] = {
+            "n": len(comp),
+            "mean_L": round(float(np.mean([v["L"] for v in comp])), 4) if comp else None,
+            "mean_U_strict": round(float(np.mean([v["U"] for v in comp if v["U"] is not None])), 4) if comp else None,
+            "mean_U_sem": round(float(np.mean([v["U_sem"] for v in comp if v["U_sem"] is not None])), 4) if comp else None,
+            "auto_release_strict": round(rel_strict / len(comp), 3) if comp else None,
+            "auto_release_sem": round(rel_sem / len(comp), 3) if comp else None,
+            "release_sem_by_domain": {d: sum(1 for v in comp if v["domain"] == d and v["L"] <= 0.05 and (v["U_sem"] or 0) >= 0.5)
+                                      for d in sorted({v["domain"] for v in comp})} if comp else {}}
+    (OUT / "p41_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1))
+    print("P41:", json.dumps(summary, ensure_ascii=False))
+    return summary
+
+
+PHASES = {"p36b": p36b, "p37": p37, "p38": p38, "p39": p39, "p40": p40, "p41": p41}
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
