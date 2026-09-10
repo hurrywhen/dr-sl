@@ -3,3 +3,4 @@ latex/main.log
 latex/main.out
 __pycache__/
 *.pyc
+dataset/data_raw/
