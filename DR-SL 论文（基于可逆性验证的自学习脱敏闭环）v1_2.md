@@ -2,7 +2,7 @@
 
 **Dehydrate-Rehydrate with Reversibility-Guided Self-Learning Loop (DR-SL)**
 
-作者：Wen Hu¹、于雅¹、王绪彤¹（¹ 南京航空航天大学 电子信息工程学院，南京；huwen@nuaa.edu.cn · 15949116139@163.com · wsgxt@outlook.com）
+作者：胡文¹、于雅¹、王绪彤¹（¹ 南京航空航天大学 电子信息工程学院，南京；huwen@nuaa.edu.cn · 15949116139@163.com · wsgxt@outlook.com）
 
 > **评审修订轮摘要（2026-09-07，正文以英文投稿版 `latex/main.tex` 为准）**：根据外部评阅意见完成以下修订，全部登记于协议偏离记录 D13：
 > 1. **单位信息更正**：作者单位为南京航空航天大学**电子信息工程学院**（原误写计算机科学与技术学院）；

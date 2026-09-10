@@ -61,7 +61,14 @@ All three classes additionally share a third defect: sanitization pipelines are 
 
 \subsection{This Work}
 
-We propose \textbf{DR-SL} (Dehydrate-Rehydrate with Self-Learning loop), addressing these gaps at three levels:
+We propose \textbf{DR-SL} (Dehydrate-Rehydrate with Self-Learning loop), addressing these gaps at three levels (system overview in Figure~\ref{fig:overview}):
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig1.pdf}
+\caption{DR-SL system overview. Inside the local trust boundary, the cascade extractor derives the sensitive set $S$ from the original material $X$; a type-matched prompt library hot-starts dehydration into the artifact $D$; the two-branch reversibility verification (re-identification probes $L$, restoration $R$, QA utility probes $U$) feeds the lexicographic gate; and the mandatory release chain (local gate $\to$ deterministic hard-line scrub $\to$ external strong-attacker re-test) decides egress: PASS instances send only $D$ to the cloud LLM, while INFEASIBLE instances emit a residual-leakage report and route to human review.}
+\label{fig:overview}
+\end{figure}
 
 \begin{enumerate}
 \item \textbf{Decision level (reversibility verification).} De-identification completeness is formalized as two complementary, measurable conditions---\textbf{de-identification sufficiency} (Pufferfish semantics~\cite{kifer2012rigorous,kifer2014pufferfish}: the dehydrated artifact alone cannot support re-identification of sensitive information) and \textbf{task-information preservation} (measured by QA probes)---with the cascade extractor's recall explicitly delimiting the guarantee boundary. The decision mechanism runs entirely locally, driven by a local model and prompts; \textbf{nothing leaves the device before the completeness decision is made}. We state honestly: the leakage score produced by a local evaluator is a \textbf{lower-bound witness} of true leakage (Theorem~\ref{thm:fano})---a heuristic certificate, not an absolute upper bound; we strengthen it via offline empirical calibration (\S\ref{sec:security}) and a layered assurance model (\S\ref{sec:layered}).
@@ -371,22 +378,10 @@ A layered prompt system: \emph{global baseline prompts} (universal rules), \emph
 \subsection{Overall Architecture}
 
 \begin{figure}[H]
-\centering\small
-\begin{verbatim}
-original material X
-  | type-matched prompt library -> hot-start dehydration
-  v
-dehydrated D --> Branch 1 (re-identify S) --> leakage L (Wilson CI)
-  |              \ Branch 2 (D+S -> X_hat)  --> restoration R (diagnostic)
-  |              \ QA probes (D only)        --> utility U (primary)
-  v
-  Pass(L, U) and stable? --no--> instance fix -> attribution -> experience store
-   |yes                              |
-   v                    periodic distillation -> memorization check
- PASS: egress D (audit log)          -> versioned prompt update (reuse)
- INFEASIBLE: residual-leak report -> human review (egress refused)
-\end{verbatim}
-\caption{Self-learning loop architecture (decision exits per Algorithm~2$'$).}
+\centering
+\includegraphics[width=0.72\textwidth]{figures/fig2.pdf}
+\caption{Self-learning loop architecture (decision exits per Algorithm~2$'$): instance failures are attributed, accumulated in the experience store, periodically distilled into rules, gated by the memorization check, and committed as versioned prompt-library updates that hot-start subsequent instances.}
+\label{fig:looparch}
 \end{figure}
 
 \subsection{Two Boundaries}
