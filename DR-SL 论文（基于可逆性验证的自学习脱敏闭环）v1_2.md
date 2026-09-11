@@ -2,7 +2,7 @@
 
 **Dehydrate-Rehydrate with Reversibility-Guided Self-Learning Loop (DR-SL)**
 
-作者：胡文¹、于雅¹、王绪彤¹（¹ 南京航空航天大学 电子信息工程学院，南京；huwen@nuaa.edu.cn · 15949116139@163.com · wsgxt@outlook.com）
+作者：胡文¹˒²、于雅¹、王绪彤¹（¹ 南京航空航天大学 电子信息工程学院，南京；² 江苏云禾峰智能科技有限公司，江苏；huwen@nuaa.edu.cn · 15949116139@163.com · wsgxt@outlook.com）
 
 > **第三轮评审修订摘要（2026-09-11，正文以英文投稿版 `latex/main.tex` 为准）**：复审 9 项全部落实，登记于 D16：
 > 1. **表10 数字自洽**：U_strict 全域 0.415 实为 76 条可计实例均值（44/120 无任务关键精确值探针），已补逐行 n 与脚注；

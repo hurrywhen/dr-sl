@@ -6,7 +6,7 @@ authors:
   - family-names: Hu
     given-names: Wen
     email: huwen@nuaa.edu.cn
-    affiliation: "Nanjing University of Aeronautics and Astronautics"
+    affiliation: "Nanjing University of Aeronautics and Astronautics; Jiangsu Yunhefeng Intelligent Technology Co., Ltd."
   - family-names: Yu
     given-names: Ya
     email: 15949116139@163.com
@@ -18,7 +18,7 @@ authors:
 version: "1.2"
 date-released: 2026-09-05
 license: MIT
-repository-code: "https://github.com/hurrywhen/dr-sl"
+repository-code: "https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl"
 keywords:
   - privacy
   - anonymization
