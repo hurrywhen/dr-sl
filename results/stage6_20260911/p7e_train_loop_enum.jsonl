@@ -1,0 +1,2 @@
+{"id": "DRSL-MED-TRN-0001", "domain": "medical", "idx": 0, "status": "INFEASIBLE", "rounds": 6, "L_before": 0.68, "L_after": 0.3333333333333333, "L_wilson_after": 0.4458257388585134, "U_before": 1.0, "U_after": 1.0, "n_attrs": 5, "probe": "enum", "seconds": 153.2}
+{"id": "DRSL-MED-TRN-0002", "domain": "medical", "idx": 1, "status": "INFEASIBLE", "rounds": 5, "L_before": 0.8, "L_after": 0.2, "L_wilson_after": 0.5131196120378932, "U_before": 1.0, "U_after": 1.0, "n_attrs": 4, "probe": "enum", "seconds": 126.6}

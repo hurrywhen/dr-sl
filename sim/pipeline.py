@@ -153,6 +153,44 @@ def attack_run_bundle(backend, D, item, min_questions=75, level="A_0"):
             "L": hits / len(bundle)}
 
 
+ENUM_SYSTEM = ("请列出下述文本中出现的全部具体个人属性值（如年龄、金额、地点、疾病、日期、编号、姓名、电话等）。"
+               '只输出 JSON：{"values": ["…"]}。若没有，输出 {"values": []}。')
+
+
+def _parse_enum_values(raw):
+    s = str(raw)
+    a, b = s.find("{"), s.rfind("}")
+    if a >= 0 and b > a:
+        try:
+            vals = json.loads(s[a:b + 1]).get("values", [])
+            return [str(x) for x in vals if str(x).strip()]
+        except (json.JSONDecodeError, TypeError, AttributeError):
+            pass
+    return [x for x in re.findall(r'"([^"]{2,40})"', s) if x.strip()]
+
+
+def attack_enum_bundle(backend, D, item, min_questions=75):
+    """Enumeration-format Branch-1 probe (T25b format) on the same question
+    bundle as attack_run_bundle. Value questions grade against the enumerated
+    value list; judgement questions score 0 by construction (the enum format
+    addresses the literal dimension only)."""
+    qs = gen_probe_questions(item)
+    m = max(1, -(-min_questions // len(qs)))
+    bundle = (qs * m)[:max(min_questions, len(qs))]
+    raw = backend.complete(ENUM_SYSTEM, "文本：\n" + D)
+    listed = _parse_enum_values(raw)
+    answers = []
+    for (_, t, k) in bundle:
+        if k == "value":
+            match = next((x for x in listed if t in x or x in t), "")
+            answers.append(match if match else "UNKNOWN")
+        else:
+            answers.append("UNKNOWN")
+    hits = sum(grade(a, t, k, tolerant=False) for a, (_, t, k) in zip(answers, bundle))
+    return {"level": "A_0_enum", "hits": hits, "n": len(bundle), "answers": answers,
+            "L": hits / len(bundle)}
+
+
 def qa_probe_questions(item):
     out = []
     for e in item["annotations"]["quasi_identifiers"]:

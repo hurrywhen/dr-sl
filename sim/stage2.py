@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "dataset"))
 import numpy as np
 
 from protocol import TAU_L, TAU_U
-from pipeline import (attack_run_bundle, qa_probe_run, gen_probe_questions, grade,
+from pipeline import (attack_run_bundle, attack_enum_bundle, qa_probe_run, gen_probe_questions, grade,
                       det_dehydrate, det_strengthen, det_loosen, det_policy_entities,
                       ATTR_NAMES, DOMAIN_PRIOR)
 from distill import (refine_dehydrate, strengthen_llm, degrade, DegradeLevels,
@@ -56,7 +56,7 @@ def append(path, rec):
 
 
 def run_loop_v2(item, backend, rules, tau_l=TAU_L, tau_u=TAU_U,
-                no_branch1=False, no_hotstart=False):
+                no_branch1=False, no_hotstart=False, enum_probe=False):
     sens = item["annotations"]["explicit_identifiers"] + item["annotations"]["quasi_identifiers"]
     S = [f"{ATTR_NAMES.get(e['type'], e['type'])}={e['value']}" for e in sens]
     qs = gen_probe_questions(item)
@@ -69,7 +69,9 @@ def run_loop_v2(item, backend, rules, tau_l=TAU_L, tau_u=TAU_U,
         if no_branch1:
             hits, n = 0, 75
         else:
-            res = attack_run_bundle(backend, D, item, min_questions=75, level="A_0")
+            attack = attack_enum_bundle if enum_probe else attack_run_bundle
+            res = attack(backend, D, item, min_questions=75, level="A_0") if not enum_probe \
+                else attack(backend, D, item, min_questions=75)
             hits, n = res["hits"], res["n"]
             for j, s in enumerate(S_):
                 if j < len(res.get("answers", [])) and j < len(qs):
@@ -432,6 +434,36 @@ def a2_context(D, item):
     return "\n".join(lines)
 
 
+def p16e():
+    """Test-160 main-loop rerun with the enumeration-format Branch-1 probe
+    (T25b format in vivo; review-round-4 optional reinforcement, D17)."""
+    v2 = load_v2()
+    rows = [r for r in v2 if r["split"] == "test"]
+    if SMOKE_N:
+        rows = rows[:SMOKE_N]
+    backend = make_backend("local_main", model="ornith-1.5-35b")
+    path = OUT / "p16e_D.jsonl"
+    done = resume(path, lambda r: r["id"])
+    for item in rows:
+        if item["id"] in done:
+            continue
+        try:
+            rec = run_loop_v2(item, backend, rules=[], enum_probe=True)
+            rec["ok"] = True
+        except Exception as e:
+            rec = {"id": item["id"], "error": str(e)[:200]}
+        done[item["id"]] = rec
+        append(path, rec)
+        time.sleep(0.05)
+    ok = [r for r in done.values() if r.get("ok")]
+    summary = {"n": len(ok),
+               "pass_rate": round(sum(1 for r in ok if r["status"] == "PASS") / len(ok), 3) if ok else None,
+               "mean_rounds": round(float(np.mean([r["rounds"] for r in ok])), 2) if ok else None,
+               "probe": "enum"}
+    (OUT / "p16e_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1))
+    print("P16e:", json.dumps(summary, ensure_ascii=False))
+
+
 def p16b():
     Drecs = {json.loads(l)["id"]: json.loads(l) for l in open(OUT / "p16_D.jsonl")}
     v2 = {r["id"]: r for r in load_v2()}
@@ -509,7 +541,7 @@ def p16b():
 
 
 PHASES = {"p11": p11, "p12": p12, "p13": p13, "p14": p14, "p15": p15,
-          "p16a": p16a, "p16b": p16b}
+          "p16a": p16a, "p16b": p16b, "p16e": p16e}
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)

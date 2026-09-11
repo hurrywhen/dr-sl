@@ -474,9 +474,84 @@ def p2_strong():
     return summary
 
 
+def p7e_train_loop_enum():
+    """Train-400 main-loop rerun with the enumeration-format Branch-1 probe
+    (review-round-4 optional reinforcement, D17): same loop machinery, gates,
+    and question bundles as p7; only the probe format changes."""
+    import os as _os
+    from pipeline import (det_dehydrate, det_strengthen, det_loosen, gen_probe_questions,
+                          grade as _grade, attack_enum_bundle)
+    v2, _ = load_all()
+    rows = [r for r in v2 if r["split"] == "train"]
+    smoke = int(_os.environ.get("PILOT_SMOKE", "0"))
+    if smoke:
+        rows = rows[:smoke]
+    backend = make_backend("local_main", model="ornith-1.5-35b")
+    done_path = OUT / "p7e_train_loop_enum.jsonl"
+    done = set()
+    if done_path.exists():
+        for line in done_path.read_text().splitlines():
+            done.add(json.loads(line)["id"])
+    for idx, item in enumerate(rows):
+        if item["id"] in done:
+            continue
+        sens = item["annotations"]["explicit_identifiers"] + item["annotations"]["quasi_identifiers"]
+        S = [f"{ATTR_NAMES.get(e['type'], e['type'])}={e['value']}" for e in sens]
+        qs = gen_probe_questions(item)
+        d0 = det_dehydrate(item)
+        state = {"contrib": {s: 0.0 for s in S}}
+
+        def evaluate_fn(D, Q, S_, X):
+            res = attack_enum_bundle(backend, D, item, min_questions=75)
+            u = qa_probe_run(backend, D, item)
+            u_val = u["U"] if u["U"] is not None else 1.0
+            for j, s in enumerate(S_):
+                if j < len(res.get("answers", [])) and j < len(qs):
+                    state["contrib"][s] = float(_grade(res["answers"][j], qs[j][1], qs[j][2], tolerant=False))
+            return {"hits": res["hits"], "n_probes": res["n"], "U": u_val, "R": u_val}
+
+        def leak_contrib_fn(D, S_):
+            return dict(state["contrib"]) if any(state["contrib"].values()) else {s: 1.0 for s in S_}
+
+        before = attack_enum_bundle(backend, item["prompt"], item, min_questions=75)
+        u_before = qa_probe_run(backend, item["prompt"], item)
+        t0 = time.time()
+        try:
+            res = lexicographic_loop(
+                item["prompt"], S, None, None,
+                dehydrate_fn=lambda X, S_, P: d0["D"],
+                strengthen_fn=lambda D, s, X, S_, P: (
+                    lambda r: r["D"] if r.get("changed") else None)(det_strengthen(D, item, s, {})),
+                loosen_fn=lambda D, X, S_, P: det_loosen(item)["D"],
+                evaluate_fn=evaluate_fn, leak_contrib_fn=leak_contrib_fn,
+                tau_l=TAU_L, tau_u=TAU_U, tau_r=TAU_U, n_stable=1)
+            after = attack_enum_bundle(backend, res.D, item, min_questions=75)
+            rec = {"id": item["id"], "domain": item["domain"], "idx": idx,
+                   "status": res.status, "rounds": res.rounds,
+                   "L_before": before["L"], "L_after": after["L"],
+                   "L_wilson_after": res.L_upper,
+                   "U_before": u_before["U"], "U_after": res.U,
+                   "n_attrs": len(S), "probe": "enum",
+                   "seconds": round(time.time() - t0, 1)}
+        except Exception as e:
+            rec = {"id": item["id"], "domain": item["domain"], "idx": idx,
+                   "error": str(e)[:200], "seconds": round(time.time() - t0, 1)}
+        with open(done_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    ok = [json.loads(l) for l in done_path.read_text().splitlines() if "error" not in l]
+    if ok:
+        summary = {"n": len(ok), "probe": "enum",
+                   "pass_rate": round(sum(1 for r in ok if r["status"] == "PASS") / len(ok), 3),
+                   "mean_L_before": round(sum(r["L_before"] for r in ok) / len(ok), 4),
+                   "mean_L_after": round(sum(r["L_after"] for r in ok) / len(ok), 4),
+                   "mean_rounds": round(sum(r["rounds"] for r in ok) / len(ok), 2)}
+        (OUT / "p7e_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1))
+        print("P7e:", json.dumps(summary, ensure_ascii=False))
+
+
 PHASES = {"p0": p0_regex_recall, "p1": p1_shift_metrics, "p2": p2_direct_forward_leakage,
           "p3": p3_qa_probe_direct, "p4": p4_local_loop_pilot, "p5": p5_calibration_delta,
-          "p6": p6_extractor, "p5_full": p5_full, "p2_local": p2_local, "p7": p7_train_loop,
+          "p6": p6_extractor, "p5_full": p5_full, "p2_local": p2_local, "p7": p7_train_loop, "p7e": p7e_train_loop_enum,
           "p2_strong": p2_strong}
 
 if __name__ == "__main__":

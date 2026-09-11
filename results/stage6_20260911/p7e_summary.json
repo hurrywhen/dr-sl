@@ -1,0 +1,8 @@
+{
+ "n": 2,
+ "probe": "enum",
+ "pass_rate": 0.0,
+ "mean_L_before": 0.74,
+ "mean_L_after": 0.2667,
+ "mean_rounds": 5.5
+}

@@ -237,6 +237,35 @@ def test_det_dehydrate_all_occurrences():
     print("test_det_dehydrate_all_occurrences OK")
 
 
+def test_attack_enum_bundle():
+    from pipeline import attack_enum_bundle, gen_probe_questions
+    items = load_dataset(str(DATA))
+    item = next(i for i in items if i["split"] == "test" and i["annotations"]["quasi_identifiers"])
+
+    class EnumMock:
+        def __init__(self, values):
+            self.values = values
+            self.calls = 0
+
+        def complete(self, system, user):
+            self.calls += 1
+            return json.dumps({"values": self.values})
+
+    qs = gen_probe_questions(item)
+    m = max(1, -(-75 // len(qs)))
+    bundle = (qs * m)[:max(75, len(qs))]
+    n_value = sum(1 for _, _, k in bundle if k == "value")
+
+    gold = [e["value"] for cat in ("explicit_identifiers", "quasi_identifiers")
+            for e in item["annotations"][cat]]
+    res = attack_enum_bundle(EnumMock(gold), "材料", item, min_questions=75)
+    assert res["n"] >= 75
+    assert res["hits"] == n_value, (res["hits"], n_value)
+    res2 = attack_enum_bundle(EnumMock([]), "材料", item, min_questions=75)
+    assert res2["hits"] == 0
+    print("test_attack_enum_bundle OK")
+
+
 if __name__ == "__main__":
     test_grade()
     test_grade_numeric_tolerance()
@@ -246,6 +275,7 @@ if __name__ == "__main__":
     test_qa_probe_perfect_when_D_equals_X()
     test_attack_run_counts_hits()
     test_attack_run_bundle_expands_to_75()
+    test_attack_enum_bundle()
     test_parse_dehydrate_json()
     test_dehydrate_run_with_mock()
     test_dehydrate_fallback_on_bad_output()
