@@ -13,3 +13,4 @@ Traceback (most recent call last):
 RuntimeError: local_main/ornith-1.5-35b failed: HTTP Error 400: Bad Request
 : {str(last_err)[:200]}")
 RuntimeError: local_main/ornith-1.5-35b failed: HTTP Error 400: Bad Request
+P7e: {"n": 399, "probe": "enum", "pass_rate": 0.085, "mean_L_before": 0.7623, "mean_L_after": 0.3581, "mean_rounds": 4.06}
