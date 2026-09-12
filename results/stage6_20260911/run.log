@@ -1,1 +1,15 @@
 P16e: {"n": 160, "pass_rate": 0.05, "mean_rounds": 7.8, "probe": "enum"}
+Traceback (most recent call last):
+  File "/home/worker06/20260825tuoshuipaper/sim/run_experiments.py", line 564, in <module>
+    PHASES[which]()
+  File "/home/worker06/20260825tuoshuipaper/sim/run_experiments.py", line 516, in p7e_train_loop_enum
+    before = attack_enum_bundle(backend, item["prompt"], item, min_questions=75)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/worker06/20260825tuoshuipaper/sim/pipeline.py", line 180, in attack_enum_bundle
+    raw = backend.complete(ENUM_SYSTEM, "文本：\n" + D)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/worker06/20260825tuoshuipaper/sim/backends.py", line 76, in complete
+    raise RuntimeError(f"{cfg.name}/{cfg.model} failed: {str(last_err)[:200]}")
+RuntimeError: local_main/ornith-1.5-35b failed: HTTP Error 400: Bad Request
+: {str(last_err)[:200]}")
+RuntimeError: local_main/ornith-1.5-35b failed: HTTP Error 400: Bad Request
