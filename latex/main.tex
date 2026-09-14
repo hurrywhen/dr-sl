@@ -13,8 +13,11 @@
 \usepackage{verbatim}
 \usepackage[ruled,linesnumbered]{algorithm2e}
 \renewcommand{\thealgocf}{2$'$}
-\usepackage{xeCJK}
-\setCJKmainfont{FandolSong-Regular.otf}
+\usepackage{iftex}
+\ifxetex
+  \usepackage{xeCJK}
+  \setCJKmainfont{FandolSong-Regular.otf}
+\fi
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
@@ -997,16 +1000,13 @@ If any test finds a counterexample, the proposition is corrected before submissi
 \section*{Appendix C: Semantic-Utility Judge Rubric (Complete Prompt)}
 \addcontentsline{toc}{section}{Appendix C: Semantic-Utility Judge Rubric}
 
-The reference-based semantic utility metric ($U_{\mathrm{sem}}$, T23/T24) uses the following frozen system prompt (Chinese original; the judge sees the original material $X$ followed by the processed artifact $D$; user turn: ``原始材料：\textbackslash n\{X\}\textbackslash n\textbackslash n处理后材料：\textbackslash n\{D\}''):
+The reference-based semantic utility metric ($U_{\mathrm{sem}}$, T23/T24) uses the following frozen system prompt; the judge sees the original material $X$ followed by the processed artifact $D$, and the user turn concatenates ``original material:'' $+$ $X$ $+$ ``processed material:'' $+$ $D$ with newline separators. The verbatim Chinese original (system prompt and user-turn template) is reproduced below when compiled with XeTeX and is distributed with the source package as \texttt{appendix\_c\_zh.tex} (UTF-8) otherwise; the English rendering that follows is line-by-line equivalent.
 
-\begin{quote}\small
-你是咨询材料质量评审员。你会看到同一咨询的【原始材料】和【处理后材料】。请判断：仅凭处理后材料，AI 助手能否给出与原始材料几乎同样有用、有针对性且正确的答复？\\
-评分标准：\\
-1.0 = 请求所需关键信息全部保留（允许以区间/档位/类别等泛化形式存在，且泛化后仍足以支撑同样的建议）；\\
-0.5 = 关键信息部分缺失或过度模糊，建议有用性明显受限但仍有价值；\\
-0.0 = 关键信息缺失、被占位符替代、或被篡改为与原值不符的内容（错误值会导致错误建议，按缺失处理）。\\
-只输出 JSON：\{"score": 1.0 或 0.5 或 0.0, "reason": "一句话理由"\}。不要输出其他内容。
-\end{quote}
+\ifxetex
+\input{appendix_c_zh.tex}
+\else
+\noindent\textit{(Verbatim Chinese original: see \texttt{appendix\_c\_zh.tex} in the source package.)}
+\fi
 
 \noindent English gloss: \emph{``You are a quality reviewer of consultation material. Given the [original] and [processed] material of the same consultation, decide whether the processed material alone still supports essentially the same useful, targeted, and correct advice. 1.0 = all request-critical information preserved (generalized forms such as bands/ranges/categories acceptable if they still support the same advice); 0.5 = critical information partly missing or over-vague, advice usefulness clearly limited but still valuable; 0.0 = critical information missing, placeholder-substituted, or altered to values inconsistent with the original (wrong values cause wrong advice; count as missing). Output JSON only.''} Human study~1 used the same rubric in its scoring instructions, keeping the human anchor and the automatic metric on the same construct. Parse robustness: two attempts with a strict-JSON suffix on retry; regex fallback extracting \texttt{"score": v}, $v\in\{0,0.5,1\}$; unparseable responses are logged as missing, never imputed.
 
