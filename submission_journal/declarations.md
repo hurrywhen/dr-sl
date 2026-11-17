@@ -1,0 +1,56 @@
+# Declarations and Disclosure Statements — Journal Submission
+
+Manuscript: **Reversibility-Verified De-identification for Cloud-Local LLM Inference: A Locally Certified Dehydrate-Rehydrate Loop with Layered Assurance (DR-SL)**
+Authors: Wen Hu, Ya Yu, Xutong Wang
+
+## 1. Author contributions (CRediT) — journal manuscript (author order: Wen Hu, Ya Yu, Xutong Wang; corresponding author: Ya Yu)
+
+- **Wen Hu (first author):** conceptualization, methodology, formal analysis (theory and proofs, Appendices A--B), software (core verification loop, cascade extractor, proof-verification suite), validation, investigation (extended experimental record T18--T25 and the release-chain audit), writing — original draft (journal manuscript), writing — review & editing, supervision.
+- **Ya Yu (corresponding author):** investigation (simulation experiments carried over from and re-verified beyond the conference stage), validation (human-study rater), data curation, writing — review & editing; responsible for correspondence and for the integrity of the submitted record.
+- **Xutong Wang:** validation (human-study rater/annotator), data curation, writing — review & editing.
+
+**Author order and corresponding authorship across versions.** Author order is decided per manuscript on contribution grounds: the conference version (accepted; order Y. Yu, W. Hu, X. Wang) reflects Y. Yu's first-author-level execution and drafting of that manuscript; this journal manuscript reflects W. Hu's leadership of the extended theory, experimental record, and writing; Y. Yu serves as corresponding author of this manuscript by team agreement and genuine assumption of the corresponding role. Preprint v1 lists W. Hu first (it precedes the conference-stage division of work). All three records, their bases, and the signed per-version memo (`../authorship_contribution_memo.md`) are disclosed to the editor in the cover letter; no version misstates any author's contribution.
+
+All authors meet the ICMJE authorship criteria and have approved this version and its submission.
+
+## 2. Conflict of interest
+
+Wen Hu holds a position at Jiangsu Yunhefeng Intelligent Technology Co., Ltd. (second affiliation); the public artifact repository is hosted on that company's Gitee organization. No author reports financial interests, patents, or commercial products whose value could be affected by the results. The remaining authors declare no conflicts. [To be re-confirmed and signed by all authors before submission.]
+
+## 3. Funding
+
+[To be completed: grant numbers or "This research received no external funding."]
+
+## 4. Data and code availability
+
+All artifacts are public at https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl : simulation pipeline and test suite (MIT), four fully synthetic datasets (CC-BY-4.0), the pre-registered experimental protocol with the complete deviation log (D1–D18), the human-study package (blinded scoring sheets, annotation sheets, analysis scripts, preregistered criteria), and the proof-verification suite (`sim/proof_checks.py`). All sensitive values are synthetic and fictional; no real personal data are included. MedQA-derived consultation stems are used under the MIT license (Jin et al., Appl. Sci. 11(14):6421, 2021) with every concrete value replaced. Synthetic-population marginals currently use documented placeholder values (W2), flagged in the manuscript as future work to replace with public statistical tables.
+
+## 5. Ethics statement
+
+- **Human studies.** Two studies: (1) semantic-utility anchor — two raters independently scored 160 blinded rows (40 instances × 4 operating points; blind key withheld until scoring finished); (2) annotation audit — two annotators independently listed sensitive items and judged combination re-identification risk on 50 instances. The only participants were co-authors Y. Yu and X. Wang (expert raters, independent of the pipeline implementation), participating voluntarily with full knowledge of their co-authorship; they were blinded to variant identities and automatic scores during scoring. No third-party subjects, no crowdsourced labor, no personal or clinical data; all evaluated text is fully synthetic. Under [INSTITUTION] policy such non-subject evaluation of synthetic material is exempt from IRB review; [confirm exemption wording/number before submission]. Preregistered criteria and outcomes (including the κ fallback analysis) are reported in full.
+- **Privacy of local assets.** The manuscript itself analyzes and mitigates the sensitivity of system-internal artifacts (experience store, residual reports, audit logs); no such artifact containing sensitive values is published.
+- **Dual-use.** The attack/verification methodology is defensive (release gating); experiments use only synthetic data and provider APIs under their terms.
+
+## 6. Prior publication, preprint, and version-relationship disclosure
+
+1. **Preprint.** A preprint of this work is posted on arXiv ([arXiv:XXXX.XXXXX — insert identifier upon assignment]); disclosed in the title footnote. Preprint posting is not prior peer-reviewed publication; the journal version is cited against it where relevant.
+2. **Conference version (accepted).** A condensed 4-page conference version has been **accepted** at [CONFERENCE NAME — to be inserted] with author order **Y. Yu, W. Hu, X. Wang**: for that manuscript Y. Yu executed and consolidated the principal simulation experiments and drafted/organized the text (first-author-level contribution), while W. Hu provided the conceptualization, method, proofs, and supervision. This journal manuscript extends that work (complete proofs + executable verification appendix; full experimental record T1–T25 including the release-chain audit, probe-format analysis, distribution-shift framework, applicability boundary; extended related work and judge rubric — far exceeding the customary ≥30% new material) with W. Hu first per his contributions to this manuscript, and Y. Yu as corresponding author by team agreement and genuine assumption of the role. This manuscript cites the conference paper; the author-order difference between the two versions (and relative to preprint v1, which lists W. Hu first) is contribution-based per manuscript, is documented in the signed memo `../authorship_contribution_memo.md`, and is disclosed here and in the cover letter. The conference version is not under review anywhere; this journal manuscript is submitted after the conference outcome, per standard extended-version practice. No simultaneous review of overlapping content will occur.
+3. **No duplicate submission.** This manuscript is not under review elsewhere; no substantially identical peer-reviewed publication exists.
+4. **Preprint versioning policy (preprint posted first, carries no venue markings).** The arXiv record (v1) predates both this submission and the conference submission and, by construction, contains no venue markings; this is the correct chronological order and requires no retroactive change at submission time. The citation direction runs from this manuscript to the preprint (title footnote; bibliography). The arXiv record will be updated only upon acceptance, as follows:
+   - *On acceptance of the conference version* — upload arXiv v2 with Comments field: "v2: a condensed version of this work appears in Proc. [CONFERENCE NAME, YEAR]; this preprint remains the extended technical version. v1: original preprint."
+   - *On acceptance of this journal manuscript* — upload arXiv v3 with Comments field: "v3: this work has been published in [JOURNAL NAME], vol. X, no. Y, pp. Z, [YEAR], doi:[DOI]; please cite the journal version." and add the journal reference/DOI to the preprint's first page; the camera-ready of this manuscript will likewise carry the conference citation and the preprint citation.
+   Until acceptance, no venue is named on the preprint, and no version under peer review is posted.
+
+## 7. Use of AI/LLM tools in manuscript preparation
+
+LLMs appear in this work **as the object of study** (local evaluators/dehydrators, graded attackers, utility judges, and cloud models under test); their roles, model names, and parameters are fully specified in the manuscript and protocol. [Statement on AI writing assistance to be confirmed by the authors before submission.] LLM tools are not and cannot be authors.
+
+## 8. Compliance checklist
+
+- [ ] Insert arXiv identifier in manuscript footnote and this document.
+- [ ] Insert target journal name in cover letter and `\markboth` header; confirm 20-page limit (16 pages, met).
+- [ ] Confirm funding statement.
+- [ ] Confirm IRB-exemption wording with institution.
+- [ ] All authors sign COI and contribution statements.
+- [ ] Confirm journal policy on preprints and on conference-extended versions; sequence submissions accordingly.
+- [ ] Replace W2 placeholder marginals or retain the documented caveat (currently retained and disclosed).

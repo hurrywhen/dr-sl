@@ -1,6 +1,10 @@
 latex/main.aux
 latex/main.log
 latex/main.out
+submission_conference/main.aux
+submission_conference/main.log
+submission_journal/main.aux
+submission_journal/main.log
 __pycache__/
 *.pyc
 dataset/data_raw/
