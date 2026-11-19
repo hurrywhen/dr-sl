@@ -52,8 +52,9 @@ def test_probe_questions():
 def test_branch1_stats():
     res = branch1_stats(hits=0, n=75, tau_l=0.05)
     assert res["pass_gate"]
+    assert res["gate_type"] == "heuristic_point_rate"
     res2 = branch1_stats(hits=0, n=15, tau_l=0.05)
-    assert not res2["pass_gate"]
+    assert res2["pass_gate"]  # heuristic point rate, not Wilson
     res3 = branch1_stats(hits=3, n=20, tau_l=0.05)
     assert res3["L"] == 0.15 and not res3["pass_gate"]
     print("test_branch1_stats OK")
@@ -185,16 +186,19 @@ def test_det_policy():
     print("test_det_policy OK")
 
 
-def test_attack_run_bundle_expands_to_75():
+def test_attack_run_bundle_no_replication():
     from pipeline import attack_run_bundle
     items = load_dataset(str(DATA))
     item = next(i for i in items if i["split"] == "test" and i["annotations"]["quasi_identifiers"])
     mb = PipelineMockBackend(mode="answer_nothing")
     mb.set_truths(item)
     res = attack_run_bundle(mb, "（空材料）", item, min_questions=75)
-    assert res["n"] >= 75
+    n_unique = len(gen_probe_questions(item))
+    assert res["n"] == n_unique
+    assert res["n_unique_questions"] == n_unique
+    assert res["n_model_calls"] == 1
     assert res["hits"] == 0
-    print("test_attack_run_bundle_expands_to_75 OK")
+    print("test_attack_run_bundle_no_replication OK")
 
 
 def test_det_dehydrate_all_occurrences():
@@ -252,14 +256,13 @@ def test_attack_enum_bundle():
             return json.dumps({"values": self.values})
 
     qs = gen_probe_questions(item)
-    m = max(1, -(-75 // len(qs)))
-    bundle = (qs * m)[:max(75, len(qs))]
-    n_value = sum(1 for _, _, k in bundle if k == "value")
+    n_value = sum(1 for _, _, k in qs if k == "value")
 
     gold = [e["value"] for cat in ("explicit_identifiers", "quasi_identifiers")
             for e in item["annotations"][cat]]
     res = attack_enum_bundle(EnumMock(gold), "材料", item, min_questions=75)
-    assert res["n"] >= 75
+    assert res["n"] == n_value
+    assert res["n_model_calls"] == 1
     assert res["hits"] == n_value, (res["hits"], n_value)
     res2 = attack_enum_bundle(EnumMock([]), "材料", item, min_questions=75)
     assert res2["hits"] == 0
@@ -274,7 +277,7 @@ if __name__ == "__main__":
     test_extract_explicit()
     test_qa_probe_perfect_when_D_equals_X()
     test_attack_run_counts_hits()
-    test_attack_run_bundle_expands_to_75()
+    test_attack_run_bundle_no_replication()
     test_attack_enum_bundle()
     test_parse_dehydrate_json()
     test_dehydrate_run_with_mock()

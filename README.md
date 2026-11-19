@@ -1,78 +1,69 @@
-# DR-SL — Dehydrate-Rehydrate with Reversibility-Guided Self-Learning Loop
+# DR-SL — Runtime-Sensitive-Set Release Chain for Cloud-Local LLM Inference
 
-面向云-本地 LLM 推理的敏感信息隔离方法：以可逆性验证为核心的脱敏判定闭环，
-Pufferfish 语义 + Fano 下界证书 + rate-privacy 可行性判据，全本地在线判定，
-离线阶段仅接触非敏感语料。
+面向云-本地 LLM 推理的敏感信息隔离发布链：运行时敏感集抽取、如实泛化、本地攻击/效用检查、确定性全出现擦除、稳定门限、残余报告与人工回退。
 
-**Paper (投稿版, LaTeX)**: `latex/main.tex`（中文工作版：`DR-SL 论文（基于可逆性验证的自学习脱敏闭环）v1_2.md`；英文 Markdown 镜像：`DR-SL_paper_submission_EN.md`）
-**Pre-registered protocol**: `experiment_protocol_v1.md`（含偏离记录 D1–D17，全程留痕）
+**当前修订版主论文**：`latex/main.tex` → `latex/main.pdf`（11 页）。  
+**会议版**：`submission_conference/main.tex` → `main.pdf`（3 页 condensed）。  
+**期刊版**：`submission_journal/main.tex` → `main.pdf`（6 页 IEEE journal）。  
+**修订协议**：`revision_protocol.md`；修订偏离：`revision_deviations.md`。  
+历史协议 `experiment_protocol_v1.md`（D1–D18）与旧 Markdown 版本仅作过程记录，不代表当前结论。
+
+## 修订核心变化
+
+- 删除“75 次重复问题束 = 独立伯努利试验”的 Wilson 推断；改为启发式观测命中率门限 + 实例聚类 bootstrap。
+- 主实验区分 oracle-S 与 runtime-S；金标只用于外部评分，不进入运行时策略。
+- 混合基准旧 67.5% 改标为离线 oracle 语义路由率；在线语义裁判不参与本地放行。
+- 删除错误 Fano 阈值推论；可行性判据仅保留互信息量纲；终止证明改为有限预算。
+- 外部强攻击者复测改为受控披露审计，不再称为出网前安全保证。
+- 随机替换基线修复为全出现一致替换，并改称 PRISM-style random replacement，不再冒称 LDP。
+- 新增 INTACT-inspired 候选选择基线、确定性泛化/硬线/闭环公平消融。
+- 新增未触碰独立模板 holdout（80 条，seed 20261118）。
+- 人工研究补充组内相关、实例聚类区间、MAE、阈值混淆；明确原始组合风险 κ 未通过。
+- 自学习降为探索性组件；H1 未支持，H1′ 未显著。
+
+## 当前主要结果（修订版）
+
+- 冻结 holdout（n=80）全本地确定性 runtime-S 闭环：本地启发式放行率 **57.5%**，但外部金标字面审计平均命中率 **0.121**，runtime 抽取召回 **0.858**。这说明本地放行不等于出网零泄漏。
+- 40 条 holdout 子集在线受控披露审计：2 攻击器 × 2 策略，640 次模型调用、3888 个唯一问题，观测命中 **519**（非零）；闭环外部最大命中率 **0.130**，离线语义裁判效用 **0.363**。本地效用代理与裁判总体 ρ=0.326、MAE=0.358、阈值一致率 68.1%。
+- test-160 / mixed-120 的 oracle-S 与 runtime-S 结果分开报告；旧 37.5%/43.8%/5.0%/67.5% 不再作为修正后门限下的最终结论。
+- 人工效用研究：总体 ρ=0.839（实例聚类 CI [0.774, 0.892]），MAE=0.133；组内相关 generalized 0.661、placeholder 0.784、random 0.626。
+- 标注研究：类型级召回 1.000/0.987；原始组合风险 κ=−0.083（预注册未通过）；构念对齐 κ=0.696 为事后分析。
+- 理论数值测试为回归/反例搜索，包含已删除 Fano 阈值推论的反例。
 
 ## 仓库结构
 
 | 目录/文件 | 内容 |
 |---|---|
-| `dataset/` | 合成评测数据集 v2（930 条）+ 扩充（test_ext 240 / T_new 240）+ 阶段 2 流（120 条）+ 混合耦合基准（`output/dr_sl_mixed.jsonl` 120 条）；生成器、标注手册、审计器、规约与测试 |
-| `sim/` | 实验框架：字典序闭环（`loop.py`）、级联抽取器（`extractor.py`）、QA 探针/攻击者/脱水管线（`pipeline.py`，含枚举式探针 `attack_enum_bundle`）、合成人口库与 k-匿名（`synthpop.py`）、分布差异测量（`shift.py`）、理论界数值验证（`proof_checks.py`）、阶段编排（`run_experiments.py`, `stage2.py`–`stage5.py`）、规约（`specs/`）与全部测试 |
-| `results/` | 全部实验产出（JSON/JSONL/PNG）：k-匿名、阶段 1（pilot_20260829）、阶段 2（stage2_20260902）、阶段 3（stage3_20260905）、修订轮（stage4_20260907、stage5_20260907，含 T18–T25 与 P41 基线）、枚举探针全管线复跑（stage6_20260911，进行中） |
-| `human_study/` | 两项人工研究包：盲态评分表、标注复核表、分析脚本（`analyze_results.py`）、结果（`analysis_results.json`）与操作说明（含预注册判定标准） |
-| `latex/` | 投稿版论文（`main.tex` → `main.pdf`，40 页）与 arXiv 源码包（`drsl_arxiv_source.tar.gz`） |
-| `DR-SL 论文 v1_0_*.md` | 审稿意见、讨论与回复、执行记录（预注册过程全记录） |
-
-## 主要结果速览
-
-- 主闭环（train 400，严格门限 τ_L=0.05 + ≥75 探测）：泄漏 **0.457→0.304**（p≈0，前后同测量基础），PASS 率 37.5%，INFEASIBLE 实例全部输出残余泄漏报告；*注：硬线擦除前工件上的效用数值部分由残余字面值承载，效用结论按 T18/T21 口径仅在擦除后工件上报告*；
-- 强制三段放行链（本地门限 → 确定性硬线 → 外部强攻击者复测）下，test-160 出网字面泄漏 **0.000**（flash/glm 双强攻击者；汇集 95% 上界 <0.001）；
-- 安全点（如实泛化）语义效用 **U_sem=0.431**（全耦合最坏基准）/ **0.571**（混合耦合基准）；混合基准自动放行率 **67.5%**（严格口径 24.2%），并在同一放行规则下对 placeholder（58.3%）与选择性 LDP（25.0%，L=0.070 越限）实测 Pareto 占优（P41）；
-- 两项人工研究达标：效用人工锚点 ρ=**0.839**（预注册 ≥0.8，2 评分员×160 行盲态）；标注复核类型级召回 **1.000/0.987**、精确率 0.959/0.991（2 标注员×50 实例）；
-- 级联抽取器召回 0.951（显式 0.977 / 准标识符 0.931；跨家族复核 glm-5.2 召回 0.983）；
-- 评估器校准 Δ̂ = +0.181（本地 vs 强模型）；T25 机制诊断：本地证书的体制差距系**探针格式**伪影；枚举式探针全管线复跑（T25c, test-160）：PASS 率 43.8%→5.0%、轮数 4.0→7.8、成本不变——旧 PASS 大多为探针盲假放行；外部复测显示银行工件真干净（L=0.000）、法律工件残余开放词表类目字面值（L=0.320），硬线后全部 0.000——软证书诚实化，硬线/外部复测对类目类承重；train-400 配对复跑（n=399/400）：raw L 0.457→0.762、配对削减 −0.154→−0.404、PASS 37.6%→8.5%——泄漏削减对探针格式稳健；
-- 偏态参考人口下 16.7%–21.1% 准标识符携带实例（全实例 7.9%–11.9%）k̃<5；
-- 消融：去反推分支 → 假放行泄漏 0.327；去 U 闸门 → 效用崩至 0.111；
-- 理论界数值验证：3×1000 合成机制配置零反例；
-- 自学习：H1 未获支持、修正假设 H1′ 边际（p=0.059）——预注册负结果如实报告。
+| `dataset/` | 合成数据生成器、标注手册、审计器；新增 `generate_holdout.py` 与 `output/dr_sl_holdout_v1.jsonl` |
+| `sim/` | 发布链、runtime-S 抽取器、稳定门限、统计、公平消融、在线受控披露审计、测试 |
+| `results/revision_20261118/` | 修订版离线结果、冻结清单、在线审计原始输出与汇总 |
+| `human_study/` | 人工评分/标注表、修订分析脚本与结果 |
+| `latex/` | 主论文与自动生成的修订结果表 `revision_results.tex` |
+| `submission_conference/`, `submission_journal/` | 会议/期刊投稿包 |
 
 ## 复现
 
 ```bash
-cd dataset && python3 generate_dataset.py && python3 rewrite_medqa.py \
-  && python3 generate_expansion.py && python3 generate_stage2_stream.py
-cd ../sim && python3 test_loop.py && python3 test_pipeline.py \
-  && python3 test_extractor.py && python3 test_proof_checks.py \
-  && python3 test_shift.py && python3 test_distill.py
-python3 run_kanonymity.py          # k-匿名（无需 LLM）
-# LLM 阶段需配置后端（OpenAI 兼容端点），见 sim/backends.py BACKENDS 注册表
-python3 run_experiments.py p0      # 正则层召回（无需 LLM）
-python3 stage2.py p12              # 需在线后端
-python3 stage5.py p38              # 混合耦合基准（T24）；p41 为同基准基线
-cd ../human_study && python3 analyze_results.py   # 人工研究统计（ρ/κ/Wilson）
+python3 -m pip install -r requirements.txt
+python3 dataset/generate_holdout.py
+python3 sim/revision_experiment.py          # 离线，无需 LLM
+python3 sim/revision_online_audit.py        # 在线受控披露审计，需配置后端
+python3 sim/make_revision_tables.py
+python3 human_study/analyze_results.py
+python3 sim/test_loop.py && python3 sim/test_pipeline.py && python3 sim/test_runtime.py && python3 sim/test_revision_stats.py && python3 sim/test_proof_checks.py
 ```
 
-后端密钥运行时从 `~/.config/opencode/opencode.jsonc` / `~/.local/share/opencode/auth.json`
-读取，仓库内不含任何密钥。
+后端密钥运行时从本地配置读取，仓库不含密钥。本地模型端点通过 `DRSL_LOCAL_BASE_URL` 配置；历史内网地址已从当前文本中移除。在线模型快照/权重版本未完全固定，是复现限制。
 
 ## 合规声明
 
-- 全部敏感值（姓名/证件号/卡号/电话/地址/机构名等）为程序合成的**虚构值**
-  （手机号 190 号段、邮箱 example.com、地名/机构名为虚构），不含任何真实个人信息；
-- MedQA 中文子集题干为医师资格考试题（非真实患者信息，MIT 许可，引用 Jin et al. 2021,
-  Applied Sciences 11(14):6421, arXiv:2009.13081）；
-  源数据 `dataset/data_raw/` 不入库，按 `dataset/README.md` 说明自行获取；
-- 合成人口库 W2 示例边际分布为占位数据，正式使用须替换为公开统计表并登记来源。
+- 全部敏感值为程序合成虚构值，不含真实个人信息。
+- MedQA 中文子集题干为医师资格考试题（MIT 许可），具体值已替换。
+- 外部审计仅发送合成工件；原始 X 只用于离线语义效标验证，不参与本地放行。
+- 内部端点、密钥、本地凭据不上传。
 
 ## 许可
 
-- 代码：MIT（见 `LICENSE`）
-- 数据集（合成部分）：CC-BY-4.0（见 `dataset/LICENSE-DATA`）
+- 代码：MIT（`LICENSE`）
+- 合成数据：CC-BY-4.0（`dataset/LICENSE-DATA`）
 - 论文文本：版权保留，投稿前请勿转载
-
-## 引用
-
-```bibtex
-@article{drsl2026,
-  title   = {Reversibility-Verified De-identification for Cloud-Local LLM Inference:
-             A Locally Certified Dehydrate-Rehydrate Loop with Layered Assurance (DR-SL)},
-  author  = {Hu, Wen and Yu, Ya and Wang, Xutong},
-  journal = {arXiv preprint (to appear)},
-  year    = {2026}
-}
-```

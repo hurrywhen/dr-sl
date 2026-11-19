@@ -162,7 +162,7 @@ def p22():
             s = d * rng.choice([-1, 1], len(d))
             if s.mean() >= obs:
                 cnt += 1
-        return cnt / 2000
+        return (cnt + 1) / (2000 + 1)
 
     summary = {"n": len(ok),
                "mean_recall_quasi_v0": float(np.mean([r["recall_quasi_v0"] for r in ok])),
@@ -256,7 +256,7 @@ def p23():
         rng = np.random.default_rng(0)
         obs = d.mean()
         cnt = sum((d * rng.choice([-1, 1], len(d))).mean() >= obs for _ in range(2000))
-        p = cnt / 2000
+        p = (cnt + 1) / (2000 + 1)
     summary = {"n_pairs": len(common),
                "L_system_v0": float(np.mean([ok0[i]["L_system"] for i in common])) if common else None,
                "L_system_v1": float(np.mean([ok1[i]["L_system"] for i in common])) if common else None,

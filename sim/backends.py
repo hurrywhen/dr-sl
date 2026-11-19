@@ -32,7 +32,7 @@ class BackendConfig:
     max_tokens: int = 2048
     timeout: int = 600
     retries: int = 2
-    seed: int = 0
+    seed: int = None
     extra: dict = None
 
 
@@ -57,6 +57,8 @@ class HTTPBackend:
             "temperature": cfg.temperature,
             "max_tokens": cfg.max_tokens,
         }
+        if cfg.seed is not None:
+            payload["seed"] = cfg.seed
         if cfg.extra:
             payload.update(cfg.extra)
         last_err = None
@@ -96,9 +98,9 @@ def make_backend(role, **override):
     return HTTPBackend(cfg)
 
 
-_LOCAL = "http://10.125.125.64:1234/v1"
-_ZEN = "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1"
-_KIMI = "https://api.kimi.com/coding/v1"
+_LOCAL = os.environ.get("DRSL_LOCAL_BASE_URL", "")
+_ZEN = os.environ.get("DRSL_ONLINE_BASE_URL", "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1")
+_KIMI = os.environ.get("DRSL_KIMI_BASE_URL", "https://api.kimi.com/coding/v1")
 
 BACKENDS = {
     "local_main": lambda: BackendConfig("local_main", "qwen3.8-27b-mlx", _LOCAL, "", 0.3, 2048, 1200, 2),

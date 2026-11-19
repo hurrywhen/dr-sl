@@ -8,7 +8,7 @@
 - `.complete(system, user) -> str`：chat 完成；失败重试；超时异常。
 - `.embed(texts) -> list[list[float]]`（仅嵌入后端）。
 - `BACKENDS` 注册表（角色 → 配置）：
-  - `local_main` qwen3.8-27b-mlx @ 10.125.125.64:1234/v1（并发 1，max_tokens=512）
+  - `local_main` qwen3.8-27b-mlx @ <LOCAL_LLM_ENDPOINT>（并发 1，max_tokens=512）
   - `local_small` ornith-1.5-35b（同端点）
   - `local_embed` text-embedding-nomic-embed-text-v1.5（同端点）
   - `online_strong` qwen3.8-max、`online_fast` qwen3.8-flash、`online_alt` glm-5.2（token-plan 网关，密钥运行时从 `~/.local/share/opencode/auth.json` 读取，不落盘、不打印）

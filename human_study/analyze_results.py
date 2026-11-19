@@ -14,7 +14,7 @@ Registered decision criteria (README_人工研究说明.md):
   annotation: human-vs-auto Cohen's kappa >= 0.8
 Outputs: analysis_results.json + printed summary.
 """
-import csv, json, math, os, re, zipfile
+import csv, json, math, os, random, re, zipfile
 import xml.etree.ElementTree as ET
 from collections import Counter
 
@@ -106,6 +106,51 @@ def krippendorff_alpha_ordinal(r1, r2):
     De = sum(cnt[v1] * cnt[v2] * (v1 - v2) ** 2 for v1 in vals for v2 in vals) / (N * (N - 1))
     return 1 - Do / De if De > 0 else float('nan')
 
+def percentile(xs, q):
+    xs = sorted(x for x in xs if x is not None and not math.isnan(x))
+    if not xs:
+        return None
+    k = (len(xs) - 1) * q
+    f = math.floor(k)
+    c = math.ceil(k)
+    if f == c:
+        return xs[int(k)]
+    return xs[f] * (c - k) + xs[c] * (k - f)
+
+
+def instance_cluster_bootstrap(rows, human, auto, variant_of, n_boot=2000, seed=20261118):
+    """Resample instances, keeping all four blinded variants together."""
+    by_inst = {}
+    for rid in rows:
+        iid = rid.rsplit('_', 1)[0]
+        by_inst.setdefault(iid, []).append(rid)
+    inst_ids = sorted(by_inst)
+    rng = random.Random(seed)
+    boots_all, boots_mae = [], []
+    boots_var = {v: [] for v in VARIANTS}
+    for _ in range(n_boot):
+        sampled = [rng.choice(inst_ids) for _ in inst_ids]
+        rids = [rid for iid in sampled for rid in by_inst[iid]]
+        h = [human[r] for r in rids]
+        a = [auto[r] for r in rids]
+        rho = spearman(h, a)
+        if not math.isnan(rho):
+            boots_all.append(rho)
+        boots_mae.append(sum(abs(x - y) for x, y in zip(h, a)) / len(h))
+        for v in VARIANTS:
+            vr = [r for r in rids if variant_of[r] == v]
+            if len(vr) >= 3:
+                rv = spearman([human[r] for r in vr], [auto[r] for r in vr])
+                if not math.isnan(rv):
+                    boots_var[v].append(rv)
+    return {
+        "rho_row_ci95": [percentile(boots_all, 0.025), percentile(boots_all, 0.975)],
+        "mae_ci95": [percentile(boots_mae, 0.025), percentile(boots_mae, 0.975)],
+        "rho_within_ci95": {v: [percentile(boots_var[v], 0.025), percentile(boots_var[v], 0.975)] for v in VARIANTS},
+        "n_instances": len(inst_ids), "n_boot": n_boot, "unit": "instance_cluster",
+    }
+
+
 # ---------- load key + auto data ----------
 key = {k: v for k, v in json.load(open(os.path.join(BASE, 'utility_variant_key.json'))).items()}
 POINT_MAP = {'ldp': 'selective_ldp', 'placeholder': 'placeholder',
@@ -158,20 +203,31 @@ for v in VARIANTS:
     hm = sum(human[r] for r in ids) / len(ids)
     am = sum(auto[r] for r in ids) / len(ids)
     rho_v = spearman([human[r] for r in ids], [auto[r] for r in ids])
+    mae_v = sum(abs(human[r] - auto[r]) for r in ids) / len(ids)
     by_variant[v] = dict(n=len(ids), human_mean=round(hm, 3), auto_mean=round(am, 3),
-                         rho_within=round(rho_v, 3))
+                         rho_within=None if math.isnan(rho_v) else round(rho_v, 3),
+                         mae=round(mae_v, 3))
 # operating-point level correlation (4 points)
 pts_h = [by_variant[v]['human_mean'] for v in VARIANTS]
 pts_a = [by_variant[v]['auto_mean'] for v in VARIANTS]
 rho_points = spearman(pts_h, pts_a)
+mae_all = sum(abs(human[r] - auto[r]) for r in common) / len(common)
+cluster_ci = instance_cluster_bootstrap(common, human, auto, variant_of)
+threshold_confusion = {}
+for r in common:
+    key = f"human_{int(human[r] >= 0.5)}_auto_{int(auto[r] >= 0.5)}"
+    threshold_confusion[key] = threshold_confusion.get(key, 0) + 1
 
 print('\n=== utility: human vs auto ===')
 print(f'inter-rater Krippendorff alpha (ordinal): {alpha_inter:.3f}')
 print(f'row-level Spearman rho (n={len(common)}): {rho_all:.3f}  [registered >= 0.8]')
-print(f'operating-point rho (4 points): {rho_points:.3f}')
+print(f'row-level rho instance-cluster 95% CI: {cluster_ci["rho_row_ci95"]}')
+print(f'MAE={mae_all:.3f}, instance-cluster 95% CI: {cluster_ci["mae_ci95"]}')
+print(f'operating-point rho (4 points, descriptive only): {rho_points:.3f}')
 for v in VARIANTS:
     d = by_variant[v]
-    print(f"  variant {v}: n={d['n']} human={d['human_mean']} auto={d['auto_mean']} rho_within={d['rho_within']}")
+    print(f"  variant {v}: n={d['n']} human={d['human_mean']} auto={d['auto_mean']} rho_within={d['rho_within']} mae={d['mae']} ci={cluster_ci['rho_within_ci95'][v]}")
+print('threshold confusion (>=0.5):', threshold_confusion)
 
 # ---------- part 2: annotation ----------
 a1 = rows_to_dicts(read_csv_rows(os.path.join(BASE, 'annotation_sheet1.csv')))
@@ -241,11 +297,24 @@ print('\n=== item-level (type) vs auto gold ===')
 print(f'rater1: precision={p1:.3f} recall={r1_:.3f}')
 print(f'rater2: precision={p2:.3f} recall={r2_:.3f}')
 
+def _clean(obj):
+    if isinstance(obj, float):
+        return None if math.isnan(obj) else obj
+    if isinstance(obj, dict):
+        return {k: _clean(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_clean(v) for v in obj]
+    return obj
+
+
 out = dict(
     utility=dict(n=len(common), alpha_inter_rater=round(alpha_inter, 3),
                  rho_row_level=round(rho_all, 3), rho_operating_points=round(rho_points, 3),
+                 mae=round(mae_all, 3), instance_cluster=cluster_ci,
+                 threshold_confusion=threshold_confusion,
                  by_variant=by_variant,
-                 criterion='rho>=0.8', passed=bool(rho_all >= 0.8)),
+                 criterion='rho>=0.8', passed=bool(rho_all >= 0.8),
+                 note='Overall rho is driven partly by between-variant mean differences; within-variant correlations and instance-cluster CIs are reported. Four-point rank correlation is descriptive only.'),
     annotation=dict(n=len(common_c), kappa_inter_rater=round(kappa_12, 3),
                     kappa_rater1_auto=round(kappa_1a, 3), kappa_rater2_auto=round(kappa_2a, 3),
                     kappa_consensus_auto=round(kappa_ca, 3), n_consensus=len(agree),
@@ -253,10 +322,11 @@ out = dict(
                     disagreement_rows=disagree,
                     criterion='kappa>=0.8', passed=bool(kappa_ca >= 0.8),
                     broad_gold=dict(kappa_rater1=round(kappa_1b, 3), kappa_rater2=round(kappa_2b, 3),
-                                    y_rate=round(sum(1 for r in common_c if auto_b[r] == 'y') / len(common_c), 3)),
+                                    y_rate=round(sum(1 for r in common_c if auto_b[r] == 'y') / len(common_c), 3),
+                                    status='post_hoc_construct_aligned_analysis_not_preregistered_pass'),
                     item_level=dict(rater1=dict(precision=round(p1, 3), recall=round(r1_, 3)),
                                     rater2=dict(precision=round(p2, 3), recall=round(r2_, 3)))),
 )
 with open(os.path.join(BASE, 'analysis_results.json'), 'w') as f:
-    json.dump(out, f, ensure_ascii=False, indent=2)
+    json.dump(_clean(out), f, ensure_ascii=False, indent=2, allow_nan=False)
 print('\nwrote analysis_results.json')

@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 
 from proof_checks import (
@@ -97,6 +99,28 @@ def test_pufferfish_boundary_independent_channel():
     print("test_pufferfish_boundary_independent_channel OK")
 
 
+def test_fano_threshold_corollary_counterexample():
+    """The deleted threshold-mapping corollary is false.
+
+    Uniform S over 100 values, D independent of S: I(D;S)=0 and optimal
+    guessing hit rate L=0.01 <= tau_L=0.05, yet substituting tau_L into the
+    Fano expression yields a positive lower bound.  This regression test
+    records the counterexample; it does not validate the corollary.
+    """
+    k = 100
+    prior = np.full(k, 1.0 / k)
+    channel = np.tile(np.full(1, 1.0), (k, 1))  # single output, independent
+    L_star = map_accuracy(channel, prior)
+    assert abs(L_star - 0.01) < 1e-12
+    joint = np.outer(prior, np.array([1.0]))
+    I_DS = exact_mi(joint)
+    assert abs(I_DS) < 1e-12
+    invalid_bound = fano_lower_bound(math.log2(k), [0.05], [k])
+    assert invalid_bound > 0.0
+    assert I_DS < invalid_bound
+    print("test_fano_threshold_corollary_counterexample OK", invalid_bound)
+
+
 def test_feasibility_criterion_property():
     rng = np.random.default_rng(SEED + 3)
     violations = []
@@ -136,4 +160,5 @@ if __name__ == "__main__":
     test_pufferfish_witness_property()
     test_pufferfish_boundary_independent_channel()
     test_feasibility_criterion_property()
+    test_fano_threshold_corollary_counterexample()
     print("ALL PROOF-CHECK TESTS PASSED")

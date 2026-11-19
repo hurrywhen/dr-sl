@@ -1,6 +1,6 @@
 # Declarations and Disclosure Statements — Conference Submission
 
-Manuscript: **DR-SL: Reversibility-Verified De-identification for Cloud-Local LLM Inference with Layered Assurance**
+Manuscript: **DR-SL: A Runtime-Sensitive-Set Release Chain for Cloud-Local LLM Inference with Layered Assurance**
 Authors: Wen Hu, Ya Yu, Xutong Wang
 
 ## 1. Author contributions (CRediT) — conference manuscript (author order: Ya Yu, Wen Hu, Xutong Wang)
@@ -49,7 +49,7 @@ Large language models appear in this work **as the object of study** (local eval
 ## 8. Compliance checklist
 
 - [ ] Insert arXiv identifier in manuscript footnote and this document.
-- [ ] Insert conference name/year in cover letter; confirm page limit (4 pages, met).
+- [ ] Insert conference name/year in cover letter; confirm page limit (current condensed draft 3 pages).
 - [ ] Confirm funding statement.
 - [ ] Confirm IRB-exemption wording with institution.
 - [ ] All authors sign COI and contribution statements.

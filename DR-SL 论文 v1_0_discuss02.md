@@ -333,7 +333,7 @@ _证明思路_：对输出 d，取 v* = argmax_v p(v|d)。若最优攻击者命�
 ### ⑥ 后端接入与试点实验（2026-08-30，进行中）
 
 **接入（全部已验证）**：
-- Mac Studio（10.125.125.64:1234，LM Studio）：qwen3.8-27b-mlx（主）、ornith-1.5-35b（低资源）、nomic-embed（嵌入）；并发 1，~20 tok/s，reasoning 无法经 API 关闭（输出按短 JSON 设计，max_tokens=2048）。
+- Mac Studio（<LOCAL_LLM_ENDPOINT>，LM Studio）：qwen3.8-27b-mlx（主）、ornith-1.5-35b（低资源）、nomic-embed（嵌入）；并发 1，~20 tok/s，reasoning 无法经 API 关闭（输出按短 JSON 设计，max_tokens=2048）。
 - opencode 免费额度网关：qwen3.8-max / qwen3.8-flash / glm-5.2；`enable_thinking:false` 生效（成本降约 3×）。kimi k3 备用。DeepSeek 官方 API 按用户指令禁用。
 - 踩坑与修复（记录在案）：reasoning 模型在 max_tokens=512 时思考耗尽导致 content 为空 → 全部后端 max_tokens=2048；受影响的旧结果已作废重跑（见偏离记录）。
 

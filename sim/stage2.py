@@ -269,7 +269,7 @@ def p13():
         rng = np.random.default_rng(0)
         obs = d.mean()
         cnt = sum((d * rng.choice([-1, 1], len(d))).mean() <= obs for _ in range(2000))
-        p = cnt / 2000
+        p = (cnt + 1) / (2000 + 1)
     summary = {"n_pairs": len(common),
                "mean_rounds_v0": float(r0.mean()), "mean_rounds_v1": float(r1.mean()),
                "rounds_delta": float(d.mean()), "perm_p": p,

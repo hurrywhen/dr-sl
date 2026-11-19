@@ -4,34 +4,77 @@
     "alpha_inter_rater": 0.78,
     "rho_row_level": 0.839,
     "rho_operating_points": 1.0,
+    "mae": 0.133,
+    "instance_cluster": {
+      "rho_row_ci95": [
+        0.7738775744638082,
+        0.8918145839229648
+      ],
+      "mae_ci95": [
+        0.1,
+        0.16875
+      ],
+      "rho_within_ci95": {
+        "direct": [
+          null,
+          null
+        ],
+        "generalized": [
+          0.4422200290218396,
+          0.8301162524649384
+        ],
+        "placeholder": [
+          0.5873199698845639,
+          0.9369494511794823
+        ],
+        "ldp": [
+          0.3490238515950082,
+          0.8116750329722672
+        ]
+      },
+      "n_instances": 40,
+      "n_boot": 2000,
+      "unit": "instance_cluster"
+    },
+    "threshold_confusion": {
+      "human_1_auto_1": 73,
+      "human_1_auto_0": 6,
+      "human_0_auto_0": 71,
+      "human_0_auto_1": 10
+    },
     "by_variant": {
       "direct": {
         "n": 40,
         "human_mean": 0.988,
         "auto_mean": 1.0,
-        "rho_within": NaN
+        "rho_within": null,
+        "mae": 0.013
       },
       "generalized": {
         "n": 40,
         "human_mean": 0.487,
         "auto_mean": 0.406,
-        "rho_within": 0.661
+        "rho_within": 0.661,
+        "mae": 0.244
       },
       "placeholder": {
         "n": 40,
         "human_mean": 0.144,
         "auto_mean": 0.175,
-        "rho_within": 0.784
+        "rho_within": 0.784,
+        "mae": 0.106
       },
       "ldp": {
         "n": 40,
         "human_mean": 0.181,
         "auto_mean": 0.2,
-        "rho_within": 0.626
+        "rho_within": 0.626,
+        "mae": 0.169
       }
     },
     "criterion": "rho>=0.8",
-    "passed": true
+    "passed": true,
+    "note": "Overall rho is driven partly by between-variant mean differences; within-variant correlations and instance-cluster CIs are reported. Four-point rank correlation is descriptive only."
   },
   "annotation": {
     "n": 50,
@@ -48,7 +91,8 @@
     "broad_gold": {
       "kappa_rater1": 0.696,
       "kappa_rater2": 0.696,
-      "y_rate": 0.92
+      "y_rate": 0.92,
+      "status": "post_hoc_construct_aligned_analysis_not_preregistered_pass"
     },
     "item_level": {
       "rater1": {

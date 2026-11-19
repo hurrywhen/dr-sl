@@ -1,0 +1,207 @@
+audit progress 50/800 errors=0
+audit progress 100/800 errors=0
+audit progress 150/800 errors=0
+audit progress 200/800 errors=0
+audit progress 250/800 errors=0
+audit progress 300/800 errors=0
+audit progress 350/800 errors=0
+audit progress 400/800 errors=0
+audit progress 450/800 errors=0
+audit progress 500/800 errors=0
+audit progress 550/800 errors=0
+audit progress 600/800 errors=0
+audit progress 650/800 errors=0
+audit progress 700/800 errors=0
+audit progress 750/800 errors=0
+audit progress 800/800 errors=0
+{
+  "n_tasks": 800,
+  "n_errors": 0,
+  "zero_observation": {
+    "n_instances": 40,
+    "n_attackers": 2,
+    "n_strategies": 2,
+    "n_model_calls": 640,
+    "n_unique_questions": 3888,
+    "observed_hits": 519,
+    "interpretation": "observed hits present",
+    "statistical_guarantee": null
+  },
+  "by_method": {
+    "closed_loop": {
+      "external_L_max": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "zero_observation": {
+        "n_instances": 40,
+        "n_attackers": 2,
+        "n_strategies": 2,
+        "n_model_calls": 160,
+        "n_unique_questions": 972,
+        "observed_hits": 128,
+        "interpretation": "observed hits present",
+        "statistical_guarantee": null
+      },
+      "semantic_judge": {
+        "estimate": 0.3625,
+        "ci95": [
+          0.25,
+          0.475
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "hardline_only": {
+      "external_L_max": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "zero_observation": {
+        "n_instances": 40,
+        "n_attackers": 2,
+        "n_strategies": 2,
+        "n_model_calls": 160,
+        "n_unique_questions": 972,
+        "observed_hits": 128,
+        "interpretation": "observed hits present",
+        "statistical_guarantee": null
+      },
+      "semantic_judge": {
+        "estimate": 0.425,
+        "ci95": [
+          0.3121875,
+          0.55
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "intact_style": {
+      "external_L_max": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.1294345238095238,
+        "ci95": [
+          0.1022596726190476,
+          0.15800967261904758
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "zero_observation": {
+        "n_instances": 40,
+        "n_attackers": 2,
+        "n_strategies": 2,
+        "n_model_calls": 160,
+        "n_unique_questions": 972,
+        "observed_hits": 127,
+        "interpretation": "observed hits present",
+        "statistical_guarantee": null
+      },
+      "semantic_judge": {
+        "estimate": 0.4125,
+        "ci95": [
+          0.3,
+          0.5375
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "prism_random": {
+      "external_L_max": {
+        "estimate": 0.1388095238095238,
+        "ci95": [
+          0.10821428571428571,
+          0.16941369047619043
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.1388095238095238,
+        "ci95": [
+          0.10821428571428571,
+          0.16941369047619043
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "zero_observation": {
+        "n_instances": 40,
+        "n_attackers": 2,
+        "n_strategies": 2,
+        "n_model_calls": 160,
+        "n_unique_questions": 972,
+        "observed_hits": 136,
+        "interpretation": "observed hits present",
+        "statistical_guarantee": null
+      },
+      "semantic_judge": {
+        "estimate": 0.125,
+        "ci95": [
+          0.05,
+          0.2125
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    }
+  },
+  "threshold_confusion": {
+    "local_True_judge_True": 57,
+    "local_True_judge_False": 31,
+    "local_False_judge_True": 20,
+    "local_False_judge_False": 52
+  },
+  "errors": []
+}

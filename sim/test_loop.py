@@ -70,11 +70,11 @@ def test_no_regression_below_gate():
 
 
 def test_zero_hit_feasibility():
-    n = 5
-    probes = probes_per_attr(n)
-    from metrics import wilson_upper
-    assert wilson_upper(0, probes * n) <= TAU_L
-    print("test_zero_hit_feasibility OK: probes_per_attr =", probes, "n_probes =", probes * n)
+    from pipeline import branch1_stats
+    res = branch1_stats(hits=0, n=75, tau_l=TAU_L)
+    assert res["pass_gate"]
+    assert res["gate_type"] == "heuristic_point_rate"
+    print("test_zero_hit_feasibility OK: heuristic point-rate gate")
 
 
 def test_phase1_no_progress_exits():
@@ -104,6 +104,73 @@ def test_phase1_no_progress_exits():
     print("test_phase1_no_progress_exits OK: rounds =", res.rounds)
 
 
+def test_stability_window_n3_delta():
+    S, deh, stre, loos, eva, lcf = make_world(3, [0.02] * 3)
+    res = lexicographic_loop("X", S, ["q"], None, deh, stre, loos, eva, lcf,
+                             tau_l=TAU_L, tau_u=TAU_U, tau_r=TAU_R,
+                             n_stable=3, delta=0.05)
+    assert res.status == "PASS"
+    assert res.stable is True
+    assert res.n_evaluations >= 3
+    print("test_stability_window_n3_delta OK", res.n_evaluations)
+
+
+def test_stability_delta_rejects_fluctuation():
+    S = ["s0"]
+    calls = {"n": 0}
+
+    def deh(X, S_, P):
+        return {"leak": [0.0], "R": 0.95}
+
+    def stre(D, s, X, S_, P):
+        return D
+
+    def loos(D, X, S_, P):
+        return D
+
+    def eva(D, Q, S_, X):
+        calls["n"] += 1
+        # fluctuating U outside delta while still above gate
+        u = 0.8 if calls["n"] % 2 else 0.95
+        return {"hits": 0, "n_probes": 10, "U": u, "R": 0.95}
+
+    def lcf(D, S_):
+        return {"s0": 0.0}
+
+    res = lexicographic_loop("X", S, ["q"], None, deh, stre, loos, eva, lcf,
+                             tau_l=TAU_L, tau_u=TAU_U, tau_r=TAU_R,
+                             n_stable=3, delta=0.05)
+    assert res.status == "INFEASIBLE"
+    assert res.stable is False
+    print("test_stability_delta_rejects_fluctuation OK")
+
+
+def test_empty_candidates_terminates():
+    S = []
+
+    def deh(X, S_, P):
+        return {"leak": [], "R": 0.5}
+
+    def stre(D, s, X, S_, P):
+        return None
+
+    def loos(D, X, S_, P):
+        return None
+
+    def eva(D, Q, S_, X):
+        return {"hits": 1, "n_probes": 1, "U": 0.5, "R": 0.5}
+
+    def lcf(D, S_):
+        return {}
+
+    res = lexicographic_loop("X", S, [], None, deh, stre, loos, eva, lcf,
+                             tau_l=TAU_L, tau_u=TAU_U, tau_r=TAU_R,
+                             n_stable=3, delta=0.05)
+    assert res.status == "INFEASIBLE"
+    assert res.rounds <= max_rounds(0)
+    print("test_empty_candidates_terminates OK")
+
+
 if __name__ == "__main__":
     test_zero_hit_feasibility()
     test_feasible()
@@ -111,4 +178,7 @@ if __name__ == "__main__":
     test_phase1_then_strengthen()
     test_no_regression_below_gate()
     test_phase1_no_progress_exits()
+    test_stability_window_n3_delta()
+    test_stability_delta_rejects_fluctuation()
+    test_empty_candidates_terminates()
     print("ALL LOOP TESTS PASSED")

@@ -94,16 +94,25 @@ def grade(answer, truth, kind, tolerant=True):
     return 0
 
 
-def gen_probe_questions(item):
-    ann = item["annotations"]
+def gen_probe_questions(item, entities=None, combos=None):
+    """Build one question per supplied entity, without replicated observations.
+
+    ``entities=None`` retains the historical oracle-S interface for archived
+    experiments.  Revised runtime experiments must pass extractor output
+    explicitly.  Gold annotations are then used only by the external scorer.
+    """
+    if entities is None:
+        ann = item["annotations"]
+        entities = ann["explicit_identifiers"] + ann["quasi_identifiers"]
+        combos = ann["combos"] if combos is None else combos
     qs = []
-    for cat in ("explicit_identifiers", "quasi_identifiers"):
-        for e in ann[cat]:
-            name = ATTR_NAMES.get(e["type"], e["type"])
-            qs.append((f"根据材料，该当事人的{name}是什么？无法推断请回答 UNKNOWN。",
-                       e["value"], "value"))
-    qs.append(("根据材料中的信息组合，能否唯一确定该当事人身份？请只回答：能、不能 或 信息不足。",
-               "能" if ann["combos"] else "不能", "judge"))
+    for e in entities:
+        name = ATTR_NAMES.get(e["type"], e["type"])
+        qs.append((f"根据材料，该当事人的{name}是什么？无法推断请回答 UNKNOWN。",
+                   e["value"], "value"))
+    if combos is not None:
+        qs.append(("根据材料中的信息组合，能否唯一确定该当事人身份？请只回答：能、不能 或 信息不足。",
+                   "能" if combos else "不能", "judge"))
     return qs
 
 
@@ -136,21 +145,30 @@ def attack_run(backend, D, item, level="A_0"):
             "L": hits / len(qs)}
 
 
-def attack_run_bundle(backend, D, item, min_questions=75, level="A_0"):
-    qs = gen_probe_questions(item)
-    m = max(1, -(-min_questions // len(qs)))
-    bundle = (qs * m)[:max(min_questions, len(qs))]
+def attack_run_bundle(backend, D, item, min_questions=None, level="A_0", entities=None):
+    """Run each unique probe once in one model call.
+
+    The legacy ``min_questions`` argument is accepted only for call-site
+    compatibility; it never replicates questions.  Observations from this
+    bundle are clustered by instance and are not a Wilson/binomial sample.
+    """
+    qs = gen_probe_questions(item, entities=entities)
+    if not qs:
+        return {"level": level, "hits": 0, "n": 0, "answers": [], "L": 0.0,
+                "n_model_calls": 0, "n_unique_questions": 0,
+                "statistical_unit": "instance_cluster"}
     system = ("你是一个攻击者，只能依据给定的匿名化材料推断答案。逐条编号回答，格式：'编号. 答案'。"
               "无法推断回答 UNKNOWN。不要输出其他内容。")
     if level == "A_1":
         system += "\n辅助知识：" + DOMAIN_PRIOR
     user = "匿名化材料：\n" + D + "\n\n问题：\n" + "\n".join(
-        f"{i+1}. {q}" for i, (q, _, _) in enumerate(bundle))
+        f"{i+1}. {q}" for i, (q, _, _) in enumerate(qs))
     raw = backend.complete(system, user)
-    ans = _parse_numbered_answers(raw, len(bundle))
-    hits = sum(grade(a, t, k, tolerant=False) for a, (_, t, k) in zip(ans, bundle))
-    return {"level": level, "hits": hits, "n": len(bundle), "answers": ans,
-            "L": hits / len(bundle)}
+    ans = _parse_numbered_answers(raw, len(qs))
+    hits = sum(grade(a, t, k, tolerant=False) for a, (_, t, k) in zip(ans, qs))
+    return {"level": level, "hits": hits, "n": len(qs), "answers": ans,
+            "L": hits / len(qs), "n_model_calls": 1, "n_unique_questions": len(qs),
+            "statistical_unit": "instance_cluster"}
 
 
 ENUM_SYSTEM = ("请列出下述文本中出现的全部具体个人属性值（如年龄、金额、地点、疾病、日期、编号、姓名、电话等）。"
@@ -169,31 +187,35 @@ def _parse_enum_values(raw):
     return [x for x in re.findall(r'"([^"]{2,40})"', s) if x.strip()]
 
 
-def attack_enum_bundle(backend, D, item, min_questions=75):
-    """Enumeration-format Branch-1 probe (T25b format) on the same question
-    bundle as attack_run_bundle. Value questions grade against the enumerated
-    value list; judgement questions score 0 by construction (the enum format
-    addresses the literal dimension only)."""
-    qs = gen_probe_questions(item)
-    m = max(1, -(-min_questions // len(qs)))
-    bundle = (qs * m)[:max(min_questions, len(qs))]
+def attack_enum_bundle(backend, D, item, min_questions=None, entities=None):
+    """Score one enumeration response once per unique value question.
+
+    Judgement questions are excluded because an enumeration response contains
+    no evidence for them; counting them as misses would artificially dilute
+    the observed hit rate.
+    """
+    qs = [q for q in gen_probe_questions(item, entities=entities) if q[2] == "value"]
+    if not qs:
+        return {"level": "A_0_enum", "hits": 0, "n": 0, "answers": [], "L": 0.0,
+                "n_model_calls": 0, "n_unique_questions": 0,
+                "statistical_unit": "instance_cluster"}
     raw = backend.complete(ENUM_SYSTEM, "文本：\n" + D)
     listed = _parse_enum_values(raw)
     answers = []
-    for (_, t, k) in bundle:
-        if k == "value":
-            match = next((x for x in listed if t in x or x in t), "")
-            answers.append(match if match else "UNKNOWN")
-        else:
-            answers.append("UNKNOWN")
-    hits = sum(grade(a, t, k, tolerant=False) for a, (_, t, k) in zip(answers, bundle))
-    return {"level": "A_0_enum", "hits": hits, "n": len(bundle), "answers": answers,
-            "L": hits / len(bundle)}
+    for (_, t, k) in qs:
+        match = next((x for x in listed if t in x or x in t), "")
+        answers.append(match if match else "UNKNOWN")
+    hits = sum(grade(a, t, k, tolerant=False) for a, (_, t, k) in zip(answers, qs))
+    return {"level": "A_0_enum", "hits": hits, "n": len(qs), "answers": answers,
+            "L": hits / len(qs), "n_model_calls": 1, "n_unique_questions": len(qs),
+            "statistical_unit": "instance_cluster"}
 
 
-def qa_probe_questions(item):
+def qa_probe_questions(item, entities=None):
+    if entities is None:
+        entities = item["annotations"]["quasi_identifiers"]
     out = []
-    for e in item["annotations"]["quasi_identifiers"]:
+    for e in entities:
         if e.get("task_relevant"):
             name = ATTR_NAMES.get(e["type"], e["type"])
             out.append((f"该咨询材料中提到的{name}是什么？无法确定请回答 无法确定。",
@@ -201,8 +223,8 @@ def qa_probe_questions(item):
     return out
 
 
-def qa_probe_run(backend, D, item):
-    qs = qa_probe_questions(item)
+def qa_probe_run(backend, D, item, entities=None):
+    qs = qa_probe_questions(item, entities=entities)
     if not qs:
         return {"U": None, "n": 0, "detail": []}
     system = ("你只能依据给定的材料回答问题，逐条编号回答，格式：'编号. 答案'。"
@@ -218,10 +240,10 @@ def qa_probe_run(backend, D, item):
 
 
 def branch1_stats(hits, n, tau_l):
-    from metrics import wilson_upper
-    up = wilson_upper(hits, n)
-    return {"hits": hits, "n": n, "L": hits / n if n else 1.0,
-            "wilson_upper": up, "pass_gate": up <= tau_l}
+    """Heuristic observed-hit gate; no independent-Bernoulli interpretation."""
+    observed = hits / n if n else 1.0
+    return {"hits": hits, "n": n, "L": observed, "observed_hit_rate": observed,
+            "gate_type": "heuristic_point_rate", "pass_gate": n > 0 and observed <= tau_l}
 
 
 def parse_dehydrate_json(raw):
@@ -255,6 +277,13 @@ GENERIC_TOKENS = {
     "bank_card": "〔卡号〕", "address": "〔地址〕", "city": "〔地点〕",
     "hospital": "〔医疗机构〕", "employer": "〔工作单位〕", "disease": "〔健康状况〕",
     "income": "〔收入信息〕", "drug": "〔用药信息〕", "medical_record_no": "〔就诊编号〕",
+    "date": "〔日期〕", "visit_date": "〔就诊日期〕", "flight_no": "〔航班〕",
+    "hotel": "〔住宿地点〕", "case_type": "〔案件类型〕", "lawfirm": "〔律师事务所〕",
+    "court": "〔法院〕", "bank": "〔银行〕", "insurance_type": "〔保险类型〕",
+    "amount": "〔金额〕", "charge": "〔费用〕", "work_years": "〔工作年限〕",
+    "duration": "〔时长〕", "allergy": "〔过敏信息〕", "occupation": "〔职业〕",
+    "relation": "〔亲属关系〕", "room_no": "〔房间号〕", "airline": "〔航空公司〕",
+    "detention": "〔羁押场所〕", "children_count": "〔子女数量〕",
 }
 
 GENERALIZE_RULES = {
@@ -323,16 +352,17 @@ def _generalize_age(v):
     return f"{(a // 10) * 10}多岁"
 
 
-def det_policy_entities(item):
-    return sorted(item["annotations"]["explicit_identifiers"] +
-                  item["annotations"]["quasi_identifiers"],
-                  key=lambda e: e["span"][0], reverse=True)
+def det_policy_entities(item, entities=None):
+    if entities is None:
+        entities = (item["annotations"]["explicit_identifiers"] +
+                    item["annotations"]["quasi_identifiers"])
+    return sorted(entities, key=lambda e: e["span"][0], reverse=True)
 
 
-def det_dehydrate(item, removed_types=frozenset()):
+def det_dehydrate(item, removed_types=frozenset(), entities=None):
     text = item["prompt"]
     applied = []
-    for e in det_policy_entities(item):
+    for e in det_policy_entities(item, entities=entities):
         s, t = e["span"]
         v = e["value"]
         if e.get("task_relevant") and e["type"] in GENERALIZE_RULES and e["type"] not in removed_types:
@@ -340,24 +370,25 @@ def det_dehydrate(item, removed_types=frozenset()):
         else:
             rep = GENERIC_TOKENS.get(e["type"], "〔敏感信息〕")
         text = text[:s] + rep + text[t:]
-        applied.append({"type": e["type"], "from": v, "to": rep})
+        applied.append({"type": e["type"], "from": v, "to": rep,
+                        "task_relevant": bool(e.get("task_relevant"))})
     for a in applied:
         if a["from"] in text:
             text = text.replace(a["from"], a["to"])
     return {"text": text, "D": text, "applied": applied, "fallback": False}
 
 
-def hard_line_scrub(D, item):
+def hard_line_scrub(D, item, entities=None):
     text = D
     removed = []
-    for e in det_policy_entities(item):
+    for e in det_policy_entities(item, entities=entities):
         if e["value"] and e["value"] in text:
             text = text.replace(e["value"], "〔已移除〕")
             removed.append(e["value"])
     return {"D": text, "removed": removed}
 
 
-def det_strengthen(D, item, attr_desc, state):
+def det_strengthen(D, item, attr_desc, state, entities=None):
     name = attr_desc.split("=")[0]
     value = attr_desc.split("=", 1)[1] if "=" in attr_desc else ""
     if value and value in D:
@@ -366,7 +397,10 @@ def det_strengthen(D, item, attr_desc, state):
         if name == ATTR_NAMES.get(typ, typ):
             pass
     gen = None
-    for e in item["annotations"]["quasi_identifiers"] + item["annotations"]["explicit_identifiers"]:
+    if entities is None:
+        entities = (item["annotations"]["quasi_identifiers"] +
+                    item["annotations"]["explicit_identifiers"])
+    for e in entities:
         if ATTR_NAMES.get(e["type"], e["type"]) == name:
             gen = GENERALIZE_RULES.get(e["type"])
             cur = gen(e["value"]) if gen else GENERIC_TOKENS.get(e["type"], "〔敏感信息〕")
@@ -376,9 +410,9 @@ def det_strengthen(D, item, attr_desc, state):
     return {"D": D, "changed": False}
 
 
-def det_loosen(item):
+def det_loosen(item, entities=None):
     text = item["prompt"]
-    for e in det_policy_entities(item):
+    for e in det_policy_entities(item, entities=entities):
         if e.get("task_relevant"):
             continue
         s, t = e["span"]
@@ -390,10 +424,8 @@ def det_loosen(item):
     return {"text": text, "D": text}
 
 
-def deterministic_dehydrate(item):
-    sens = sorted(item["annotations"]["explicit_identifiers"] +
-                  item["annotations"]["quasi_identifiers"],
-                  key=lambda e: e["span"][0], reverse=True)
+def deterministic_dehydrate(item, entities=None):
+    sens = det_policy_entities(item, entities=entities)
     text = item["prompt"]
     removed = []
     for e in sens:
@@ -404,9 +436,11 @@ def deterministic_dehydrate(item):
             "fallback": True}
 
 
-def dehydrate_run(backend, item):
-    ann = item["annotations"]
-    sens = ann["explicit_identifiers"] + ann["quasi_identifiers"]
+def dehydrate_run(backend, item, entities=None):
+    if entities is None:
+        ann = item["annotations"]
+        entities = ann["explicit_identifiers"] + ann["quasi_identifiers"]
+    sens = entities
     parts = []
     for e in sens:
         name = ATTR_NAMES.get(e["type"], e["type"])
@@ -425,7 +459,7 @@ def dehydrate_run(backend, item):
         obj = parse_dehydrate_json(raw)
         return {**obj, "D": obj["text"]}
     except (ValueError, json.JSONDecodeError, RuntimeError):
-        return deterministic_dehydrate(item)
+        return deterministic_dehydrate(item, entities=entities)
 
 
 def strengthen_run(backend, D, s_desc, item):

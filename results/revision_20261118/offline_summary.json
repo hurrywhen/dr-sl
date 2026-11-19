@@ -1,0 +1,1677 @@
+{
+  "methods": {
+    "holdout80/runtime/closed_loop": {
+      "n": 80,
+      "release_rate": 0.575,
+      "release_wilson95": [
+        0.4656928984656886,
+        0.6774343821039822
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.54375,
+        "ci95": [
+          0.4375,
+          0.64375
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.1211309523809524,
+        "ci95": [
+          0.10113095238095238,
+          0.1407752976190476
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8580357142857142,
+        "ci95": [
+          0.8363095238095237,
+          0.879111607142857
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.3,
+        "ci95": [
+          0.2,
+          0.4
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 60,
+      "gold_literal_hit_instances": 55
+    },
+    "holdout80/runtime/generalization_only": {
+      "n": 80,
+      "release_rate": 0.575,
+      "release_wilson95": [
+        0.4656928984656886,
+        0.6774343821039822
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6322916666666667,
+        "ci95": [
+          0.5442317708333333,
+          0.7109635416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.1211309523809524,
+        "ci95": [
+          0.10113095238095238,
+          0.1407752976190476
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8580357142857142,
+        "ci95": [
+          0.8363095238095237,
+          0.879111607142857
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.3,
+        "ci95": [
+          0.2,
+          0.4
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 60,
+      "gold_literal_hit_instances": 55
+    },
+    "holdout80/runtime/hardline_only": {
+      "n": 80,
+      "release_rate": 0.5125,
+      "release_wilson95": [
+        0.40493334216542254,
+        0.6189212045961893
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.5125,
+        "ci95": [
+          0.4,
+          0.6125
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.1211309523809524,
+        "ci95": [
+          0.10113095238095238,
+          0.1407752976190476
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8580357142857142,
+        "ci95": [
+          0.8363095238095237,
+          0.879111607142857
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.3,
+        "ci95": [
+          0.2,
+          0.4
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 60,
+      "gold_literal_hit_instances": 55
+    },
+    "holdout80/runtime/intact_style": {
+      "n": 80,
+      "release_rate": 0.575,
+      "release_wilson95": [
+        0.4656928984656886,
+        0.6774343821039822
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6322916666666667,
+        "ci95": [
+          0.5442317708333333,
+          0.7109635416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.1211309523809524,
+        "ci95": [
+          0.10113095238095238,
+          0.1407752976190476
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8580357142857142,
+        "ci95": [
+          0.8363095238095237,
+          0.879111607142857
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.3,
+        "ci95": [
+          0.2,
+          0.4
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 60,
+      "gold_literal_hit_instances": 55
+    },
+    "holdout80/runtime/prism_random": {
+      "n": 80,
+      "release_rate": 0.5125,
+      "release_wilson95": [
+        0.40493334216542254,
+        0.6189212045961893
+      ],
+      "L_local": {
+        "estimate": 0.0125,
+        "ci95": [
+          0.0020833333333333333,
+          0.027135416666666388
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.5375,
+        "ci95": [
+          0.4291666666666666,
+          0.6376041666666661
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.13154761904761905,
+        "ci95": [
+          0.10856696428571426,
+          0.15541666666666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8580357142857142,
+        "ci95": [
+          0.8363095238095237,
+          0.879111607142857
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.3,
+        "ci95": [
+          0.2,
+          0.4
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 60,
+      "gold_literal_hit_instances": 55
+    },
+    "mixed120/oracle_gold/closed_loop": {
+      "n": 120,
+      "release_rate": 0.8333333333333334,
+      "release_wilson95": [
+        0.7565471860673773,
+        0.8894400363201539
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6,
+        "ci95": [
+          0.5333333333333333,
+          0.6625
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 0
+    },
+    "mixed120/oracle_gold/generalization_only": {
+      "n": 120,
+      "release_rate": 0.8333333333333334,
+      "release_wilson95": [
+        0.7565471860673773,
+        0.8894400363201539
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6,
+        "ci95": [
+          0.5333333333333333,
+          0.6625
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 0
+    },
+    "mixed120/oracle_gold/hardline_only": {
+      "n": 120,
+      "release_rate": 0.36666666666666664,
+      "release_wilson95": [
+        0.2858293519000576,
+        0.45577575914493
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.36666666666666664,
+        "ci95": [
+          0.2833333333333333,
+          0.4502083333333322
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 0
+    },
+    "mixed120/oracle_gold/intact_style": {
+      "n": 120,
+      "release_rate": 0.8333333333333334,
+      "release_wilson95": [
+        0.7565471860673773,
+        0.8894400363201539
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6,
+        "ci95": [
+          0.5333333333333333,
+          0.6625
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 0
+    },
+    "mixed120/oracle_gold/prism_random": {
+      "n": 120,
+      "release_rate": 0.3416666666666667,
+      "release_wilson95": [
+        0.26290438368564517,
+        0.4302516856802777
+      ],
+      "L_local": {
+        "estimate": 0.028333333333333332,
+        "ci95": [
+          0.01625,
+          0.042083333333333334
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.4125,
+        "ci95": [
+          0.32916666666666666,
+          0.5041666666666667
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.028333333333333332,
+        "ci95": [
+          0.01625,
+          0.042083333333333334
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 15
+    },
+    "mixed120/runtime/closed_loop": {
+      "n": 120,
+      "release_rate": 0.8083333333333333,
+      "release_wilson95": [
+        0.7287884399579756,
+        0.8687497407504907
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6999622306362239,
+        "ci95": [
+          0.6285027709679153,
+          0.7649984504893679
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.14624999999999996,
+        "ci95": [
+          0.12625,
+          0.16541666666666668
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8095833333333334,
+        "ci95": [
+          0.7804062500000001,
+          0.8383333333333333
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.325,
+        "ci95": [
+          0.225,
+          0.43333333333333335
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 80,
+      "gold_literal_hit_instances": 79
+    },
+    "mixed120/runtime/generalization_only": {
+      "n": 120,
+      "release_rate": 0.8083333333333333,
+      "release_wilson95": [
+        0.7287884399579756,
+        0.8687497407504907
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6999622306362239,
+        "ci95": [
+          0.6285027709679153,
+          0.7649984504893679
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.14624999999999996,
+        "ci95": [
+          0.12625,
+          0.16541666666666668
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8095833333333334,
+        "ci95": [
+          0.7804062500000001,
+          0.8383333333333333
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.325,
+        "ci95": [
+          0.225,
+          0.43333333333333335
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 80,
+      "gold_literal_hit_instances": 79
+    },
+    "mixed120/runtime/hardline_only": {
+      "n": 120,
+      "release_rate": 0.48333333333333334,
+      "release_wilson95": [
+        0.3958364430105443,
+        0.5718641958700792
+      ],
+      "L_local": {
+        "estimate": 0.02666666666666667,
+        "ci95": [
+          0.015000000000000001,
+          0.03833333333333334
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6166666666666667,
+        "ci95": [
+          0.5333333333333333,
+          0.7
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.14624999999999996,
+        "ci95": [
+          0.12625,
+          0.16541666666666668
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8095833333333334,
+        "ci95": [
+          0.7804062500000001,
+          0.8383333333333333
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.325,
+        "ci95": [
+          0.225,
+          0.43333333333333335
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 80,
+      "gold_literal_hit_instances": 79
+    },
+    "mixed120/runtime/intact_style": {
+      "n": 120,
+      "release_rate": 0.8083333333333333,
+      "release_wilson95": [
+        0.7287884399579756,
+        0.8687497407504907
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6999622306362239,
+        "ci95": [
+          0.6285027709679153,
+          0.7649984504893679
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.14624999999999996,
+        "ci95": [
+          0.12625,
+          0.16541666666666668
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8095833333333334,
+        "ci95": [
+          0.7804062500000001,
+          0.8383333333333333
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.325,
+        "ci95": [
+          0.225,
+          0.43333333333333335
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 80,
+      "gold_literal_hit_instances": 79
+    },
+    "mixed120/runtime/prism_random": {
+      "n": 120,
+      "release_rate": 0.5833333333333334,
+      "release_wilson95": [
+        0.49388032700164236,
+        0.6676164785952404
+      ],
+      "L_local": {
+        "estimate": 0.017083333333333332,
+        "ci95": [
+          0.007083333333333334,
+          0.028333333333333332
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6207955639695572,
+        "ci95": [
+          0.5383844724332344,
+          0.7018836179353006
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.16291666666666668,
+        "ci95": [
+          0.14208333333333334,
+          0.18208333333333335
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8095833333333334,
+        "ci95": [
+          0.7804062500000001,
+          0.8383333333333333
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.325,
+        "ci95": [
+          0.225,
+          0.43333333333333335
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 80,
+      "gold_literal_hit_instances": 86
+    },
+    "test160/oracle_gold/closed_loop": {
+      "n": 160,
+      "release_rate": 0.0,
+      "release_wilson95": [
+        0.0,
+        0.02344619517150519
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 0
+    },
+    "test160/oracle_gold/generalization_only": {
+      "n": 160,
+      "release_rate": 0.0,
+      "release_wilson95": [
+        0.0,
+        0.02344619517150519
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.1834375,
+        "ci95": [
+          0.16494661458333335,
+          0.20250260416666663
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 0
+    },
+    "test160/oracle_gold/hardline_only": {
+      "n": 160,
+      "release_rate": 0.0,
+      "release_wilson95": [
+        0.0,
+        0.02344619517150519
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 0
+    },
+    "test160/oracle_gold/intact_style": {
+      "n": 160,
+      "release_rate": 0.0,
+      "release_wilson95": [
+        0.0,
+        0.02344619517150519
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.1834375,
+        "ci95": [
+          0.16494661458333335,
+          0.20250260416666663
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 0
+    },
+    "test160/oracle_gold/prism_random": {
+      "n": 160,
+      "release_rate": 0.0,
+      "release_wilson95": [
+        0.0,
+        0.02344619517150519
+      ],
+      "L_local": {
+        "estimate": 0.014166666666666666,
+        "ci95": [
+          0.00625,
+          0.023651041666666636
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.015729166666666666,
+        "ci95": [
+          0.006666666666666666,
+          0.026875
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.014166666666666666,
+        "ci95": [
+          0.00625,
+          0.023651041666666636
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 0,
+      "gold_literal_hit_instances": 10
+    },
+    "test160/runtime/closed_loop": {
+      "n": 160,
+      "release_rate": 0.19375,
+      "release_wilson95": [
+        0.13998689693266386,
+        0.2618738976098831
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.096875,
+        "ci95": [
+          0.065625,
+          0.128125
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.11482142857142859,
+        "ci95": [
+          0.0984375,
+          0.13049107142857141
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8851785714285715,
+        "ci95": [
+          0.8695089285714286,
+          0.9015625
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.05625,
+        "ci95": [
+          0.025,
+          0.09375
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 90,
+      "gold_literal_hit_instances": 90
+    },
+    "test160/runtime/generalization_only": {
+      "n": 160,
+      "release_rate": 0.19375,
+      "release_wilson95": [
+        0.13998689693266386,
+        0.2618738976098831
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.21953125,
+        "ci95": [
+          0.1911458333333333,
+          0.24818359374999993
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.11482142857142859,
+        "ci95": [
+          0.0984375,
+          0.13049107142857141
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8851785714285715,
+        "ci95": [
+          0.8695089285714286,
+          0.9015625
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.05625,
+        "ci95": [
+          0.025,
+          0.09375
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 90,
+      "gold_literal_hit_instances": 90
+    },
+    "test160/runtime/hardline_only": {
+      "n": 160,
+      "release_rate": 0.0,
+      "release_wilson95": [
+        0.0,
+        0.02344619517150519
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.11482142857142859,
+        "ci95": [
+          0.0984375,
+          0.13049107142857141
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8851785714285715,
+        "ci95": [
+          0.8695089285714286,
+          0.9015625
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.05625,
+        "ci95": [
+          0.025,
+          0.09375
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 90,
+      "gold_literal_hit_instances": 90
+    },
+    "test160/runtime/intact_style": {
+      "n": 160,
+      "release_rate": 0.19375,
+      "release_wilson95": [
+        0.13998689693266386,
+        0.2618738976098831
+      ],
+      "L_local": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.21953125,
+        "ci95": [
+          0.1911458333333333,
+          0.24818359374999993
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.11482142857142859,
+        "ci95": [
+          0.0984375,
+          0.13049107142857141
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8851785714285715,
+        "ci95": [
+          0.8695089285714286,
+          0.9015625
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.05625,
+        "ci95": [
+          0.025,
+          0.09375
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 90,
+      "gold_literal_hit_instances": 90
+    },
+    "test160/runtime/prism_random": {
+      "n": 160,
+      "release_rate": 0.0,
+      "release_wilson95": [
+        0.0,
+        0.02344619517150519
+      ],
+      "L_local": {
+        "estimate": 0.009375,
+        "ci95": [
+          0.0026041666666666665,
+          0.017200520833333264
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.015625,
+        "ci95": [
+          0.003645833333333333,
+          0.03229166666666666
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L": {
+        "estimate": 0.12242559523809522,
+        "ci95": [
+          0.1051186755952381,
+          0.14031287202380952
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8851785714285715,
+        "ci95": [
+          0.8695089285714286,
+          0.9015625
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "over_extraction": {
+        "estimate": 0.05625,
+        "ci95": [
+          0.025,
+          0.09375
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "missed_gold_instances": 90,
+      "gold_literal_hit_instances": 91
+    }
+  },
+  "paired": {
+    "holdout80/runtime/closed_loop_minus_generalization": {
+      "release_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_delta": {
+        "estimate": -0.08854166666666666,
+        "ci95": [
+          -0.1171875,
+          -0.06145833333333332
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "test160/runtime/closed_loop_minus_generalization": {
+      "release_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_delta": {
+        "estimate": -0.12265625,
+        "ci95": [
+          -0.14244791666666665,
+          -0.10208333333333333
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "test160/oracle_gold/closed_loop_minus_generalization": {
+      "release_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_delta": {
+        "estimate": -0.1834375,
+        "ci95": [
+          -0.20250260416666666,
+          -0.16494661458333335
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 160,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "mixed120/runtime/closed_loop_minus_generalization": {
+      "release_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "mixed120/oracle_gold/closed_loop_minus_generalization": {
+      "release_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 120,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    }
+  },
+  "freeze_manifest": {
+    "revision_protocol.md": "206d91d8df2aa21bfff17886677a9dbc9a07a9bfb30a2781b4f3b942ad6779bd",
+    "dataset/generate_holdout.py": "be3f7ec5a1f50f61ac1f8ec4f31c4604b16c5a92877c795598592f28eccf1899",
+    "sim/runtime.py": "7632bd4d6f3eaa2ff90188b2c7418dad4e8d8d16e239eb393d0dcdd17e9c2b87",
+    "sim/runtime_extractor.py": "d20d9641e3feb7f21b086dbb7d1b0d531906624fa30b3a399ecfe2ee8da46296",
+    "sim/revision_stats.py": "2d9d4624a7af992f69d47fd09c5befe0227bc042165a1413cdddba9fa88b5808",
+    "sim/revision_experiment.py": "8acc29f8597ce24ad645a133cbfab58e77c7f965d5fa2c6b4ef5d755e96c8929",
+    "sim/loop.py": "d916839843991a5d984ffaf84833fc16aac66fc6029fe6af883f59f0b45e28b7",
+    "sim/pipeline.py": "584649ae205ff5fad3c1778a4089c55efc31dac012f91fdaacbbb38c4a5e5fdc"
+  },
+  "scope": "deterministic local runtime-S track; no neural local-LLM rerun"
+}

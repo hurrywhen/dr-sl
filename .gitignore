@@ -5,6 +5,8 @@ submission_conference/main.aux
 submission_conference/main.log
 submission_journal/main.aux
 submission_journal/main.log
+submission_journal/main.out
+submission_conference/main.out
 __pycache__/
 *.pyc
 dataset/data_raw/

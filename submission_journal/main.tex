@@ -1,639 +1,299 @@
 \documentclass[journal]{IEEEtran}
-\usepackage{cite}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{array}
-\usepackage{url}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{verbatim}
 \usepackage[ruled,linesnumbered]{algorithm2e}
-\def\UrlFont{\rmfamily}
+\usepackage{iftex}
+\ifxetex
+  \usepackage{xeCJK}
+  \setCJKmainfont{FandolSong-Regular.otf}
+\fi
+
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \newtheorem{definition}{Definition}
 \newtheorem{hypothesis}{Hypothesis}
+
 \DeclareMathOperator*{\argmax}{arg\,max}
-\hyphenation{Puf-fer-fish de-hy-dra-tion re-hy-dra-tion}
+
+\title{Reversibility-Verified De-identification for Cloud-Local LLM Inference:\\
+A Runtime-Sensitive-Set Release Chain with Layered Assurance (DR-SL)}
+\author{Wen~Hu, Ya~Yu, and Xutong~Wang
+\thanks{W. Hu is with the College of Electronic and Information Engineering, Nanjing University of Aeronautics and Astronautics, Nanjing, China, and with Jiangsu Yunhefeng Intelligent Technology Co., Ltd., Jiangsu, China (e-mail: huwen@nuaa.edu.cn). Y. Yu and X. Wang are with the College of Electronic and Information Engineering, Nanjing University of Aeronautics and Astronautics, Nanjing, China (e-mail: 15949116139@163.com; wsgxt@outlook.com). Corresponding author: Y. Yu.}
+\thanks{A condensed conference version uses author order Y. Yu, W. Hu, X. Wang; the difference is disclosed in the submission declarations. Code and synthetic artifacts are public at \texttt{https://github.com/hurrywhen/dr-sl} and \texttt{https://gitee.com/jiangsu-yunhefeng-intelligent\_0/dr-sl}.}
+\thanks{This revision uses fully synthetic data and co-author scoring of synthetic artifacts. Funding, ethics-review status, and venue-specific declarations must be finalized by the authors before submission.}}
+\markboth{Manuscript under review}{Hu \MakeLowercase{\textit{et al.}}: Runtime-Sensitive-Set Release Chain for Cloud-Local LLM Inference}
 
 \begin{document}
-
-\title{Reversibility-Verified De-identification for Cloud-Local LLM Inference: A Locally Certified Dehydrate-Rehydrate Loop with Layered Assurance (DR-SL)}
-
-\author{Wen~Hu, Ya~Yu, and Xutong~Wang
-\thanks{W. Hu is with the College of Electronic and Information Engineering, Nanjing University of Aeronautics and Astronautics, Nanjing, China, and with Jiangsu Yunhefeng Intelligent Technology Co., Ltd., Jiangsu, China (e-mail: huwen@nuaa.edu.cn). Y. Yu and X. Wang are with the College of Electronic and Information Engineering, Nanjing University of Aeronautics and Astronautics, Nanjing, China (e-mail: 15949116139@163.com; wsgxt@outlook.com). Corresponding author: Y. Yu (e-mail: 15949116139@163.com).}
-\thanks{A preprint of this work is available on arXiv (identifier to be inserted upon assignment). A condensed conference version of selected results, with author order Y. Yu, W. Hu, and X. Wang reflecting the contribution division of that manuscript, has been accepted at [CONFERENCE NAME --- to be inserted]; this manuscript extends and cites it, and the author-order difference between the two versions is disclosed in the submission declarations. Code, synthetic datasets, the pre-registered experimental protocol with deviation log, and the human-study packages are public at \texttt{https://\allowbreak gitee.com/\allowbreak jiangsu-yunhefeng-intelligent\_0/\allowbreak dr-sl} (code MIT; datasets CC-BY-4.0).}
-\thanks{This work was supported by [funding statement to be completed before submission].}}
-
-\markboth{Manuscript under review}{Hu \MakeLowercase{\textit{et al.}}: Reversibility-Verified De-identification for Cloud-Local LLM Inference (DR-SL)}
-
 \maketitle
 
 \begin{abstract}
-Cloud-local LLM inference must keep sensitive user data on-device while exploiting cloud-grade reasoning, yet existing sanitization approaches---placeholder substitution, differential-privacy perturbation, and skill distillation---lack a release decision that is simultaneously safe and utility-preserving. We propose DR-SL (Dehydrate-Rehydrate with Self-Learning loop), which formalizes de-identification completeness as two measurable conditions: de-identification sufficiency under Pufferfish semantics, and task-information preservation via QA probes. A fully local two-branch verifier iterates dehydration under a lexicographic gate with guaranteed termination, backed by a deterministic hard line, an external strong-attacker re-test, and human fallback. We prove Fano-type lower bounds, a Pufferfish witness, and a rate-privacy feasibility criterion, and state their scope plainly: the bounds certify leakage, never safety, and are near-vacuous at our operating point, so release safety rests on empirical calibration, the hard line, and human review. On a worst-case fully task-coupled benchmark the loop reduces leakage $0.457\to0.304$ ($p\approx0$) and the release chain delivers 0.000 literal leakage at egress (160 instances, two strong attackers), the system degrading to certification-and-routing exactly as the feasibility criterion predicts. On a mixed-coupling benchmark the same safe point releases 67.5\% of instances automatically at zero measured leakage, Pareto-dominating placeholder and selective-LDP corners under an identical release rule. Two human studies anchor the semantic utility metric (Spearman $\rho=0.839$) and the annotation gold (type-level recall $\ge0.987$). The exploratory self-learning hypothesis was not supported and is reported as such. All theoretical bounds pass executable numerical verification.
-\end{abstract}
+Cloud-local LLM inference must keep sensitive user data on-device while exploiting cloud-grade reasoning. We study DR-SL, a release chain that combines runtime sensitive-set extraction, truthful generalization, local attack/utility checks, deterministic all-occurrence scrubbing, and human fallback. This revision corrects several overclaims in earlier versions: repeated probe copies are not independent Bernoulli trials; gold annotations are not a runtime sensitive set; reference-based online semantic judges are offline criteria, not local release inputs; and external re-testing is a controlled disclosure, not a pre-egress guarantee. We remove an invalid Fano threshold corollary, keep information-theoretic feasibility statements in mutual-information units, and implement the declared stability window. On a frozen independent-template holdout of 80 synthetic instances, a fully local deterministic runtime-S track releases 57.5\% of instances under a heuristic local gate, but external gold-literal auditing still finds residual literal exposure (mean gold hit rate 0.121) because runtime extraction recall is 0.858. A controlled-disclosure LLM audit on a 40-instance subset confirms residual hits (external max hit rate 0.130) and low semantic utility (0.363); the local utility surrogate correlates only weakly with the offline judge ($\rho=0.326$). Thus local release is not evidence of zero egress leakage. Oracle-S experiments are reported separately as upper-bound references. Human-study reanalysis shows overall utility correlation $\rho=0.839$ but substantially lower within-operating-point correlations, and the original combination-risk annotation criterion failed ($\kappa=-0.083$); a construct-aligned $\kappa=0.696$ is post hoc. Self-learning remains exploratory: its preregistered efficiency hypothesis was not supported. The contribution is therefore an auditable cloud-local release workflow and a clear account of its failure modes, not a certified zero-leakage or fully automatic system.
 
-\begin{IEEEkeywords}
-sensitive-information isolation, cloud-local inference, dehydrate-rehydrate, reversibility verification, self-learning, Pufferfish privacy, maximal leakage, prompt optimization
-\end{IEEEkeywords}
+\medskip
+\noindent\textbf{Keywords:} sensitive-information isolation; cloud-local inference; runtime sensitive set; release decision; truthful generalization; Pufferfish privacy; controlled-disclosure audit
+\end{abstract}
 
 \section{Introduction}
 
-\subsection{Background and Motivation}
+Cloud models offer stronger reasoning than on-device small models, but forwarding user requests exposes sensitive data. Cloud-local systems seek both capabilities under the constraint that cloud-bound requests should exclude personally identifiable information (PII)~\cite{hao2024hybrid,jin2025cecollm,li2025collab,siyan2025papillon,das2025security,lukas2023pii}. The difficulty is not only removing names or ID numbers: quasi-identifier combinations can identify a person, while deleting task-critical context can make the cloud response useless.
 
-A fundamental security tension exists between the reasoning capability of large language models (LLMs) and their deployment paradigms. Cloud models offer stronger reasoning, planning, and tool use, but user requests must leave the local device, exposing sensitive data to interception, retention, and misuse by the service provider; local small models (SLMs) protect data on-device but reason weakly. Cloud-local LLM inference systems~\cite{hao2024hybrid,jin2025cecollm,li2025collab,siyan2025papillon} seek both cloud-grade reasoning and on-device data protection, under the core constraint that cloud-bound requests must exclude personally identifiable information (PII)~\cite{das2025security,lukas2023pii}. Yet the question ``how to guarantee the cloud receives only non-sensitive content'' still lacks a decision mechanism that is both safe and practical: a lax decision leaks; a strict one strips task semantics and degrades reasoning quality.
+This paper revises DR-SL around a narrower, evidence-supported claim: \emph{an auditable local release chain can combine runtime sensitive-set extraction, truthful generalization, attack/utility checks, deterministic scrubbing, and human fallback, but its safety is conditional on extraction coverage, attacker class, and utility calibration}. We do not claim statistical zero leakage, fully automatic release, or that self-learning is the source of the final safe operating point.
 
-The problem is acute in scenarios such as medical consultation and financial services. A user typing ``I am 67, had a stent procedure in the cardiology department of XX Hospital three months ago, and take aspirin daily; I would like advice on post-operative exercise'' is uniquely identifiable from the combination of age, hospital, surgical history, and medication even without a name or ID number; forwarding it constitutes quasi-identifier-level leakage~\cite{sweeney2002k}, while crudely deleting all details leaves the cloud unable to give useful advice.
+\subsection{Corrections relative to earlier versions}
 
-\subsection{Three Defects of Existing Approaches}
-
-Existing methods fall into three classes. \emph{Entity-level placeholder substitution}~\cite{presidio,rehydra,zeng2025privacyrestore} (e.g., Rehydra, Presidio, PrivacyRestore) replaces declared identifiers and restores them later: deterministic and auditable, but blind to semantic/quasi-identifier leakage, destructive of task-critical context, and dependent on local mapping tables that fail for semantically equivalent but literally different content. \emph{Differential-privacy perturbation}~\cite{mai2023split,shi2022selective,duchi2013local}, including text-level DP rewriting (SANTEXT~\cite{yue2021santext}), protects by injected noise that necessarily harms semantic coherence, with an inherent privacy-utility trade-off. \emph{Skill distillation} (P2Skill)~\cite{ryu2026p2skill} has a local SLM perform decomposition, routing, paraphrasing, and reconstruction while a cloud model guides skill refinement; it is closest to our problem but has two gaps: (i) \emph{cloud dependence during refinement}---its refinement loop's reference branch ``answers the original prompt directly'' and its evaluator scores triples containing the PII-bearing original input (\cite{ryu2026p2skill}, \S3.3, steps 2--3), and its refinement corpus mixes in PII samples (\S4.1), so PII-bearing refinement data must leave the device before refinement completes (in fairness, its \emph{deployment}-phase egress passes a deterministic matcher and its supervisor sees only aggregate statistics); (ii) \emph{coverage and decision gaps}---the matcher covers only declared identifiers, missing semantic leakage and over-redaction (\S4.4 attributes residual leakage to missed detections at decomposition). All three classes share a third defect: sanitization pipelines are one-shot scripts without cross-instance reuse or self-improvement.
-
-\subsection{This Work and Contributions}
-
-We propose \textbf{DR-SL} (Dehydrate-Rehydrate with Self-Learning loop), addressing these gaps at three levels (Fig.~\ref{fig:overview}):
-\begin{enumerate}
-\item \emph{Decision level (reversibility verification).} De-identification completeness is formalized as two complementary measurable conditions---de-identification sufficiency (Pufferfish semantics~\cite{kifer2012rigorous,kifer2014pufferfish}: the dehydrated artifact alone cannot support re-identification of sensitive information) and task-information preservation (QA probes)---with the cascade extractor's recall explicitly delimiting the guarantee boundary. The decision runs entirely locally; nothing leaves the device before it is made. We state honestly that the leakage score of a local evaluator is a \emph{lower-bound witness} of true leakage (Theorem~\ref{thm:fano})---a heuristic certificate, not an absolute upper bound---strengthened by offline empirical calibration (\S\ref{sec:security}) and a layered assurance model (\S\ref{sec:layered}).
-\item \emph{Mechanism level (self-learning loop).} Instance-level fixes are elevated to prompt-level global optimization through attribution, accumulation, distillation, and versioned updates, with typed prompt libraries and hot-start (design expectation tested as hypothesis H1).
-\item \emph{Theory level.} A five-layer architecture characterizes the method's limits: Pufferfish target semantics, Maximal Leakage as attacker-independent limit~\cite{issa2020operational}, the rate-privacy frontier, Wyner-Ziv conditional rate-distortion (fidelity limit), and an empirically calibrated approximation layer; we prove a Fano-type leakage lower bound, a Pufferfish witness, a feasibility criterion, and termination.
-\end{enumerate}
-
-Contributions: (i) a two-branch reversibility-verification framework covering de-identification sufficiency (including semantic/quasi-identifier leakage) and task-information preservation (including over-redaction detection), with a runtime cascade extractor and recall-ceiling analysis; (ii) the theoretical positioning of the method---lower-boundedness of the leakage score, the Pufferfish witness, the rate-privacy feasibility criterion, termination of the lexicographic iteration, and the explicit stance of ``an empirically calibrated heuristic certificate approaching theoretical limits''; (iii) a fully local self-learning loop (the offline stage touches only non-sensitive corpora) and a layered assurance model (soft certificate $+$ deterministic hard line $+$ human fallback), evaluated under a complete pre-registered experimental design with two human studies and honestly reported negative results.
-
-\emph{Note on the method name.} DR-SL stands for ``Dehydrate-Rehydrate with Self-Learning loop''; the verified core is the reversibility-verification loop, while the self-learning component is exploratory (\S\ref{sec:slresults}).
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=0.78\textwidth,trim={49.3pt 271.9pt 89.2pt 269.2pt},clip]{figures/fig1.pdf}
-\caption{DR-SL system overview. Inside the local trust boundary, the cascade extractor derives the sensitive set $S$ from the original material $X$; a type-matched prompt library hot-starts dehydration into the artifact $D$; the two-branch reversibility verification (re-identification probes $L$, restoration $R$, QA utility probes $U$) feeds the lexicographic gate; and the mandatory release chain (local gate $\to$ deterministic hard-line scrub $\to$ external strong-attacker re-test) decides egress: PASS instances send only $D$ to the cloud LLM, while INFEASIBLE instances emit a residual-leakage report and route to human review. The external re-test stage belongs to the destination trust class (same class as the destination cloud; \S\ref{sec:security})---only the dehydrated $D$ ever crosses the boundary.}
-\label{fig:overview}
-\end{figure*}
-
-\section{Related Work}
-
-\emph{Cloud-local inference and privacy.} Cloud-local systems route simple or privacy-sensitive sub-tasks locally and complex reasoning to the cloud~\cite{hao2024hybrid,jin2025cecollm,li2025collab}; PAPILLON~\cite{siyan2025papillon} formulates Privacy-Conscious Delegation with a local privacy-aware proxy deciding which requests to forward---a canonical local-routing design. Cryptographic approaches~\cite{gilad2016cryptonets,mohassel2017secureml} offer strong guarantees but require specialized primitives and multi-party infrastructure with high latency; NER-based de-identification~\cite{presidio,rehydra} strips identifiable spans but loses task context; local differential privacy (LDP)~\cite{mai2023split,shi2022selective,duchi2013local} perturbs tokens before transmission with an inherent privacy-utility trade-off; PrivacyRestore~\cite{zeng2025privacyrestore} removes privacy spans client-side and restores them server-side via meta-vectors---a server-side-restoration paradigm complementary to our decide-before-egress local loop, whose meta-vector sensitivity warrants assessment (our inference; Table~\ref{tab:position}). Overall, privacy modules are trained as separate components requiring per-deployment adaptation~\cite{ryu2026p2skill}, and a unified ``is de-identification complete?'' decision mechanism is missing.
-
-\emph{Reversible anonymization.} Rehydra~\cite{rehydra} and Presidio~\cite{presidio} offer reversibility, conversational coherence, and session-level identity persistence, but are essentially per-entity substitution: unprotected against uncovered sensitive types and semantic leakage, with restoration tables that fail for semantically equivalent but literally different content.
-
-\emph{P2Skill and skill distillation.} P2Skill~\cite{ryu2026p2skill} distills ``privacy skills'' into four prompts of a frozen local SLM while a cloud model plays reference, evaluator, and supervisor roles; it needs no fine-tuning and gates deployment-phase egress with a deterministic matcher, improving privacy-preserved inference quality by $1.69\times$/$3.66\times$ over baselines on 160 PRISM prompts. As verified verbatim and scope-limited in \S\ref{sec:intro}: during \emph{skill refinement} its reference/evaluator branches read original inputs (\S3.3, steps 2--3), a refinement-phase leakage point; its matcher covers only declared identifiers, and its self-reported residual leakage stems from missed detections at decomposition (\S4.4), corroborating our recall-ceiling analysis (\S\ref{sec:extractor}).
-
-\emph{Information-theoretic quantification.} Mutual information is the classic leakage measure~\cite{belghazi2018mine,heerklotz2025neural}; MINE~\cite{belghazi2018mine} estimates high-dimensional MI neurally and the privacy funnel~\cite{eswa2022funnel} optimizes the privacy-utility trade-off, but neural estimation requires training and per-dataset iteration, unsuitable for real-time per-instance decisions. Closer to this work: Pufferfish privacy~\cite{kifer2012rigorous,kifer2014pufferfish} declares secrets and discriminative pairs, bounding posterior-odds amplification---fitting ``inference protection over declared secrets''; Maximal Leakage~\cite{issa2020operational} is the supremum, over all randomized functions of the source, of the multiplicative increase in guessing probability upon observing the release---attacker-independent, giving a theoretical ceiling on leakage. We anchor our theory in these two and use reversibility verification as the empirical approximation.
-
-\emph{Utility evaluation.} Text Preserved Similarity~\cite{pilan2025truthful} defines sanitization utility as preserved task-relevant information, aligning with our goal; BERTScore~\cite{zhang2020bertscore} and TAE~\cite{tae2026} provide semantic-similarity measures; QA-based evaluation (QAFactEval~\cite{fabbri2022qafacteval}) measures ``can task questions be answered from the text''---the methodological source of our QA probe. We take the QA probe as primary utility metric, rehydration as secondary diagnostic, and validate metrics with cross-model and human studies.
-
-\emph{Self-learning and prompt optimization.} Related to our self-learning mechanism are self-refinement and automatic prompt optimization, whose shared challenge is preventing prompts from overfitting training cases; our memorization check (\S\ref{sec:sl}) and independent generalization scoring target exactly this problem.
-
-\begin{table*}[!t]
-\centering
-\caption{Comparison of representative methods. Cells are marked ``fact'' (from the cited source) or ``our inference/claim''.}
-\label{tab:position}
-\small
-\begin{tabular}{@{}p{2.5cm}p{2.7cm}p{2.2cm}p{5.6cm}p{2.2cm}@{}}
-\toprule
-Method & Leakage coverage & Over-redaction detection & Evaluation/refinement leakage & Cross-instance reuse \\
-\midrule
-Placeholder substitution~\cite{presidio,rehydra} & Declared identifiers (fact) & None (fact) & None (fact) & None (fact) \\
-LDP perturbation~\cite{mai2023split,shi2022selective} & Probabilistic (fact) & None (inherent noise loss, fact) & None (fact) & None (fact) \\
-PrivacyRestore~\cite{zeng2025privacyrestore} & Declared identifiers (fact) & Partial (restoration fidelity, fact) & \textbf{Yes} (cloud processes meta-vectors; our inference) & None (fact) \\
-P2Skill~\cite{ryu2026p2skill} & Declared identifiers + rewriting (fact) & Partial (reconstruction skill, fact) & \textbf{Yes}: during refinement, cloud reference/evaluator read original inputs (fact, \S3.3 steps 2--3); none at deployment (fact) & Limited (skill distillation, fact) \\
-\textbf{DR-SL (this work)} & \textbf{Declared + quasi-identifiers within extractor recall} (our claim, conditioned on recall) & \textbf{Yes} (task-information-preservation metric) & \textbf{None} (offline: non-sensitive corpora only; online fully local) & \textbf{Yes} (prompt library + hot start) \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
-\section{Problem Definition and Method}
-
-\subsection{Problem Formalization}
-
-Let the original material be a random variable $X$, the sensitive set $S=\{s_1,\dots,s_n\}$ (each $s_i$ a sensitive attribute with domain $V_i$; explicit identifiers or quasi-identifiers), the attacker's auxiliary knowledge $A$, and the task-relevant variable $T$. The dehydrator $\mathcal{D}$ maps $X$ to the artifact $D=\mathcal{D}(X)$. At runtime $S$ is produced by the cascade extractor (\S\ref{sec:extractor}).
-
-\emph{De-identification sufficiency (Pufferfish semantics).} We adopt the Pufferfish framework~\cite{kifer2012rigorous,kifer2014pufferfish}: the secret set is induced by $S$---for each $s_i$ and $v\in V_i$, $\sigma_{i,v}:=``s_i=v\text{''}$; the discriminative-pair set $\mathcal{Q}$ contains all same-attribute distinct-value pairs and identity pairs (quasi-identifier combinations pointing to a unique individual); $\Theta$ is the attacker's prior-belief set. The mechanism $P(D\mid X)$ satisfies $(\varepsilon,\mathcal{Q},\Theta)$-sufficiency iff for all $(\sigma,\sigma')\in\mathcal{Q}$, $\theta\in\Theta$, outputs $d$:
-\begin{equation}
-e^{-\varepsilon} \le \frac{P(D=d\mid \sigma,\theta)}{P(D=d\mid \sigma',\theta)} \le e^{\varepsilon}.
-\label{eq:pufferfish}
-\end{equation}
-Releasing $D$ amplifies the attacker's prior odds on any discriminative pair by at most $e^{\varepsilon}$. Unlike differential privacy, Pufferfish constrains inference about declared secrets without adding noise---precisely what the re-identification branch aims to prevent; the conditional probabilities are relative to $A$ (operationalized as graded attackers, \S\ref{sec:verify}).
-
-\emph{Task-information preservation.} The fidelity goal changes from ``restore the original text'' to ``preserve task-relevant information'': maximize $I(D;T)$, measured operationally by the QA-probe utility $U$ (\S\ref{sec:verify}); the rehydration score $R$ (similarity of $\hat X$ reconstructed from $(D,S)$ to $X$) is demoted to a secondary diagnostic. With $I_{\mathrm{norm}}(D;S):=I(D;S)/H(S)$ and binary entropy $H_2(\cdot)$, the mapping between the information-theoretic $\varepsilon$ and the operational $\tau_L$ is given by Theorem~\ref{thm:fano} ($\tau_L$ corresponds to a leakage \emph{lower-bound} guarantee).
-
-\begin{definition}[Reversible compression]
-If a map $f$ exists with $f(D,S)=X$, then $D$ is a reversible compression of $X$ w.r.t.\ $S$; retained as the theoretical object of the (diagnostic) rehydration branch.
-\end{definition}
-
-\begin{definition}[De-identification completeness]
-$\mathcal{D}$'s de-identification of $(X,S)$ is complete iff $D$ satisfies: (i) the operational criteria $L\le\tau_L$ (Wilson-interval upper-bound sense, \S\ref{sec:verify}) and $U\ge\tau_U$; (ii) these hold under extractor recall $\hat\rho$ and attacker class $A_3$ (conditionality of the guarantee, \S\ref{sec:security}).
-\end{definition}
-
-\subsection{Runtime Extraction of the Sensitive Set (Cascade Extractor)}
-\label{sec:extractor}
-
-The premise ``where does $S$ come from at runtime?'' is answered by a cascade: \textbf{(a)} a regex/NER high-precision layer for explicit identifiers (finite pattern classes, near-complete recall); \textbf{(b)} a local-LLM high-recall layer for quasi-identifiers (age, department, surgical history, and normalizations) via an extraction prompt plus a self-critique second pass dedicated to missed items; \textbf{(c)} a combination layer (DetectCombinable) deciding which extracted attribute combinations constitute quasi-identifiers, emitting candidates for combination probes and the synthetic-population $k$ test. Extraction recall on a gold-annotated set is $\mathrm{Recall}=|S_{\mathrm{found}}\cap S_{\mathrm{gold}}|/|S_{\mathrm{gold}}|$, reported stratified (explicit/quasi/overall).
-
-\begin{proposition}[Recall ceiling of system leakage, over-extraction-corrected]\label{prop:recall}
-Let $G=S_{\mathrm{gold}}$, $F=S_{\mathrm{found}}$. Branch~1 probes only attributes in $F$; missed attributes are never probed. With $L_{\mathrm{measured}}$ the hit rate over the probed set and $\mathrm{Recall}=|F\cap G|/|G|$,
-$L_{\mathrm{system}} \le \frac{|F|}{|G|}\,L_{\mathrm{measured}} + (1-\mathrm{Recall})$.
-When the extractor over-extracts ($|F|>|G|$; mean 1.43 on our data), the first term carries an inflation factor: spurious probes that miss dilute $L_{\mathrm{measured}}$, so the true-attribute hit rate can be up to $|F|/|G|$ times larger.
-\end{proposition}
-
-Every system-level safety conclusion is therefore conditioned on measured recall $\hat\rho$ \emph{and} inflation $\iota=|F|/|G|$: ``given $\hat\rho$ and $\iota$, residual leakage $\le \iota\cdot L_{\mathrm{measured}}+(1-\hat\rho)$'' (on Stage-1 data: $\le 1.43\,L_{\mathrm{measured}}+0.049$). Explicit-identifier recall can approach 1 (finite pattern class); quasi-identifier recall has no finite upper bound---identifiability depends on $A$---so recall is defined relative to $A$ as $\mathrm{Recall}(A)$, and \S\ref{sec:verify}/\S\ref{sec:exp} report curves over graded attackers $A_0$--$A_3$.
-
-\subsection{Two-Branch Reversibility Verification}
-\label{sec:verify}
-
-\emph{Branch 1 (re-identification / sufficiency).} The evaluator receives only $D$ and general knowledge (plus graded auxiliary knowledge) and answers a question set $Q$ built from $S$. Probing each attribute $m=\lceil 75/|S|\rceil$ times (total $\ge75$, keeping the gate passable at zero hits) yields per-attribute hit rates $L_i$ and $L=\frac{1}{|S|}\sum_i L_i$; the decision uses a Wilson confidence interval~\cite{wilson1927}: pass iff the 95\% Wilson upper bound of $L$ is $\le\tau_L$, resolving small-$|S|$ binomial granularity (at $|S|=5$ a single-point granularity of 0.2 would otherwise equal zero tolerance).
-
-\emph{Graded attackers (operationalizing $A$).} The supremum over $A$ is a maximum over a finite nested set: $A_0$ general knowledge (bare local re-identification); $A_1$ domain statistical priors (prompt-injected frequency knowledge); $A_2$ public-data retrieval (public-corpus RAG); $A_3$ linkage-attack database (synthetic-population $k$ counting, no LLM). With $A_0\subseteq A_1\subseteq A_2\subseteq A_3$, $L(A_i)$ should be monotone; non-monotonicity is treated as evaluation instability and triggers review. The $A_3$ hit event is $k(q)\le k^{*}$ ($k^{*}=5$ frozen), where $k(q)$ counts records in a synthetic population matching the quasi-identifier combination $q$ extracted from $D$ (controlled world: dataset-generator distribution; real-statistics world: public marginals via iterative proportional fitting~\cite{deming1940ipf}; fully synthetic and reproducible)~\cite{sweeney2002k}: $k=1$ means unique identification.
-
-\emph{Branch 2 (rehydration / diagnostic).} The evaluator receives $(D,S)$ and reconstructs $\hat X$; $\mathrm{Sim}(\hat X,X)$ (literal matching primary, BERTScore~\cite{zhang2020bertscore} fallback) gives $R$, detecting rehydrator hallucination and over-redaction.
-
-\emph{Primary utility metric: QA probes}~\cite{pilan2025truthful,fabbri2022qafacteval}. Decoupled from restoring the original text, measuring task-information availability from the cloud's viewpoint: (1) generate task questions $Q_T$ from $X$ plus the task description (not targeting sensitive attributes; filtered and spot-checked); (2) reference answers $A_{\mathrm{ref}}=\mathrm{ans}(q\mid X)$ (fixed reference model; self-consistency sampling for open questions; ground truth for structured ones); (3) target answers $A_D=\mathrm{ans}(q\mid D)$ (same model and sampling---the deployment condition); (4) per-item agreement: structured items by exact/tolerance match $\{0,1\}$, open items by judge rubric $\{1,0.5,0,0\text{ contradicted}\}$ with ``cannot determine'' $=0.25$ (frozen), the judge seeing only $(q,A_{\mathrm{ref}},A_D)$; (5) $U=\frac{1}{|Q_T|}\sum_j \mathrm{Agree}_j$ with bootstrap CIs. Dehydration succeeds iff WilsonUpperBound$(L)\le\tau_L$ and $U\ge\tau_U$ (lexicographic; Algorithm~\ref{alg:main}).
-
-\subsection{Lexicographic Iteration and Convergence}
-
-Same-round bidirectional updates can oscillate without termination guarantees; DR-SL uses \emph{lexicographic} optimization: utility as hard gate, leakage as soft objective, single-attribute strengthening, single-step rollback (Algorithm~\ref{alg:main}).
-
-\begin{algorithm}[!t]
-\small
-\caption{DR-SL per-instance main loop (lexicographic)}
-\label{alg:main}
-\KwIn{$X$, $S$ (recall $\hat\rho$), $\tau_L,\tau_U$, budget $B=3|S|+5$, window $N$, prompt library $P$, local evaluator $M$}
-\KwOut{PASS($D^{*}$) or INFEASIBLE(residual report)}
-$P_{\mathrm{init}}\leftarrow\mathrm{HotStart}(P,S)$; $D\leftarrow\mathrm{Dehydrate}(X,S,P_{\mathrm{init}})$\;
-$Q\leftarrow\mathrm{QuestionSetGen}(S)$; $(L,CI,U)\leftarrow\mathrm{Evaluate}(M,D,Q,S,X)$\;
-\While(\tcp*[h]{Phase 1: utility gate first}){$U<\tau_U$ \textbf{and} $t<B$}{
-  $D\leftarrow\mathrm{LoosenDehydrate}(D,X,S,P)$; exit on two consecutive no-improvement loosens\;
-  $(L,CI,U)\leftarrow\mathrm{Evaluate}(M,D,Q,S,X)$\;
-}
-$\mathrm{skipped},\mathrm{triedLoosen}\leftarrow\emptyset$\;
-\While(\tcp*[h]{Pass $:=$ Wilson upper $\le\tau_L$ and $U\ge\tau_U$}){$\neg\mathrm{Pass}(\cdot)$ \textbf{and} $t<B$}{
-  $s^{*}\leftarrow\argmax_{s_i\in S\setminus\mathrm{skipped}}\mathrm{LeakContrib}(s_i,D)$\;
-  $D'\leftarrow\mathrm{StrengthenAttribute}(D,s^{*},X,S,P)$; $(L',CI',U')\leftarrow\mathrm{Evaluate}(\cdot)$\;
-  \uIf(\tcp*[h]{hard gate}){$U'\ge\tau_U$}{accept $D\leftarrow D'$; update window\;}
-  \uElseIf(\tcp*[h]{one compensatory chance}){$s^{*}\notin\mathrm{triedLoosen}$}{
-    mark tried; $D''\leftarrow\mathrm{LoosenDehydrate}(D,X,S,P)$\;
-    \lIf{$U(D'')>U$}{$D\leftarrow D''$; reset triedLoosen; \textbf{continue}}
-    \lElse{$\mathrm{skipped}\mathrel{+}=s^{*}$ \tcp*{residual}}
-  }
-  \lElse{$\mathrm{skipped}\mathrel{+}=s^{*}$; failure $\to$ experience store}
-  $t\leftarrow t+1$\;
-}
-\eIf{$\mathrm{Pass}(\cdot)$ and window stable}{\Return PASS($D$)}{\Return INFEASIBLE(skipped $+$ failing attributes, hit-question details)}
-\end{algorithm}
-
-Key points: every accepted step maintains $U\ge\tau_U$ (gate invariant; the fidelity criterion \emph{is} task-information preservation, $R$ diagnostic only); after a successful compensatory loosen \texttt{triedLoosen} resets; skipped attributes permanently enter the residual set; consecutive no-improvement loosens terminate Phase~1; the hard budget $B$ guarantees termination (Theorem~\ref{thm:termination}). A \emph{stable pass} over window $W=\{t-N+1,\dots,t\}$ requires max CI upper bound $\le\tau_L$, $\min U_w\ge\tau_U$, and fluctuations of $L$ (and diagnostic $R$) $\le\delta$. Failure is a formal INFEASIBLE branch with a residual-leakage report, not a deadlock.
-
-\subsection{Theoretical Properties (Graded)}
-
-Grading rule: \textbf{Theorem} = full proof (Appendix~A); \textbf{Proposition} = sketch in text, full proof in Appendix~A; \textbf{Hypothesis} = tested experimentally.
-
-\begin{proposition}[Directional correctness of the two-branch alarm]\label{prop:direction}
-Fix evaluator capability. (i) If $I(D;S)=0$, then for any template family the Branch-1 hit rate does not exceed the prior guessing rate; (ii) if $H(X\mid D,S)>\eta$, any rehydrator has $\mathbb{E}[R]<1$. Each branch alarms in the correct direction when its condition is violated.
-\end{proposition}
-
-\begin{theorem}[Lower-boundedness of the leakage score, Fano-type]\label{thm:fano}
-Let an attacker (including the local evaluator) achieve per-attribute hit rate $L_i\ge 1/|V_i|$ on $s_i$. Then
-$I(D;S) \ge H(S) - \sum_i [H_2(1-L_i) + (1-L_i)\log(|V_i|-1)]$,
-and $I_{\mathrm{norm}}(D;S)\ge 1-\sum_i[\cdot]/H(S)$.
-\end{theorem}
-
-\emph{Interpretation and its limits.} Measured attack success lower-bounds true leakage; stronger attackers can only raise the bound; a local evaluator's failure to re-identify \emph{cannot} prove that no attacker can. \textbf{The bound certifies leakage, never safety}---this one-sidedness is structural to Fano-type arguments, and at our operating point the guarantee is weak: with $\tau_L=0.05$ and a uniform attribute over $|V|=100$, passing certifies only $\approx0.06$ bits ($\approx1\%$ of $H(s)$); for open-domain quasi-identifiers ($|V|\sim10^4$) $\approx0.34$ bits, $I_{\mathrm{norm}}\ge0.026$---essentially vacuous. The operative safety argument therefore rests on (i) empirical calibration $\hat\Delta$ (\S\ref{sec:security}), (ii) the deterministic hard line, and (iii) human fallback on INFEASIBLE; Theorem~\ref{thm:fano} witnesses leakage for rejection and warning and makes the certificate's evaluator-dependence explicit. With auxiliary knowledge $A$, all entropy terms are conditional on $A$ and the theorem applies verbatim to $I(D;S\mid A)$.
-
-\begin{proposition}[Pufferfish witness: hit rate $\to$ $\varepsilon$ lower bound]\label{prop:witness}
-Let the optimal attacker's hit rate on $s_i$ be $L$, with prior extremes $p_{\max},p_{\min}$. Then some discriminative pair exists such that any mechanism satisfying \eqref{eq:pufferfish} must have
-$\varepsilon \ge \ln\frac{L}{1-L} + \ln\frac{p_{\min}}{p_{\max}}$ (uniform prior: $\varepsilon\ge\ln\frac{L}{1-L}$).
-\end{proposition}
-
-Attacks lower-bound the mechanism's required $\varepsilon$ (a leakage witness), same direction as Theorem~\ref{thm:fano}: $L=0.9\Rightarrow\varepsilon\ge2.2$ (uniform prior); $L=0.05$ gives only a loose bound---the certificate is strong only when the evaluator is strong.
-
-\begin{proposition}[Feasibility criterion, rate-privacy frontier]\label{prop:feasibility}
-For any dehydrator, $I(D;T) \le I(D;S) + I(X;T\mid S)$; hence $U^{*}(\varepsilon):=\max_{p(D|X):I(D;S|A)\le\varepsilon} I(D;T) \le \varepsilon + I(X;T\mid S,A)$.
-\end{proposition}
-
-If $\tau_U > \tau_L + I(X;T\mid S)$ the feasible region is empty and Algorithm~\ref{alg:main} necessarily outputs INFEASIBLE: when task information is strongly coupled to sensitive information (the medical example), \textbf{infeasibility is a property of the problem, not a defect of the method}.
-
-\begin{theorem}[Termination of the lexicographic iteration]\label{thm:termination}
-Algorithm~\ref{alg:main} terminates in finitely many rounds with PASS or INFEASIBLE; after Phase~1 every accepted step maintains $U\ge\tau_U$ (gate invariant).
-\end{theorem}
-
-\begin{hypothesis}[Loop-count decrease; H1]\label{hyp:h1}
-Let $n_c^{(v)}$ be the expected initial iteration rounds for type-$c$ material under prompt version $v$. If distilled rules eliminate generalizable failure modes for type $c$, then $n_c^{(v+1)}\le n_c^{(v)}$ and expected total iterations decrease across versions. (The memorization check only prevents memorizing concrete instances; it does not guarantee generalization.)
-\end{hypothesis}
-
-\section{The Self-Learning Loop}
-\label{sec:sl}
-
-\subsection{Optimization Objects and the Update Loop}
-
-Iteration involves \emph{instance-level} fixes (no cross-instance reuse) and \emph{prompt-level} rules distilled from repeated failures (global, reusable). DR-SL's core principle: elevate instance-level fixes into prompt-level optimization. The loop: \textbf{(1) Attribution}---on each abnormal branch feedback, locate the root cause (which sensitive type or context structure the dehydration prompt failed to cover), emitting a structured (material, cause, action) triple; \textbf{(2) Accumulation}---failure cases, causes, and actions persist in a local experience store indexed by domain/type/failure mode; \textbf{(3) Distillation}---periodically (every $K$ entries or daily) the local model induces general rules, subject to the memorization check; \textbf{(4) Update}---accepted rules merge into dehydration/rehydration/evaluation prompts as versioned, rollback-capable updates; prompts become the sole carrier of ``de-identification knowledge'' (Fig.~\ref{fig:looparch}).
-
-\subsection{Memorization Check}
-
-The check intercepts literal/quotation leakage (literal/normalized value check, quote-length threshold $\ell$, generalization-score threshold $\theta_g$) with two corrections: \emph{scoped responsibility}---it no longer claims to ``guarantee generalization''; \emph{independent GenScore}---$\theta_g$ is produced by an independent scorer (offline strong model on non-sensitive corpora, or a local model from a different family); self-scoring is forbidden. Formally, rule $r$ is rejected iff $\exists s\in S: s\in r \;\lor\; \exists c\subseteq X, |c|>\ell: c\in r \;\lor\; \mathrm{GenScore}_{\mathrm{indep}}(r)<\theta_g$.
-
-\subsection{Prompt Library, Hot Start, and Boundaries}
-
-A layered prompt system: global baseline prompts; typed libraries (medical/financial/credential/dialogue); hot start (new materials initialize from their type's mature prompt). The loop-count-decrease prediction is Hypothesis H1, tested in \S\ref{sec:slresults}. Boundaries: uncovered new types require cold starts (loop-count decrease is asymptotic, not one-shot); overfitting is mitigated by the memorization check, diverse distillation sources, independent scoring, and rollback.
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=0.62\textwidth,trim={25.2pt 148.8pt 24.8pt 149.2pt},clip]{figures/fig2.pdf}
-\caption{Self-learning loop architecture: instance failures are attributed, accumulated in the experience store, periodically distilled into rules, gated by the memorization check, and committed as versioned prompt-library updates that hot-start subsequent instances. The per-instance main loop and its PASS/INFEASIBLE exits are specified in Algorithm~\ref{alg:main}.}
-\label{fig:looparch}
-\end{figure*}
-
-\subsection{Offline-Online Distribution Shift: An Operationalized Measurement Framework}
-\label{sec:shift}
-
-Prompt libraries distilled offline face domain shift. We give each theoretical quantity a frozen measurement recipe, turning ``the generalization problem'' into a repeatably measurable object. \emph{Key claim (safety-efficiency separation):} shift affects only \emph{efficiency} (rounds) and \emph{utility}, not \emph{safety decisions}---the release decision is computed online per current instance; the offline library only initializes. The risk of shift is bounded cost, not a safety breach.
-
-\emph{Theoretical hook (domain adaptation~\cite{bendavid2010theory}).} With offline distillation distribution $S$, online distribution $T$, policy $h$:
-\begin{equation}
-\varepsilon_T(h) \le \varepsilon_S(h) + \tfrac12 d_{\mathcal{H}\Delta\mathcal{H}}(S,T) + \lambda(S,T).
-\label{eq:da}
-\end{equation}
-Each term is instantiated and measured: $\varepsilon_T$ as normalized rounds ($\ell_1$) and convergence failure ($\ell_2$) on online-drawn instances; $\varepsilon_S$ on the offline held-out (non-sensitive) calibration split; $d_{\mathcal{H}\Delta\mathcal{H}}$ via a finite frozen probe class $\mathcal{H}_{\mathrm{probe}}$ (TF-IDF + logistic regression; frozen sentence embeddings + logistic regression; LLM zero-shot discrimination), $\hat d_{\mathcal{H}}=2\max_{h'\in\mathcal{H}_{\mathrm{probe}}}|P_S(h'{=}1)-P_T(h'{=}1)|$, a \emph{lower-bound} estimate that must not be cited as the true divergence; $\lambda$ by back-computed residual $\lambda\ge\Delta-\tfrac12\hat d$ (primary) or oracle approximation (domain-specific prompt on pooled data). Three proxies, none touching sensitive values: domain-discriminator AUC ($n{=}200$ per side, TF-IDF + logistic regression, 5-fold CV; $\hat d_{\mathcal{H}}\ge2|\mathrm{AUC}-0.5|$; reading: $\le0.6$ negligible, 0.6--0.8 moderate, $>0.8$ severe); embedding MMD with permutation test; type-signature coverage (fraction of online instances whose sensitive-type signature is exactly/subset-matched in the library---zero model calls, most interpretable). A dose-response experiment over $T_\alpha=(1-\alpha)S+\alpha T_{\mathrm{new}}$, $\alpha\in\{0,0.25,0.5,0.75,1\}$, with controlled new-type variants (lexical perturbation, new-type-combination injection, format transfer), verifies monotonicity of $\Delta(\alpha)$ against $\hat d(S,T_\alpha)$.
-
-\section{Theoretical Grounding and Security Model}
-
-\subsection{Five-Layer Architecture}
-\label{sec:fivelayer}
-
-L1 \emph{Target semantics}: Pufferfish~\cite{kifer2012rigorous,kifer2014pufferfish}, posterior odds $\le e^{\varepsilon}$---the \emph{definition} of sufficiency (\eqref{eq:pufferfish}). L2 \emph{Attacker-independent limit}: Maximal Leakage~\cite{issa2020operational}, $\mathrm{MaxL}(X\to D)=\log\sum_d\max_x P(d\mid x)$---the theoretical ceiling of what Branch~1 measures; empirical $L$ can only be a lower-bound approximation. L3 \emph{Utility-privacy frontier}: the rate-privacy function $U^{*}(\varepsilon)=\max I(D;T)$ s.t.\ $I(D;S\mid A)\le\varepsilon$~\cite{eswa2022funnel}---the limit of information separation; feasibility criterion (Prop.~\ref{prop:feasibility}). L4 \emph{Fidelity limit (secondary)}: Wyner-Ziv conditional rate-distortion $R_{X|S}(\delta)$~\cite{wyner1976rate}---positioning of the rehydration branch. L5 \emph{Empirical approximation}: heuristic certificate plus calibration, $\hat L=L_{\mathrm{local}}+\hat\Delta$ (\S\ref{sec:security}).
-
-\emph{Positioning statement}: DR-SL approaches the rate-privacy limit under Pufferfish semantics via an empirically calibrated heuristic certificate; closeness improves with evaluator capability (measured by $\hat\Delta$); we do not claim to reach the limit. \emph{Honesty note}: L2 and L4 are \emph{positioning} layers---they delimit what the empirical quantities approximate but are not computed in our experiments (computable MaxL estimation is future work); the operative layers are L1, L3, L5. Compared with MINE~\cite{belghazi2018mine}/privacy funnel~\cite{eswa2022funnel}, reversibility verification is training-free and usable online; its price is dependence on evaluator capability---exactly the trade-off of Theorem~\ref{thm:fano} and calibration.
-
-\subsection{Security Model: Two-Phase Threat Model and the Calibrated Certificate}
-\label{sec:security}
-
-\emph{Two-phase threat model.} \textbf{Offline}: the cloud strong model acts \emph{only} on corpora containing no sensitive data (public/synthetic; a data audit guarantees no real PII), serving as offline attacker benchmark and calibrator; non-sensitivity by construction means no leakage channel. \textbf{Online}: all decisions and iterations are local. Attacker assumptions: (A1) obtains every egressed $D$; (A2) has general domain knowledge and public corpora but knows neither local $S$ nor the experience store; (A3) can invoke arbitrarily strong models. The class is operationalized as $A_0$--$A_3$; safety conclusions are conditioned on attacker knowledge $\supseteq A_3$.
-
-\emph{Nature of the guarantee: an empirically calibrated heuristic certificate.} (1) \emph{Lower-boundedness} (Thm.~\ref{thm:fano}): $L_{\mathrm{local}}\le L_{\mathrm{true}}$; a local pass is a witness against attackers no weaker than the evaluator, not an absolute upper bound. (2) \emph{Empirical calibration}: run local and cloud-strong re-identification branches on non-sensitive corpora; measure $\hat\Delta=L_{\mathrm{cloud}}-L_{\mathrm{local}}$ (stratified, with CIs); certificate $\hat L=L_{\mathrm{local}}+\hat\Delta$. (3) \emph{Transferability assumption (made explicit)}: $\hat\Delta$ is measured on the direct-forwarding distribution of a non-sensitive calibration corpus; using it online assumes the evaluator gap transfers (a) from calibration corpus to sensitive production instances and (b) across regimes (original vs dehydrated text). Assumption (b) is load-bearing and testable: T16/T18 measure the strong-vs-local gap on dehydrated text separately; where regime-dependent, calibration must be regime-specific ($\hat\Delta_{\mathrm{post}}$); we report both and claim no universal $\hat\Delta$. T25b subsequently showed much of (b)'s literal regime gap is a probe-format artifact closed locally by an enumeration probe; the in-vivo rerun (T25c) qualifies this---local enumeration still misses open-vocabulary categoricals, and the genuinely regime-dependent residual concentrates in the semantic/combinatorial dimension plus that class. This assumption---not the theorems---is the fulcrum of the quantitative safety claim. (4) \emph{Attacker-independent anchor}: Maximal Leakage's supremum over arbitrary attackers; the gap between empirical $\max L(A_3)$ and a MaxL upper-bound estimate measures residual uncertainty about the attacker class. (5) \emph{Post-processing safety}: by the data-processing inequality (SDPI), cloud-side post-processing of $D$ does not increase leakage: $I(g(D);S)\le I(D;S)$.
-
-\emph{Difference from P2Skill (verified, scope-limited).} P2Skill's deployment-phase egress is matcher-gated, but its refinement loop requires the cloud to read PII-bearing originals, so refinement data leaves the device before refinement completes; DR-SL's offline phase touches only non-sensitive corpora and all online decisions are local: no phase requires sensitive data to leave the device. \emph{Honest boundary}: DR-SL does not guarantee absolute safety against attackers outside the class---consistent with all model-based privacy decision methods; high-sensitivity scenarios rely on the layered model below.
-
-\subsection{Local Model Selection and Capability Dependence}
-
-The reference configuration designates Qwen3.8-27B as primary evaluator~\cite{qwen3827b} and Ornith-1.5-35B-A3B as low-resource alternative~\cite{ornith35b}. All Stage 1--3 experiments ran with ornith-1.5-35b as local executor (throughput decision, protocol deviation D10: $\approx51$ vs $\approx20$ tok/s); qwen3.8-27b-mlx serves as capability reference in the size-gradient ablation (T19). The capability gradient (ornith $\to$ qwen-27B $\to$ offline strong model) quantifies ``certificate strength vs evaluator capability'', matching the stratified $\hat\Delta$ estimates.
-
-\subsection{Layered Assurance Model (Core Safety Argument)}
-\label{sec:layered}
-
-DR-SL's safety claim is layered and conditional: (1) \emph{soft-decision layer} (quantitative lower bound): the calibrated certificate $\hat L$, utility $U$, and $k$ values---auditable, strengthening with evaluator capability; (2) \emph{hard-line layer} (deterministic): a deterministic identifier matcher rejects all declared identifiers before egress, with a network allowlist as backstop---independent of model capability; (3) \emph{human-fallback layer}: INFEASIBLE (empty feasible region per Prop.~\ref{prop:feasibility}, or budget exhaustion) $\to$ residual-leakage report $\to$ human risk judgment; automatic egress refused. Total-leakage decomposition (Prop.~\ref{prop:recall}): system residual $\le \iota\cdot$(declared-part residual, soft layer) $+$ missed-extraction part (conditioned on $\hat\rho$); each layer's guarantee type, conditions, and residual risks are explicitly statable.
-
-\emph{Local assets are themselves sensitive.} The experience store, residual reports, and audit logs contain failure contexts (attribute types, hit questions, and---in INFEASIBLE reports---residual sensitive values). Mitigations: distillation inputs are aggregated to type-level statistics (raw values never enter prompt distillation; the memorization check rejects literal values and $>\ell$-token quotes); residual reports and audit logs never egress (hard line and allowlist on all outbound channels; reports render only to the local reviewer); audit logs are append-only with configurable expiry, encrypted at rest where the OS provides it. Plainly stated: a compromised local device voids all guarantees---the threat model (A1--A3) concerns the cloud/link adversary, not local malware.
-
-\subsection{Limitations}
-
+The revision makes the following changes:
 \begin{itemize}
-\item \emph{Capability dependence}: certificate strength is bounded by the local evaluator; $\hat\Delta$ calibration only partially compensates and depends on an offline strong model.
-\item \emph{Recall dependence}: guarantees are conditioned on $\hat\rho$; quasi-identifier recall has no finite upper bound.
-\item \emph{Attacker-class conditionality}: guarantees hold for knowledge $\supseteq A_3$; attackers outside the class are uncovered.
-\item \emph{Threshold calibration cost}: $\tau_L,\tau_U,\tau_R,\delta,N,k^{*}$ require per-domain calibration.
-\item \emph{Inherent infeasibility}: strongly coupled tasks have empty feasible regions (Prop.~\ref{prop:feasibility}) and take the human fallback.
-\item \emph{Gold-standard caveats}: annotations are audited automatic labels; reliability is triangulated by dual-model agreement (T11), cross-family agreement (T22), and a two-rater human study (type-level recall 0.987--1.000, precision 0.959--0.991; combination-risk $\kappa=0.696$ under a construct-matched gold); utility-metric validity is anchored by cross-model correlation (T12) and a two-rater human utility study ($\rho=0.839$ vs automatic $U_{\mathrm{sem}}$, meeting the preregistered $\rho\ge0.8$).
+\item \textbf{Statistical unit.} Earlier experiments replicated the same question bundle to reach $\ge75$ probes and reused one enumeration response across replicated questions. Those observations are not independent. The revised gate is a heuristic observed-hit-rate gate; instance-cluster bootstrap replaces pooled binomial/Wilson inference for attack summaries.
+\item \textbf{Runtime-S.} Earlier core experiments used gold annotations inside dehydration, strengthening, QA, and hard-line scrubbing. The revised runtime path receives only extractor output and a declared task-relevance profile. Gold is used only by external scoring after the artifact and local decision are frozen.
+\item \textbf{Local vs online utility.} The earlier mixed-benchmark ``automatic release'' used an online reference-based judge that saw original $X$. That is offline oracle routing, not fully local release. The revised local gate uses a fully local utility surrogate; online judges are offline criteria only.
+\item \textbf{Theory.} We delete the invalid Fano threshold-mapping corollary, avoid substituting QA scores or hit-rate thresholds for mutual-information budgets, and prove termination from finite budgets rather than bounded continuous improvement.
+\item \textbf{External re-test.} Sending $D$ to an external attacker is itself a disclosure. We reclassify it as a controlled-disclosure audit, not a pre-egress safety boundary.
+\item \textbf{Baselines and attribution.} We fix first-occurrence-only replacement in the random baseline, rename it PRISM-style random replacement rather than LDP, add an INTACT-inspired candidate-selection baseline, and report deterministic/generalization/loop ablations under the same runtime-S and gates.
 \end{itemize}
 
-\section{Experimental Design and Results}
-\label{sec:exp}
-
-All stages ran under a pre-registered protocol (frozen 2026-08-28/29); every deviation is recorded in the public deviation log (D1--D18) and reported honestly.
-
-\subsection{Datasets, Metrics, Baselines, Implementation}
-
-A four-domain synthetic benchmark (medical/banking/travel/general-legal), isomorphic to P2Skill's 160-prompt PRISM benchmark~\cite{ryu2026p2skill}: core test-160 (40/domain) plus test\_ext 240 (60/domain, same generator) giving 100 test instances per domain (PRISM-isomorphic subset reported separately); calibration 290 (doubling as the non-sensitive offline calibration corpus); train 400 (simulated online stream); adversarial 80; a controlled new-type variant set $T_{\mathrm{new}}$ (lexical perturbation, new-type-combination injection, format transfer); and a mixed-coupling extension of 120 instances (30/domain) in which only task-critical types are annotated task-relevant (mean coupling ratio 0.40). The sensitive set $S$ is annotated per a handbook with an audit pipeline; quasi-identifiers form a separately annotated subset. All sensitive values are synthetic and fictional (compliance statement in the dataset documentation); medical consultation stems are rewritten from the MIT-licensed MedQA Chinese subset (physician licensing examination questions; no real patient information) by a template pipeline replacing every concrete value~\cite{jin2021medqa}.
-
-Metrics: $L(A_i)$ (four-level attacker curves, mean hit rate $+$ 95\% Wilson interval, by domain); $k$ (median, $P(k<5)$, share $k=1$); $U$ (QA probes, primary); $R$ (secondary diagnostic); process metrics (rounds, infeasibility rate, cost, hot vs cold); calibration $\hat\Delta$; extractor recall (explicit/quasi/overall). Baselines: direct forwarding (upper bound), all-local SLM (lower bound), Rehydra-style placeholder substitution~\cite{rehydra}, uniform/selective LDP, and P2Skill (same-scale numbers cited from its Table~3 on PRISM-160; cross-scale comparison forbidden). Implementation: hyperparameters frozen pre-experiment---$\tau_L=0.05$ (Wilson semantics), $\tau_R=0.9$, $N=3$, $\delta=0.05$, $\ell=16$, $\theta_g\ge4/5$ (independent scoring), $K=50$, $k^{*}=5$, temperature 0.3, 3 seeds; local executor ornith-1.5-35b (Mac Studio, LM Studio), capability reference qwen3.8-27b-mlx, frozen embeddings nomic-embed-text-v1.5, offline strong model qwen3.8-max (calibration, independent GenScore, distiller), low-cost attackers qwen3.8-flash, cross-family attacker/scorer glm-5.2; statistics: mean$\pm$std, Wilcoxon signed-rank, bootstrap intervals, permutation tests for paired comparisons.
-
-\subsection{Extraction, Annotation Reliability, and Human Audit}
-
-Regex-layer recall on regexable types is 97.4\% (ID card 206/206, bank card 31/31, medical-record numbers 23/23, phone 173/177, passport 26/30, case numbers 26/31), but overall explicit recall including name/address/card-tail (needing the LLM layer) is 46.1\%---quantitatively confirming the cascade's necessity (T2). Full cascade recall (480 instances) is \textbf{0.951} (95\% CI 0.941--0.960; explicit 0.977; quasi 0.931), with conservative over-extraction (mean 2.03 extra values/instance; $\iota=1.43$, median 1.40) and per-domain recall 0.970/0.985/0.934/0.914 (medical/travel/legal/banking; Fig.~\ref{fig:extractor}). Per the corrected Prop.~\ref{prop:recall}, system conclusions read: residual $\le 1.43\,L_{\mathrm{measured}}+0.049$.
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.86\columnwidth]{figures/extractor_recall.png}
-\caption{Cascade extractor recall by domain ($n=480$).}
-\label{fig:extractor}
-\end{figure}
-
-Annotation reliability: value-level Jaccard agreement between two model families extracting independently (qwen3.8-max vs ornith-1.5-35b) is \textbf{0.845}, recalls against the automatic gold 0.986/0.949 (T11); a genuinely cross-family re-extraction (glm-5.2) reaches recall \textbf{0.983} with Jaccard 0.817/0.785 vs qwen/ornith---three architecturally independent extractors converge at $J\approx0.79$--0.85 (T22). A two-rater human audit (human study~2; raters are the second and third authors, independent of the pipeline implementation) on 50 test instances validates the gold: type-level recall \textbf{1.000/0.987}, precision \textbf{0.959/0.991}; on combination-risk judgments the raters agree perfectly with each other ($\kappa=1.000$) but diverge from the automatic \texttt{combos} label ($\kappa=-0.083$) because the constructs differ (the automatic label fires only on quasi-identifier combinations; humans also count explicit identifiers). Under a construct-matched gold (combos \emph{or} any explicit identifier) agreement is 94\%, $\kappa=0.696$; per the preregistered fallback ($\kappa\in[0.6,0.8)$: report and analyse), all three residual disagreements are pure-quasi-identifier banking instances the rule flags but both humans judged non-unique---the automatic label errs on the conservative (safe) side; at 92\% gold positive rate $\kappa$ is additionally depressed by the prevalence effect despite 94\% raw agreement.
-
-\subsection{Baseline Leakage, Calibration, and $k$-Anonymity}
-
-Direct-forwarding leakage is high and consistent across attacker families (0.57--0.79; Table~\ref{tab:direct}), highest in medical (strong attacker 0.90), lowest in travel ($\approx0.60$) (T3). \emph{Monotonicity review} (triggered per the \S\ref{sec:verify} rule): $A_1<A_0$ for local and flash attackers violates expected monotonicity; the mandated review attributes this to an attacker-behavior artifact---injecting domain priors makes models answer more conservatively (more UNKNOWN) on raw text where values are already explicit, i.e., the prior changes the answering policy rather than adding usable knowledge; $A_1$'s intended value must be assessed on dehydrated text (T16). QA-probe utility on direct forwarding is $U=0.917$ ($n=160$), a near-ceiling sanity result (T4). Evaluator calibration on 290 non-sensitive instances ($\ge75$ probes): local 0.490 vs strong 0.670, $\hat\Delta=\mathbf{+0.181}$ (CI 0.149--0.215; by domain 0.202/0.202/0.184/0.129; Fig.~\ref{fig:delta})---the local evaluator systematically underestimates leakage; the external certificate uniformly uses $\hat L=L_{\mathrm{local}}+\hat\Delta$ (T5). Under skewed reference populations, 16.7\%--21.1\% of quasi-identifier-bearing instances have $\tilde k<5$; all-instance rates 7.9\% ($n=240$) and 11.9\% (test-160)---denominators labeled at every occurrence; under uniform large populations $\approx0$--5.3\%: the relativity of $k$ is quantitatively demonstrated (T7, Fig.~\ref{fig:kpop}).
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=0.82\textwidth]{figures/k_vs_population.png}
-\caption{$A_3$ quasi-identifier risk vs reference population size and profile ($k^{*}=5$, primary dimensions).}
-\label{fig:kpop}
-\end{figure*}
-
-\begin{table}[!t]
-\centering
-\caption{Direct-forwarding leakage (Branch~1, structured probes, strict grading).}
-\label{tab:direct}
-\small
-\begin{tabular}{@{}llrl@{}}
-\toprule
-Attacker & Level & $n$ & mean $L$ [95\% CI] \\
-\midrule
-ornith-1.5-35b (local) & $A_0$ & 400 & 0.574 [0.539--0.610] \\
-ornith-1.5-35b (local) & $A_1$ & 400 & 0.502 [0.466--0.538] \\
-qwen3.8-flash & $A_0$ & 160 & 0.768 [0.741--0.795] \\
-qwen3.8-flash & $A_1$ & 160 & 0.765 [0.738--0.791] \\
-glm-5.2 (cross-family) & $A_0$ & 160 & 0.789 [0.756--0.818] \\
-qwen3.8-max & $A_0$ & 160 & 0.779 [0.754--0.803] \\
-Synthetic population & $A_3$ & 240 & 0.079 / 0.167$^{\dagger}$ \\
-\bottomrule
-\end{tabular}
-\\[2pt]
-{\footnotesize $^{\dagger}$all instances / quasi-identifier-bearing instances (skewed $10^5$, conservative).}
-\end{table}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.80\columnwidth]{figures/delta_hist.png}
-\caption{Per-instance calibration gap $\hat\Delta=L_{\mathrm{strong}}-L_{\mathrm{local}}$ ($n=290$, $\ge75$ probes).}
-\label{fig:delta}
-\end{figure}
-
-\subsection{Main Closed-Loop Results}
-
-A local pilot (8 instances) verified loop mechanics and exposed that with 5--6 probes the zero-hit Wilson upper bound ($\approx0.39$--0.44) makes the instance-level gate statistically unreachable---direct evidence for the $\ge75$-probe requirement (T8, D1). On train-400 under real gates ($\tau_L=0.05$, $\ge75$ probes; T10, Table~\ref{tab:main}): paired leakage falls $0.457\to\mathbf{0.304}$ (permutation $p\approx0$, including INFEASIBLE) while the utility gate holds ($U$: 0.973$\to$0.980; only 2/400 with $U$-drop $>0.1$); PASS rate 37.5\% (legal 57\%, banking 53\%, medical 30\%, travel 28\%); 250 INFEASIBLE instances all emit residual-leakage reports and route to humans by design. The medical domain's lowest PASS rate is consistent with Prop.~\ref{prop:feasibility} (strong task--sensitive coupling shrinks the feasible region). Rounds decrease along the stream (3.52$\to$2.62), directional evidence for H1 but confounded by domain composition (Stage~1 disabled prompt updates). \emph{Qualification (T18)}: the $U$ figures were measured on pre-hard-line artifacts that could retain residual literals; part of the ``preserved utility'' was carried by literal leakage (scope corrected below); the paired leakage reduction remains valid (same measurement basis before/after).
-
-\begin{table}[!t]
-\centering
-\caption{Main closed-loop results (train-400, real gates).}
-\label{tab:main}
-\small
-\begin{tabular}{@{}ll@{}}
-\toprule
-Metric & Result \\
-\midrule
-PASS rate & \textbf{37.5\%} (150/400) \\
-Mean rounds & 3.08 (first half 3.52 $\to$ second half 2.62) \\
-Leakage (paired) & $L$: 0.457 $\to$ \textbf{0.304} ($p\approx0$) \\
-Task utility (paired) & $U$: 0.973 $\to$ \textbf{0.980} (gate invariant) \\
-INFEASIBLE & 250, all with residual reports \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Post-dehydration attacker re-test on test-160 (T16): PASS 70/160 (43.8\%), mean 4.0 rounds; leakage on dehydrated text vs direct forwarding shows $\approx45\%$ relative reduction, consistent across families (flash $0.768\to0.436$; glm $0.789\to0.412$; Table~\ref{tab:gain}, Fig.~\ref{fig:gain}); retrieval-augmented $A_2$ gains nothing on dehydrated text; residual leakage concentrates in task-relevant quasi-identifiers protected by the $U$ gate (consistent with T12's tension); LLM refinement succeeds on only 11\% of steps (rest fall back to deterministic dehydration).
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.86\columnwidth]{figures/fig_privacy_gain.png}
-\caption{Privacy gain of DR-SL dehydrated text (test $n=160$, strict grading).}
-\label{fig:gain}
-\end{figure}
-
-\begin{table}[!t]
-\centering
-\caption{Privacy gain on dehydrated text vs direct forwarding (strict grading).}
-\label{tab:gain}
-\small
-\begin{tabular}{@{}lrrl@{}}
-\toprule
-Attacker & $L$ direct & $L$ dehydrated & gain \\
-\midrule
-qwen3.8-flash $A_0$ & 0.768 & \textbf{0.436} & $-0.33$ \\
-qwen3.8-flash $A_1$ & 0.765 & 0.435 & $-0.33$ \\
-qwen3.8-flash $A_2$ & --- & 0.432 & none over $A_0$ \\
-glm-5.2 $A_0$ & 0.789 & \textbf{0.412} & $-0.38$ \\
-glm-5.2 $A_1$ & 0.789 & 0.422 & $-0.37$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=0.86\textwidth]{figures/fig_train_loop.png}
-\caption{Left: loop rounds over the train stream (H1 check). Right: per-instance leakage before vs after DR-SL (green PASS, red INFEASIBLE).}
-\label{fig:loop}
-\end{figure*}
-
-\subsection{Release-Chain Audit: The Hard Line and What It Exposes}
-
-Auditing archived loop outputs $D_{\mathrm{final}}$ of T16 revealed that \textbf{159/160 instances still contained literal sensitive values} (mean 3.01/instance)---an artifact of span-only replacement missing repeated mentions: the soft layer alone does not eliminate literal leakage (T18). Applying the deterministic hard-line scrub (replace every remaining literal occurrence of every declared value) and re-running the external strong attackers (strict grading, $\ge75$ probes) yields \textbf{0.000} literal leakage on all 160 instances and both subgroups (PASS: 0.486/0.432 $\to$ 0.000; INFEASIBLE: 0.398/0.396 $\to$ 0.000 for flash/glm). Reading: (1) the pre-scrub PASS$>$INFEASIBLE inversion is fully explained by residual literals (PASS instances exit earlier, undergoing fewer strengthening passes); (2) after the hard line, \emph{literal-value} leakage measured by two external strong attackers is zero---the layered model's deterministic layer, not the soft certificate, carries this guarantee; (3) outside this measurement remains \emph{semantic/combinatorial} inference not expressible as literal declared values---covered by the $A_3$ $k$ dimension (T7) and the human-review path. The scope of ``0.000'' is stated precisely: strict literal grading over declared-attribute probes (zero hits per instance out of $\ge75$ probes, Wilson upper $\approx0.048$ each; pooled over $160\times\ge75=12000$ probes, 95\% upper bound $<0.001$); it is not a claim of zero semantic leakage.
-
-\emph{Utility cost and retraction of scope (T20b).} Re-measuring QA utility on scrubbed text gives $U=0.000$ (all 160, tolerant scoring): on this benchmark every quasi-identifier is task-relevant by annotation design, so exact-value utility and literal sensitive value coincide, and any sanitizer that truly removes the literals removes that utility with them. The claim ``leakage reduced while $U\ge0.97$ is preserved'' therefore holds \emph{only} for pre-hard-line artifacts; the corrected frontier runs from (direct: $U=0.92$, $L=0.77$) through (loop output pre-hard-line: $U=0.97$, $L_{\mathrm{strong}}=0.44$) to (fully sanitized: $U\to$ tolerance-limited, $L_{\mathrm{strong}}=0.00$), with T21 locating the middle point under principled generalization. \emph{Release procedure upgraded (deviation D13)}: a local PASS is necessary but not sufficient---on 70/160 locally certified instances external attackers still extracted $L\approx0.43$--0.49 pre-hard-line (the certification gap, quantifying one-sidedness in vivo). The mandatory chain is therefore local gate $\to$ hard-line scrub $\to$ \emph{external strong-attacker re-test on the final artifact} $\to$ egress or human review.
-
-\emph{Trust model of the external re-test.} Under (A1), submitting $D$ to a re-test service is itself an egress event; we fix the semantics: the re-tester belongs to the same trust class as the destination cloud (in experiments, the same provider family). The re-test is then a controlled first disclosure to the destination trust class, valued for (i) destination selection (release only to providers whose measured post-sanitization extraction stays below threshold), (ii) retention control (payload is exactly the intended egress artifact), (iii) catching local-gate misses before further destination processing. Residual caveat stated plainly: if re-tester $\ne$ destination the trust model must extend to that third party; if re-tester $=$ destination a failed re-test prevents subsequent processing but not the first exposure. Localizing the strong re-test (or a TEE) removes the caveat but reopens the certificate gap of T19.
-
-\emph{Incremental value of the re-test, decomposed.} For declared values, ``no declared literal remains'' is pure string matching---free, deterministic, local (the hard line). The external LLM re-test adds value where the hard line is blind: literal values of \emph{missed} attributes (the $1-\hat\rho$ fraction of Prop.~\ref{prop:recall}) and semantic/combinatorial inference (residual risk probed by the $A_3$ $k$ dimension).
-
-\emph{Chain semantics for utility; effective automatic-release rate.} The chain re-checks utility after the hard line under the declared active metric. Under exact-value utility on this fully coupled benchmark, post-scrub $U=0.000<\tau_U$ for all 160: the \textbf{effective automatic-release rate is 0\%}---every instance routes to human review with a certificate package. We state this as the empirical incarnation of Prop.~\ref{prop:feasibility}: when every quasi-identifier is a task parameter ($I(X;T\mid S)\approx0$), no non-degenerate automatic operating point exists and the correct behavior is certification-and-routing. Where non-degenerate points exist is quantified in T23/T24 (\S\ref{sec:oppoints}, \S\ref{sec:mixed}).
-
-\emph{Why the hard line comes last, not first.} Deletion-only sanitization collapses utility to the placeholder corner ($U_{\mathrm{sem}}=0.228$ on test-160). Running the loop first buys \emph{generalization} (age bands, amount ranges), which preserves semantic utility (0.431, $1.9\times$); the hard line then mops up literals generalization missed, and the external re-test certifies the result. The ordering is dictated by the measured generalization-vs-deletion utility gap: generalize what you can, delete what you must, verify what leaves.
-
-\emph{The post-dehydration certification gap and its mechanism (T25).} On the 70 locally PASS-certified artifacts, $\hat\Delta_{\mathrm{post}}\approx0.44\approx2.4\times$ the raw-text $\hat\Delta$---calibration is regime-dependent, as \S\ref{sec:security} requires. Diagnosis (30 PASS artifacts): asked in a \emph{comprehension} format to enumerate every concrete personal-attribute value, the local model lists the residual literals at rate \textbf{0.992}---it \emph{sees} the values---yet answers UNKNOWN under the adversarial probe template: the gap is probe format/role, not comprehension. Repair validated (T25b, $n=30$): enumeration-format scoring yields $L_{\mathrm{enum}}^{\mathrm{local}}=\mathbf{1.000}$---the literal dimension of $\hat\Delta_{\mathrm{post}}$ is a probe-format artifact a local enumeration probe closes for closed-vocabulary types, defusing most of the re-test trust dilemma; the in-vivo rerun (T25c) qualifies this for open-vocabulary categoricals (below). What genuinely remains for the external re-test is the semantic/combinatorial dimension (T19). \emph{Methodological lesson}: LLM-evaluator measurements are joint functions of knowledge and answering policy/probe format---never knowledge alone; any certificate built on LLM probes must treat probe format as a controlled factor (formats frozen in protocol D8/D9; flagged monotonicity violations re-tested under a mandated review rule).
-
-\emph{The enumeration probe in vivo (T25c).} Replacing Branch-1's adversarial template with the enumeration probe and re-running the entire loop unchanged makes the local certificate markedly stricter at unchanged cost: PASS falls 43.8\%$\to$\textbf{5.0\%} (8/160: banking 2, legal 6), mean rounds 4.0$\to$7.8 (242 vs 240 s/instance; utility on accepted steps unchanged at 0.955). Most adversarial-template PASS certificates were false passes; the repaired probe converts them into genuine strengthening or honest INFEASIBLE routing (the safe direction). External validation of the 8 enum-PASS artifacts splits them: the 2 banking artifacts are genuinely clean ($L=0.000$); all 6 legal artifacts still leak $L=0.320$ through residual open-vocabulary categorical literals (a law-firm name, a case type) that local enumeration missed---the boundary class of \S\ref{sec:boundary}; after the hard line all eight measure 0.000. The paired train-400 rerun (399/400 instances; D18) reproduces the pattern and strengthens the headline: raw-text leakage 0.762 (enum) vs 0.457 (adversarial), post-loop 0.358 vs 0.304---the paired reduction is \emph{larger} under the stricter probe ($-0.404$ vs $-0.154$), PASS 37.6\%$\to$8.5\%, rounds 3.08$\to$4.06. The leakage-reduction claim is robust to probe format; the adversarial-template figures understate both baseline leakage and delivered reduction.
-
-\subsection{Operating Points, Utility Metrics, and Human Anchors}
-\label{sec:oppoints}
-
-Two classical baselines share the 160 instances, attack bundles, and QA probes with DR-SL: placeholder substitution (every annotated value becomes a typed token) and selective LDP (every annotated value becomes a random same-type value). Together with the DR-SL points they complete the leakage-utility plane (T21, Table~\ref{tab:plane}): principled generalization (the fixed deterministic policy: every occurrence of every declared value generalized or removed; task-relevant values generalized to bands/categories) achieves $L=0.000$ against both strong attackers---the placeholder corner's leakage at higher exact-value utility (0.033 vs 0.000; 0.276 with the completed generalization lexicon: banking 0.370, legal 0.317, travel 0.264, medical 0.152)---while selective LDP retains chance-level utility (0.075) but leaks more ($L\approx0.05$). \emph{Metric caveat, stated plainly}: exact-value QA utility is a conservative lower bound on downstream usefulness---it credits a random wrong-age draw landing in tolerance while debiting a truthful age-band generalization a human advisor would find usable; we therefore claim domination over placeholders (same $L$, higher $U$) and a leakage advantage over selective LDP, not a total-order utility advantage. The loop's distinctive value is not the corner itself but \emph{deciding per instance} whether a safer point is reachable without destroying the task (Prop.~\ref{prop:feasibility}), certifying what it releases, and emitting residual reports for what it cannot.
-
-\begin{table}[!t]
-\centering
-\caption{Leakage-utility plane on test-160 (strict-literal $L$; strong attackers flash/glm).}
-\label{tab:plane}
-\small
-\begin{tabular}{@{}lccc@{}}
-\toprule
-Operating point & $L$ (flash) & $L$ (glm) & $U$ \\
-\midrule
-Direct forwarding & 0.768 & 0.789 & 0.917 \\
-Loop output, pre-hard-line & 0.436 & 0.412 & 0.97$^{\dagger}$ \\
-\textbf{Principled generalization} & \textbf{0.000} & \textbf{0.000} & 0.033 \\
-Placeholder substitution & 0.000 & 0.000 & 0.000 \\
-Selective LDP & 0.057 & 0.049 & 0.075 \\
-\bottomrule
-\end{tabular}
-\\[2pt]
-{\footnotesize $^{\dagger}$utility partly carried by residual literals (T18); not an achievable safe point.}
-\end{table}
-
-The decisive measurement (T23) replaces exact-value utility with a \emph{reference-based semantic rubric}: an LLM judge sees $X$ and $D$ and scores whether $D$ still supports essentially the same useful, correct advice (1.0/0.5/0.0; altered values count as loss; frozen prompt in the artifact package). Judge qwen3.8-max (primary), glm-5.2 (reliability, 160 paired items; Spearman $\rho=0.757$). On fully coupled test-160 the semantic metric places principled generalization at $(0.000,\ \mathbf{0.431})$---roughly double the placeholder corner (0.228) and $2.3\times$ the LDP corner (0.188) at equal-or-better leakage (Table~\ref{tab:usem})---confirming T21's caveat in the predicted direction, though below the $\tau_U^{\mathrm{sem}}=0.5$ release threshold on this worst-case corpus.
-
-\begin{table}[!t]
-\centering
-\caption{Semantic utility $U_{\mathrm{sem}}$ by operating point (reference-based judge; $L$ from T21).}
-\label{tab:usem}
-\small
-\begin{tabular}{@{}lcc@{}}
-\toprule
-Operating point & $U_{\mathrm{sem}}$ & $L$ (strong) \\
-\midrule
-Direct forwarding & 1.000 & 0.768--0.789 \\
-\textbf{Principled generalization} & \textbf{0.431} & \textbf{0.000} \\
-Placeholder substitution & 0.228 & 0.000 \\
-Selective LDP & 0.188 & 0.049--0.057 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\emph{Human study 1 (utility anchor).} Two annotators (second and third authors; independent of the pipeline implementation; blind to variant identities and automatic scores) independently scored all 160 blinded rows (40 instances $\times$ 4 operating points; blind key withheld until scoring finished). Inter-rater Krippendorff $\alpha=0.780$ (ordinal); human-vs-automatic row-level Spearman $\rho=\mathbf{0.839}$ ($n=160$), meeting the preregistered bar ($\ge0.8$); operating-point means rank identically (point-level $\rho=1.000$): direct 0.988 (auto 1.000), principled generalization \textbf{0.487} (auto 0.406), placeholder 0.144 (auto 0.175), selective LDP 0.181 (auto 0.200). Consequences: the semantic judge is a valid proxy for human usefulness judgments; humans credit honest generalization even more than the judge does---the safe point's human-rated utility (0.487) is $1.8\times$ the exact-value metric (0.276) and approaches $\tau_U^{\mathrm{sem}}=0.5$ even on this worst-case corpus. Context notes: auto means above are on the 40-instance human-study subset (generalized 0.406 here vs 0.431 on full test-160); the placeholder/LDP ordering flips between subset and full set---a small-$n$ composition effect, not a contradiction. Threshold provenance: $\tau_U^{\mathrm{sem}}=0.5$ was frozen (deviation D14) \emph{before} human scores were collected; sensitivity: release rate 67.5\% at $\tau_U^{\mathrm{sem}}\in\{0.4,0.5\}$, 46.7\% at 0.6.
-
-\subsection{Mixed-Coupling Benchmark: Where Automatic Release Is Non-Degenerate}
-\label{sec:mixed}
-
-The test corpus is worst-case by construction (every quasi-identifier task-relevant). On the mixed-coupling benchmark (120 fresh instances, seed 20260908, mean coupling 0.40), the safe point measures $L=0.000$ everywhere with $U_{\mathrm{sem}}=0.571$ overall and automatic release of \textbf{67.5\%} of instances (95\% Wilson [58.6, 75.6]) under the semantic rule; by domain, banking reaches $U_{\mathrm{sem}}=0.933$ and 100\% release, while medical/travel (categorical-coupled) sit at 47\%/53\% (T24, Table~\ref{tab:mixed}; $U_{\mathrm{strict}}$ is computable only on instances containing task-critical exact values---76/120---so the all-domain 0.415 is a mean over scorable instances, not of domain rows). Both corner baselines were run on the same instances with the same gates (P41, measured---not inferred; Table~\ref{tab:mixedpoints}): placeholder ties zero leakage but loses 9.2pp of release rate and all exact-value utility; selective LDP fails the leakage gate on average ($L=0.070>\tau_L$) and releases 25.0\%. The safe point Pareto-dominates both corners under the identical rule; the per-instance split---not the corpus average---is the decision mechanism's distinctive output.
-
-\begin{table}[!t]
-\centering
-\caption{Mixed-coupling benchmark ($n=120$): safe-point metrics and automatic-release rate (rule: $L\le\tau_L$, $U\ge$ threshold 0.7 strict / 0.5 semantic; Wilson intervals).}
-\label{tab:mixed}
-\footnotesize
-\begin{tabular}{@{}lcccc@{}}
-\toprule
- & $L$ & $U_{\mathrm{strict}}$ ($n$) & $U_{\mathrm{sem}}$ & auto (strict/sem) \\
-\midrule
-All domains & 0.000 & 0.415 (76) & 0.571 & 24.2\% / \textbf{67.5\%} \\
-banking & 0.000 & 0.567 (30) & \textbf{0.933} & --- / 100\% [88.6, 100] \\
-legal & 0.000 & 0.523 (22) & 0.633 & --- / 70\% [52.1, 83.3] \\
-travel & 0.000 & 0.000 (6) & 0.350 & --- / 53\% [36.1, 69.8] \\
-medical & 0.000 & 0.167 (18) & 0.367 & --- / 47\% [30.2, 63.9] \\
-\bottomrule
-\end{tabular}
-\end{table}
+\subsection{Contributions}
 
-\begin{table}[!t]
-\centering
-\caption{Mixed-coupling benchmark ($n=120$): operating points under the identical release rule; the safe point Pareto-dominates both corners.}
-\label{tab:mixedpoints}
-\small
-\begin{tabular}{@{}lcccc@{}}
-\toprule
-Operating point & $L$ & $U_{\mathrm{strict}}$ & $U_{\mathrm{sem}}$ & auto (strict/sem) \\
-\midrule
-\textbf{Principled gen.} & \textbf{0.000} & \textbf{0.415} & \textbf{0.571} & \textbf{24.2\% / 67.5\%} \\
-Placeholder & 0.000 & 0.000 & 0.421 & 0.0\% / 58.3\% \\
-Selective LDP & 0.070 & 0.099 & 0.254 & 2.5\% / 25.0\% \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Ablations, Self-Learning Tests, and Cost}
-\label{sec:slresults}
-
-\emph{Ablations (T14, 30 instances each; Table~\ref{tab:ablation}).} Removing Branch~1 leaves final $D$ at true leakage $L=0.327$ (quantified false-release risk: indispensable); removing Branch~2 collapses $U$ to 0.111 (over-redaction runs away: indispensable); removing hot start changes rounds 2.82$\to$2.90 (marginal under the deterministic policy); removing the memorization check triggered 0 of 5 rejections in this batch (weak evidence).
-
-\begin{table}[!t]
-\centering
-\caption{Ablation results (Stage~2).}
-\label{tab:ablation}
-\small
-\begin{tabular}{@{}p{3.2cm}p{2.2cm}p{2.6cm}@{}}
-\toprule
-Ablation & Result & Conclusion \\
-\midrule
-Remove Branch 1 & $L=0.327$ & False-release risk; indispensable \\
-Remove Branch 2 & $U=0.111$ & Over-redaction; gate indispensable \\
-Remove hot start & rounds 2.90 (ctrl 2.82) & Marginal under deterministic policy \\
-Remove memorization check & 0/5 rules contaminated & No rejection this batch (weak) \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\emph{Self-learning (T13, formal H1 test).} A fresh-seed stream of 120 instances (60 distillation + 60 validation): distillation produced 5 rules from 172 failure experiences (all passing the memorization check). Paired validation: rounds v0 2.82 vs v1 2.90 ($\Delta=+0.08$, permutation $p=0.68$, n.s.); PASS 46.7\% vs 41.7\%. \textbf{H1 is not supported}---a single distillation round brought no loop-efficiency gain; attribution: distilled rules concern recognition/recall strategies, decoupled from the loop's dehydration actions, which the deterministic policy dominates. \emph{Corrected hypothesis H1$'$ (T17, preregistered D12)}: rules distilled from extraction-failure experience and injected into the extractor should raise recall and reduce miss-driven system leakage. P21: from 55 missed-detection experiences (dominant missed types: income 28, address 7, amount 6), 4 rules passed the memorization check and independent GenScore, 1 rejected---evidencing the check. P22 ($n=240$, disjoint): quasi recall $0.928\to\mathbf{0.943}$ ($+1.5$pp, one-sided $p=\mathbf{0.059}$); overall $0.954\to0.962$ ($p=0.077$); over-extraction cost $+0.04$ values/instance. P23 ($n=30$ paired): extraction recall $0.975\to0.992$; $L_{\mathrm{system}}$ $0.420\to0.398$ ($p=0.69$, n.s.; ceiling effect---baseline recall already 0.975). \textbf{Verdict (honest reporting)}: H1$'$ obtains directional support without statistical significance; per the preregistered criterion ($p<0.05$) it is judged unproven (borderline). Power analysis: detecting $\Delta=0.015$ with per-instance recall SD $\approx0.10$ requires $n\ge700$. Contrasted with H1 (negative, mechanistic decoupling), H1$'$ is directionally positive with aligned mechanism (rule content \emph{is} extraction strategy): the correct target of self-learning is the extractor, though gains are limited at high baseline recall.
-
-\emph{Distribution shift (T6, T15).} Between test and $T_{\mathrm{new}}$: TF-IDF domain-discriminator AUC $=0.725$ (CI 0.66--0.79; moderate shift); embedding MMD permutation $p=0.0$; type-signature coverage exact 25.6\%/subset 31.9\% (on $T_{\mathrm{new}}$: 18.8\%/22.9\%); the uncovered-signature list is archived and guides library expansion. Dose-response ($5\alpha\times20$ instances): rounds flat (3.6--4.65), pass rate 0.25--0.35 (efficiency robust), and \textbf{at every $\alpha$ the PASS outputs' Wilson upper bound is $0.049\le\tau_L$}---release safety does not degrade with shift, empirically supporting the safety-efficiency separation of \S\ref{sec:shift}.
-
-\emph{Capability gradient and cost (T19, T20).} Paired local attackers on raw text: ornith-1.5-35b $L=0.531$ vs qwen3.8-27b-mlx $0.556$ ($\Delta=+0.024$, $p=0.26$, n.s.), both far below the online strong attacker (0.779): within the locally deployable class attack capability \emph{saturates}; the decisive gap is local-vs-cloud, so the $\hat\Delta$ calibration---not local upgrades---is the mechanism that matters ($\hat\Delta=+0.181\gg0.024$). Cost: main loop (train-400, $\ge75$-probe evaluations) mean \textbf{203 s/instance} (median 166; max 1177), $\approx10.2$ LLM calls/instance; test-160 loop 240 s/instance; hot start changes rounds by $\approx0$ under the deterministic policy (T14), so cost is dominated by the probe bundle---reducing probes (at the price of Wilson-gate power) is the primary cost lever; interactive use requires parallelized probe bundles or interval-corrected smaller $|Q|$ (engineering limitation, reported not hidden).
-
-\emph{Proof verification (T1).} Theorem~\ref{thm:fano}, Prop.~\ref{prop:witness}, Prop.~\ref{prop:feasibility}: 1000 random synthetic-mechanism configurations each (exact enumeration + counterexample search) \textbf{all pass}; boundary cases (independent channel $\to$ vacuous bound; $L\to1\to$ divergence; uniform-prior special case) verified (Appendix~B).
-
-\subsection{Applicability Boundary: Which Domains and Information Types Automate}
-\label{sec:boundary}
-
-Synthesizing T21--T24 (safe-point utility by domain and attribute type, $L=0.000$ everywhere): explicit identifiers are removed outright and rarely task-critical---\textbf{fully automatic} (hard line, deterministic); numeric/ordinal quasi-identifiers (age, amounts, incomes, dates, durations) tolerate band generalization preserving semantic utility ($U_{\mathrm{sem}}$ 0.93 in banking)---\textbf{largely automatic} (release 70--100\% in numeric-led domains); open-vocabulary categoricals that \emph{are} the task object (disease for medical advice, destination for travel, case object for legal) lose the advice target under generalization ($U_{\mathrm{sem}}$ 0.35--0.37)---\textbf{certify-and-route}: automatic certification plus residual report, human decides; strongly coupled instances in any domain ($I(X;T\mid S)\approx0$) have empty feasible regions (Prop.~\ref{prop:feasibility})---\textbf{human only}, the system's role being the early-warning package. The near-zero exact-value utility at the safe point is thus a property of (i) the worst-case fully coupled benchmark, (ii) the exact-value metric, and (iii) the generalization lexicon's coverage---all quantified---not of the method. Numeric-led, partially coupled corpora approach full automation; categorical-coupled domains use DR-SL as a certification and annotation layer ahead of human review---the layered-assurance design point of \S\ref{sec:layered}.
-
-\section{Conclusion and Future Work}
-
-This paper proposed DR-SL, a sensitive-information isolation method centered on reversibility verification with prompts as the optimization object. We placed de-identification sufficiency under Pufferfish semantics, proved lower-boundedness of the leakage score (Fano-type), the Pufferfish witness, a rate-privacy feasibility criterion, and termination of the lexicographic iteration, positioned the method as ``approaching theoretical limits via an empirically calibrated heuristic certificate'', and verified all bounds with executable numerical property tests on 3000 synthetic mechanisms. Engineering-wise, the offline stage calibrates only on non-sensitive corpora while all online decisions are local, and the layered assurance model (soft certificate $+$ hard line $+$ human fallback) explicitly characterizes each layer's guarantee and residual risk. Experiments show significant leakage reduction ($0.457\to0.304$, $p\approx0$, same measurement basis before/after); the release-chain audit establishes literal leakage at egress of \textbf{0.000} on all 160 test instances under the mandatory sequence local gate $\to$ hard line $\to$ external re-test (two independent strong attackers; pooled 95\% upper bound $<0.001$), with exact-value utility at that safe point of 0.276 (completed lexicon; 0.033 deletion-only) and semantic utility 0.431 on the deliberately worst-case fully coupled benchmark---utility figures measured on pre-hard-line artifacts are reported separately because residual literals could carry part of them. On such benchmarks the delivered value is precisely characterized: a \emph{certification machine} (quantified leakage lower bounds, residual reports, auditable decisions) plus a \emph{human-fallback router}, with a mapped leakage-utility frontier---not an automatic utility-preserving sanitizer. Where non-degenerate automatic operating points exist (partially coupled corpora; utility metrics crediting honest generalization) is quantified in T23--T25 and summarized as the applicability boundary; the medical domain's low pass rate corroborates the feasibility criterion's prediction for strongly coupled sensitive information.
-
-Future work: (i) powered re-tests of H1$'$ on harder extraction benchmarks ($n\ge700$) and multi-round iterative distillation; (ii) re-measure $A_3$'s $k$ risk on dehydrated text; (iii) replace the W2 example marginals with real public statistical tables; (iv) scale the human studies (two raters each; $\rho=0.839$ passed its preregistered bar; annotation recall $\ge0.987$) to more raters, real-user populations, and covert-identifier benchmarks; (v) an open-ended judge-rubric utility metric crediting generalization; (vi) computable Maximal-Leakage upper-bound estimation; (vii) interactive-latency engineering of the $\ge75$-probe gate; (viii) composition with structured-field isolation.
-
-\emph{Reproducibility and artifact availability.} All artifacts are public: the simulation pipeline and test suite, the four synthetic datasets (main v2, expansion, stage-2 stream, mixed-coupling; all fully fictional), the pre-registered protocol with the complete deviation log (D1--D18), the human-study package with scoring sheets and analysis scripts, and the proof-verification suite, at \url{https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl} (code MIT; datasets CC-BY-4.0).
-
-\appendices
-
-\section{Proofs}
-\label{app:proofs}
-
-\noindent\emph{Notation}: $\log$ is base 2; $H_2(p)=-p\log p-(1-p)\log(1-p)$; $\ln$ is natural. Every proof step cites its justification; extended derivations and remarks accompany the public preprint.
-
-\subsection{Proposition~\ref{prop:recall} (recall decomposition)}
-
-With $G$, $F$, $\mathrm{Recall}$ as stated and $L_{\mathrm{system}}=\frac{1}{|G|}\sum_{s\in G}\mathrm{leak}(s)$, split the gold sum by whether the attribute was found. Missed attributes: bounding $\mathrm{leak}(s)\le1$, $\frac{1}{|G|}\sum_{s\in G\setminus F}\mathrm{leak}(s)\le\frac{|G|-|G\cap F|}{|G|}=1-\mathrm{Recall}$. Found attributes: for $s\in G\cap F$, $\mathrm{leak}(s)$ equals the probe hit $\mathrm{hit}(s)\in[0,1]$; since all summands are non-negative, $\sum_{s\in F\cap G}\mathrm{leak}(s)\le\sum_{s\in F}\mathrm{hit}(s)=|F|\cdot L_{\mathrm{measured}}$. Dividing by $|G|$ and adding gives $L_{\mathrm{system}}\le\frac{|F|}{|G|}L_{\mathrm{measured}}+(1-\mathrm{Recall})$. $\blacksquare$ \emph{Remarks}: the older form without the inflation factor is recovered only if $F\subseteq G$; over-extraction is conservative for probing (more attributes watched) but anti-conservative for the measured rate (dilution); on Stage-1 data $\iota=1.43$ (median 1.40).
-
-\subsection{Theorem~\ref{thm:fano} (Fano-type lower bound)}
-
-(1) Let $P^{*}_{e,i}=\inf_{\hat g}P(\hat g_i(D)\ne S_i)$. The measured attacker's error $1-L_i$ is feasible, hence $P^{*}_{e,i}\le1-L_i$ (optimality). (2) By $L_i\ge1/|V_i|$, $P^{*}_{e,i}\le(|V_i|-1)/|V_i|$. (3) Fano's inequality~\cite{cover2006elements}: $H(S_i\mid D)\le H_2(P^{*}_{e,i})+P^{*}_{e,i}\log(|V_i|-1)$. (4) Monotonicity: $g(p):=H_2(p)+p\log(k-1)$ is non-decreasing on $[0,(k-1)/k]$, since $g'(p)=\log\frac{(1-p)(k-1)}{p}\ge0 \iff p\le\frac{k-1}{k}$. (5) By (1)(2)(4): $H(S_i\mid D)\le g(1-L_i)$. (6) Subadditivity: $H(S\mid D)\le\sum_i H(S_i\mid D)$. (7) Combining: $I(D;S)=H(S)-H(S\mid D)\ge H(S)-\sum_i g(1-L_i)$. $\blacksquare$ \emph{Corollary (threshold mapping)}: if all hit rates are $\le\tau_L$, $I_{\mathrm{norm}}(D;S)\ge1-\sum_i g(1-\tau_L)/H(S)$: $\tau_L$ corresponds to a leakage \emph{lower-bound} guarantee.
-
-\subsection{Proposition~\ref{prop:witness} (Pufferfish witness)}
-
-Let $\varepsilon_{\mathrm{true}}:=\max_{v_1,v_2,d}|\ln\frac{P(d\mid v_1)}{P(d\mid v_2)}|$ be the smallest Pufferfish parameter the mechanism satisfies, $L^{*}$ the optimal (MAP) attacker's hit rate, and $L\le L^{*}$ any measured attacker's. (1) The MAP attacker guesses the posterior mode: $L^{*}=\mathbb{E}_d[\max_v p(v\mid d)]$ (Bayesian decision theory). (2) Since $\max_v p(v\mid d)\le1$, some output $d_0$ has $m:=\max_v p(v\mid d_0)\ge L^{*}$ (else the expectation in (1) would be $<L^{*}$). (3) At $d_0$ with $v^{*}=\argmax_v p(v\mid d_0)$: $p(v^{*}\mid d_0)\ge L^{*}$ and for $v'\ne v^{*}$, $p(v'\mid d_0)\le1-L^{*}$; posterior odds $\ge\frac{L^{*}}{1-L^{*}}$. (4) Bayes expansion: odds $=\frac{P(d_0\mid v^{*})}{P(d_0\mid v')}\cdot\frac{p(v^{*})}{p(v')}$. (5) Hence $\frac{P(d_0\mid v^{*})}{P(d_0\mid v')}\ge\frac{L^{*}}{1-L^{*}}\cdot\frac{p_{\min}}{p_{\max}}$ (if $P(d_0\mid v')=0<P(d_0\mid v^{*})$ the ratio is $+\infty$ and the claim holds trivially). (6) By definition of $\varepsilon_{\mathrm{true}}$ and monotonicity of $x\mapsto\ln\frac{x}{1-x}$ with $L^{*}\ge L$: $\varepsilon_{\mathrm{true}}\ge\ln\frac{L}{1-L}+\ln\frac{p_{\min}}{p_{\max}}$. $\blacksquare$ Numerically: $L=0.9\Rightarrow\varepsilon\ge2.20$ (uniform prior); $L=0.5\Rightarrow0$; $L=0.05\Rightarrow$ vacuous---non-trivial only for strong evaluators.
-
-\subsection{Proposition~\ref{prop:feasibility} (feasibility criterion)}
-
-(1) Monotonicity: $I(D;T\mid A)\le I(D;(T,S)\mid A)$. (2) Chain rule: $I(D;(T,S)\mid A)=I(D;S\mid A)+I(D;T\mid S,A)$. (3) Conditional data-processing: $T$ is a function of $X$, so $T\to X\to D$ is a Markov chain given $(S,A)$; hence $I(D;T\mid S,A)\le I(X;T\mid S,A)$. (4) Combining and taking the supremum over $\{p(D|X):I(D;S|A)\le\varepsilon\}$ gives $U^{*}(\varepsilon)\le\varepsilon+I(X;T\mid S,A)$. $\blacksquare$ \emph{Corollary}: if $\tau_U>\tau_L+I(X;T\mid S,A)$ the feasible region is empty and Algorithm~\ref{alg:main} necessarily outputs INFEASIBLE.
-
-\subsection{Theorem~\ref{thm:termination} (termination)}
-
-(1) \emph{Phase 1}: each round either strictly increases $U$ or fails to improve; two consecutive no-improvement rounds exit, and a \texttt{None} loosen return exits; $U\le1$ bounds strictly increasing rounds; Phase~1 ends finitely. If it ends with $U<\tau_U$, no strengthening can satisfy the gate (strengthening cannot raise $U$) and the Phase-2 skip mechanism outputs INFEASIBLE quickly. (2) \emph{Phase 2}: each round does exactly one of: accept a strengthening; accept a loosening; permanently add one attribute to \texttt{skipped}; record a failed strengthening---each incrementing $t$. (3) $t<B=3|S|+5$ bounds all rounds. (4) \emph{Gate invariant}: at Phase-1 exit $U\ge\tau_U$ or exit by no-progress; strengthenings are accepted only if $U'\ge\tau_U$; accepted loosenings only increase $U$. (5) Termination outputs PASS or INFEASIBLE per the criteria. $\blacksquare$ \emph{Note}: evaluation noise does not affect termination (finitely many deterministic checks) but affects statistical reliability: the invariant holds for sampled estimates; with per-instance variance $\sigma^2$ the true $U$ can fall below $\tau_U$ by $O(\sigma)$ on accepted steps---bounded for the release decision by the stability window and Wilson intervals, reported as a limitation of the certified guarantee, not of termination.
-
-\subsection{Proposition~\ref{prop:direction} (directional correctness)}
-
-(i) If $I(D;S)=0$ then $p(v\mid d)=p(v)$ for all $v$; no answer function exceeds the prior guessing rate (Bayesian decision theory), so the hit rate does not exceed the prior level. (ii) If $H(X\mid D,S)>\eta\ge0$, some $(d,s)$ with positive probability leaves $X$ undetermined; any rehydrator's expected reconstruction error is positive, so $\mathbb{E}[R]<1$. $\blacksquare$
-
-\section{Proof-Verification Methodology}
-\label{app:verify}
-
-For every bound in Appendix~A we establish three-layer executable verification (\texttt{sim/proof\_checks.py}, delivered test-first): (1) \emph{Numerical property tests (counterexample search; core)}---synthetic mechanism families with fully known parameters (binary symmetric channels, naive-Bayes text models, arbitrary discrete $P(D,S)$) whose true quantities (true $\varepsilon$ = maximum log-likelihood ratio, true mutual information, true posteriors) are exactly enumerable; simulated attackers yield hit rates and we assert each bound's direction (bound $\le$ true quantity) and non-triviality; $\ge1000$ random configurations per proposition, all passing. (2) \emph{Boundary-case checks}---zero information gain $\Rightarrow$ vacuous bound; $L\to1\Rightarrow$ divergence; uniform-prior special cases checked line-by-line against manual derivations. (3) \emph{Cross-consistency}---on the same families, Theorem~\ref{thm:fano}'s bound and Prop.~\ref{prop:witness}'s witness point in the same direction without contradiction, aligned with known results (differential privacy's odds semantics; numerical data-processing inequality). Any counterexample corrects the proposition before submission with full test regression; results are archived as a test report accompanying the paper.
-
-\section{Semantic-Utility Judge Rubric (Frozen Prompt)}
-\label{app:rubric}
-
-The reference-based semantic utility metric ($U_{\mathrm{sem}}$, T23/T24) uses a frozen system prompt; the judge sees the original material $X$ followed by the processed artifact $D$, and the user turn concatenates ``original material:'' $+X+$ ``processed material:'' $+D$ with newline separators. The verbatim Chinese original is distributed with the source package and public artifact repository; the English gloss follows and is line-by-line equivalent: \emph{``You are a quality reviewer of consultation material. Given the [original] and [processed] material of the same consultation, decide whether the processed material alone still supports essentially the same useful, targeted, and correct advice. 1.0 = all request-critical information preserved (generalized forms such as bands/ranges/categories acceptable if they still support the same advice); 0.5 = critical information partly missing or over-vague, advice usefulness clearly limited but still valuable; 0.0 = critical information missing, placeholder-substituted, or altered to values inconsistent with the original (wrong values cause wrong advice; count as missing). Output JSON only.''} Human study~1 used the same rubric in its scoring instructions, keeping the human anchor and the automatic metric on the same construct. Parse robustness: two attempts with a strict-JSON suffix on retry; regex fallback extracting \texttt{"score": v}, $v\in\{0,0.5,1\}$; unparseable responses are logged as missing, never imputed.
-
-\begin{thebibliography}{36}
-\bibitem{hao2024hybrid} H. Hao, H. Jiang, S. Jiang, J. Ren, and T. Cao, ``Hybrid SLM and LLM for edge-cloud collaborative inference,'' in \emph{Proc. Workshop Edge Mobile Found. Models (EdgeFM)}, 2024, pp. 36--41.
-\bibitem{jin2025cecollm} H. Jin and Y. Wu, ``CE-COLLM: efficient and adaptive large language models through cloud-edge collaboration,'' in \emph{Proc. IEEE ICWS}, 2025, pp. 316--323.
-\bibitem{li2025collab} S. Li, H. Wang, W. Xu \emph{et al.}, ``Collaborative inference and learning between edge SLMs and cloud LLMs: a survey of algorithms, execution, and open challenges,'' arXiv:2507.16731, 2025.
-\bibitem{siyan2025papillon} L. Siyan, V. C. Raghuram, O. Khattab \emph{et al.}, ``PAPILLON: privacy preservation from internet-based and local language model ensembles,'' in \emph{Proc. NAACL}, 2025.
-\bibitem{das2025security} B. C. Das, M. H. Amini, and Y. Wu, ``Security and privacy challenges of large language models: a survey,'' \emph{ACM Comput. Surv.}, vol. 57, no. 6, pp. 1--39, 2025.
-\bibitem{lukas2023pii} N. Lukas, A. Salem, R. Sim \emph{et al.}, ``Analyzing leakage of personally identifiable information in language models,'' in \emph{Proc. IEEE S\&P}, 2023.
-\bibitem{presidio} data-privacy-stack, ``Presidio: open-source framework for detecting, redacting, and anonymizing PII,'' GitHub.
-\bibitem{rehydra} rehydra-ai, ``Rehydra SDK: PII security for AI workflows, coding agents and browser workloads,'' GitHub, MIT.
-\bibitem{zeng2025privacyrestore} Z. Zeng, J. Wang, J. Yang \emph{et al.}, ``PrivacyRestore: privacy-preserving inference in large language models via privacy removal and restoration,'' in \emph{Proc. ACL}, 2025.
-\bibitem{mai2023split} P. Mai, R. Yan, Z. Huang, Y. Yang, and Y. Pang, ``Split-and-denoise: protect large language model inference with local differential privacy,'' arXiv:2310.09130, 2023.
-\bibitem{shi2022selective} W. Shi, A. Cui, E. Li \emph{et al.}, ``Selective differential privacy for language modeling,'' in \emph{Proc. NAACL}, 2022.
-\bibitem{duchi2013local} J. C. Duchi, M. I. Jordan, and M. J. Wainwright, ``Local privacy and statistical minimax rates,'' in \emph{Proc. IEEE FOCS}, 2013, pp. 429--438.
-\bibitem{ryu2026p2skill} M. Ryu, G. Park, S. Lee, X. Piao, and J. Kim, ``P2Skill: privacy preserving skill distillation for cloud-local LLM inference systems,'' arXiv:2608.14094, 2026.
-\bibitem{belghazi2018mine} M. I. Belghazi \emph{et al.}, ``MINE: mutual information neural estimation,'' in \emph{Proc. ICML}, 2018.
-\bibitem{eswa2022funnel} Q. Wu, J. Tang, S. Dang, and G. Chen, ``Data privacy and utility trade-off based on mutual information neural estimator,'' \emph{Expert Syst. Appl.}, vol. 207, p. 118012, 2022.
-\bibitem{gilad2016cryptonets} R. Gilad-Bachrach \emph{et al.}, ``CryptoNets: applying neural networks to encrypted data with high throughput and accuracy,'' in \emph{Proc. ICML}, 2016.
-\bibitem{mohassel2017secureml} P. Mohassel and Y. Zhang, ``SecureML: a system for scalable privacy-preserving machine learning,'' in \emph{Proc. IEEE S\&P}, 2017.
-\bibitem{heerklotz2025neural} D. S. Heerklotz, I. Schroeder, P.-H. Lin, C. Deppe, and E. A. Jorswieck, ``Neural estimation of information leakage for secure communication system design,'' arXiv:2508.05176, 2025.
-\bibitem{pilan2025truthful} I. Pil\'an, B. Manzanares-Salor, D. S\'anchez, and P. Lison, ``Truthful text sanitization guided by inference attacks,'' \emph{Appl. Soft Comput.}, vol. 185, p. 114013, 2025.
-\bibitem{zhang2020bertscore} T. Zhang \emph{et al.}, ``BERTScore: evaluating text generation with BERT,'' in \emph{Proc. ICLR}, 2020.
-\bibitem{tae2026} B. Manzanares-Salor, D. S\'anchez, P. Lison, and I. Pil\'an, ``TAE: Text Anonymization Evaluator,'' \emph{SoftwareX}, vol. 35, p. 102851, 2026.
-\bibitem{qwen3827b} Qwen, ``Qwen3.8-27B,'' Hugging Face, 2026.
-\bibitem{ornith35b} ornith-ai, ``Ornith-1.5-35B-A3B,'' Hugging Face, 2026.
-\bibitem{kifer2012rigorous} D. Kifer and A. Machanavajjhala, ``A rigorous and customizable framework for privacy,'' in \emph{Proc. PODS}, 2012, pp. 77--88.
-\bibitem{kifer2014pufferfish} D. Kifer and A. Machanavajjhala, ``Pufferfish: a framework for mathematical privacy definitions,'' \emph{ACM Trans. Database Syst.}, vol. 39, no. 1, pp. 3:1--3:36, 2014.
-\bibitem{issa2020operational} I. Issa, A. B. Wagner, and S. Kamath, ``An operational approach to information leakage,'' \emph{IEEE Trans. Inf. Theory}, vol. 66, no. 3, pp. 1625--1657, 2020.
-\bibitem{sweeney2002k} L. Sweeney, ``$k$-anonymity: a model for protecting privacy,'' \emph{Int. J. Uncertainty, Fuzziness Knowl.-Based Syst.}, vol. 10, no. 5, pp. 557--570, 2002.
-\bibitem{bendavid2010theory} S. Ben-David, J. Blitzer, K. Crammer, A. Kulesza, F. Pereira, and J. Wortman Vaughan, ``A theory of learning from different domains,'' \emph{Mach. Learn.}, vol. 79, no. 1--2, pp. 151--175, 2010.
-\bibitem{wilson1927} E. B. Wilson, ``Probable inference, the law of succession, and statistical inference,'' \emph{JASA}, vol. 22, no. 158, pp. 209--212, 1927.
-\bibitem{fabbri2022qafacteval} A. R. Fabbri, C. Wu, W. Liu, and C. Xiong, ``QAFactEval: improved QA-based factual consistency evaluation for summarization,'' in \emph{Proc. NAACL-HLT}, 2022, pp. 2587--2601.
-\bibitem{deming1940ipf} W. E. Deming and F. F. Stephan, ``On a least squares adjustment of a sampled finite contingency table,'' \emph{Ann. Math. Stat.}, vol. 11, no. 4, pp. 427--444, 1940.
-\bibitem{wyner1976rate} A. D. Wyner and J. Ziv, ``The rate-distortion function for source coding with side information at the decoder,'' \emph{IEEE Trans. Inf. Theory}, vol. 22, no. 1, pp. 1--10, 1976.
-\bibitem{yue2021santext} X. Yue, M. Du, T. Wang, Y. Li, H. Sun, and S. S. M. Chow, ``Differential privacy for text analytics via natural text sanitization,'' in \emph{Findings ACL/IJCNLP}, 2021, pp. 3853--3866.
-\bibitem{cover2006elements} T. M. Cover and J. A. Thomas, \emph{Elements of Information Theory}. Hoboken, NJ, USA: Wiley, 2006.
-\bibitem{jin2021medqa} Q. Jin, B. Dhingra, Z. Liu, W. W. Cohen, and X. Lu, ``What disease does this patient have? A large-scale open domain question answering dataset from medical exams,'' \emph{Appl. Sci.}, vol. 11, no. 14, p. 6421, 2021.
+\begin{itemize}
+\item A runtime-S release chain with explicit trust boundaries, stable local gates, deterministic all-occurrence scrubbing, residual reports, and human fallback.
+\item A corrected theoretical account: Fano-type leakage witnesses at actual MAP success, a Pufferfish witness, an MI-unit feasibility inequality, and finite-budget termination.
+\item A frozen independent-template holdout and fair runtime-S ablations, with oracle-S results separated from deployment-track results.
+\item A restrained human-study reanalysis reporting within-group correlations, instance-cluster intervals, MAE, threshold confusion, and the failed original annotation criterion.
+\end{itemize}
+
+\section{Related Work and Positioning}
+
+\paragraph{Cloud-local inference and routing.} PAPILLON formulates privacy-conscious delegation with a local proxy deciding what to forward~\cite{siyan2025papillon}. Hybrid and collaborative inference systems study capability/latency trade-offs~\cite{hao2024hybrid,jin2025cecollm,li2025collab}. DR-SL differs by making the release decision depend on a runtime sensitive set and explicit residual reporting, but it does not claim to solve routing generally.
+
+\paragraph{INTACT is the closest methodological baseline.} INTACT~\cite{pilan2025truthful} uses instruction-tuned open-weight LLMs to generate truth-preserving generalization candidates at different abstraction levels, then selects the most informative candidate resistant to inference attacks. This is very close to DR-SL's generalization--attack--utility idea. We therefore do not claim that candidate generalization plus attack selection is novel. Our incremental scope is the cloud-local release chain: runtime-S construction, explicit/quasi-identifier/task-information joint gating, INFEASIBLE residual reports, human routing, and probe-format failure analysis. Because the official INTACT implementation was not run here, our \texttt{intact\_style} baseline is an algorithmic proxy, not a reproduction.
+
+\paragraph{Placeholder and restoration systems.} Presidio and Rehydra provide entity detection/substitution and restoration workflows~\cite{presidio,rehydra}. PrivacyRestore removes privacy spans client-side and restores server-side via meta-vectors~\cite{zeng2025privacyrestore}. These systems motivate reversible handling but do not by themselves establish quasi-identifier release decisions.
+
+\paragraph{Perturbation and skill distillation.} LDP-style text perturbation trades privacy for coherence~\cite{mai2023split,shi2022selective,duchi2013local,yue2021santext}. Our random same-type replacement baseline is PRISM-style, not a formal LDP mechanism. P2Skill distills reusable privacy skills into a frozen local SLM~\cite{ryu2026p2skill}; its refinement loop uses cloud reference/evaluator roles on original inputs, while deployment egress is matcher-gated. The earlier $1.69\times/3.66\times$ numbers come from v1; v2 (2026-10-13) changes evaluation emphasis and should be cited separately. We therefore avoid the claim that existing methods lack cross-instance reuse: P2Skill explicitly distills skills. The narrower gap we address is joint runtime-S release gating and residual routing for cloud-local inference.
+
+\section{Threat Model and Runtime Sensitive Set}
+
+Let $X$ be original material, $S$ a sensitive attribute set, $A$ attacker auxiliary knowledge, $T$ task-relevant information, and $D$ the released artifact. The local device is trusted; the cloud/link adversary observes egressed artifacts. A compromised local device voids the guarantees.
+
+\subsection{Runtime-S versus oracle-S}
+
+The revised runtime path constructs $S_{\mathrm{rt}}$ from $X$ using an extractor. Policy functions receive only $(X,\mathrm{domain},S_{\mathrm{rt}},\Pi)$, where $\Pi$ is a declared task-relevance profile. Gold annotations $G$ are read only by external scoring. We report two tracks:
+\begin{itemize}
+\item \textbf{oracle-S}: $S=G$ enters the policy. This is an upper-bound reference, not deployment evidence.
+\item \textbf{runtime-S}: $S=S_{\mathrm{rt}}$ enters the policy. Missed gold attributes are outside the local gate and must be measured externally.
+\end{itemize}
+
+The deterministic runtime extractor used in the new experiments combines explicit patterns, public synthetic-domain lexicons, and generic labeled-span rules. It is scoped to the synthetic benchmark; it is not an open-world NER guarantee. The neural cascade extractor remains implemented for local-LLM deployment, but the local neural service was unavailable for this revision, so no neural local-LLM end-to-end rerun is claimed.
+
+\subsection{Recall sensitivity, not an average upper bound}
+
+For a fixed instance, let $F$ be found attributes and $G$ gold attributes. If probes cover $F$ and $\mathrm{hit}(s)$ equals the leakage indicator for $s\in F\cap G$, while missed attributes contribute at most 1, then
+\[
+L_{\mathrm{system}} \le \frac{|F|}{|G|} L_{\mathrm{measured}} + (1-\mathrm{Recall}).
+\]
+This is a per-instance algebraic sensitivity identity under those assumptions. Substituting \emph{average} recall and average over-extraction ratios does not yield a valid system-wide upper bound. We therefore report recall, over-extraction, missed-gold exposure, and external gold-literal hits separately.
+
+\section{Release Chain and Local Gates}
+
+\subsection{Policies}
+
+All methods share the same runtime entities, task profile, local attack strategies, utility surrogate, and release rule:
+\begin{itemize}
+\item \texttt{hardline\_only}: typed placeholders for every runtime entity and every occurrence.
+\item \texttt{generalization\_only}: truthful numeric/date bands for task-relevant values, placeholders otherwise.
+\item \texttt{closed\_loop}: generalization followed by the stable local gate, final all-occurrence scrub, and gate recheck.
+\item \texttt{intact\_style}: INTACT-inspired candidate selection among placeholder/generalized/loosened artifacts, choosing the highest local utility among candidates passing the local privacy gate.
+\item \texttt{prism\_random}: consistent random same-type replacement for every occurrence; no DP guarantee is claimed.
+\end{itemize}
+
+\subsection{Local attack and utility}
+
+The local privacy audit is deterministic and fully local. It checks verbatim, punctuation-normalized, and NFKC-normalized occurrences of runtime entity values. Strategy hit rates are not concatenated into a larger sample; the maximum strategy rate is the conservative local summary. The gate is
+\[
+L_{\mathrm{local}} \le \tau_L,\qquad \tau_L=0.05,
+\]
+where $L_{\mathrm{local}}$ is an observed point rate, not a confidence bound.
+
+The local utility surrogate is reference-based but local: exact retention scores 1; a frozen truthful numeric/date band scores 0.5; deletion, placeholders, or wrong random values score 0 for each runtime task-relevant attribute. Instances without such attributes use non-sensitive context retention. The local utility gate is $U_{\mathrm{local}}\ge0.5$. This surrogate is not a human-equivalent semantic judge.
+
+\subsection{Stability and termination}
+
+The declared stability window is implemented: $N=3$ evaluations of the \emph{same frozen artifact}, all passing, with ranges of $L$ and $U$ at most $\delta=0.05$. A changed artifact resets the window. The returned artifact must itself have a complete stable window.
+
+\begin{algorithm}[!t]
+\caption{Revised local release loop (schematic).}
+\KwIn{$X$, runtime entities $S$, task profile $\Pi$, thresholds $\tau_L,\tau_U$, budget $B=3|S|+5$, $N=3$, $\delta=0.05$}
+\KwOut{PASS($D$) or INFEASIBLE(residual report)}
+$D\leftarrow$ generalize/scrub according to policy\;
+evaluate $D$; initialize window\;
+\While{utility phase needs loosening and $t<B$}{
+  propose loosen; increment $t$; accept only if diagnostic improves; reset window on artifact change\;
+}
+\While{not stable and $t<B$}{
+  \If{current artifact passes and window incomplete}{
+    re-evaluate same artifact; update window\;
+  }
+  choose unskipped attribute with positive local contribution; increment $t$\;
+  propose single-attribute strengthening; accept only if utility gate holds; reset window on change\;
+  otherwise skip attribute or record residual\;
+}
+apply final all-occurrence runtime scrub; recheck stable gates\;
+\eIf{stable PASS}{\Return PASS($D$)}{\Return INFEASIBLE(residual report)}
+\end{algorithm}
+
+Termination follows from the finite round budget and finite skip set, not from boundedness of a continuous utility score.
+
+\subsection{External audit is controlled disclosure}
+
+After local decisions are frozen, external attackers may receive $D$. This is a first disclosure to the audit trust class. A failed audit can prevent subsequent processing but cannot undo the first exposure. Therefore external re-testing is not a pre-egress guarantee. A local strong attacker or trusted execution environment would be needed to avoid this disclosure; those are future deployment options.
+
+\section{Theoretical Properties}
+
+\subsection{Fano-type leakage witness}
+
+\begin{theorem}[Fano-type lower bound at MAP success]
+Let $S=(S_1,\dots,S_m)$ have finite domains $V_i$, and let $L_i^{*}$ be the optimal MAP decoding success probability for $S_i$ from $D$ under a specified joint distribution and prior. Then
+\[
+I(D;S) \ge H(S)-\sum_i \left[H_2(1-L_i^{*})+(1-L_i^{*})\log(|V_i|-1)\right].
+\]
+\end{theorem}
+
+The bound certifies leakage, not safety. A local evaluator's failure to recover a value does not prove that no stronger attacker can. Empirical LLM template hit rates are not automatically MAP success probabilities under a defined random trial; we use them as heuristic attack coverage unless a sampling model is established.
+
+\paragraph{Deleted threshold corollary.} The earlier claim that $L_i\le\tau_L$ implies $I(D;S)\ge H(S)-\sum_i g(1-\tau_L)$ is false. Counterexample: $S$ uniform on 100 values, $D$ independent of $S$, so $I(D;S)=0$ and optimal guessing success is $0.01\le0.05$, yet substituting $\tau_L=0.05$ gives a positive lower bound. The regression test \texttt{test\_fano\_threshold\_corollary\_counterexample} records this.
+
+\subsection{Pufferfish witness}
+
+For a single attribute with prior extremes $p_{\min},p_{\max}$ and MAP success $L^{*}$, any mechanism satisfying Pufferfish odds constraints must have
+\[
+\varepsilon \ge \ln\frac{L^{*}}{1-L^{*}}+\ln\frac{p_{\min}}{p_{\max}}.
+\]
+This is a leakage witness. It is nontrivial only when the attacker is strong; low hit rates give vacuous bounds.
+
+\subsection{MI-unit feasibility inequality}
+
+Assume $T$ is a function of $X$, and conditioned on $(S,A)$ the artifact satisfies $T\to X\to D$. Then
+\[
+I(D;T\mid A)\le I(D;S\mid A)+I(X;T\mid S,A).
+\]
+Consequently, for an MI privacy budget $\varepsilon$ and MI utility requirement $\upsilon$, the feasible region is empty if $\upsilon>\varepsilon+I(X;T\mid S,A)$. We do \emph{not} substitute QA scores or attack hit-rate thresholds for $\varepsilon$ or $\upsilon$. Low medical release rates are consistent with strong task--sensitive coupling qualitatively, but do not confirm the theorem quantitatively.
+
+\subsection{Numerical tests are regression tests}
+
+The proof-check suite performs exact-enumeration regression and counterexample search on synthetic mechanisms. It is not an independent proof of theorem correctness. The revised suite includes the deleted-corollary counterexample and finite-budget/stability tests.
+
+\section{Experiments}
+
+\subsection{Protocol and data separation}
+
+The revised protocol is frozen in \texttt{revision\_protocol.md} before holdout evaluation. Earlier T1--T25/P1--P41 results are method-development evidence only. The new holdout contains 80 synthetic instances (20 per domain), seed 20261118, generated from an independent template family (\texttt{dataset/generate\_holdout.py}). The external audit subset is the first 10 holdout instances per domain after sorting by ID. No threshold, prompt, lexicon, or template is tuned after holdout results are inspected; process corrections are logged in \texttt{revision\_deviations.md}.
+
+All values are fictional. MedQA-derived stems in the development set use MIT-licensed exam questions with concrete values replaced~\cite{jin2021medqa}. No real patient data are used.
+
+\subsection{Metrics and statistics}
+
+We report local observed hit rate, local utility surrogate, release rate, extraction recall/over-extraction, missed-gold exposure, and external gold-literal hit rate. Attack summaries use instance-cluster bootstrap (2000 resamples, seed 20261118). Release-rate Wilson intervals are used only at the independent-instance level. Permutation p-values use $(b+1)/(B+1)$; $p=0$ is forbidden. Zero hits are reported as zero \emph{observed} hits under specified attackers and grading, with coverage counts, not as a statistical guarantee.
+
+\subsection{Runtime-S and oracle-S results}
+
+\input{revision_results.tex}
+
+Table~\ref{tab:runtime_oracle} separates oracle-S from runtime-S. On the fully coupled development test-160, oracle-S local utility is too low for automatic release under the local surrogate. On mixed-120, oracle-S release is high, but runtime-S release must be interpreted together with external gold-literal exposure. On the frozen holdout, runtime extraction recall is 0.858 and missed gold attributes produce residual literal exposure even when the local gate passes. This is the central negative result: \emph{local release under runtime-S is not evidence of zero egress leakage}.
+
+Table~\ref{tab:holdout_methods} compares fair runtime-S methods. The closed loop and generalization-only artifact are often identical because the deterministic generalizer already handles all occurrences; the loop's incremental value in this deterministic track is stable gating and residual routing, not a new safe artifact. The INTACT-inspired selector matches the generalized point under the same local gate, reinforcing that candidate selection itself is not the novel contribution. PRISM-style random replacement is not labelled LDP and does not dominate the truthful generalization point.
+
+The controlled-disclosure audit (Table~\ref{tab:audit_coverage}) used two online attackers and two strategies on 40 frozen holdout instances, with 640 model calls and 3888 unique questions; it observed 519 hits, not zero. For the closed-loop artifact, external max hit rate is 0.130 [0.103, 0.159] and offline semantic-judge utility is 0.363 [0.250, 0.475]. The local utility surrogate is poorly calibrated against this offline judge: overall Spearman $\rho=0.326$, MAE 0.358, threshold agreement 68.1\%; within-method correlations range from $-0.071$ (random replacement) to 0.535 (INTACT-style). Table~\ref{tab:threshold_confusion} shows 31 artifacts released locally but judged below threshold offline. These results reinforce that the local gate is a heuristic routing signal, not a validated safety or utility certificate.
+
+\subsection{Historical exploratory results}
+
+Earlier oracle-S experiments reported leakage reduction $0.457\to0.304$ on train-400 and PASS rates 37.5\%/43.8\%/5.0\% under different probe formats. Those numbers used replicated probe bundles and gold-S policies; they are not confirmatory under the revised gate. The earlier mixed-benchmark 67.5\% was an offline oracle semantic-routing rate because the online judge saw original $X$. We retain these results only as exploratory development history.
+
+\subsection{Human studies}
+
+Utility study: two raters scored 160 blinded rows (40 instances $\times$ four operating points). Inter-rater Krippendorff $\alpha=0.780$. Overall human--automatic Spearman $\rho=0.839$ with instance-cluster 95\% CI [0.774, 0.892]; MAE 0.133 [0.100, 0.169]. Within-operating-point correlations are lower: generalized 0.661 [0.442, 0.830], placeholder 0.784 [0.587, 0.937], random replacement 0.626 [0.349, 0.812]; direct has no variance. The four-point rank correlation is descriptive only. Threshold confusion around 0.5 is reported in the analysis package. Thus the semantic judge has some overall ranking validity but is not a fully calibrated local release threshold.
+
+Annotation study: type-level recall against automatic gold is 1.000/0.987 and precision 0.959/0.991 for the two raters. The original combination-risk criterion failed: human--automatic $\kappa=-0.083$. A construct-aligned gold (combos or any explicit identifier) gives $\kappa=0.696$, but this is post hoc and does not repair the preregistered failure. Human recall against automatic gold also does not prove the automatic gold is correct.
+
+\subsection{Self-learning is exploratory}
+
+The preregistered loop-efficiency hypothesis H1 was not supported: distilled rules changed validation rounds from 2.82 to 2.90. The corrected extractor-targeted hypothesis H1$'$ showed a small directional recall gain ($+1.5$ pp) but did not reach significance ($p=0.059$). We therefore do not claim cross-instance self-learning as the source of the final safe point. The supported components are deterministic generalization, all-occurrence scrubbing, stable local gating, and residual routing.
+
+\section{Limitations}
+
+\begin{itemize}
+\item \textbf{Extraction coverage.} Runtime-S misses gold attributes; local gates cannot detect what was never extracted. The holdout shows nonzero external gold-literal exposure despite local PASS.
+\item \textbf{Attacker scope.} Deterministic local audits and the external LLM audits do not cover arbitrary paraphrase, composition, or stronger attackers.
+\item \textbf{Utility calibration.} The local utility surrogate is coarse; human and online-judge validation is limited and within-group correlations are modest.
+\item \textbf{Neural local track not rerun.} The local LLM service was unavailable; new end-to-end results concern the deterministic local track.
+\item \textbf{External audit disclosure.} External re-testing is controlled disclosure, not pre-egress prevention.
+\item \textbf{Synthetic scope.} Results are on fictional synthetic benchmarks; real deployment requires independent data, stronger detectors, and domain-specific calibration.
+\end{itemize}
+
+\section{Conclusion}
+
+DR-SL is best understood as an auditable cloud-local release workflow, not a certified zero-leakage sanitizer. The revised evidence supports deterministic truthful generalization plus all-occurrence scrubbing and stable local gating as useful components, while showing that runtime extraction misses create residual egress exposure. Theoretical statements are limited to leakage witnesses and MI-unit feasibility; statistical claims are scoped to observed attacks and instance clusters. Future work should prioritize stronger runtime extraction, local strong attackers or trusted execution environments, powered human calibration, and independent real-world anonymization benchmarks.
+
+\paragraph{Artifact availability.} Code, synthetic datasets, frozen protocol, raw audit outputs, result hashes, and analysis scripts are public at \url{https://github.com/hurrywhen/dr-sl} and \url{https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl}. Dependencies are pinned in \texttt{requirements.txt}. API keys and private endpoints are excluded.
+
+\appendix
+
+\section*{Appendix A: Proof Sketches}
+
+\subsection*{A.1 Fano-type bound}
+Let $P^{*}_{e,i}=1-L_i^{*}$ be the MAP error. Fano's inequality gives $H(S_i\mid D)\le H_2(P^{*}_{e,i})+P^{*}_{e,i}\log(|V_i|-1)$. The function $g(p)=H_2(p)+p\log(k-1)$ is nondecreasing on $[0,(k-1)/k]$. Subadditivity $H(S\mid D)\le\sum_i H(S_i\mid D)$ yields the stated bound. No threshold substitution is valid: replacing a smaller actual hit rate by a larger threshold reverses the needed monotonicity direction.
+
+\subsection*{A.2 Pufferfish witness}
+Let $L^{*}$ be MAP success. There exists an output $d_0$ with posterior mode mass at least $L^{*}$. The posterior odds against any other value are at least $L^{*}/(1-L^{*})$. Bayes expansion relates posterior odds to likelihood ratio times prior odds, giving the stated lower bound on the mechanism's required $\varepsilon$.
+
+\subsection*{A.3 Feasibility inequality}
+Condition on $A$. Monotonicity and the chain rule give $I(D;T\mid A)\le I(D;S\mid A)+I(D;T\mid S,A)$. The conditional Markov relation $T\to X\to D$ given $(S,A)$ and the data-processing inequality give $I(D;T\mid S,A)\le I(X;T\mid S,A)$. The inequality is in mutual-information units only.
+
+\subsection*{A.4 Termination}
+Each transformation or skip increments a counter bounded by $B=3|S|+5$. Stability checks are bounded per artifact and artifact changes reset the window. The skip set is finite. Hence the algorithm terminates. Boundedness of a continuous utility score alone would not imply finitely many strict improvements.
+
+\section*{Appendix B: Reproducibility}
+
+The revised track is run by:
+\begin{verbatim}
+python3 dataset/generate_holdout.py
+python3 sim/revision_experiment.py
+python3 sim/revision_online_audit.py
+python3 sim/make_revision_tables.py
+python3 human_study/analyze_results.py
+\end{verbatim}
+Offline results require no LLM. Online audit calls use synthetic artifacts only and archive raw outputs in \texttt{results/revision\_20261118/online\_audit\_raw.jsonl}. The freeze manifest records SHA-256 hashes of protocol, generator, runtime code, and analysis scripts. Model snapshots and local weight quantization for the historical neural track are not fully pinned; this is a reproducibility limitation. HTTP backends now support an explicit seed field when configured, but historical runs did not submit seeds and cannot be claimed seed-reproducible.
+
+\begin{thebibliography}{30}
+\bibitem{hao2024hybrid} Hao Z, Jiang H, Jiang S, Ren J, Cao T. Hybrid SLM and LLM for edge-cloud collaborative inference. EdgeFM, 2024.
+\bibitem{jin2025cecollm} Jin H, Wu Y. CE-COLLM: efficient and adaptive large language models through cloud-edge collaboration. IEEE ICWS, 2025.
+\bibitem{li2025collab} Li S, Wang H, Xu W, et al. Collaborative inference and learning between edge SLMs and cloud LLMs: a survey. arXiv:2507.16731, 2025.
+\bibitem{siyan2025papillon} Siyan L, Raghuram V C, Khattab O, et al. PAPILLON: privacy preservation from internet-based and local language model ensembles. NAACL, 2025.
+\bibitem{das2025security} Das B C, Amini M H, Wu Y. Security and privacy challenges of large language models: a survey. ACM Computing Surveys, 2025.
+\bibitem{lukas2023pii} Lukas N, Salem A, Sim R, et al. Analyzing leakage of personally identifiable information in language models. IEEE S\&P, 2023.
+\bibitem{presidio} data-privacy-stack/presidio. Open-source framework for detecting, redacting, and anonymizing PII. GitHub.
+\bibitem{rehydra} rehydra-ai/rehydra-sdk. PII security for AI workflows. GitHub, MIT.
+\bibitem{zeng2025privacyrestore} Zeng Z, Wang J, Yang J, et al. PrivacyRestore: privacy-preserving inference in large language models via privacy removal and restoration. ACL, 2025.
+\bibitem{mai2023split} Mai P, Yan R, Huang Z, Yang Y, Pang Y. Split-and-denoise: protect large language model inference with local differential privacy. arXiv:2310.09130, 2023.
+\bibitem{shi2022selective} Shi W, Cui A, Li E, et al. Selective differential privacy for language modeling. NAACL, 2022.
+\bibitem{duchi2013local} Duchi J C, Jordan M I, Wainwright M J. Local privacy and statistical minimax rates. IEEE FOCS, 2013.
+\bibitem{yue2021santext} Yue X, Du M, Wang T, Li Y, Sun H, Chow S S M. Differential privacy for text analytics via natural text sanitization (SANTEXT). Findings of ACL/IJCNLP, 2021.
+\bibitem{ryu2026p2skill} Ryu M, Park G, Lee S, Piao X, Kim J. P2Skill: privacy preserving skill distillation for cloud-local LLM inference systems. arXiv:2608.14094, 2026. v1: 2026-08-14; v2: 2026-10-13.
+\bibitem{pilan2025truthful} Pil\'an I, Manzanares-Salor B, S\'anchez D, Lison P. Truthful text sanitization guided by inference attacks (INTACT). Applied Soft Computing, 185:114013, 2025. arXiv:2412.12928.
+\bibitem{kifer2012rigorous} Kifer D, Machanavajjhala A. A rigorous and customizable framework for privacy. PODS, 2012.
+\bibitem{kifer2014pufferfish} Kifer D, Machanavajjhala A. Pufferfish: a framework for mathematical privacy definitions. ACM TODS, 2014.
+\bibitem{issa2020operational} Issa I, Wagner A B, Kamath S. An operational approach to information leakage. IEEE Trans. Inf. Theory, 2020.
+\bibitem{sweeney2002k} Sweeney L. k-Anonymity: a model for protecting privacy. IJUFKS, 2002.
+\bibitem{cover2006elements} Cover T M, Thomas J A. Elements of Information Theory. Wiley, 2006.
+\bibitem{jin2021medqa} Jin Q, Dhingra B, Liu Z, Cohen W W, Lu X. What disease does this patient have? A large-scale open domain question answering dataset from medical exams. Applied Sciences, 2021.
+\bibitem{wilson1927} Wilson E B. Probable inference, the law of succession, and statistical inference. JASA, 1927.
 \end{thebibliography}
 
 \end{document}

@@ -4,6 +4,8 @@
 **状态**：预注册。冻结后任何偏离必须记入文末"偏离记录"，并在论文 §6 如实报告。
 **配套文件**：`dataset/output/`（数据集）、`dataset/annotation_handbook.md`、`DR-SL 论文 v1_0_discuss02/03.md`（定义出处）、`DR-SL 论文（…）v1_2.md`（§4.7 与附录 A/B）。
 
+> **修订说明（2026-11-19）**：本文件为历史预注册协议（D1–D18）。当前修订版实验以 `revision_protocol.md` 为准，偏离见 `revision_deviations.md`。旧协议中的 Wilson/75 探测、oracle-S 主实验、在线语义裁判放行等口径已被修订版取代；本文件保留作过程记录。
+
 ---
 
 ## 1. 研究问题与假设
@@ -32,7 +34,7 @@
 
 | 角色 | 模型 | 端点 | 备注 |
 |---|---|---|---|
-| 本地主评估器/脱水器 | qwen3.8-27b-mlx | http://10.125.125.64:1234/v1（LM Studio，OpenAI 兼容，无密钥） | 并发 1，~20 tok/s，reasoning 常开（输出按短 JSON 设计） |
+| 本地主评估器/脱水器 | qwen3.8-27b-mlx | <LOCAL_LLM_ENDPOINT>（LM Studio，OpenAI 兼容，无密钥） | 并发 1，~20 tok/s，reasoning 常开（输出按短 JSON 设计） |
 | 低资源消融 | ornith-1.5-35b | 同上 | |
 | 冻结嵌入（分布差异测量） | text-embedding-nomic-embed-text-v1.5 | 同上 | 用于 §8.1 嵌入探针 |
 | 离线强模型（Δ̂ 校准、独立泛化评分、judge） | qwen3.8-max | opencode 免费额度网关（token-plan） | 跨家族旁证用 glm-5.2 |
@@ -154,7 +156,7 @@
 
 **D5（2026-08-29，数据扩充）**：新增 test_ext 240 条（每域 60，合成）使每域测试达 100 条；新增 T_new 受控变体集（三类变换：词面扰动/新类型组合注入/格式迁移）用于剂量响应；PRISM 同构 160 条保持独立口径。
 
-**D6（2026-08-29，已确认）**：Mac Studio 接入：10.125.125.64:1234，LM Studio，OpenAI 兼容，无密钥，并发 1，~20 tok/s；模型清单已查询：qwen3.8-27b-mlx / ornith-1.5-35b / text-embedding-nomic-embed-text-v1.5。
+**D6（2026-08-29，已确认）**：Mac Studio 接入：<LOCAL_LLM_ENDPOINT>，LM Studio，OpenAI 兼容，无密钥，并发 1，~20 tok/s；模型清单已查询：qwen3.8-27b-mlx / ornith-1.5-35b / text-embedding-nomic-embed-text-v1.5。
 
 **D7（2026-08-29，在线后端与预算）**：在线角色改用 opencode 免费额度网关（qwen3.8-max / qwen3.8-flash / glm-5.2），k3 备用；DeepSeek 官方 API 禁用（成本）。本地模型 reasoning 常开（API 无法关闭），单次调用按短 JSON 输出（≤300 token）设计；策略为"小规模试点先行，达标后扩量"。
 

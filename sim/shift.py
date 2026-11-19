@@ -152,4 +152,4 @@ def mmd_test(X, Y, n_perm=1000, seed=0):
         Kbb = _gaussian_kernel(stacked[b], stacked[b], bw)
         if float(Kaa.mean() + Kbb.mean() - 2 * K.mean()) >= mmd2:
             count += 1
-    return mmd2, count / n_perm
+    return mmd2, (count + 1) / (n_perm + 1)

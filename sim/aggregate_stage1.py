@@ -36,7 +36,7 @@ def sign_test_paired(before, after, n_perm=2000):
         signs = rng.choice([-1, 1], size=len(d))
         if (d * signs).mean() <= obs:
             cnt += 1
-    return cnt / n_perm
+    return (cnt + 1) / (n_perm + 1)
 
 
 def main():

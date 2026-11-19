@@ -1,6 +1,6 @@
 # Declarations and Disclosure Statements — Journal Submission
 
-Manuscript: **Reversibility-Verified De-identification for Cloud-Local LLM Inference: A Locally Certified Dehydrate-Rehydrate Loop with Layered Assurance (DR-SL)**
+Manuscript: **Reversibility-Verified De-identification for Cloud-Local LLM Inference: A Runtime-Sensitive-Set Release Chain with Layered Assurance (DR-SL)**
 Authors: Wen Hu, Ya Yu, Xutong Wang
 
 ## 1. Author contributions (CRediT) — journal manuscript (author order: Wen Hu, Ya Yu, Xutong Wang; corresponding author: Ya Yu)
@@ -34,7 +34,7 @@ All artifacts are public at https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr
 ## 6. Prior publication, preprint, and version-relationship disclosure
 
 1. **Preprint.** A preprint of this work is posted on arXiv ([arXiv:XXXX.XXXXX — insert identifier upon assignment]); disclosed in the title footnote. Preprint posting is not prior peer-reviewed publication; the journal version is cited against it where relevant.
-2. **Conference version (accepted).** A condensed 4-page conference version has been **accepted** at [CONFERENCE NAME — to be inserted] with author order **Y. Yu, W. Hu, X. Wang**: for that manuscript Y. Yu executed and consolidated the principal simulation experiments and drafted/organized the text (first-author-level contribution), while W. Hu provided the conceptualization, method, proofs, and supervision. This journal manuscript extends that work (complete proofs + executable verification appendix; full experimental record T1–T25 including the release-chain audit, probe-format analysis, distribution-shift framework, applicability boundary; extended related work and judge rubric — far exceeding the customary ≥30% new material) with W. Hu first per his contributions to this manuscript, and Y. Yu as corresponding author by team agreement and genuine assumption of the role. This manuscript cites the conference paper; the author-order difference between the two versions (and relative to preprint v1, which lists W. Hu first) is contribution-based per manuscript, is documented in the signed memo `../authorship_contribution_memo.md`, and is disclosed here and in the cover letter. The conference version is not under review anywhere; this journal manuscript is submitted after the conference outcome, per standard extended-version practice. No simultaneous review of overlapping content will occur.
+2. **Conference version.** A condensed conference version is prepared with author order **Y. Yu, W. Hu, X. Wang**; its venue and acceptance status must be confirmed before submission. For that manuscript Y. Yu executed and consolidated the principal simulation experiments and drafted/organized the text (first-author-level contribution), while W. Hu provided the conceptualization, method, proofs, and supervision. This journal manuscript extends that work with the revised runtime-S track, corrected theory/statistics, frozen holdout, fair ablations, and full human-study reanalysis, with W. Hu first per his contributions to this manuscript, and Y. Yu as corresponding author by team agreement. The author-order difference is documented in the signed memo `../authorship_contribution_memo.md` and disclosed here and in the cover letter. No simultaneous review of overlapping content will occur.
 3. **No duplicate submission.** This manuscript is not under review elsewhere; no substantially identical peer-reviewed publication exists.
 4. **Preprint versioning policy (preprint posted first, carries no venue markings).** The arXiv record (v1) predates both this submission and the conference submission and, by construction, contains no venue markings; this is the correct chronological order and requires no retroactive change at submission time. The citation direction runs from this manuscript to the preprint (title footnote; bibliography). The arXiv record will be updated only upon acceptance, as follows:
    - *On acceptance of the conference version* — upload arXiv v2 with Comments field: "v2: a condensed version of this work appears in Proc. [CONFERENCE NAME, YEAR]; this preprint remains the extended technical version. v1: original preprint."
@@ -48,7 +48,7 @@ LLMs appear in this work **as the object of study** (local evaluators/dehydrator
 ## 8. Compliance checklist
 
 - [ ] Insert arXiv identifier in manuscript footnote and this document.
-- [ ] Insert target journal name in cover letter and `\markboth` header; confirm 20-page limit (16 pages, met).
+- [ ] Insert target journal name in cover letter and `\markboth` header; confirm page limit (current IEEE journal draft 6 pages).
 - [ ] Confirm funding statement.
 - [ ] Confirm IRB-exemption wording with institution.
 - [ ] All authors sign COI and contribution statements.
