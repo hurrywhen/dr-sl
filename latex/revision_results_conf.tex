@@ -1,0 +1,59 @@
+% Auto-generated (condensed). Do not edit by hand.
+
+\begin{table}[!t]\centering\footnotesize
+\caption{Holdout-1 closed loop, stratified by local decision. The primary safety metric is the conditional residue rate given local PASS (FalseRelease). Whole-set averages mask the released subgroup.}
+\label{tab:stratified}
+\begin{tabular}{@{}lcccc@{}}\toprule
+Stratum & $n$ & residue \% & gold $L$ & recall \\ \midrule
+ALL & 80 & 68.8\% & 0.121 & 0.858 \\
+PASS & 46 & 78.3\% & 0.147 & 0.853 \\
+INFEASIBLE & 34 & 55.9\% & 0.086 & 0.865 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!t]\centering\footnotesize
+\caption{Holdout-1 closed loop by domain. Banking releases 20/20 and every released instance retains gold literals; legal PASS is 10/10 with residue.}
+\label{tab:domain}
+\begin{tabular}{@{}lcccc@{}}\toprule
+Domain & release \% & PASS $n$ & FalseRelease \% & PASS gold $L$ \\ \midrule
+banking & 100.0\% & 20 & 100.0\% & 0.211 \\
+legal & 50.0\% & 10 & 100.0\% & 0.155 \\
+medical & 25.0\% & 5 & 0.0\% & 0.000 \\
+travel & 55.0\% & 11 & 54.5\% & 0.091 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!t]\centering\footnotesize
+\caption{Vocabulary shift: holdout-1 shares the extractor lexicons; holdout-2 uses a disjoint vocabulary. Recall collapses and nearly every released instance leaks.}
+\label{tab:vocabshift}
+\begin{tabular}{@{}lcc@{}}\toprule
+Quantity & holdout-1 & holdout-2 \\ \midrule
+extractor recall & 0.858 & 0.526 \\
+local release \% & 57.5\% & 93.8\% \\
+gold $L$ (ALL) & 0.121 & 0.453 \\
+FalseRelease (gold) & 78.3\% & 100.0\% \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!t]\centering\footnotesize
+\caption{Paired closed-loop minus generalization-only (instance-cluster 95\% CI). Release and gold-leakage deltas are zero; local utility is lower for the loop.}
+\label{tab:paired}
+\begin{tabular}{@{}lcc@{}}\toprule
+Metric $\Delta$ & holdout-1 & holdout-2 \\ \midrule
+release & 0.000 [0.00,0.00] & 0.000 [0.00,0.00] \\
+gold $L$ & 0.000 [0.00,0.00] & 0.000 [0.00,0.00] \\
+$U_{local}$ & -0.089 [-0.12,-0.06] & -0.017 [-0.03,-0.00] \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!t]\centering\footnotesize
+\caption{Corrected audit coverage. Question evaluations count repeated assessments; hits are total hit evaluations, not distinct leaked values.}
+\label{tab:coverage}
+\begin{tabular}{@{}lc@{}}\toprule
+Quantity & Value \\ \midrule
+instances & 40 \\
+attackers & 2 \\
+strategies & 2 \\
+attack calls & 960 \\
+judge calls & 240 \\
+question evaluations & 5832 \\
+unique instance--question pairs & 243 \\
+unique question texts & 36 \\
+total hit evaluations & 1591 \\
+\bottomrule\end{tabular}\end{table}

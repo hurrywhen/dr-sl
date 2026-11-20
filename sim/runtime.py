@@ -26,6 +26,13 @@ from runtime_extractor import runtime_extract
 
 TAU_U_LOCAL = 0.50
 
+# The deterministic attack/utility functions are idempotent: repeating the same
+# artifact yields exactly the same L and U, so an N=3 window has zero range and
+# filters nothing.  The deterministic track therefore uses a single effective
+# evaluation (N=1).  The N=3 machinery (protocol.N_STABLE) is retained only for a
+# future stochastic neural track.  See revision_protocol_v2.md §7.
+DET_N_STABLE = 1
+
 MIXED_TASK_TYPES = {
     "medical": {"age", "disease", "drug", "allergy"},
     "banking": {"amount", "charge"},
@@ -217,7 +224,7 @@ def prism_random_artifact(view, seed=20261118):
     return {"D": text, "applied": applied, "method_detail": "prism_random"}
 
 
-def build_artifact(method, view, seed=20261118):
+def build_artifact(method, view, seed=20261118, n_stable=DET_N_STABLE):
     entities = view["runtime_entities"]
     if method == "hardline_only":
         out = deterministic_dehydrate(view, entities=entities)
@@ -269,25 +276,26 @@ def build_artifact(method, view, seed=20261118):
             loosen_fn=lambda D, X, S_, P: det_loosen(view, entities=entities)["D"],
             evaluate_fn=evaluate_fn, leak_contrib_fn=leak_contrib_fn,
             tau_l=TAU_L, tau_u=TAU_U_LOCAL, tau_r=TAU_U_LOCAL,
-            n_stable=N_STABLE, delta=DELTA)
+            n_stable=n_stable, delta=DELTA)
         scrub = hard_line_scrub(res.D, view, entities=entities)
-        final = stable_decision(view, scrub["D"])
+        final = stable_decision(view, scrub["D"], n_stable=n_stable)
         status = "PASS" if res.status == "PASS" and final["release"] else "INFEASIBLE"
         return {"D": scrub["D"], "applied": [], "method_detail": "closed_loop_stable_hardline",
                 "loop_status": res.status, "loop_rounds": res.rounds,
                 "loop_evaluations": res.n_evaluations,
                 "final_stable": final, "status_override": status,
-                "scrub_removed": scrub["removed"]}
+                "scrub_removed": scrub["removed"],
+                "residual_report": res.residual_leak_report}
     raise ValueError(method)
 
 
 def run_runtime_item(source, method="closed_loop", task_profile="mixed",
-                     entities=None, seed=20261118):
+                     entities=None, seed=20261118, n_stable=DET_N_STABLE):
     if entities is None:
         entities = runtime_extract(source["prompt"])
     view = runtime_view(source, entities, task_profile=task_profile)
-    art = build_artifact(method, view, seed=seed)
-    decision = art.get("final_stable") or stable_decision(view, art["D"])
+    art = build_artifact(method, view, seed=seed, n_stable=n_stable)
+    decision = art.get("final_stable") or stable_decision(view, art["D"], n_stable=n_stable)
     if art.get("status_override"):
         decision = {**decision, "status": art["status_override"],
                     "release": art["status_override"] == "PASS"}
@@ -300,6 +308,8 @@ def run_runtime_item(source, method="closed_loop", task_profile="mixed",
             "stable": decision["stable"], "method_detail": art["method_detail"],
             "loop_rounds": art.get("loop_rounds"),
             "loop_evaluations": art.get("loop_evaluations"),
+            "residual_report": art.get("residual_report"),
+            "scrub_removed": art.get("scrub_removed"),
             "runtime_entities": entities}
 
 

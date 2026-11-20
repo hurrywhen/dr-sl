@@ -1,7 +1,9 @@
 # Declarations and Disclosure Statements — Conference Submission
 
-Manuscript: **DR-SL: A Runtime-Sensitive-Set Release Chain for Cloud-Local LLM Inference with Layered Assurance**
+Manuscript: **Auditing Local Release Gates for Cloud-Local LLM Inference: Failure Modes of a Runtime-Sensitive-Set De-identification Chain**
 Authors: Wen Hu, Ya Yu, Xutong Wang
+
+> **Positioning note (round 2).** This condensed manuscript is a failure-analysis and reproducible-audit study of a runtime-S release chain, not a claim of a superior automatic sanitizer. The closed loop is an audited object; the title no longer uses "Reversibility-Verified". The audited artifact retains the legacy repository name DR-SL; self-learning is exploratory and excluded from the confirmatory release path. The venue and acceptance status are to be confirmed before submission.
 
 ## 1. Author contributions (CRediT) — conference manuscript (author order: Ya Yu, Wen Hu, Xutong Wang)
 
@@ -23,11 +25,11 @@ Wen Hu holds a position at Jiangsu Yunhefeng Intelligent Technology Co., Ltd. (s
 
 ## 4. Data and code availability
 
-All artifacts are public at https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl : simulation pipeline and test suite (MIT), four fully synthetic datasets (CC-BY-4.0), the pre-registered experimental protocol with the complete deviation log (D1–D18), the human-study package (scoring sheets, annotation sheets, analysis scripts), and the proof-verification suite. All sensitive values in all datasets are synthetic and fictional; no real personal data are included. MedQA-derived consultation stems are used under the MIT license (Jin et al., Appl. Sci. 11(14):6421, 2021) with every concrete value replaced by synthetic values.
+All artifacts are public at https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl and https://github.com/hurrywhen/dr-sl : simulation pipeline and test suite (MIT), fully synthetic datasets including the development sets, the shared-vocabulary holdout-1 and the disjoint-vocabulary holdout-2 (CC-BY-4.0), the pre-registered experimental protocols with the complete deviation log (D1–D18 and D-R1–D-R9), the human-study package (scoring sheets, annotation sheets, analysis scripts, and a prepared-but-not-collected holdout utility packet), the controlled-disclosure raw audit outputs and freeze manifests, and the proof-verification suite. All sensitive values in all datasets are synthetic and fictional; no real personal data are included. MedQA-derived consultation stems are used under the MIT license (Jin et al., Appl. Sci. 11(14):6421, 2021) with every concrete value replaced by synthetic values.
 
 ## 5. Ethics statement
 
-- **Human studies.** Two studies were conducted (semantic-utility scoring, 160 blinded rows; annotation audit, 50 instances). The only human participants were co-authors Y. Yu and X. Wang, acting as expert raters/annotators; they participated voluntarily, were blinded to variant identities and automatic scores during scoring, and are co-authors aware of the use of their judgments. No third-party human subjects, no crowdsourced workers, and no personal or clinical data were involved; all evaluated text is fully synthetic. Under [INSTITUTION] policy such non-subject, synthetic-material evaluation is exempt from IRB review; [confirm exemption wording/number with the institution before submission].
+- **Human studies.** Two studies were conducted (semantic-utility scoring, 160 blinded development rows; annotation audit, 50 instances). The only human participants were co-authors Y. Yu and X. Wang, acting as expert raters/annotators; they participated voluntarily, were blinded to variant identities and automatic scores during scoring, and are co-authors aware of the use of their judgments. No third-party human subjects, no crowdsourced workers, and no personal or clinical data were involved; all evaluated text is fully synthetic. A blinded holdout utility packet is prepared but **not yet collected**; no synthetic "human" scores were invented. Under [INSTITUTION] policy such non-subject, synthetic-material evaluation is exempt from IRB review; [confirm exemption wording/number with the institution before submission].
 - **Data.** No real personally identifiable information was collected, used, or released. Synthetic populations use placeholder marginals (documented; to be replaced by public statistics in future work).
 - **Dual-use.** The attack/verification methodology is defensive (release gating); potential misuse is limited by design (all decisions local, artifacts synthetic).
 
@@ -55,8 +57,8 @@ Large language models appear in this work **as the object of study** (local eval
 - [ ] All authors sign COI and contribution statements.
 - [ ] Verify venue policy on double-blind links and on preprints.
 
-## 9. Post-acceptance record (author order and camera-ready)
+## 9. Author order and camera-ready plan (upon acceptance)
 
-- **Final accepted author order: Ya Yu, Wen Hu, Xutong Wang.** Basis: for this manuscript Y. Yu executed and consolidated the principal simulation experiments and drafted/organized the text (first-author-level contribution), W. Hu provided the conceptualization, method, proofs, and supervision, and X. Wang contributed validation and curation. The order decision is contribution-based per manuscript and is recorded in the signed memo `../authorship_contribution_memo.md`; it is independent of conference-attendance arrangements (Y. Yu's presentation of the paper is a consequence of her authorship, not its basis).
+- **Intended final author order: Ya Yu, Wen Hu, Xutong Wang.** Basis: for this manuscript Y. Yu executed and consolidated the principal simulation experiments and drafted/organized the text (first-author-level contribution), W. Hu provided the conceptualization, method, proofs, and supervision, and X. Wang contributed validation and curation. The order decision is contribution-based per manuscript and is recorded in the signed memo `../authorship_contribution_memo.md`; it is independent of conference-attendance arrangements (Y. Yu's presentation of the paper is a consequence of her authorship, not its basis).
 - **Camera-ready corrections:** the human-study sentence now names the raters explicitly ("Y. Yu and X. Wang") instead of positional wording, since positional wording changed meaning with the order; author block and e-mail order updated accordingly.
 - **Cross-version consistency:** preprint v1 and the journal version list W. Hu first; the difference is contribution-based per manuscript and is disclosed to the journal (see `../submission_journal/declarations.md` and its cover letter). Upon conference publication, upload arXiv v2 with the Comments-field note in §6(5).

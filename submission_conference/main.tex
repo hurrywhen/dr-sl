@@ -6,12 +6,12 @@
 \usepackage{url}
 \def\UrlFont{\rmfamily}
 \newtheorem{theorem}{Theorem}
-\newtheorem{proposition}{Proposition}
 \hyphenation{Puf-fer-fish de-hy-dra-tion re-hy-dra-tion}
+\emergencystretch=3em
 
 \begin{document}
 
-\title{DR-SL: A Runtime-Sensitive-Set Release Chain for Cloud-Local LLM Inference with Layered Assurance}
+\title{Auditing Local Release Gates for Cloud-Local LLM Inference: Failure Modes of a Runtime-Sensitive-Set De-identification Chain}
 
 \author{\IEEEauthorblockN{Ya Yu\IEEEauthorrefmark{1}, Wen Hu\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Xutong Wang\IEEEauthorrefmark{1}}
 \IEEEauthorblockA{\IEEEauthorrefmark{1}College of Electronic and Information Engineering, Nanjing University of Aeronautics and Astronautics, Nanjing, China\\
@@ -21,68 +21,39 @@
 \maketitle
 
 \begin{abstract}
-Cloud-local LLM inference must keep sensitive data on-device while using cloud reasoning. We revise DR-SL as an auditable release chain combining runtime sensitive-set extraction, truthful generalization, local attack/utility checks, deterministic all-occurrence scrubbing, and human fallback. Repeated probe copies are not independent trials; gold annotations are not runtime inputs; online reference-based judges are offline criteria; and external re-testing is controlled disclosure, not pre-egress prevention. We remove an invalid Fano threshold corollary and keep feasibility statements in mutual-information units. On a frozen 80-instance synthetic holdout, a fully local deterministic runtime-S track releases 57.5\% under a heuristic gate, yet external gold-literal auditing finds residual exposure (mean gold hit rate 0.121) because extraction recall is 0.858. A controlled-disclosure LLM audit on 40 instances confirms residual hits (external max hit rate 0.130) and low semantic utility (0.363); the local utility surrogate correlates weakly with the offline judge ($\rho=0.326$). Local release is therefore not zero-leakage evidence. Human-study reanalysis shows overall utility correlation $\rho=0.839$ but lower within-group correlations, and the original combination-risk annotation criterion failed ($\kappa=-0.083$). The supported contribution is an auditable workflow and failure-mode account, not certified zero leakage or full automation.
+Cloud-local LLM inference forwards a de-identified artifact only after a local release gate approves it. We audit whether such approval is trustworthy, studying a runtime-sensitive-set (runtime-S) release chain on a frozen synthetic benchmark, a disjoint-vocabulary stress test, and controlled-disclosure LLM audits. Four findings: (1) local release is misaligned with external leakage---the chain releases 57.5\% of a shared-vocabulary holdout yet 78.3\% of released instances retain gold sensitive literals, and under vocabulary shift it releases 93.75\% with every released instance leaking; (2) a closed loop gives no advantage over one-shot deterministic generalization (paired release and leakage differences are zero, local utility is lower); (3) the local utility surrogate is poorly calibrated against an offline judge, and whole-set averages mask the released subgroup's risk; (4) residual reports cover none of the true residual risk, because the dangerous leftovers are exactly the attributes the extractor missed. We contribute a reproducible release-audit framework with a conditional false-release metric and release/domain stratification, not a certified zero-leakage or superior automatic sanitizer.
 \end{abstract}
 
 \begin{IEEEkeywords}
-sensitive-information isolation, cloud-local inference, runtime sensitive set, release decision, truthful generalization, controlled-disclosure audit
+cloud-local inference, runtime sensitive set, release gate, false release, de-identification audit, controlled disclosure
 \end{IEEEkeywords}
 
 \section{Introduction}
+Cloud models reason better than on-device models, but forwarding requests exposes sensitive data~\cite{hao2024hybrid,siyan2025papillon,das2025security,lukas2023pii}. Cloud-local systems de-identify locally and forward only an artifact approved by a local release gate. We audit that trust, studying the DR-SL release chain (legacy repository name; self-learning is exploratory and excluded from the confirmatory path). The question is not whether the chain is a novel sanitizer but whether its local approval can be relied upon. Our answer, on frozen synthetic evidence, is that local approval is a weak and sometimes misleading signal: the gate inherits the extractor's blind spots, which are invisible to the gate and to its residual reports. We contribute an audit framework, a conditional false-release metric, release/domain-stratified risk analysis, a disjoint-vocabulary stress test, and public raw outputs. We do not claim a superior automatic method; the closed loop is an audited object.
 
-Cloud models reason better than on-device small models, but forwarding requests exposes sensitive data~\cite{hao2024hybrid,siyan2025papillon,das2025security,lukas2023pii}. Removing explicit identifiers is insufficient: quasi-identifier combinations can identify a person, while deleting task context destroys utility. DR-SL studies a local release decision that combines runtime sensitive-set extraction, truthful generalization, attack/utility checks, deterministic scrubbing, and human fallback.
+\section{Background and the Audited Chain}
+INTACT~\cite{pilan2025truthful} is the closest baseline (truth-preserving generalization candidates selected against inference attacks); we claim no novelty for generalization-plus-attack selection, and our \texttt{intact\_style} is a proxy, not the official implementation. PAPILLON studies delegation~\cite{siyan2025papillon}; Presidio/Rehydra~\cite{presidio,rehydra} and PrivacyRestore~\cite{zeng2025privacyrestore} handle substitution/restoration; LDP-style perturbation trades privacy for coherence~\cite{mai2023split,duchi2013local}; P2Skill distills privacy skills~\cite{ryu2026p2skill}. Quasi-identifier risk is classically framed by k-anonymity~\cite{sweeney2002k}.
 
-This revision narrows the claim. Earlier versions treated replicated probe bundles as independent samples, used gold annotations inside the runtime policy, and used an online semantic judge that saw original material as an automatic-release gate. Those choices do not support statistical zero-leakage or fully local release claims. We correct them and report a frozen independent-template holdout.
+The runtime policy receives only $(X,\mathrm{domain},S_{\mathrm{rt}},\Pi)$: extractor output and a declared task profile, never gold annotations (used only by external scoring after freezing). Oracle-S (gold enters the policy) is an upper-bound reference. The local privacy gate is a heuristic observed point rate $L_{\mathrm{local}}\le0.05$; the local utility surrogate (exact 1 / truthful band 0.5 / else 0) gates at $U_{\mathrm{local}}\ge0.5$. The deterministic attack/utility functions are idempotent, so the declared $N=3$ stability window has zero range and filters nothing; the deterministic track uses a single effective evaluation ($N=1$, verified identical to $N=3$ on 400 pairs), reserving $N=3$ for a future stochastic track. External re-testing is controlled disclosure, not pre-egress prevention. Fano/Pufferfish witnesses~\cite{cover2006elements,kifer2014pufferfish} and an MI-unit feasibility inequality are background positioning, not safety certificates; the invalid Fano threshold corollary of earlier versions is removed (counterexample: independent $D$, uniform $S$ on 100 values gives $I=0$, $L^*=0.01\le0.05$, yet substituting $0.05$ yields a positive bound).
 
-\section{Related Work}
+\section{Audit Framework}
+The primary safety metric is conditional: $\operatorname{FalseRelease}=\Pr(\text{external residue}\mid\text{local PASS})$, with a gold-literal analogue on the full holdout. Every metric is stratified by local decision (ALL/PASS/INFEASIBLE) and by domain. The sampling unit is the instance (attackers/formats/repeats nested); means and paired deltas use 2000 instance-cluster bootstrap resamples (95\% percentile CIs); permutation $p$ uses $(b+1)/(B+1)$. Repeated question evaluations are counted separately from unique instance--question pairs and unique question texts; hits are hit evaluations, not distinct leaked values. We validate the local surrogate against an offline judge (Spearman $\rho$, MAE, threshold agreement, per-method confusion) and measure residual-report recall against gold still present in $D$. A downstream-task measure judges answers-from-$D$ against answers-from-$X$.
 
-INTACT~\cite{pilan2025truthful} is the closest methodological baseline: it generates truth-preserving generalization candidates and selects the most informative candidate resistant to inference attacks. We therefore do not claim novelty for generalization-plus-attack selection. Our scope is the cloud-local release chain: runtime-S construction, joint explicit/quasi/task gating, INFEASIBLE residual reports, and human routing. Our \texttt{intact\_style} baseline is an algorithmic proxy, not the official INTACT implementation.
+\section{Experiments and Results}
+\textbf{Data.} Holdout-1: 80 fictional instances (20/domain), seed 20261118, independent templates but \emph{shared} extractor vocabulary. Holdout-2: 80 instances, seed 20261121, new templates with entity values asserted \emph{disjoint} from every extractor lexicon (vocabulary-shift stress test). Audit subsets: 40 holdout-1 and 20 holdout-2 instances fixed before calls. The extractor was not modified in response to results.
 
-PAPILLON studies privacy-conscious delegation~\cite{siyan2025papillon}. Presidio/Rehydra provide entity substitution/restoration~\cite{presidio,rehydra}; PrivacyRestore uses server-side restoration~\cite{zeng2025privacyrestore}. LDP-style perturbation trades privacy for coherence~\cite{mai2023split,shi2022selective,duchi2013local}. P2Skill distills reusable privacy skills~\cite{ryu2026p2skill}; its refinement loop uses cloud reference/evaluator roles on original inputs, while deployment egress is matcher-gated. We avoid claiming that prior methods lack cross-instance reuse.
+\input{revision_results_conf.tex}
 
-\section{Method}
+\textbf{False release.} Table~\ref{tab:stratified}: 46/80 released, 36/46 (78.3\%) retain gold literals; PASS gold $L$ 0.147 exceeds the whole-set 0.121. Table~\ref{tab:domain}: banking releases 20/20 with 20/20 residue (amounts/charges are not extracted on these templates); legal PASS is 10/10 with residue. \textbf{No loop advantage.} Table~\ref{tab:paired}: release and gold-leakage deltas are exactly zero; local utility is lower for the loop ($-0.089$ on holdout-1). \textbf{Vocabulary shift.} Table~\ref{tab:vocabshift}: recall $0.858\to0.526$, release $57.5\%\to93.75\%$, gold $L$ $0.121\to0.453$, gold FalseRelease $\to100\%$; all lexicon-dependent types fall to recall 0. \textbf{Coverage.} Table~\ref{tab:coverage}: 243 unique instance--question pairs, 36 unique texts, 640 attack + 160 judge calls (round 1); round 2 adds generalization-only and direct-forward.
 
-\subsection{Runtime-S and trust boundary}
+Offline, the closed-loop external max hit rate is 0.130 and judge utility 0.362; the PASS subgroup has higher external leakage (0.159) \emph{and} higher judge utility (0.522 vs 0.147 INFEASIBLE). The local surrogate correlates weakly with the judge (instance-cluster CIs in the full version). Residual-report recall of true gold residue is 0: reports name only extracted attributes, while the leftovers are the missed ones. Human-study reanalysis: overall utility $\rho=0.839$ but lower within-group correlations; the original combination-risk annotation criterion failed ($\kappa=-0.083$), construct-aligned $\kappa=0.696$ is post hoc. Self-learning is exploratory (H1 unsupported; H1$'$ $p=0.059$).
 
-The runtime policy receives only original prompt, domain, extractor output, and a declared task-relevance profile. Gold annotations are used only by external scoring after the artifact and local decision are frozen. Oracle-S experiments, where gold enters the policy, are upper-bound references. External attackers receive only the processed artifact; this is a controlled first disclosure, not a pre-egress guarantee.
-
-\subsection{Local gates}
-
-The local privacy audit checks verbatim, punctuation-normalized, and NFKC-normalized occurrences of runtime entity values. The gate is a heuristic observed-hit-rate threshold $L_{\mathrm{local}}\le0.05$, not a Wilson confidence bound. The local utility surrogate scores exact retention 1, truthful numeric/date bands 0.5, and deletion/placeholders/wrong values 0; the gate is $U_{\mathrm{local}}\ge0.5$. Stability requires $N=3$ evaluations of the same artifact, all passing, with $L$ and $U$ ranges $\le\delta=0.05$. Termination follows from a finite round budget and finite skip set.
-
-\subsection{Corrected theory}
-
-Fano-type bounds apply to actual MAP success under a specified joint distribution:
-\[
-I(D;S)\ge H(S)-\sum_i[H_2(1-L_i^*)+(1-L_i^*)\log(|V_i|-1)].
-\]
-They witness leakage, not safety. The earlier threshold corollary is false: independent $D$ and uniform $S$ over 100 values give $I(D;S)=0$ and $L^*=0.01\le0.05$, yet substituting $0.05$ yields a positive bound. The feasibility inequality
-\[
-I(D;T\mid A)\le I(D;S\mid A)+I(X;T\mid S,A)
-\]
-is stated only in MI units; QA scores and hit-rate thresholds are not substituted for MI budgets.
-
-\section{Experiments}
-
-\textbf{Protocol.} The revised protocol is frozen before holdout evaluation. The holdout has 80 fictional synthetic instances (20/domain), seed 20261118, independent template family. The external audit subset is 40 instances fixed before model calls. Earlier T1--T25 results are exploratory only.
-
-\textbf{Statistics.} Attack summaries use instance-cluster bootstrap; repeated probes/attackers/formats are nested within instances. Zero hits are reported as zero observed hits under specified attackers, with coverage counts, not as a pooled binomial guarantee. Permutation p-values use $(b+1)/(B+1)$.
-
-\input{revision_results.tex}
-
-Table~\ref{tab:runtime_oracle} shows that runtime-S release must be interpreted with external gold-literal exposure. On the holdout, extraction recall is 0.858 and missed gold attributes produce residual literal exposure despite local PASS. Table~\ref{tab:holdout_methods} compares fair runtime-S methods under the same gate. The closed loop often returns the same artifact as deterministic generalization; its incremental value is stable gating and residual routing, not a new safe artifact. The INTACT-inspired selector matches the generalized point, reinforcing that candidate selection itself is not the novel contribution. The controlled-disclosure audit observed 519 hits over 640 model calls (not zero); closed-loop external max hit rate is 0.130 and offline judge utility 0.363. The local utility surrogate correlates weakly with the judge ($\rho=0.326$, threshold agreement 68.1\%).
-
-\textbf{Human studies.} Utility: overall human--automatic $\rho=0.839$ (instance-cluster CI [0.774,0.892]), MAE 0.133; within-group correlations are lower (generalized 0.661, placeholder 0.784, random replacement 0.626). Annotation: type-level recall 1.000/0.987, but original combination-risk $\kappa=-0.083$ failed; construct-aligned $\kappa=0.696$ is post hoc.
-
-\textbf{Self-learning.} H1 was not supported (rounds 2.82$\to$2.90). H1$'$ gave a small directional recall gain but $p=0.059$, not significant. Self-learning is exploratory.
-
-\section{Limitations and Conclusion}
-
-Runtime extraction misses create residual egress exposure; local audits do not cover arbitrary attackers; the local utility surrogate is coarse; the neural local-LLM track was not rerun because the local service was unavailable; external audit is controlled disclosure. DR-SL is therefore an auditable release workflow, not a certified zero-leakage sanitizer. Future work should prioritize stronger runtime extraction, local strong attackers or trusted execution environments, powered human calibration, and independent benchmarks. Code and synthetic artifacts are public at \texttt{https://github.com/hurrywhen/dr-sl} and \texttt{https://gitee.com/jiangsu-yunhefeng-intelligent\_0/dr-sl}.
+\section{Conclusion}
+Local release gates are not trustworthy by default: they inherit extractor blind spots, the closed loop does not beat simple generalization, the utility surrogate is uncalibrated, and residual reports miss the real risk. We contribute a reproducible audit framework that makes these failure modes measurable. Reliable gating needs stronger coverage-aware extraction with forced human routing, local strong attackers or trusted execution, and powered human calibration on independent data. Code, synthetic data, frozen protocols, and raw outputs are public at \url{https://github.com/hurrywhen/dr-sl} and \url{https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl}.
 
 \begin{thebibliography}{14}
 \bibitem{hao2024hybrid} H. Hao et al., ``Hybrid SLM and LLM for edge-cloud collaborative inference,'' EdgeFM, 2024.
-\bibitem{siyan2025papillon} L. Siyan et al., ``PAPILLON: privacy preservation from internet-based and local language model ensembles,'' NAACL, 2025.
+\bibitem{siyan2025papillon} L. Siyan et al., ``PAPILLON,'' NAACL, 2025.
 \bibitem{das2025security} B. C. Das et al., ``Security and privacy challenges of large language models: a survey,'' ACM Comput. Surv., 2025.
 \bibitem{lukas2023pii} N. Lukas et al., ``Analyzing leakage of personally identifiable information in language models,'' IEEE S\&P, 2023.
 \bibitem{pilan2025truthful} I. Pil\'an et al., ``Truthful text sanitization guided by inference attacks (INTACT),'' Applied Soft Computing, 2025.
@@ -90,9 +61,9 @@ Runtime extraction misses create residual egress exposure; local audits do not c
 \bibitem{rehydra} rehydra-ai, ``Rehydra SDK,'' GitHub.
 \bibitem{zeng2025privacyrestore} Z. Zeng et al., ``PrivacyRestore,'' ACL, 2025.
 \bibitem{mai2023split} P. Mai et al., ``Split-and-denoise,'' arXiv:2310.09130, 2023.
-\bibitem{shi2022selective} W. Shi et al., ``Selective differential privacy for language modeling,'' NAACL, 2022.
 \bibitem{duchi2013local} J. C. Duchi et al., ``Local privacy and statistical minimax rates,'' IEEE FOCS, 2013.
 \bibitem{ryu2026p2skill} M. Ryu et al., ``P2Skill,'' arXiv:2608.14094, 2026.
+\bibitem{sweeney2002k} L. Sweeney, ``k-Anonymity,'' IJUFKS, 2002.
 \bibitem{kifer2014pufferfish} D. Kifer and A. Machanavajjhala, ``Pufferfish,'' ACM TODS, 2014.
 \bibitem{cover2006elements} T. M. Cover and J. A. Thomas, Elements of Information Theory, Wiley, 2006.
 \end{thebibliography}

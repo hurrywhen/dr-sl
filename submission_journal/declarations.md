@@ -1,7 +1,9 @@
 # Declarations and Disclosure Statements — Journal Submission
 
-Manuscript: **Reversibility-Verified De-identification for Cloud-Local LLM Inference: A Runtime-Sensitive-Set Release Chain with Layered Assurance (DR-SL)**
+Manuscript: **Auditing Local Release Gates for Cloud-Local LLM Inference: Failure Modes of a Runtime-Sensitive-Set De-identification Chain**
 Authors: Wen Hu, Ya Yu, Xutong Wang
+
+> **Positioning note (round 2).** This manuscript is a failure-analysis and reproducible-audit study of a runtime-S release chain, not a claim of a superior automatic sanitizer. The closed loop is an audited object; the title no longer uses "Reversibility-Verified" (no rehydration/reversibility experiment is run in the deterministic track). The audited artifact retains the legacy repository name DR-SL; self-learning is exploratory and excluded from the confirmatory release path.
 
 ## 1. Author contributions (CRediT) — journal manuscript (author order: Wen Hu, Ya Yu, Xutong Wang; corresponding author: Ya Yu)
 
@@ -9,7 +11,7 @@ Authors: Wen Hu, Ya Yu, Xutong Wang
 - **Ya Yu (corresponding author):** investigation (simulation experiments carried over from and re-verified beyond the conference stage), validation (human-study rater), data curation, writing — review & editing; responsible for correspondence and for the integrity of the submitted record.
 - **Xutong Wang:** validation (human-study rater/annotator), data curation, writing — review & editing.
 
-**Author order and corresponding authorship across versions.** Author order is decided per manuscript on contribution grounds: the conference version (accepted; order Y. Yu, W. Hu, X. Wang) reflects Y. Yu's first-author-level execution and drafting of that manuscript; this journal manuscript reflects W. Hu's leadership of the extended theory, experimental record, and writing; Y. Yu serves as corresponding author of this manuscript by team agreement and genuine assumption of the corresponding role. Preprint v1 lists W. Hu first (it precedes the conference-stage division of work). All three records, their bases, and the signed per-version memo (`../authorship_contribution_memo.md`) are disclosed to the editor in the cover letter; no version misstates any author's contribution.
+**Author order and corresponding authorship across versions.** Author order is decided per manuscript on contribution grounds: the conference version (prepared; venue and acceptance status to be confirmed; order Y. Yu, W. Hu, X. Wang) reflects Y. Yu's first-author-level execution and drafting of that manuscript; this journal manuscript reflects W. Hu's leadership of the extended theory, experimental record, and writing; Y. Yu serves as corresponding author of this manuscript by team agreement and genuine assumption of the corresponding role. Preprint v1 lists W. Hu first (it precedes the conference-stage division of work). All three records, their bases, and the signed per-version memo (`../authorship_contribution_memo.md`) are disclosed to the editor in the cover letter; no version misstates any author's contribution.
 
 All authors meet the ICMJE authorship criteria and have approved this version and its submission.
 
@@ -23,11 +25,11 @@ Wen Hu holds a position at Jiangsu Yunhefeng Intelligent Technology Co., Ltd. (s
 
 ## 4. Data and code availability
 
-All artifacts are public at https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl : simulation pipeline and test suite (MIT), four fully synthetic datasets (CC-BY-4.0), the pre-registered experimental protocol with the complete deviation log (D1–D18), the human-study package (blinded scoring sheets, annotation sheets, analysis scripts, preregistered criteria), and the proof-verification suite (`sim/proof_checks.py`). All sensitive values are synthetic and fictional; no real personal data are included. MedQA-derived consultation stems are used under the MIT license (Jin et al., Appl. Sci. 11(14):6421, 2021) with every concrete value replaced. Synthetic-population marginals currently use documented placeholder values (W2), flagged in the manuscript as future work to replace with public statistical tables.
+All artifacts are public at https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl and https://github.com/hurrywhen/dr-sl : simulation pipeline and test suite (MIT), fully synthetic datasets including the development sets, the shared-vocabulary holdout-1 and the disjoint-vocabulary holdout-2 (CC-BY-4.0), the pre-registered experimental protocols (`revision_protocol.md`, `revision_protocol_v2.md`) with the complete deviation log (D1–D18 and D-R1–D-R9), the human-study package (blinded scoring sheets, annotation sheets, analysis scripts, preregistered criteria, and a prepared-but-not-collected holdout utility packet), the controlled-disclosure raw audit outputs and freeze manifests, and the proof-verification suite (`sim/proof_checks.py`). All sensitive values are synthetic and fictional; no real personal data are included. MedQA-derived consultation stems are used under the MIT license (Jin et al., Appl. Sci. 11(14):6421, 2021) with every concrete value replaced. Synthetic-population marginals currently use documented placeholder values (W2), flagged as future work to replace with public statistical tables.
 
 ## 5. Ethics statement
 
-- **Human studies.** Two studies: (1) semantic-utility anchor — two raters independently scored 160 blinded rows (40 instances × 4 operating points; blind key withheld until scoring finished); (2) annotation audit — two annotators independently listed sensitive items and judged combination re-identification risk on 50 instances. The only participants were co-authors Y. Yu and X. Wang (expert raters, independent of the pipeline implementation), participating voluntarily with full knowledge of their co-authorship; they were blinded to variant identities and automatic scores during scoring. No third-party subjects, no crowdsourced labor, no personal or clinical data; all evaluated text is fully synthetic. Under [INSTITUTION] policy such non-subject evaluation of synthetic material is exempt from IRB review; [confirm exemption wording/number before submission]. Preregistered criteria and outcomes (including the κ fallback analysis) are reported in full.
+- **Human studies.** Two studies: (1) semantic-utility anchor — two raters independently scored 160 blinded development rows (40 instances × 4 operating points; blind key withheld until scoring finished); (2) annotation audit — two annotators independently listed sensitive items and judged combination re-identification risk on 50 instances. The only participants were co-authors Y. Yu and X. Wang (expert raters, independent of the pipeline implementation), participating voluntarily with full knowledge of their co-authorship; they were blinded to variant identities and automatic scores during scoring. No third-party subjects, no crowdsourced labor, no personal or clinical data; all evaluated text is fully synthetic. A blinded holdout utility scoring packet is prepared but **not yet collected**; no synthetic "human" scores were invented, and holdout utility claims rest on external judges only. Under [INSTITUTION] policy such non-subject evaluation of synthetic material is exempt from IRB review; [confirm exemption wording/number before submission]. Preregistered criteria and outcomes (including the failed original combination-risk κ and the post hoc construct-aligned analysis) are reported in full.
 - **Privacy of local assets.** The manuscript itself analyzes and mitigates the sensitivity of system-internal artifacts (experience store, residual reports, audit logs); no such artifact containing sensitive values is published.
 - **Dual-use.** The attack/verification methodology is defensive (release gating); experiments use only synthetic data and provider APIs under their terms.
 
@@ -48,7 +50,7 @@ LLMs appear in this work **as the object of study** (local evaluators/dehydrator
 ## 8. Compliance checklist
 
 - [ ] Insert arXiv identifier in manuscript footnote and this document.
-- [ ] Insert target journal name in cover letter and `\markboth` header; confirm page limit (current IEEE journal draft 6 pages).
+- [ ] Insert target journal name in cover letter and `\markboth` header; confirm page limit (current IEEE journal draft 7 pages).
 - [ ] Confirm funding statement.
 - [ ] Confirm IRB-exemption wording with institution.
 - [ ] All authors sign COI and contribution statements.

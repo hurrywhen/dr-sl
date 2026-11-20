@@ -121,6 +121,27 @@ def test_fano_threshold_corollary_counterexample():
     print("test_fano_threshold_corollary_counterexample OK", invalid_bound)
 
 
+def test_fano_singleton_domain():
+    """|V_i|=1 must be handled (log(|V_i|-1) is undefined).
+
+    A singleton attribute carries no uncertainty: its Fano term is skipped, and
+    the bound must remain a valid lower bound on I(D;S).
+    """
+    rng = np.random.default_rng(SEED + 4)
+    for _ in range(200):
+        sizes = [1, int(rng.integers(2, 6))]
+        d_size = int(rng.integers(2, 7))
+        joint = random_joint_dsm(rng, d_size, sizes)
+        I_DS, H_S, hit_rates = _fano_quantities(joint, sizes)
+        assert abs(hit_rates[0] - 1.0) < 1e-9  # singleton always guessed
+        bound = fano_lower_bound(H_S, hit_rates, sizes)  # must not raise
+        # skipping the singleton equals computing the bound on the non-singleton
+        bound_skip = fano_lower_bound(H_S, hit_rates[1:], sizes[1:])
+        assert abs(bound - bound_skip) < 1e-9
+        assert I_DS >= bound - TOL
+    print("test_fano_singleton_domain OK (200 configs)")
+
+
 def test_feasibility_criterion_property():
     rng = np.random.default_rng(SEED + 3)
     violations = []
@@ -161,4 +182,5 @@ if __name__ == "__main__":
     test_pufferfish_boundary_independent_channel()
     test_feasibility_criterion_property()
     test_fano_threshold_corollary_counterexample()
+    test_fano_singleton_domain()
     print("ALL PROOF-CHECK TESTS PASSED")

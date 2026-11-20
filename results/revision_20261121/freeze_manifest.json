@@ -1,0 +1,14 @@
+{
+  "revision_protocol.md": "206d91d8df2aa21bfff17886677a9dbc9a07a9bfb30a2781b4f3b942ad6779bd",
+  "revision_protocol_v2.md": "cd932de16e0ff775c5ba6afdad383784eb97b290215b268abda56ed9c018e67c",
+  "dataset/generate_holdout.py": "be3f7ec5a1f50f61ac1f8ec4f31c4604b16c5a92877c795598592f28eccf1899",
+  "dataset/generate_holdout2.py": "672055990464c6477c597f36060aa5aeaba2d89bdfd98357aa24d56072195e02",
+  "dataset/synth_values.py": "4996817742ee65345c4032a465d5e8d7402d3d3e7548135d84f560cbab0131ea",
+  "dataset/synth_values_v2.py": "c5c733f0a78a4906fc4c99705984a37087635432b06d91b40454d9a8165e8757",
+  "sim/runtime.py": "6e2aca5368a29f47538cf556ca63da70674e8784573dd08f32c49a5349245cd0",
+  "sim/runtime_extractor.py": "d20d9641e3feb7f21b086dbb7d1b0d531906624fa30b3a399ecfe2ee8da46296",
+  "sim/revision_stats.py": "2d9d4624a7af992f69d47fd09c5befe0227bc042165a1413cdddba9fa88b5808",
+  "sim/revision_experiment.py": "275f245da8779e301dfaaeb4e052b10288f10941c6705c745daeb9a6ccd710b3",
+  "sim/loop.py": "d916839843991a5d984ffaf84833fc16aac66fc6029fe6af883f59f0b45e28b7",
+  "sim/pipeline.py": "584649ae205ff5fad3c1778a4089c55efc31dac012f91fdaacbbb38c4a5e5fdc"
+}

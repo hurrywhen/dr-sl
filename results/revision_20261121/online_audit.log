@@ -1,0 +1,224 @@
+reused 800 round-1 records; new calls 600
+audit progress 50/600 errors=0
+audit progress 100/600 errors=0
+audit progress 150/600 errors=0
+audit progress 200/600 errors=0
+audit progress 250/600 errors=0
+audit progress 300/600 errors=0
+audit progress 350/600 errors=0
+audit progress 400/600 errors=0
+audit progress 450/600 errors=0
+audit progress 500/600 errors=0
+audit progress 550/600 errors=0
+audit progress 600/600 errors=0
+{
+  "n_new_calls": 600,
+  "n_reused": 800,
+  "n_errors": 0,
+  "by_method": {
+    "closed_loop": {
+      "external_L_max": {
+        "estimate": 0.23944444444444443,
+        "ci95": [
+          0.19444444444444445,
+          0.2859623015873015
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.23529761904761903,
+        "ci95": [
+          0.1913849206349206,
+          0.2798720238095237
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n_attack_calls": 240,
+      "total_hit_evaluations": 354,
+      "semantic_judge": {
+        "estimate": 0.43333333333333335,
+        "ci95": [
+          0.3333333333333333,
+          0.5333333333333333
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "direct_forward": {
+      "external_L_max": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.9704166666666666,
+        "ci95": [
+          0.9562485119047619,
+          0.9833973214285714
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n_attack_calls": 160,
+      "total_hit_evaluations": 944,
+      "semantic_judge": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "generalization_only": {
+      "external_L_max": {
+        "estimate": 0.23944444444444443,
+        "ci95": [
+          0.19444444444444445,
+          0.2859623015873015
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.23329365079365078,
+        "ci95": [
+          0.18993948412698414,
+          0.27802777777777776
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n_attack_calls": 240,
+      "total_hit_evaluations": 350,
+      "semantic_judge": {
+        "estimate": 0.4583333333333333,
+        "ci95": [
+          0.36666666666666664,
+          0.5583333333333333
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "hardline_only": {
+      "external_L_max": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n_attack_calls": 160,
+      "total_hit_evaluations": 128,
+      "semantic_judge": {
+        "estimate": 0.425,
+        "ci95": [
+          0.3121875,
+          0.55
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "intact_style": {
+      "external_L_max": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.1294345238095238,
+        "ci95": [
+          0.1022596726190476,
+          0.15800967261904758
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n_attack_calls": 160,
+      "total_hit_evaluations": 127,
+      "semantic_judge": {
+        "estimate": 0.4125,
+        "ci95": [
+          0.3,
+          0.5375
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "prism_random": {
+      "external_L_max": {
+        "estimate": 0.1388095238095238,
+        "ci95": [
+          0.10821428571428571,
+          0.16941369047619043
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "external_L_mean": {
+        "estimate": 0.1388095238095238,
+        "ci95": [
+          0.10821428571428571,
+          0.16941369047619043
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n_attack_calls": 160,
+      "total_hit_evaluations": 136,
+      "semantic_judge": {
+        "estimate": 0.125,
+        "ci95": [
+          0.05,
+          0.2125
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    }
+  }
+}

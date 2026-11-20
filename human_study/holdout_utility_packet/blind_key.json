@@ -1,0 +1,482 @@
+{
+  "HU-0001": {
+    "instance": "DRSL-HOLD-TRA-0001",
+    "variant": "generalization_only"
+  },
+  "HU-0002": {
+    "instance": "DRSL-HOLD-TRA-0002",
+    "variant": "closed_loop"
+  },
+  "HU-0003": {
+    "instance": "DRSL-HOLD-TRA-0003",
+    "variant": "closed_loop"
+  },
+  "HU-0004": {
+    "instance": "DRSL-HOLD-MED-0001",
+    "variant": "closed_loop"
+  },
+  "HU-0005": {
+    "instance": "DRSL-HOLD-TRA-0010",
+    "variant": "generalization_only"
+  },
+  "HU-0006": {
+    "instance": "DRSL-HOLD-BAN-0003",
+    "variant": "generalization_only"
+  },
+  "HU-0007": {
+    "instance": "DRSL-HOLD-LEG-0004",
+    "variant": "closed_loop"
+  },
+  "HU-0008": {
+    "instance": "DRSL-HOLD-MED-0007",
+    "variant": "generalization_only"
+  },
+  "HU-0009": {
+    "instance": "DRSL-HOLD-LEG-0008",
+    "variant": "generalization_only"
+  },
+  "HU-0010": {
+    "instance": "DRSL-HOLD-TRA-0001",
+    "variant": "closed_loop"
+  },
+  "HU-0011": {
+    "instance": "DRSL-HOLD-LEG-0003",
+    "variant": "generalization_only"
+  },
+  "HU-0012": {
+    "instance": "DRSL-HOLD-BAN-0002",
+    "variant": "generalization_only"
+  },
+  "HU-0013": {
+    "instance": "DRSL-HOLD-BAN-0001",
+    "variant": "closed_loop"
+  },
+  "HU-0014": {
+    "instance": "DRSL-HOLD-TRA-0003",
+    "variant": "generalization_only"
+  },
+  "HU-0015": {
+    "instance": "DRSL-HOLD-TRA-0010",
+    "variant": "direct"
+  },
+  "HU-0016": {
+    "instance": "DRSL-HOLD-MED-0001",
+    "variant": "generalization_only"
+  },
+  "HU-0017": {
+    "instance": "DRSL-HOLD-LEG-0007",
+    "variant": "direct"
+  },
+  "HU-0018": {
+    "instance": "DRSL-HOLD-LEG-0002",
+    "variant": "closed_loop"
+  },
+  "HU-0019": {
+    "instance": "DRSL-HOLD-MED-0002",
+    "variant": "generalization_only"
+  },
+  "HU-0020": {
+    "instance": "DRSL-HOLD-TRA-0002",
+    "variant": "generalization_only"
+  },
+  "HU-0021": {
+    "instance": "DRSL-HOLD-MED-0010",
+    "variant": "direct"
+  },
+  "HU-0022": {
+    "instance": "DRSL-HOLD-MED-0007",
+    "variant": "closed_loop"
+  },
+  "HU-0023": {
+    "instance": "DRSL-HOLD-BAN-0007",
+    "variant": "direct"
+  },
+  "HU-0024": {
+    "instance": "DRSL-HOLD-LEG-0001",
+    "variant": "generalization_only"
+  },
+  "HU-0025": {
+    "instance": "DRSL-HOLD-BAN-0009",
+    "variant": "direct"
+  },
+  "HU-0026": {
+    "instance": "DRSL-HOLD-BAN-0005",
+    "variant": "closed_loop"
+  },
+  "HU-0027": {
+    "instance": "DRSL-HOLD-LEG-0008",
+    "variant": "direct"
+  },
+  "HU-0028": {
+    "instance": "DRSL-HOLD-BAN-0006",
+    "variant": "generalization_only"
+  },
+  "HU-0029": {
+    "instance": "DRSL-HOLD-TRA-0008",
+    "variant": "closed_loop"
+  },
+  "HU-0030": {
+    "instance": "DRSL-HOLD-BAN-0006",
+    "variant": "direct"
+  },
+  "HU-0031": {
+    "instance": "DRSL-HOLD-LEG-0003",
+    "variant": "direct"
+  },
+  "HU-0032": {
+    "instance": "DRSL-HOLD-TRA-0007",
+    "variant": "direct"
+  },
+  "HU-0033": {
+    "instance": "DRSL-HOLD-LEG-0004",
+    "variant": "direct"
+  },
+  "HU-0034": {
+    "instance": "DRSL-HOLD-MED-0004",
+    "variant": "closed_loop"
+  },
+  "HU-0035": {
+    "instance": "DRSL-HOLD-TRA-0009",
+    "variant": "closed_loop"
+  },
+  "HU-0036": {
+    "instance": "DRSL-HOLD-TRA-0005",
+    "variant": "direct"
+  },
+  "HU-0037": {
+    "instance": "DRSL-HOLD-MED-0009",
+    "variant": "direct"
+  },
+  "HU-0038": {
+    "instance": "DRSL-HOLD-TRA-0005",
+    "variant": "closed_loop"
+  },
+  "HU-0039": {
+    "instance": "DRSL-HOLD-BAN-0005",
+    "variant": "direct"
+  },
+  "HU-0040": {
+    "instance": "DRSL-HOLD-MED-0004",
+    "variant": "direct"
+  },
+  "HU-0041": {
+    "instance": "DRSL-HOLD-MED-0010",
+    "variant": "generalization_only"
+  },
+  "HU-0042": {
+    "instance": "DRSL-HOLD-BAN-0003",
+    "variant": "direct"
+  },
+  "HU-0043": {
+    "instance": "DRSL-HOLD-TRA-0001",
+    "variant": "direct"
+  },
+  "HU-0044": {
+    "instance": "DRSL-HOLD-TRA-0005",
+    "variant": "generalization_only"
+  },
+  "HU-0045": {
+    "instance": "DRSL-HOLD-LEG-0010",
+    "variant": "direct"
+  },
+  "HU-0046": {
+    "instance": "DRSL-HOLD-LEG-0009",
+    "variant": "generalization_only"
+  },
+  "HU-0047": {
+    "instance": "DRSL-HOLD-MED-0002",
+    "variant": "direct"
+  },
+  "HU-0048": {
+    "instance": "DRSL-HOLD-BAN-0002",
+    "variant": "closed_loop"
+  },
+  "HU-0049": {
+    "instance": "DRSL-HOLD-MED-0008",
+    "variant": "generalization_only"
+  },
+  "HU-0050": {
+    "instance": "DRSL-HOLD-MED-0005",
+    "variant": "direct"
+  },
+  "HU-0051": {
+    "instance": "DRSL-HOLD-TRA-0007",
+    "variant": "closed_loop"
+  },
+  "HU-0052": {
+    "instance": "DRSL-HOLD-MED-0005",
+    "variant": "closed_loop"
+  },
+  "HU-0053": {
+    "instance": "DRSL-HOLD-LEG-0003",
+    "variant": "closed_loop"
+  },
+  "HU-0054": {
+    "instance": "DRSL-HOLD-MED-0002",
+    "variant": "closed_loop"
+  },
+  "HU-0055": {
+    "instance": "DRSL-HOLD-LEG-0005",
+    "variant": "direct"
+  },
+  "HU-0056": {
+    "instance": "DRSL-HOLD-LEG-0009",
+    "variant": "direct"
+  },
+  "HU-0057": {
+    "instance": "DRSL-HOLD-BAN-0003",
+    "variant": "closed_loop"
+  },
+  "HU-0058": {
+    "instance": "DRSL-HOLD-MED-0010",
+    "variant": "closed_loop"
+  },
+  "HU-0059": {
+    "instance": "DRSL-HOLD-TRA-0002",
+    "variant": "direct"
+  },
+  "HU-0060": {
+    "instance": "DRSL-HOLD-MED-0007",
+    "variant": "direct"
+  },
+  "HU-0061": {
+    "instance": "DRSL-HOLD-LEG-0001",
+    "variant": "direct"
+  },
+  "HU-0062": {
+    "instance": "DRSL-HOLD-MED-0003",
+    "variant": "generalization_only"
+  },
+  "HU-0063": {
+    "instance": "DRSL-HOLD-LEG-0006",
+    "variant": "direct"
+  },
+  "HU-0064": {
+    "instance": "DRSL-HOLD-LEG-0010",
+    "variant": "generalization_only"
+  },
+  "HU-0065": {
+    "instance": "DRSL-HOLD-TRA-0003",
+    "variant": "direct"
+  },
+  "HU-0066": {
+    "instance": "DRSL-HOLD-BAN-0010",
+    "variant": "closed_loop"
+  },
+  "HU-0067": {
+    "instance": "DRSL-HOLD-BAN-0001",
+    "variant": "generalization_only"
+  },
+  "HU-0068": {
+    "instance": "DRSL-HOLD-MED-0008",
+    "variant": "closed_loop"
+  },
+  "HU-0069": {
+    "instance": "DRSL-HOLD-MED-0006",
+    "variant": "direct"
+  },
+  "HU-0070": {
+    "instance": "DRSL-HOLD-MED-0004",
+    "variant": "generalization_only"
+  },
+  "HU-0071": {
+    "instance": "DRSL-HOLD-LEG-0010",
+    "variant": "closed_loop"
+  },
+  "HU-0072": {
+    "instance": "DRSL-HOLD-MED-0008",
+    "variant": "direct"
+  },
+  "HU-0073": {
+    "instance": "DRSL-HOLD-LEG-0007",
+    "variant": "closed_loop"
+  },
+  "HU-0074": {
+    "instance": "DRSL-HOLD-MED-0005",
+    "variant": "generalization_only"
+  },
+  "HU-0075": {
+    "instance": "DRSL-HOLD-MED-0009",
+    "variant": "closed_loop"
+  },
+  "HU-0076": {
+    "instance": "DRSL-HOLD-LEG-0002",
+    "variant": "direct"
+  },
+  "HU-0077": {
+    "instance": "DRSL-HOLD-BAN-0006",
+    "variant": "closed_loop"
+  },
+  "HU-0078": {
+    "instance": "DRSL-HOLD-TRA-0010",
+    "variant": "closed_loop"
+  },
+  "HU-0079": {
+    "instance": "DRSL-HOLD-BAN-0009",
+    "variant": "closed_loop"
+  },
+  "HU-0080": {
+    "instance": "DRSL-HOLD-BAN-0010",
+    "variant": "direct"
+  },
+  "HU-0081": {
+    "instance": "DRSL-HOLD-BAN-0002",
+    "variant": "direct"
+  },
+  "HU-0082": {
+    "instance": "DRSL-HOLD-LEG-0009",
+    "variant": "closed_loop"
+  },
+  "HU-0083": {
+    "instance": "DRSL-HOLD-MED-0003",
+    "variant": "direct"
+  },
+  "HU-0084": {
+    "instance": "DRSL-HOLD-TRA-0004",
+    "variant": "direct"
+  },
+  "HU-0085": {
+    "instance": "DRSL-HOLD-TRA-0007",
+    "variant": "generalization_only"
+  },
+  "HU-0086": {
+    "instance": "DRSL-HOLD-LEG-0006",
+    "variant": "generalization_only"
+  },
+  "HU-0087": {
+    "instance": "DRSL-HOLD-BAN-0009",
+    "variant": "generalization_only"
+  },
+  "HU-0088": {
+    "instance": "DRSL-HOLD-MED-0009",
+    "variant": "generalization_only"
+  },
+  "HU-0089": {
+    "instance": "DRSL-HOLD-BAN-0010",
+    "variant": "generalization_only"
+  },
+  "HU-0090": {
+    "instance": "DRSL-HOLD-BAN-0004",
+    "variant": "generalization_only"
+  },
+  "HU-0091": {
+    "instance": "DRSL-HOLD-BAN-0007",
+    "variant": "closed_loop"
+  },
+  "HU-0092": {
+    "instance": "DRSL-HOLD-LEG-0004",
+    "variant": "generalization_only"
+  },
+  "HU-0093": {
+    "instance": "DRSL-HOLD-TRA-0008",
+    "variant": "generalization_only"
+  },
+  "HU-0094": {
+    "instance": "DRSL-HOLD-MED-0001",
+    "variant": "direct"
+  },
+  "HU-0095": {
+    "instance": "DRSL-HOLD-TRA-0008",
+    "variant": "direct"
+  },
+  "HU-0096": {
+    "instance": "DRSL-HOLD-LEG-0008",
+    "variant": "closed_loop"
+  },
+  "HU-0097": {
+    "instance": "DRSL-HOLD-LEG-0001",
+    "variant": "closed_loop"
+  },
+  "HU-0098": {
+    "instance": "DRSL-HOLD-BAN-0005",
+    "variant": "generalization_only"
+  },
+  "HU-0099": {
+    "instance": "DRSL-HOLD-TRA-0009",
+    "variant": "direct"
+  },
+  "HU-0100": {
+    "instance": "DRSL-HOLD-TRA-0004",
+    "variant": "closed_loop"
+  },
+  "HU-0101": {
+    "instance": "DRSL-HOLD-TRA-0006",
+    "variant": "closed_loop"
+  },
+  "HU-0102": {
+    "instance": "DRSL-HOLD-LEG-0007",
+    "variant": "generalization_only"
+  },
+  "HU-0103": {
+    "instance": "DRSL-HOLD-TRA-0006",
+    "variant": "generalization_only"
+  },
+  "HU-0104": {
+    "instance": "DRSL-HOLD-MED-0006",
+    "variant": "closed_loop"
+  },
+  "HU-0105": {
+    "instance": "DRSL-HOLD-TRA-0006",
+    "variant": "direct"
+  },
+  "HU-0106": {
+    "instance": "DRSL-HOLD-BAN-0008",
+    "variant": "direct"
+  },
+  "HU-0107": {
+    "instance": "DRSL-HOLD-TRA-0009",
+    "variant": "generalization_only"
+  },
+  "HU-0108": {
+    "instance": "DRSL-HOLD-LEG-0006",
+    "variant": "closed_loop"
+  },
+  "HU-0109": {
+    "instance": "DRSL-HOLD-BAN-0007",
+    "variant": "generalization_only"
+  },
+  "HU-0110": {
+    "instance": "DRSL-HOLD-BAN-0008",
+    "variant": "generalization_only"
+  },
+  "HU-0111": {
+    "instance": "DRSL-HOLD-BAN-0001",
+    "variant": "direct"
+  },
+  "HU-0112": {
+    "instance": "DRSL-HOLD-BAN-0004",
+    "variant": "direct"
+  },
+  "HU-0113": {
+    "instance": "DRSL-HOLD-LEG-0005",
+    "variant": "closed_loop"
+  },
+  "HU-0114": {
+    "instance": "DRSL-HOLD-BAN-0004",
+    "variant": "closed_loop"
+  },
+  "HU-0115": {
+    "instance": "DRSL-HOLD-MED-0006",
+    "variant": "generalization_only"
+  },
+  "HU-0116": {
+    "instance": "DRSL-HOLD-TRA-0004",
+    "variant": "generalization_only"
+  },
+  "HU-0117": {
+    "instance": "DRSL-HOLD-LEG-0005",
+    "variant": "generalization_only"
+  },
+  "HU-0118": {
+    "instance": "DRSL-HOLD-LEG-0002",
+    "variant": "generalization_only"
+  },
+  "HU-0119": {
+    "instance": "DRSL-HOLD-BAN-0008",
+    "variant": "closed_loop"
+  },
+  "HU-0120": {
+    "instance": "DRSL-HOLD-MED-0003",
+    "variant": "closed_loop"
+  }
+}

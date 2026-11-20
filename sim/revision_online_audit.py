@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Controlled-disclosure external audit on the frozen holdout subset.
+"""Controlled-disclosure external audit (round 2).
+
+Adds generalization_only (the strongest simple baseline, previously absent
+online) and direct_forward (unprocessed X, attacker-capability reference) to the
+frozen holdout-1 subset, reusing round-1 raw outputs for the other four methods.
+Also audits a disjoint-vocabulary holdout-2 subset.  Counting is corrected:
+n_question_evaluations counts repeated evaluations, not unique questions.
 
 Online models are used only after local artifacts/decisions are frozen.  The
 reference-based semantic judge sees original X solely for offline criterion
@@ -9,7 +15,6 @@ import json
 import os
 import re
 import sys
-import time
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -21,13 +26,18 @@ from backends import make_backend
 from pipeline import (ENUM_SYSTEM, _parse_enum_values, _parse_numbered_answers,
                       gen_probe_questions, grade)
 from qi import load_dataset
-from revision_stats import cluster_bootstrap, zero_observation_summary
+from revision_stats import cluster_bootstrap
 from stage5 import JUDGE_SYSTEM
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "results" / os.environ.get("REVISION_OUT", "revision_20261118")
-AUDIT_METHODS = ("closed_loop", "hardline_only", "intact_style", "prism_random")
-PER_DOMAIN = 10
+OUT = ROOT / "results" / os.environ.get("REVISION_OUT", "revision_20261121")
+ROUND1 = ROOT / "results" / "revision_20261118"
+H1_METHODS = ("closed_loop", "hardline_only", "intact_style", "prism_random",
+              "generalization_only", "direct_forward")
+REUSED_METHODS = ("closed_loop", "hardline_only", "intact_style", "prism_random")
+H2_METHODS = ("closed_loop", "generalization_only")
+PER_DOMAIN_H1 = 10
+PER_DOMAIN_H2 = 5
 MAX_WORKERS = int(os.environ.get("REVISION_AUDIT_WORKERS", "4"))
 
 
@@ -66,7 +76,7 @@ def attack_once(backend, D, qs, strategy, attacker):
     hits = sum(grade(a, t, k, tolerant=False) for a, (_, t, k) in zip(answers, qs))
     return {"hits": hits, "n": len(qs), "L": hits / len(qs) if qs else 0.0,
             "answers": answers, "raw": raw, "n_model_calls": 1,
-            "n_unique_questions": len(qs), "strategy": strategy, "attacker": attacker}
+            "n_question_evaluations": len(qs), "strategy": strategy, "attacker": attacker}
 
 
 def judge_once(backend, D, X):
@@ -75,40 +85,69 @@ def judge_once(backend, D, X):
     return {"score": parse_judge(raw), "raw": raw}
 
 
+def select_subset(items, per_domain):
+    by_domain = defaultdict(list)
+    for iid in sorted(items):
+        by_domain[items[iid]["domain"]].append(iid)
+    return [iid for d in sorted(by_domain) for iid in by_domain[d][:per_domain]]
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    offline_path = OUT / "offline_runtime.jsonl"
-    if not offline_path.exists():
-        raise SystemExit("run revision_experiment.py first")
-    offline = [json.loads(l) for l in offline_path.open(encoding="utf-8")]
-    hold = {r["id"]: r for r in offline if r["dataset"] == "holdout80" and r["sensitive_set"] == "runtime"}
-    items = {r["id"]: r for r in load_dataset(str(ROOT / "dataset" / "output" / "dr_sl_holdout_v1.jsonl"))}
-    by_domain = defaultdict(list)
-    for iid in sorted(hold):
-        by_domain[items[iid]["domain"]].append(iid)
-    subset = [iid for d in sorted(by_domain) for iid in by_domain[d][:PER_DOMAIN]]
-    (OUT / "audit_subset.json").write_text(json.dumps(subset, indent=2))
+    offline = [json.loads(l) for l in (OUT / "offline_runtime.jsonl").open(encoding="utf-8")]
+    items1 = {r["id"]: r for r in load_dataset(str(ROOT / "dataset/output/dr_sl_holdout_v1.jsonl"))}
+    items2 = {r["id"]: r for r in load_dataset(str(ROOT / "dataset/output/dr_sl_holdout_v2.jsonl"))}
+    off1 = {(r["id"], r["method"]): r for r in offline
+            if r["dataset"] == "holdout80" and r["sensitive_set"] == "runtime"}
+    off2 = {(r["id"], r["method"]): r for r in offline
+            if r["dataset"] == "holdout80_v2" and r["sensitive_set"] == "runtime"}
+    subset1 = select_subset(items1, PER_DOMAIN_H1)
+    subset2 = select_subset(items2, PER_DOMAIN_H2)
+    (OUT / "audit_subset.json").write_text(json.dumps(subset1, indent=2))
+    (OUT / "audit_subset_h2.json").write_text(json.dumps(subset2, indent=2))
+
+    # Reuse round-1 raw outputs for the four already-audited holdout-1 methods.
+    reused = []
+    if (ROUND1 / "online_audit_raw.jsonl").exists():
+        for l in (ROUND1 / "online_audit_raw.jsonl").open(encoding="utf-8"):
+            r = json.loads(l)
+            if r.get("error") or r["id"] not in subset1:
+                continue
+            if r["kind"] == "attack" and r["method"] in REUSED_METHODS:
+                r.setdefault("n_question_evaluations", r.get("n", 0))
+                r["reused_from"] = "revision_20261118"
+                reused.append(r)
+            elif r["kind"] == "judge" and r["method"] in REUSED_METHODS:
+                r["reused_from"] = "revision_20261118"
+                reused.append(r)
+    reused_keys = {(r["kind"], r["id"], r["method"], r.get("attacker"), r.get("strategy"))
+                   for r in reused}
 
     backends = {"flash": make_backend("online_fast", timeout=120, retries=1),
                 "glm": make_backend("online_alt", timeout=120, retries=1)}
     judge_backend = make_backend("online_strong", timeout=120, retries=1)
 
     tasks = []
-    for iid in subset:
-        item = items[iid]
-        gold_qs = [q for q in gen_probe_questions(item) if q[2] == "value"]
-        for method in AUDIT_METHODS:
-            rec = hold[iid]
-            # find matching method row
-            row = next(r for r in offline if r["dataset"] == "holdout80" and r["sensitive_set"] == "runtime"
-                       and r["id"] == iid and r["method"] == method)
-            D = row["D"]
-            for attacker, backend in backends.items():
-                for strategy in ("unique_questions", "enum"):
-                    tasks.append(("attack", iid, method, attacker, strategy, backend, D, gold_qs))
-            tasks.append(("judge", iid, method, "strong", "semantic", judge_backend, D, item["prompt"]))
 
-    results = []
+    def add_tasks(subset, items, off, methods):
+        for iid in subset:
+            item = items[iid]
+            gold_qs = [q for q in gen_probe_questions(item) if q[2] == "value"]
+            for method in methods:
+                D = item["prompt"] if method == "direct_forward" else off[(iid, method)]["D"]
+                for attacker, backend in backends.items():
+                    for strategy in ("unique_questions", "enum"):
+                        key = ("attack", iid, method, attacker, strategy)
+                        if key not in reused_keys:
+                            tasks.append(("attack", iid, method, attacker, strategy, backend, D, gold_qs))
+                jkey = ("judge", iid, method, "strong", "semantic")
+                if jkey not in reused_keys:
+                    tasks.append(("judge", iid, method, "strong", "semantic", judge_backend, D, item["prompt"]))
+
+    add_tasks(subset1, items1, off1, H1_METHODS)
+    add_tasks(subset2, items2, off2, H2_METHODS)
+
+    results = list(reused)
     errors = []
 
     def run(task):
@@ -124,6 +163,7 @@ def main():
             return {"kind": kind, "id": iid, "method": method, "attacker": attacker,
                     "strategy": strategy, "error": str(e)[:300]}
 
+    print(f"reused {len(reused)} round-1 records; new calls {len(tasks)}", flush=True)
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
         futures = [ex.submit(run, t) for t in tasks]
         for i, fut in enumerate(as_completed(futures), 1):
@@ -138,42 +178,28 @@ def main():
         for r in results:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
-    attacks = [r for r in results if r["kind"] == "attack" and not r.get("error")]
-    judges = [r for r in results if r["kind"] == "judge" and not r.get("error") and r.get("score") is not None]
-    summary = {"n_tasks": len(tasks), "n_errors": len(errors),
-               "zero_observation": zero_observation_summary(attacks),
+    atk = [r for r in results if r["kind"] == "attack" and not r.get("error")]
+    jud = [r for r in results if r["kind"] == "judge" and not r.get("error") and r.get("score") is not None]
+    summary = {"n_new_calls": len(tasks), "n_reused": len(reused), "n_errors": len(errors),
                "by_method": {}}
-    for method in AUDIT_METHODS:
-        rows = [r for r in attacks if r["method"] == method]
+    for method in sorted({r["method"] for r in atk}):
+        rows = [r for r in atk if r["method"] == method]
         per_instance_max = defaultdict(list)
         for r in rows:
             per_instance_max[r["id"]].append(r["L"])
-        summary["by_method"][method] = {
+        entry = {
             "external_L_max": cluster_bootstrap({i: max(v) for i, v in per_instance_max.items()}),
             "external_L_mean": cluster_bootstrap({i: sum(v)/len(v) for i, v in per_instance_max.items()}),
-            "zero_observation": zero_observation_summary(rows),
+            "n_attack_calls": len(rows),
+            "total_hit_evaluations": sum(r["hits"] for r in rows),
         }
-        jrows = [r for r in judges if r["method"] == method]
+        jrows = [r for r in jud if r["method"] == method]
         if jrows:
-            summary["by_method"][method]["semantic_judge"] = cluster_bootstrap({r["id"]: r["score"] for r in jrows})
-    # local vs judge threshold agreement
-    local_rows = { (r["id"], r["method"]): r for r in offline if r["dataset"]=="holdout80" and r["sensitive_set"]=="runtime" }
-    confusion = defaultdict(int)
-    pairs = []
-    for r in judges:
-        lr = local_rows.get((r["id"], r["method"]))
-        if not lr:
-            continue
-        local_rel = bool(lr["release"])
-        judge_rel = r["score"] >= 0.5
-        confusion[(local_rel, judge_rel)] += 1
-        pairs.append({"id": r["id"], "method": r["method"], "local_U": lr["U_local"],
-                      "judge_U": r["score"], "local_release": local_rel, "judge_release": judge_rel})
-    summary["threshold_confusion"] = {f"local_{a}_judge_{b}": n for (a, b), n in confusion.items()}
-    summary["judge_pairs"] = pairs
+            entry["semantic_judge"] = cluster_bootstrap({r["id"]: r["score"] for r in jrows})
+        summary["by_method"][method] = entry
     summary["errors"] = errors
     (OUT / "online_audit_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2))
-    print(json.dumps({k: v for k, v in summary.items() if k != "judge_pairs"}, ensure_ascii=False, indent=2))
+    print(json.dumps({k: v for k, v in summary.items() if k not in ("errors",)}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

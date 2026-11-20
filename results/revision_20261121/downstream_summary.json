@@ -1,0 +1,73 @@
+{
+  "n_instances": 40,
+  "n_errors": 0,
+  "by_method": {
+    "closed_loop": {
+      "ALL": {
+        "estimate": 0.75,
+        "ci95": [
+          0.6375,
+          0.8625
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "PASS": {
+        "estimate": 0.8478260869565217,
+        "ci95": [
+          0.717391304347826,
+          0.9565217391304348
+        ],
+        "n_instances": 23,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "INFEASIBLE": {
+        "estimate": 0.6176470588235294,
+        "ci95": [
+          0.4117647058823529,
+          0.7941176470588235
+        ],
+        "n_instances": 17,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n": 40
+    },
+    "generalization_only": {
+      "ALL": {
+        "estimate": 0.75,
+        "ci95": [
+          0.625,
+          0.8625
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "PASS": {
+        "estimate": 0.8478260869565217,
+        "ci95": [
+          0.717391304347826,
+          0.9347826086956522
+        ],
+        "n_instances": 23,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "INFEASIBLE": {
+        "estimate": 0.6176470588235294,
+        "ci95": [
+          0.4117647058823529,
+          0.8235294117647058
+        ],
+        "n_instances": 17,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n": 40
+    }
+  },
+  "errors": []
+}

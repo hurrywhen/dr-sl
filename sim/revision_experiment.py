@@ -22,7 +22,7 @@ from runtime_extractor import runtime_extract
 from revision_stats import cluster_bootstrap, paired_cluster_delta, wilson_interval
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "results" / os.environ.get("REVISION_OUT", "revision_20261118")
+OUT = ROOT / "results" / os.environ.get("REVISION_OUT", "revision_20261121")
 METHODS = ("hardline_only", "generalization_only", "closed_loop",
            "intact_style", "prism_random")
 
@@ -34,7 +34,11 @@ def sha256(path):
 def freeze_manifest():
     files = [
         ROOT / "revision_protocol.md",
+        ROOT / "revision_protocol_v2.md",
         ROOT / "dataset" / "generate_holdout.py",
+        ROOT / "dataset" / "generate_holdout2.py",
+        ROOT / "dataset" / "synth_values.py",
+        ROOT / "dataset" / "synth_values_v2.py",
         ROOT / "sim" / "runtime.py",
         ROOT / "sim" / "runtime_extractor.py",
         ROOT / "sim" / "revision_stats.py",
@@ -117,8 +121,10 @@ def main():
         ("test160", ROOT / "dataset" / "output" / "dr_sl_dataset_v2.jsonl", "test", "all_quasi"),
         ("mixed120", ROOT / "dataset" / "output" / "dr_sl_mixed.jsonl", None, "mixed"),
         ("holdout80", ROOT / "dataset" / "output" / "dr_sl_holdout_v1.jsonl", None, "mixed"),
+        ("holdout80_v2", ROOT / "dataset" / "output" / "dr_sl_holdout_v2.jsonl", None, "mixed"),
     ]
     rows = []
+    coupling = defaultdict(list)
     for name, path, split, profile in datasets:
         if not path.exists():
             print(f"skip missing {path}")
@@ -127,13 +133,15 @@ def main():
         if split:
             items = [r for r in items if r["split"] == split]
         for item in items:
+            if name.startswith("holdout"):
+                coupling[f"{name}/{item['domain']}"].append(item.get("coupling_ratio", 0.0))
             ents = runtime_extract(item["prompt"])
             for method in METHODS:
                 r = run_runtime_item(item, method=method, task_profile=profile, entities=ents)
                 audit = external_gold_audit(item, r["D"], ents)
                 rows.append({"dataset": name, "sensitive_set": "runtime", **r, **audit})
-            # Oracle-S upper-bound track on development sets only.
-            if name != "holdout80":
+            # Oracle-S upper-bound track on development sets only (not holdouts).
+            if not name.startswith("holdout"):
                 for method in METHODS:
                     r = run_oracle(item, method)
                     audit = external_gold_audit(item, r["D"], gold_entities(item))
@@ -143,7 +151,11 @@ def main():
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
     summary = summarize(rows)
     summary["freeze_manifest"] = manifest
-    summary["scope"] = "deterministic local runtime-S track; no neural local-LLM rerun"
+    summary["scope"] = ("deterministic local runtime-S track (single effective evaluation, "
+                        "N=1; idempotent window); no neural local-LLM rerun")
+    summary["task_sensitive_coupling"] = {
+        k: {"mean_coupling_ratio": sum(v) / len(v), "n": len(v)}
+        for k, v in sorted(coupling.items())}
     (OUT / "offline_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2))
     print(json.dumps({k: {"n": v["n"], "release": v["release_rate"],
                            "gold_L": v["gold_L"]["estimate"] if v["gold_L"] else None,
