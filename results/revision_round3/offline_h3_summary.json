@@ -1,0 +1,1940 @@
+{
+  "methods": {
+    "drift_p000/original/closed_loop": {
+      "n": 40,
+      "release_rate": 0.925,
+      "release_rate_wilson95": [
+        0.8013576647568946,
+        0.9741639742254119
+      ],
+      "gold_L": {
+        "estimate": 0.4530952380952381,
+        "ci95": [
+          0.41904166666666665,
+          0.48822321428571436
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5219047619047619,
+        "ci95": [
+          0.4860684523809524,
+          0.5582202380952381
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.22857142857142856,
+        "ci95": [
+          0.13809523809523808,
+          0.338095238095238
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.7625,
+        "ci95": [
+          0.6625,
+          0.8625
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.6,
+      "n_pass": 37,
+      "pass_with_gold_residue": 37,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9059421741627975,
+        1.0
+      ]
+    },
+    "drift_p000/original/closed_loop_covgate": {
+      "n": 40,
+      "release_rate": 0.325,
+      "release_rate_wilson95": [
+        0.200845022317827,
+        0.47982253810122333
+      ],
+      "gold_L": {
+        "estimate": 0.4530952380952381,
+        "ci95": [
+          0.41904166666666665,
+          0.48822321428571436
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5219047619047619,
+        "ci95": [
+          0.4860684523809524,
+          0.5582202380952381
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.22857142857142856,
+        "ci95": [
+          0.13809523809523808,
+          0.338095238095238
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.7625,
+        "ci95": [
+          0.6625,
+          0.8625
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.6,
+      "n_pass": 13,
+      "pass_with_gold_residue": 13,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.7719046276458016,
+        0.9999999999999999
+      ]
+    },
+    "drift_p025/original/closed_loop": {
+      "n": 40,
+      "release_rate": 0.8,
+      "release_rate_wilson95": [
+        0.652426936536005,
+        0.895000102745623
+      ],
+      "gold_L": {
+        "estimate": 0.3933333333333333,
+        "ci95": [
+          0.35273511904761906,
+          0.4353571428571429
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5816666666666667,
+        "ci95": [
+          0.5403541666666667,
+          0.6222619047619047
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.34285714285714286,
+        "ci95": [
+          0.22369047619047616,
+          0.4714285714285714
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6625,
+        "ci95": [
+          0.5375,
+          0.7875
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.525,
+      "n_pass": 32,
+      "pass_with_gold_residue": 32,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.8928208017449293,
+        1.0
+      ]
+    },
+    "drift_p025/original/closed_loop_covgate": {
+      "n": 40,
+      "release_rate": 0.275,
+      "release_rate_wilson95": [
+        0.16108016247667337,
+        0.42834955806210573
+      ],
+      "gold_L": {
+        "estimate": 0.3933333333333333,
+        "ci95": [
+          0.35273511904761906,
+          0.4353571428571429
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5816666666666667,
+        "ci95": [
+          0.5403541666666667,
+          0.6222619047619047
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.34285714285714286,
+        "ci95": [
+          0.22369047619047616,
+          0.4714285714285714
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.6625,
+        "ci95": [
+          0.5375,
+          0.7875
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.525,
+      "n_pass": 11,
+      "pass_with_gold_residue": 11,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.7411670330319684,
+        1.0
+      ]
+    },
+    "drift_p050/original/closed_loop": {
+      "n": 40,
+      "release_rate": 0.775,
+      "release_rate_wilson95": [
+        0.6249690325768998,
+        0.8768390867645927
+      ],
+      "gold_L": {
+        "estimate": 0.2961904761904762,
+        "ci95": [
+          0.25297619047619047,
+          0.34036011904761904
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.6746428571428572,
+        "ci95": [
+          0.628095238095238,
+          0.7214404761904761
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.33809523809523806,
+        "ci95": [
+          0.2094047619047619,
+          0.4761904761904761
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.675,
+        "ci95": [
+          0.55,
+          0.8
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.575,
+      "n_pass": 31,
+      "pass_with_gold_residue": 29,
+      "FalseRelease_gold": 0.9354838709677419,
+      "FalseRelease_gold_wilson95": [
+        0.7928136326370188,
+        0.9821252164780854
+      ]
+    },
+    "drift_p050/original/closed_loop_covgate": {
+      "n": 40,
+      "release_rate": 0.2,
+      "release_rate_wilson95": [
+        0.10499989725437704,
+        0.347573063463995
+      ],
+      "gold_L": {
+        "estimate": 0.2961904761904762,
+        "ci95": [
+          0.25297619047619047,
+          0.34036011904761904
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.6746428571428572,
+        "ci95": [
+          0.628095238095238,
+          0.7214404761904761
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.33809523809523806,
+        "ci95": [
+          0.2094047619047619,
+          0.4761904761904761
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.675,
+        "ci95": [
+          0.55,
+          0.8
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.575,
+      "n_pass": 8,
+      "pass_with_gold_residue": 6,
+      "FalseRelease_gold": 0.75,
+      "FalseRelease_gold_wilson95": [
+        0.40927543031016883,
+        0.9285207872478909
+      ]
+    },
+    "drift_p075/original/closed_loop": {
+      "n": 40,
+      "release_rate": 0.65,
+      "release_rate_wilson95": [
+        0.49505880837257693,
+        0.7786547112682372
+      ],
+      "gold_L": {
+        "estimate": 0.22261904761904763,
+        "ci95": [
+          0.1860654761904762,
+          0.2650059523809523
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7446428571428572,
+        "ci95": [
+          0.7022619047619048,
+          0.7827410714285713
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4476190476190475,
+        "ci95": [
+          0.2952380952380952,
+          0.6
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.5875,
+        "ci95": [
+          0.45,
+          0.7375
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.525,
+      "n_pass": 26,
+      "pass_with_gold_residue": 24,
+      "FalseRelease_gold": 0.9230769230769231,
+      "FalseRelease_gold_wilson95": [
+        0.7585844622837095,
+        0.9786449115277238
+      ]
+    },
+    "drift_p075/original/closed_loop_covgate": {
+      "n": 40,
+      "release_rate": 0.125,
+      "release_rate_wilson95": [
+        0.05459500250945401,
+        0.261121198388511
+      ],
+      "gold_L": {
+        "estimate": 0.22261904761904763,
+        "ci95": [
+          0.1860654761904762,
+          0.2650059523809523
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7446428571428572,
+        "ci95": [
+          0.7022619047619048,
+          0.7827410714285713
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4476190476190475,
+        "ci95": [
+          0.2952380952380952,
+          0.6
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.5875,
+        "ci95": [
+          0.45,
+          0.7375
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.525,
+      "n_pass": 5,
+      "pass_with_gold_residue": 4,
+      "FalseRelease_gold": 0.8,
+      "FalseRelease_gold_wilson95": [
+        0.37553462976252533,
+        0.9637758913675698
+      ]
+    },
+    "drift_p100/original/closed_loop": {
+      "n": 40,
+      "release_rate": 0.575,
+      "release_rate_wilson95": [
+        0.42195068541991065,
+        0.7149060744004962
+      ],
+      "gold_L": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8445238095238097,
+        "ci95": [
+          0.8149970238095239,
+          0.8742916666666667
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4761904761904761,
+        "ci95": [
+          0.32380952380952377,
+          0.6285714285714286
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.55,
+        "ci95": [
+          0.4,
+          0.7125
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.525,
+      "n_pass": 23,
+      "pass_with_gold_residue": 19,
+      "FalseRelease_gold": 0.8260869565217391,
+      "FalseRelease_gold_wilson95": [
+        0.6286235235977385,
+        0.9302134643693744
+      ]
+    },
+    "drift_p100/original/closed_loop_covgate": {
+      "n": 40,
+      "release_rate": 0.05,
+      "release_rate_wilson95": [
+        0.013820667386148344,
+        0.16503877369140962
+      ],
+      "gold_L": {
+        "estimate": 0.13047619047619047,
+        "ci95": [
+          0.10321130952380951,
+          0.15904761904761905
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.8445238095238097,
+        "ci95": [
+          0.8149970238095239,
+          0.8742916666666667
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4761904761904761,
+        "ci95": [
+          0.32380952380952377,
+          0.6285714285714286
+        ],
+        "n_instances": 35,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.55,
+        "ci95": [
+          0.4,
+          0.7125
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.525,
+      "n_pass": 2,
+      "pass_with_gold_residue": 0,
+      "FalseRelease_gold": 0.0,
+      "FalseRelease_gold_wilson95": [
+        0.0,
+        0.6576197724933469
+      ]
+    },
+    "holdout80_diag_fixed/fixed/closed_loop": {
+      "n": 80,
+      "release_rate": 0.575,
+      "release_rate_wilson95": [
+        0.4656928984656886,
+        0.6774343821039822
+      ],
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 69,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.35625,
+        "ci95": [
+          0.28125,
+          0.43125
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.1375,
+      "n_pass": 46,
+      "pass_with_gold_residue": 0,
+      "FalseRelease_gold": 0.0,
+      "FalseRelease_gold_wilson95": [
+        0.0,
+        0.07707356308558039
+      ]
+    },
+    "holdout80_diag_fixed/fixed/closed_loop_covgate": {
+      "n": 80,
+      "release_rate": 0.4375,
+      "release_rate_wilson95": [
+        0.33413860916143806,
+        0.5465886570305026
+      ],
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 69,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.35625,
+        "ci95": [
+          0.28125,
+          0.43125
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.1375,
+      "n_pass": 35,
+      "pass_with_gold_residue": 0,
+      "FalseRelease_gold": 0.0,
+      "FalseRelease_gold_wilson95": [
+        6.938893903907228e-18,
+        0.09890099232440402
+      ]
+    },
+    "holdout80_diag_fixed/fixed/generalization_only": {
+      "n": 80,
+      "release_rate": 0.575,
+      "release_rate_wilson95": [
+        0.4656928984656886,
+        0.6774343821039822
+      ],
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 69,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.446875,
+        "ci95": [
+          0.3885416666666667,
+          0.503125
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.1375,
+      "n_pass": 46,
+      "pass_with_gold_residue": 0,
+      "FalseRelease_gold": 0.0,
+      "FalseRelease_gold_wilson95": [
+        0.0,
+        0.07707356308558039
+      ]
+    },
+    "holdout80_diag_fixed/fixed/generalization_only_covgate": {
+      "n": 80,
+      "release_rate": 0.4375,
+      "release_rate_wilson95": [
+        0.33413860916143806,
+        0.5465886570305026
+      ],
+      "gold_L": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_instances": 69,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.446875,
+        "ci95": [
+          0.3885416666666667,
+          0.503125
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.1375,
+      "n_pass": 35,
+      "pass_with_gold_residue": 0,
+      "FalseRelease_gold": 0.0,
+      "FalseRelease_gold_wilson95": [
+        6.938893903907228e-18,
+        0.09890099232440402
+      ]
+    },
+    "holdout80_v2_diag_fixed/fixed/closed_loop": {
+      "n": 80,
+      "release_rate": 0.875,
+      "release_rate_wilson95": [
+        0.7849719790084033,
+        0.9306644238399513
+      ],
+      "gold_L": {
+        "estimate": 0.33154761904761904,
+        "ci95": [
+          0.30065476190476187,
+          0.3622619047619048
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.6684523809523809,
+        "ci95": [
+          0.6377380952380952,
+          0.6993452380952381
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.75,
+        "ci95": [
+          0.6785714285714286,
+          0.819047619047619
+        ],
+        "n_instances": 70,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.53125,
+        "ci95": [
+          0.46875,
+          0.5875
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.1875,
+      "n_pass": 70,
+      "pass_with_gold_residue": 70,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9479769375897331,
+        1.0
+      ]
+    },
+    "holdout80_v2_diag_fixed/fixed/closed_loop_covgate": {
+      "n": 80,
+      "release_rate": 0.6875,
+      "release_rate_wilson95": [
+        0.5793222425531256,
+        0.7784959588710517
+      ],
+      "gold_L": {
+        "estimate": 0.33154761904761904,
+        "ci95": [
+          0.30065476190476187,
+          0.3622619047619048
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.6684523809523809,
+        "ci95": [
+          0.6377380952380952,
+          0.6993452380952381
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.75,
+        "ci95": [
+          0.6785714285714286,
+          0.819047619047619
+        ],
+        "n_instances": 70,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.53125,
+        "ci95": [
+          0.46875,
+          0.5875
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.1875,
+      "n_pass": 55,
+      "pass_with_gold_residue": 55,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9347150988829137,
+        1.0
+      ]
+    },
+    "holdout80_v2_diag_fixed/fixed/generalization_only": {
+      "n": 80,
+      "release_rate": 0.875,
+      "release_rate_wilson95": [
+        0.7849719790084033,
+        0.9306644238399513
+      ],
+      "gold_L": {
+        "estimate": 0.33154761904761904,
+        "ci95": [
+          0.30065476190476187,
+          0.3622619047619048
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.6684523809523809,
+        "ci95": [
+          0.6377380952380952,
+          0.6993452380952381
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.75,
+        "ci95": [
+          0.6785714285714286,
+          0.819047619047619
+        ],
+        "n_instances": 70,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.565625,
+        "ci95": [
+          0.51875,
+          0.6145833333333334
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.1875,
+      "n_pass": 70,
+      "pass_with_gold_residue": 70,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9479769375897331,
+        1.0
+      ]
+    },
+    "holdout80_v2_diag_fixed/fixed/generalization_only_covgate": {
+      "n": 80,
+      "release_rate": 0.6875,
+      "release_rate_wilson95": [
+        0.5793222425531256,
+        0.7784959588710517
+      ],
+      "gold_L": {
+        "estimate": 0.33154761904761904,
+        "ci95": [
+          0.30065476190476187,
+          0.3622619047619048
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.6684523809523809,
+        "ci95": [
+          0.6377380952380952,
+          0.6993452380952381
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.75,
+        "ci95": [
+          0.6785714285714286,
+          0.819047619047619
+        ],
+        "n_instances": 70,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.565625,
+        "ci95": [
+          0.51875,
+          0.6145833333333334
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.1875,
+      "n_pass": 55,
+      "pass_with_gold_residue": 55,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9347150988829137,
+        1.0
+      ]
+    },
+    "holdout80_v3/fixed/closed_loop": {
+      "n": 80,
+      "release_rate": 0.5125,
+      "release_rate_wilson95": [
+        0.40493334216542254,
+        0.6189212045961893
+      ],
+      "gold_L": {
+        "estimate": 0.23980654761904763,
+        "ci95": [
+          0.20349516369047616,
+          0.27739211309523804
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7125744047619047,
+        "ci95": [
+          0.6808742559523809,
+          0.7445703124999999
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.7916666666666667,
+        "ci95": [
+          0.729140625,
+          0.8500260416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.28125,
+        "ci95": [
+          0.21875,
+          0.34375
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.05,
+      "n_pass": 41,
+      "pass_with_gold_residue": 34,
+      "FalseRelease_gold": 0.8292682926829268,
+      "FalseRelease_gold_wilson95": [
+        0.6873738759959581,
+        0.91474748022405
+      ]
+    },
+    "holdout80_v3/fixed/closed_loop_covgate": {
+      "n": 80,
+      "release_rate": 0.4625,
+      "release_rate_wilson95": [
+        0.35747993562785246,
+        0.570956424087312
+      ],
+      "gold_L": {
+        "estimate": 0.23980654761904763,
+        "ci95": [
+          0.20349516369047616,
+          0.27739211309523804
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7125744047619047,
+        "ci95": [
+          0.6808742559523809,
+          0.7445703124999999
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.7916666666666667,
+        "ci95": [
+          0.729140625,
+          0.8500260416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.28125,
+        "ci95": [
+          0.21875,
+          0.34375
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.05,
+      "n_pass": 37,
+      "pass_with_gold_residue": 30,
+      "FalseRelease_gold": 0.8108108108108109,
+      "FalseRelease_gold_wilson95": [
+        0.6579530307016159,
+        0.9052002126968799
+      ]
+    },
+    "holdout80_v3/fixed/generalization_only": {
+      "n": 80,
+      "release_rate": 0.5125,
+      "release_rate_wilson95": [
+        0.40493334216542254,
+        0.6189212045961893
+      ],
+      "gold_L": {
+        "estimate": 0.23980654761904763,
+        "ci95": [
+          0.20349516369047616,
+          0.27739211309523804
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7125744047619047,
+        "ci95": [
+          0.6808742559523809,
+          0.7445703124999999
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.7916666666666667,
+        "ci95": [
+          0.729140625,
+          0.8500260416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.39677083333333335,
+        "ci95": [
+          0.35144791666666664,
+          0.4441692708333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.05,
+      "n_pass": 41,
+      "pass_with_gold_residue": 34,
+      "FalseRelease_gold": 0.8292682926829268,
+      "FalseRelease_gold_wilson95": [
+        0.6873738759959581,
+        0.91474748022405
+      ]
+    },
+    "holdout80_v3/fixed/generalization_only_covgate": {
+      "n": 80,
+      "release_rate": 0.4625,
+      "release_rate_wilson95": [
+        0.35747993562785246,
+        0.570956424087312
+      ],
+      "gold_L": {
+        "estimate": 0.23980654761904763,
+        "ci95": [
+          0.20349516369047616,
+          0.27739211309523804
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7125744047619047,
+        "ci95": [
+          0.6808742559523809,
+          0.7445703124999999
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.7916666666666667,
+        "ci95": [
+          0.729140625,
+          0.8500260416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.39677083333333335,
+        "ci95": [
+          0.35144791666666664,
+          0.4441692708333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.05,
+      "n_pass": 37,
+      "pass_with_gold_residue": 30,
+      "FalseRelease_gold": 0.8108108108108109,
+      "FalseRelease_gold_wilson95": [
+        0.6579530307016159,
+        0.9052002126968799
+      ]
+    },
+    "holdout80_v3/fixed/hardline_only": {
+      "n": 80,
+      "release_rate": 0.05,
+      "release_rate_wilson95": [
+        0.01961355453554428,
+        0.1216227620464301
+      ],
+      "gold_L": {
+        "estimate": 0.24761904761904763,
+        "ci95": [
+          0.20855282738095235,
+          0.2875018601190476
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7125744047619047,
+        "ci95": [
+          0.6808742559523809,
+          0.7445703124999999
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.7916666666666667,
+        "ci95": [
+          0.729140625,
+          0.8500260416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.075,
+        "ci95": [
+          0.029166666666666664,
+          0.13541666666666666
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.05,
+      "n_pass": 4,
+      "pass_with_gold_residue": 4,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.5101091635454027,
+        1.0
+      ]
+    },
+    "holdout80_v3/fixed/intact_style": {
+      "n": 80,
+      "release_rate": 0.5125,
+      "release_rate_wilson95": [
+        0.40493334216542254,
+        0.6189212045961893
+      ],
+      "gold_L": {
+        "estimate": 0.23980654761904763,
+        "ci95": [
+          0.20349516369047616,
+          0.27739211309523804
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7125744047619047,
+        "ci95": [
+          0.6808742559523809,
+          0.7445703124999999
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.7916666666666667,
+        "ci95": [
+          0.729140625,
+          0.8500260416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.39677083333333335,
+        "ci95": [
+          0.35144791666666664,
+          0.4441692708333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.05,
+      "n_pass": 41,
+      "pass_with_gold_residue": 34,
+      "FalseRelease_gold": 0.8292682926829268,
+      "FalseRelease_gold_wilson95": [
+        0.6873738759959581,
+        0.91474748022405
+      ]
+    },
+    "holdout80_v3/fixed/prism_random": {
+      "n": 80,
+      "release_rate": 0.05,
+      "release_rate_wilson95": [
+        0.01961355453554428,
+        0.1216227620464301
+      ],
+      "gold_L": {
+        "estimate": 0.2681547619047619,
+        "ci95": [
+          0.23162016369047614,
+          0.30589471726190465
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.7125744047619047,
+        "ci95": [
+          0.6808742559523809,
+          0.7445703124999999
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.7916666666666667,
+        "ci95": [
+          0.729140625,
+          0.8500260416666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.146875,
+        "ci95": [
+          0.08229166666666667,
+          0.21565104166666654
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.05,
+      "n_pass": 4,
+      "pass_with_gold_residue": 4,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.5101091635454027,
+        1.0
+      ]
+    },
+    "holdout80_v3/original/closed_loop": {
+      "n": 80,
+      "release_rate": 0.55,
+      "release_rate_wilson95": [
+        0.44119507889355963,
+        0.6542231081528878
+      ],
+      "gold_L": {
+        "estimate": 0.3715029761904761,
+        "ci95": [
+          0.3380152529761904,
+          0.4057291666666666
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5421875,
+        "ci95": [
+          0.5012630208333334,
+          0.5847526041666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4270833333333333,
+        "ci95": [
+          0.3520833333333333,
+          0.5020833333333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.425,
+        "ci95": [
+          0.33125,
+          0.51875
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.3,
+      "n_pass": 44,
+      "pass_with_gold_residue": 44,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9197043962415192,
+        1.0
+      ]
+    },
+    "holdout80_v3/original/closed_loop_covgate": {
+      "n": 80,
+      "release_rate": 0.25,
+      "release_rate_wilson95": [
+        0.16806231857542375,
+        0.3548467461923397
+      ],
+      "gold_L": {
+        "estimate": 0.3715029761904761,
+        "ci95": [
+          0.3380152529761904,
+          0.4057291666666666
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5421875,
+        "ci95": [
+          0.5012630208333334,
+          0.5847526041666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4270833333333333,
+        "ci95": [
+          0.3520833333333333,
+          0.5020833333333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.425,
+        "ci95": [
+          0.33125,
+          0.51875
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.3,
+      "n_pass": 20,
+      "pass_with_gold_residue": 20,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    "holdout80_v3/original/generalization_only": {
+      "n": 80,
+      "release_rate": 0.55,
+      "release_rate_wilson95": [
+        0.44119507889355963,
+        0.6542231081528878
+      ],
+      "gold_L": {
+        "estimate": 0.3715029761904761,
+        "ci95": [
+          0.3380152529761904,
+          0.4057291666666666
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5421875,
+        "ci95": [
+          0.5012630208333334,
+          0.5847526041666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4270833333333333,
+        "ci95": [
+          0.3520833333333333,
+          0.5020833333333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.5255208333333334,
+        "ci95": [
+          0.45259114583333326,
+          0.6
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.3,
+      "n_pass": 44,
+      "pass_with_gold_residue": 44,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9197043962415192,
+        1.0
+      ]
+    },
+    "holdout80_v3/original/generalization_only_covgate": {
+      "n": 80,
+      "release_rate": 0.25,
+      "release_rate_wilson95": [
+        0.16806231857542375,
+        0.3548467461923397
+      ],
+      "gold_L": {
+        "estimate": 0.3715029761904761,
+        "ci95": [
+          0.3380152529761904,
+          0.4057291666666666
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5421875,
+        "ci95": [
+          0.5012630208333334,
+          0.5847526041666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4270833333333333,
+        "ci95": [
+          0.3520833333333333,
+          0.5020833333333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.5255208333333334,
+        "ci95": [
+          0.45259114583333326,
+          0.6
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.3,
+      "n_pass": 20,
+      "pass_with_gold_residue": 20,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    "holdout80_v3/original/hardline_only": {
+      "n": 80,
+      "release_rate": 0.3,
+      "release_rate_wilson95": [
+        0.2106457126008134,
+        0.40768153921339734
+      ],
+      "gold_L": {
+        "estimate": 0.3715029761904761,
+        "ci95": [
+          0.3380152529761904,
+          0.4057291666666666
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5421875,
+        "ci95": [
+          0.5012630208333334,
+          0.5847526041666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4270833333333333,
+        "ci95": [
+          0.3520833333333333,
+          0.5020833333333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.3,
+        "ci95": [
+          0.2,
+          0.4
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.3,
+      "n_pass": 24,
+      "pass_with_gold_residue": 24,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "holdout80_v3/original/intact_style": {
+      "n": 80,
+      "release_rate": 0.55,
+      "release_rate_wilson95": [
+        0.44119507889355963,
+        0.6542231081528878
+      ],
+      "gold_L": {
+        "estimate": 0.3715029761904761,
+        "ci95": [
+          0.3380152529761904,
+          0.4057291666666666
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5421875,
+        "ci95": [
+          0.5012630208333334,
+          0.5847526041666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4270833333333333,
+        "ci95": [
+          0.3520833333333333,
+          0.5020833333333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.5255208333333334,
+        "ci95": [
+          0.45259114583333326,
+          0.6
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.3,
+      "n_pass": 44,
+      "pass_with_gold_residue": 44,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9197043962415192,
+        1.0
+      ]
+    },
+    "holdout80_v3/original/prism_random": {
+      "n": 80,
+      "release_rate": 0.3,
+      "release_rate_wilson95": [
+        0.2106457126008134,
+        0.40768153921339734
+      ],
+      "gold_L": {
+        "estimate": 0.37693452380952375,
+        "ci95": [
+          0.3426302083333333,
+          0.41205357142857135
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "recall": {
+        "estimate": 0.5421875,
+        "ci95": [
+          0.5012630208333334,
+          0.5847526041666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "task_recall": {
+        "estimate": 0.4270833333333333,
+        "ci95": [
+          0.3520833333333333,
+          0.5020833333333333
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_local": {
+        "estimate": 0.3104166666666667,
+        "ci95": [
+          0.2125,
+          0.41046874999999977
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "utility_fallback_fraction": 0.3,
+      "n_pass": 24,
+      "pass_with_gold_residue": 24,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    }
+  },
+  "dose_response": {
+    "p000": {
+      "n": 40,
+      "nominal_p_old": 0.0,
+      "realized_old_vocab_fraction": 0.0,
+      "recall": 0.5219047619047619,
+      "task_recall": 0.22857142857142856,
+      "release_rate": 0.925,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.9059421741627975,
+        1.0
+      ],
+      "gold_L": 0.4530952380952381,
+      "utility_fallback_fraction": 0.6
+    },
+    "p025": {
+      "n": 40,
+      "nominal_p_old": 0.25,
+      "realized_old_vocab_fraction": 0.163275,
+      "recall": 0.5816666666666667,
+      "task_recall": 0.34285714285714286,
+      "release_rate": 0.8,
+      "FalseRelease_gold": 1.0,
+      "FalseRelease_gold_wilson95": [
+        0.8928208017449293,
+        1.0
+      ],
+      "gold_L": 0.3933333333333333,
+      "utility_fallback_fraction": 0.525
+    },
+    "p050": {
+      "n": 40,
+      "nominal_p_old": 0.5,
+      "realized_old_vocab_fraction": 0.407525,
+      "recall": 0.6746428571428571,
+      "task_recall": 0.3380952380952381,
+      "release_rate": 0.775,
+      "FalseRelease_gold": 0.9354838709677419,
+      "FalseRelease_gold_wilson95": [
+        0.7928136326370188,
+        0.9821252164780854
+      ],
+      "gold_L": 0.29619047619047617,
+      "utility_fallback_fraction": 0.575
+    },
+    "p075": {
+      "n": 40,
+      "nominal_p_old": 0.75,
+      "realized_old_vocab_fraction": 0.6816500000000001,
+      "recall": 0.7446428571428572,
+      "task_recall": 0.4476190476190476,
+      "release_rate": 0.65,
+      "FalseRelease_gold": 0.9230769230769231,
+      "FalseRelease_gold_wilson95": [
+        0.7585844622837095,
+        0.9786449115277238
+      ],
+      "gold_L": 0.22261904761904763,
+      "utility_fallback_fraction": 0.525
+    },
+    "p100": {
+      "n": 40,
+      "nominal_p_old": 1.0,
+      "realized_old_vocab_fraction": 1.0,
+      "recall": 0.8445238095238095,
+      "task_recall": 0.4761904761904762,
+      "release_rate": 0.575,
+      "FalseRelease_gold": 0.8260869565217391,
+      "FalseRelease_gold_wilson95": [
+        0.6286235235977385,
+        0.9302134643693744
+      ],
+      "gold_L": 0.13047619047619047,
+      "utility_fallback_fraction": 0.525
+    }
+  },
+  "scope": "round-3 offline; deterministic track; original extractor frozen, fixed variant fixes clear defects only (no lexicon additions)",
+  "paired": {
+    "holdout80_v3/original": {
+      "release_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_delta": {
+        "estimate": 0.10052083333333332,
+        "ci95": [
+          0.0708203125,
+          0.13020833333333331
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "holdout80_v3/fixed": {
+      "release_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "gold_L_delta": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "U_delta": {
+        "estimate": 0.11552083333333334,
+        "ci95": [
+          0.084375,
+          0.14885416666666665
+        ],
+        "n_instances": 80,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    }
+  }
+}

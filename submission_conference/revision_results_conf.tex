@@ -1,59 +1,67 @@
-% Auto-generated (condensed). Do not edit by hand.
+% Auto-generated (condensed, round 3). Do not edit by hand.
 
 \begin{table}[!t]\centering\footnotesize
-\caption{Holdout-1 closed loop, stratified by local decision. The primary safety metric is the conditional residue rate given local PASS (FalseRelease). Whole-set averages mask the released subgroup.}
+\caption{Holdout-1 closed loop stratified by local decision (Wilson 95\% intervals). The primary safety metric is the conditional residue rate given local PASS (FR$_{gold}$); whole-set averages mask the released subgroup.}
 \label{tab:stratified}
 \begin{tabular}{@{}lcccc@{}}\toprule
-Stratum & $n$ & residue \% & gold $L$ & recall \\ \midrule
-ALL & 80 & 68.8\% & 0.121 & 0.858 \\
-PASS & 46 & 78.3\% & 0.147 & 0.853 \\
-INFEASIBLE & 34 & 55.9\% & 0.086 & 0.865 \\
+Stratum & $n$ & residue \% & 95\% CI & gold $L$ \\ \midrule
+ALL & 80 & 68.8 & [.579,.778] & 0.121 \\
+PASS & 46 & 78.3 & [.644,.877] & 0.147 \\
+INFEASIBLE & 34 & 55.9 & [.395,.711] & 0.086 \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\footnotesize
-\caption{Holdout-1 closed loop by domain. Banking releases 20/20 and every released instance retains gold literals; legal PASS is 10/10 with residue.}
+\caption{Holdout-1 closed loop by domain. Banking releases 20/20 with residue in every released instance; legal PASS is 10/10 with residue. All 20 banking instances enter the harmful utility fallback (mechanism analysis in text).}
 \label{tab:domain}
-\begin{tabular}{@{}lcccc@{}}\toprule
-Domain & release \% & PASS $n$ & FalseRelease \% & PASS gold $L$ \\ \midrule
-banking & 100.0\% & 20 & 100.0\% & 0.211 \\
-legal & 50.0\% & 10 & 100.0\% & 0.155 \\
-medical & 25.0\% & 5 & 0.0\% & 0.000 \\
-travel & 55.0\% & 11 & 54.5\% & 0.091 \\
+\begin{tabular}{@{}lccccc@{}}\toprule
+Domain & rel.\ \% & PASS $n$ & FR$_{gold}$ \% & 95\% CI & PASS gold $L$ \\ \midrule
+banking & 100.0 & 20 & 100.0 & [.839,1.000] & 0.211 \\
+legal & 50.0 & 10 & 100.0 & [.722,1.000] & 0.155 \\
+medical & 25.0 & 5 & 0.0 & [.000,.434] & 0.000 \\
+travel & 55.0 & 11 & 54.5 & [.280,.787] & 0.091 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!t]\centering\setlength{\tabcolsep}{2pt}\footnotesize
+\caption{Holdout-1 method comparison under the same local gate (40-instance audited subset for external columns). HL=hardline-only, GEN=generalization-only, CL=closed loop, INT=INTACT-style proxy, PRISM=random replacement, DF=direct-forward reference. ext=external max hit rate; judge=offline artifact-judge utility; task=reference-answer preservation. Paired rows: CL$-$GEN; the task-$U$ delta uses the round-3 rerun. Local-utility delta sign varies by dataset; release/leakage deltas are zero throughout.}
+\label{tab:methods}
+\begin{tabular}{@{}lcccccc@{}}\toprule
+Method & rel.\ \% & $U_{loc}$ & gold $L$ & ext $L$ & judge $U$ & task $U$ \\ \midrule
+HL & 51.2 & 0.512 & 0.121 & 0.130 & 0.425 & -- \\
+GEN & 57.5 & 0.632 & 0.121 & 0.130 & 0.438 & 0.700 \\
+CL & 57.5 & 0.544 & 0.121 & 0.130 & 0.362 & 0.725 \\
+INT & 57.5 & 0.632 & 0.121 & 0.130 & 0.412 & -- \\
+PRISM & 51.2 & 0.537 & 0.132 & 0.139 & 0.125 & -- \\
+DF & -- & -- & -- & 1.000 & 1.000 & -- \\
+\multicolumn{7}{@{}l@{}}{\emph{Paired $\Delta$ CL$-$GEN; release/gold-$L$ deltas 0; CIs in text}} \\
+$\Delta$ h1 & 0.0 & -0.089 & 0.0 & 0.0 & -0.075 & -0.025 \\
+$\Delta$ h2 & 0.0 & -0.017 & 0.0 & -- & -- & -- \\
+$\Delta$ h3 & 0.0 & 0.101 & 0.0 & -- & -- & -- \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\footnotesize
-\caption{Vocabulary shift: holdout-1 shares the extractor lexicons; holdout-2 uses a disjoint vocabulary. Recall collapses and nearly every released instance leaks.}
-\label{tab:vocabshift}
-\begin{tabular}{@{}lcc@{}}\toprule
-Quantity & holdout-1 & holdout-2 \\ \midrule
-extractor recall & 0.858 & 0.526 \\
-local release \% & 57.5\% & 93.8\% \\
-gold $L$ (ALL) & 0.121 & 0.453 \\
-FalseRelease (gold) & 78.3\% & 100.0\% \\
+\caption{Vocabulary-shift stress and dose--response (closed loop, original extractor). overlap = realized fraction of lexicon-dependent gold values from the old vocabulary. holdout-2 is a constructive fully-disjoint lexicon ablation, not a deployment failure rate; the drift series holds templates constant and varies only overlap (40 instances/level).}
+\label{tab:vocab}
+\begin{tabular}{@{}lccccc@{}}\toprule
+Condition & overlap & recall & rel.\ \% & FR$_{gold}$ \% & 95\% CI \\ \midrule
+holdout-1 & 1.000 & 0.858 & 57.5 & 78.3 & [.644,.877] \\
+holdout-2 & 0.000 & 0.526 & 93.8 & 100.0 & [.951,1.000] \\
+drift p000 & 0.000 & 0.522 & 92.5 & 100.0 & [.906,1.000] \\
+drift p025 & 0.163 & 0.582 & 80.0 & 100.0 & [.893,1.000] \\
+drift p050 & 0.408 & 0.675 & 77.5 & 93.5 & [.793,.982] \\
+drift p075 & 0.682 & 0.745 & 65.0 & 92.3 & [.759,.979] \\
+drift p100 & 1.000 & 0.845 & 57.5 & 82.6 & [.629,.930] \\
 \bottomrule\end{tabular}\end{table}
 
-\begin{table}[!t]\centering\footnotesize
-\caption{Paired closed-loop minus generalization-only (instance-cluster 95\% CI). Release and gold-leakage deltas are zero; local utility is lower for the loop.}
-\label{tab:paired}
-\begin{tabular}{@{}lcc@{}}\toprule
-Metric $\Delta$ & holdout-1 & holdout-2 \\ \midrule
-release & 0.000 [0.00,0.00] & 0.000 [0.00,0.00] \\
-gold $L$ & 0.000 [0.00,0.00] & 0.000 [0.00,0.00] \\
-$U_{local}$ & -0.089 [-0.12,-0.06] & -0.017 [-0.03,-0.00] \\
-\bottomrule\end{tabular}\end{table}
-
-\begin{table}[!t]\centering\footnotesize
-\caption{Corrected audit coverage. Question evaluations count repeated assessments; hits are total hit evaluations, not distinct leaked values.}
-\label{tab:coverage}
-\begin{tabular}{@{}lc@{}}\toprule
-Quantity & Value \\ \midrule
-instances & 40 \\
-attackers & 2 \\
-strategies & 2 \\
-attack calls & 960 \\
-judge calls & 240 \\
-question evaluations & 5832 \\
-unique instance--question pairs & 243 \\
-unique question texts & 36 \\
-total hit evaluations & 1591 \\
+\begin{table}[!t]\centering\setlength{\tabcolsep}{3pt}\footnotesize
+\caption{Fixed-extractor contrast (Wilson intervals in text). The fixed variant repairs clear defects only (money pattern wiring, ASCII email local part, allergy label/collision); no lexicon additions. Holdout-3 (natural 50/50 vocabulary mix, new templates) is confirmatory. CG = coverage gate (UNSCORABLE$\to$human when no task attribute extracted). Fixing defects removes gold false release on shared-vocabulary h1 but not under vocabulary shift.}
+\label{tab:fixcontrast}
+\begin{tabular}{@{}lccccc@{}}\toprule
+Config & recall & task rec. & rel.\ \% & FR$_{gold}$ \% & fallb.\ \% \\ \midrule
+h3 original & 0.542 & 0.427 & 55.0 & 100.0 & 30.0 \\
+h3 fixed & 0.713 & 0.792 & 51.2 & 82.9 & 5.0 \\
+h3 orig.+CG & 0.542 & 0.427 & 25.0 & 100.0 & 30.0 \\
+h3 fixed+CG & 0.713 & 0.792 & 46.2 & 81.1 & 5.0 \\
+\multicolumn{6}{@{}l@{}}{\emph{Diagnostic (defects discovered on these sets; not confirmatory)}} \\
+h1 fixed & 1.000 & 1.000 & 57.5 & 0.0 & 13.8 \\
+h2 fixed & 0.668 & 0.750 & 87.5 & 100.0 & 18.8 \\
 \bottomrule\end{tabular}\end{table}

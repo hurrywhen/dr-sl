@@ -1,0 +1,3926 @@
+{
+  "seed": 20261121,
+  "n_boot": 2000,
+  "offline": {
+    "holdout80": {
+      "closed_loop": {
+        "ALL": {
+          "n": 80,
+          "gold_residue_instances": 55,
+          "gold_residue_fraction": 0.6875,
+          "gold_residue_fraction_wilson95": [
+            0.5793222425531256,
+            0.7784959588710517
+          ],
+          "mean_gold_L": 0.12113095238095237,
+          "mean_gold_L_ci": {
+            "estimate": 0.1211309523809524,
+            "ci95": [
+              0.10113095238095238,
+              0.1407752976190476
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.8580357142857142,
+          "mean_U_local": 0.54375
+        },
+        "PASS": {
+          "n": 46,
+          "gold_residue_instances": 36,
+          "gold_residue_fraction": 0.782608695652174,
+          "gold_residue_fraction_wilson95": [
+            0.6442631262842105,
+            0.8773909467543746
+          ],
+          "mean_gold_L": 0.14699792960662525,
+          "mean_gold_L_ci": {
+            "estimate": 0.14699792960662525,
+            "ci95": [
+              0.11924948240165634,
+              0.17360248447204968
+            ],
+            "n_instances": 46,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.8530020703933748,
+          "mean_U_local": 0.9456521739130435
+        },
+        "INFEASIBLE": {
+          "n": 34,
+          "gold_residue_instances": 19,
+          "gold_residue_fraction": 0.5588235294117647,
+          "gold_residue_fraction_wilson95": [
+            0.3945389925620307,
+            0.7111651775375785
+          ],
+          "mean_gold_L": 0.0861344537815126,
+          "mean_gold_L_ci": {
+            "estimate": 0.0861344537815126,
+            "ci95": [
+              0.058823529411764705,
+              0.11064425770308123
+            ],
+            "n_instances": 34,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.8648459383753502,
+          "mean_U_local": 0.0
+        },
+        "FalseRelease_gold": 0.782608695652174,
+        "by_domain": {
+          "banking": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.21071428571428572,
+              "mean_gold_L_ci": {
+                "estimate": 0.21071428571428577,
+                "ci95": [
+                  0.17952380952380956,
+                  0.24595238095238098
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.7892857142857144,
+              "mean_U_local": 1.0
+            },
+            "PASS": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.21071428571428572,
+              "mean_gold_L_ci": {
+                "estimate": 0.21071428571428577,
+                "ci95": [
+                  0.17952380952380956,
+                  0.24595238095238098
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.7892857142857144,
+              "mean_U_local": 1.0
+            },
+            "release_rate": 1.0,
+            "FalseRelease_gold": 1.0
+          },
+          "legal": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.14880952380952378,
+              "mean_gold_L_ci": {
+                "estimate": 0.14880952380952378,
+                "ci95": [
+                  0.14404761904761904,
+                  0.15357142857142855
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.851190476190476,
+              "mean_U_local": 0.5
+            },
+            "PASS": {
+              "n": 10,
+              "gold_residue_instances": 10,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.7224672001371107,
+                0.9999999999999999
+              ],
+              "mean_gold_L": 0.15476190476190474,
+              "mean_gold_L_ci": {
+                "estimate": 0.15476190476190477,
+                "ci95": [
+                  0.1476190476190476,
+                  0.1619047619047619
+                ],
+                "n_instances": 10,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.8452380952380952,
+              "mean_U_local": 1.0
+            },
+            "release_rate": 0.5,
+            "FalseRelease_gold": 1.0
+          },
+          "medical": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 5,
+              "gold_residue_fraction": 0.25,
+              "gold_residue_fraction_wilson95": [
+                0.11186170140766569,
+                0.468700877618744
+              ],
+              "mean_gold_L": 0.041666666666666664,
+              "mean_gold_L_ci": {
+                "estimate": 0.041666666666666664,
+                "ci95": [
+                  0.008333333333333333,
+                  0.075
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.9083333333333334,
+              "mean_U_local": 0.125
+            },
+            "PASS": {
+              "n": 5,
+              "gold_residue_instances": 0,
+              "gold_residue_fraction": 0.0,
+              "gold_residue_fraction_wilson95": [
+                0.0,
+                0.43448246478317476
+              ],
+              "mean_gold_L": 0.0,
+              "mean_gold_L_ci": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "n_instances": 5,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 1.0,
+              "mean_U_local": 0.5
+            },
+            "release_rate": 0.25,
+            "FalseRelease_gold": 0.0
+          },
+          "travel": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 10,
+              "gold_residue_fraction": 0.5,
+              "gold_residue_fraction_wilson95": [
+                0.2992980081982123,
+                0.7007019918017877
+              ],
+              "mean_gold_L": 0.08333333333333333,
+              "mean_gold_L_ci": {
+                "estimate": 0.08333333333333334,
+                "ci95": [
+                  0.049999999999999996,
+                  0.11666666666666665
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.8833333333333334,
+              "mean_U_local": 0.55
+            },
+            "PASS": {
+              "n": 11,
+              "gold_residue_instances": 6,
+              "gold_residue_fraction": 0.5454545454545454,
+              "gold_residue_fraction_wilson95": [
+                0.280091537409322,
+                0.7872872837754024
+              ],
+              "mean_gold_L": 0.09090909090909091,
+              "mean_gold_L_ci": {
+                "estimate": 0.0909090909090909,
+                "ci95": [
+                  0.045454545454545456,
+                  0.13636363636363638
+                ],
+                "n_instances": 11,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.9090909090909091,
+              "mean_U_local": 1.0
+            },
+            "release_rate": 0.55,
+            "FalseRelease_gold": 0.5454545454545454
+          }
+        }
+      },
+      "generalization_only": {
+        "ALL": {
+          "n": 80,
+          "gold_residue_instances": 55,
+          "gold_residue_fraction": 0.6875,
+          "gold_residue_fraction_wilson95": [
+            0.5793222425531256,
+            0.7784959588710517
+          ],
+          "mean_gold_L": 0.12113095238095237,
+          "mean_gold_L_ci": {
+            "estimate": 0.1211309523809524,
+            "ci95": [
+              0.10113095238095238,
+              0.1407752976190476
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.8580357142857142,
+          "mean_U_local": 0.6322916666666667
+        },
+        "PASS": {
+          "n": 46,
+          "gold_residue_instances": 36,
+          "gold_residue_fraction": 0.782608695652174,
+          "gold_residue_fraction_wilson95": [
+            0.6442631262842105,
+            0.8773909467543746
+          ],
+          "mean_gold_L": 0.14699792960662525,
+          "mean_gold_L_ci": {
+            "estimate": 0.14699792960662525,
+            "ci95": [
+              0.11924948240165634,
+              0.17360248447204968
+            ],
+            "n_instances": 46,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.8530020703933748,
+          "mean_U_local": 0.9456521739130435
+        },
+        "INFEASIBLE": {
+          "n": 34,
+          "gold_residue_instances": 19,
+          "gold_residue_fraction": 0.5588235294117647,
+          "gold_residue_fraction_wilson95": [
+            0.3945389925620307,
+            0.7111651775375785
+          ],
+          "mean_gold_L": 0.0861344537815126,
+          "mean_gold_L_ci": {
+            "estimate": 0.0861344537815126,
+            "ci95": [
+              0.058823529411764705,
+              0.11064425770308123
+            ],
+            "n_instances": 34,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.8648459383753502,
+          "mean_U_local": 0.20833333333333331
+        },
+        "FalseRelease_gold": 0.782608695652174,
+        "by_domain": {
+          "banking": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.21071428571428572,
+              "mean_gold_L_ci": {
+                "estimate": 0.21071428571428577,
+                "ci95": [
+                  0.17952380952380956,
+                  0.24595238095238098
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.7892857142857144,
+              "mean_U_local": 1.0
+            },
+            "PASS": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.21071428571428572,
+              "mean_gold_L_ci": {
+                "estimate": 0.21071428571428577,
+                "ci95": [
+                  0.17952380952380956,
+                  0.24595238095238098
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.7892857142857144,
+              "mean_U_local": 1.0
+            },
+            "release_rate": 1.0,
+            "FalseRelease_gold": 1.0
+          },
+          "legal": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.14880952380952378,
+              "mean_gold_L_ci": {
+                "estimate": 0.14880952380952378,
+                "ci95": [
+                  0.14404761904761904,
+                  0.15357142857142855
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.851190476190476,
+              "mean_U_local": 0.6291666666666667
+            },
+            "PASS": {
+              "n": 10,
+              "gold_residue_instances": 10,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.7224672001371107,
+                0.9999999999999999
+              ],
+              "mean_gold_L": 0.15476190476190474,
+              "mean_gold_L_ci": {
+                "estimate": 0.15476190476190477,
+                "ci95": [
+                  0.1476190476190476,
+                  0.1619047619047619
+                ],
+                "n_instances": 10,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.8452380952380952,
+              "mean_U_local": 1.0
+            },
+            "release_rate": 0.5,
+            "FalseRelease_gold": 1.0
+          },
+          "medical": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 5,
+              "gold_residue_fraction": 0.25,
+              "gold_residue_fraction_wilson95": [
+                0.11186170140766569,
+                0.468700877618744
+              ],
+              "mean_gold_L": 0.041666666666666664,
+              "mean_gold_L_ci": {
+                "estimate": 0.041666666666666664,
+                "ci95": [
+                  0.008333333333333333,
+                  0.075
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.9083333333333334,
+              "mean_U_local": 0.26666666666666666
+            },
+            "PASS": {
+              "n": 5,
+              "gold_residue_instances": 0,
+              "gold_residue_fraction": 0.0,
+              "gold_residue_fraction_wilson95": [
+                0.0,
+                0.43448246478317476
+              ],
+              "mean_gold_L": 0.0,
+              "mean_gold_L_ci": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "n_instances": 5,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 1.0,
+              "mean_U_local": 0.5
+            },
+            "release_rate": 0.25,
+            "FalseRelease_gold": 0.0
+          },
+          "travel": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 10,
+              "gold_residue_fraction": 0.5,
+              "gold_residue_fraction_wilson95": [
+                0.2992980081982123,
+                0.7007019918017877
+              ],
+              "mean_gold_L": 0.08333333333333333,
+              "mean_gold_L_ci": {
+                "estimate": 0.08333333333333334,
+                "ci95": [
+                  0.049999999999999996,
+                  0.11666666666666665
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.8833333333333334,
+              "mean_U_local": 0.6333333333333333
+            },
+            "PASS": {
+              "n": 11,
+              "gold_residue_instances": 6,
+              "gold_residue_fraction": 0.5454545454545454,
+              "gold_residue_fraction_wilson95": [
+                0.280091537409322,
+                0.7872872837754024
+              ],
+              "mean_gold_L": 0.09090909090909091,
+              "mean_gold_L_ci": {
+                "estimate": 0.0909090909090909,
+                "ci95": [
+                  0.045454545454545456,
+                  0.13636363636363638
+                ],
+                "n_instances": 11,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.9090909090909091,
+              "mean_U_local": 1.0
+            },
+            "release_rate": 0.55,
+            "FalseRelease_gold": 0.5454545454545454
+          }
+        }
+      },
+      "residual_report_recall_closed_loop": {
+        "PASS": {
+          "n_instances_with_residue": 36,
+          "mean_report_recall_of_gold_residue": 0.0,
+          "total_gold_hit_values": 41,
+          "total_covered_by_report": 0,
+          "instances_with_zero_report_coverage": 36
+        },
+        "INFEASIBLE": {
+          "n_instances_with_residue": 19,
+          "mean_report_recall_of_gold_residue": 0.0,
+          "total_gold_hit_values": 19,
+          "total_covered_by_report": 0,
+          "instances_with_zero_report_coverage": 19
+        }
+      }
+    },
+    "holdout80_v2": {
+      "closed_loop": {
+        "ALL": {
+          "n": 80,
+          "gold_residue_instances": 80,
+          "gold_residue_fraction": 1.0,
+          "gold_residue_fraction_wilson95": [
+            0.9541818704644728,
+            0.9999999999999999
+          ],
+          "mean_gold_L": 0.45267857142857143,
+          "mean_gold_L_ci": {
+            "estimate": 0.45267857142857143,
+            "ci95": [
+              0.4261830357142857,
+              0.47839880952380953
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.5264880952380953,
+          "mean_U_local": 0.75
+        },
+        "PASS": {
+          "n": 75,
+          "gold_residue_instances": 75,
+          "gold_residue_fraction": 1.0,
+          "gold_residue_fraction_wilson95": [
+            0.9512761575171942,
+            1.0
+          ],
+          "mean_gold_L": 0.44952380952380955,
+          "mean_gold_L_ci": {
+            "estimate": 0.44952380952380955,
+            "ci95": [
+              0.4222825396825396,
+              0.4755555555555555
+            ],
+            "n_instances": 75,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.5393650793650793,
+          "mean_U_local": 0.8
+        },
+        "INFEASIBLE": {
+          "n": 5,
+          "gold_residue_instances": 5,
+          "gold_residue_fraction": 1.0,
+          "gold_residue_fraction_wilson95": [
+            0.5655175352168251,
+            1.0
+          ],
+          "mean_gold_L": 0.5,
+          "mean_gold_L_ci": {
+            "estimate": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "n_instances": 5,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.3333333333333333,
+          "mean_U_local": 0.0
+        },
+        "FalseRelease_gold": 1.0,
+        "by_domain": {
+          "banking": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.45714285714285713,
+              "mean_gold_L_ci": {
+                "estimate": 0.4571428571428572,
+                "ci95": [
+                  0.4385714285714286,
+                  0.4757142857142857
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5428571428571429,
+              "mean_U_local": 1.0
+            },
+            "PASS": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.45714285714285713,
+              "mean_gold_L_ci": {
+                "estimate": 0.4571428571428572,
+                "ci95": [
+                  0.4385714285714286,
+                  0.4757142857142857
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5428571428571429,
+              "mean_U_local": 1.0
+            },
+            "release_rate": 1.0,
+            "FalseRelease_gold": 1.0
+          },
+          "legal": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.47619047619047616,
+              "mean_gold_L_ci": {
+                "estimate": 0.47619047619047616,
+                "ci95": [
+                  0.4333333333333333,
+                  0.5190476190476191
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5238095238095238,
+              "mean_U_local": 0.75
+            },
+            "PASS": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.47619047619047616,
+              "mean_gold_L_ci": {
+                "estimate": 0.47619047619047616,
+                "ci95": [
+                  0.4333333333333333,
+                  0.5190476190476191
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5238095238095238,
+              "mean_U_local": 0.75
+            },
+            "release_rate": 1.0,
+            "FalseRelease_gold": 1.0
+          },
+          "medical": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.47857142857142854,
+              "mean_gold_L_ci": {
+                "estimate": 0.47857142857142854,
+                "ci95": [
+                  0.401375,
+                  0.5557142857142856
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.4797619047619047,
+              "mean_U_local": 0.375
+            },
+            "PASS": {
+              "n": 15,
+              "gold_residue_instances": 15,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.7961166989641515,
+                1.0
+              ],
+              "mean_gold_L": 0.4714285714285714,
+              "mean_gold_L_ci": {
+                "estimate": 0.4714285714285715,
+                "ci95": [
+                  0.36285714285714293,
+                  0.5828571428571429
+                ],
+                "n_instances": 15,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5285714285714286,
+              "mean_U_local": 0.5
+            },
+            "release_rate": 0.75,
+            "FalseRelease_gold": 1.0
+          },
+          "travel": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.39880952380952384,
+              "mean_gold_L_ci": {
+                "estimate": 0.3988095238095238,
+                "ci95": [
+                  0.36904761904761896,
+                  0.42976190476190473
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5595238095238095,
+              "mean_U_local": 0.875
+            },
+            "PASS": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.39880952380952384,
+              "mean_gold_L_ci": {
+                "estimate": 0.3988095238095238,
+                "ci95": [
+                  0.36904761904761896,
+                  0.42976190476190473
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5595238095238095,
+              "mean_U_local": 0.875
+            },
+            "release_rate": 1.0,
+            "FalseRelease_gold": 1.0
+          }
+        }
+      },
+      "generalization_only": {
+        "ALL": {
+          "n": 80,
+          "gold_residue_instances": 80,
+          "gold_residue_fraction": 1.0,
+          "gold_residue_fraction_wilson95": [
+            0.9541818704644728,
+            0.9999999999999999
+          ],
+          "mean_gold_L": 0.45267857142857143,
+          "mean_gold_L_ci": {
+            "estimate": 0.45267857142857143,
+            "ci95": [
+              0.4261830357142857,
+              0.47839880952380953
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.5264880952380953,
+          "mean_U_local": 0.7666666666666667
+        },
+        "PASS": {
+          "n": 75,
+          "gold_residue_instances": 75,
+          "gold_residue_fraction": 1.0,
+          "gold_residue_fraction_wilson95": [
+            0.9512761575171942,
+            1.0
+          ],
+          "mean_gold_L": 0.44952380952380955,
+          "mean_gold_L_ci": {
+            "estimate": 0.44952380952380955,
+            "ci95": [
+              0.4222825396825396,
+              0.4755555555555555
+            ],
+            "n_instances": 75,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.5393650793650793,
+          "mean_U_local": 0.8
+        },
+        "INFEASIBLE": {
+          "n": 5,
+          "gold_residue_instances": 5,
+          "gold_residue_fraction": 1.0,
+          "gold_residue_fraction_wilson95": [
+            0.5655175352168251,
+            1.0
+          ],
+          "mean_gold_L": 0.5,
+          "mean_gold_L_ci": {
+            "estimate": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "n_instances": 5,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_recall": 0.3333333333333333,
+          "mean_U_local": 0.26666666666666666
+        },
+        "FalseRelease_gold": 1.0,
+        "by_domain": {
+          "banking": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.45714285714285713,
+              "mean_gold_L_ci": {
+                "estimate": 0.4571428571428572,
+                "ci95": [
+                  0.4385714285714286,
+                  0.4757142857142857
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5428571428571429,
+              "mean_U_local": 1.0
+            },
+            "PASS": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.45714285714285713,
+              "mean_gold_L_ci": {
+                "estimate": 0.4571428571428572,
+                "ci95": [
+                  0.4385714285714286,
+                  0.4757142857142857
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5428571428571429,
+              "mean_U_local": 1.0
+            },
+            "release_rate": 1.0,
+            "FalseRelease_gold": 1.0
+          },
+          "legal": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.47619047619047616,
+              "mean_gold_L_ci": {
+                "estimate": 0.47619047619047616,
+                "ci95": [
+                  0.4333333333333333,
+                  0.5190476190476191
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5238095238095238,
+              "mean_U_local": 0.75
+            },
+            "PASS": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.47619047619047616,
+              "mean_gold_L_ci": {
+                "estimate": 0.47619047619047616,
+                "ci95": [
+                  0.4333333333333333,
+                  0.5190476190476191
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5238095238095238,
+              "mean_U_local": 0.75
+            },
+            "release_rate": 1.0,
+            "FalseRelease_gold": 1.0
+          },
+          "medical": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.47857142857142854,
+              "mean_gold_L_ci": {
+                "estimate": 0.47857142857142854,
+                "ci95": [
+                  0.401375,
+                  0.5557142857142856
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.4797619047619047,
+              "mean_U_local": 0.4416666666666667
+            },
+            "PASS": {
+              "n": 15,
+              "gold_residue_instances": 15,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.7961166989641515,
+                1.0
+              ],
+              "mean_gold_L": 0.4714285714285714,
+              "mean_gold_L_ci": {
+                "estimate": 0.4714285714285715,
+                "ci95": [
+                  0.36285714285714293,
+                  0.5828571428571429
+                ],
+                "n_instances": 15,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5285714285714286,
+              "mean_U_local": 0.5
+            },
+            "release_rate": 0.75,
+            "FalseRelease_gold": 1.0
+          },
+          "travel": {
+            "ALL": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.39880952380952384,
+              "mean_gold_L_ci": {
+                "estimate": 0.3988095238095238,
+                "ci95": [
+                  0.36904761904761896,
+                  0.42976190476190473
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5595238095238095,
+              "mean_U_local": 0.875
+            },
+            "PASS": {
+              "n": 20,
+              "gold_residue_instances": 20,
+              "gold_residue_fraction": 1.0,
+              "gold_residue_fraction_wilson95": [
+                0.8388748419471806,
+                1.0
+              ],
+              "mean_gold_L": 0.39880952380952384,
+              "mean_gold_L_ci": {
+                "estimate": 0.3988095238095238,
+                "ci95": [
+                  0.36904761904761896,
+                  0.42976190476190473
+                ],
+                "n_instances": 20,
+                "n_boot": 2000,
+                "unit": "instance_cluster"
+              },
+              "mean_recall": 0.5595238095238095,
+              "mean_U_local": 0.875
+            },
+            "release_rate": 1.0,
+            "FalseRelease_gold": 1.0
+          }
+        }
+      },
+      "residual_report_recall_closed_loop": {
+        "PASS": {
+          "n_instances_with_residue": 75,
+          "mean_report_recall_of_gold_residue": 0.0,
+          "total_gold_hit_values": 215,
+          "total_covered_by_report": 0,
+          "instances_with_zero_report_coverage": 75
+        },
+        "INFEASIBLE": {
+          "n_instances_with_residue": 5,
+          "mean_report_recall_of_gold_residue": 0.0,
+          "total_gold_hit_values": 15,
+          "total_covered_by_report": 0,
+          "instances_with_zero_report_coverage": 5
+        }
+      }
+    }
+  },
+  "per_type_recall": {
+    "holdout80": {
+      "address": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "age": {
+        "recall": 1.0,
+        "n": 29
+      },
+      "allergy": {
+        "recall": 0.0,
+        "n": 9
+      },
+      "amount": {
+        "recall": 0.0,
+        "n": 50
+      },
+      "bank": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "bank_card": {
+        "recall": 1.0,
+        "n": 16
+      },
+      "card_tail": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "case_type": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "charge": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "children_count": {
+        "recall": 1.0,
+        "n": 9
+      },
+      "city": {
+        "recall": 1.0,
+        "n": 24
+      },
+      "court": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "date": {
+        "recall": 1.0,
+        "n": 20
+      },
+      "deposit_no": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "disease": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "drug": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "duration": {
+        "recall": 1.0,
+        "n": 4
+      },
+      "email": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "employer": {
+        "recall": 1.0,
+        "n": 16
+      },
+      "flight_no": {
+        "recall": 1.0,
+        "n": 11
+      },
+      "hospital": {
+        "recall": 1.0,
+        "n": 15
+      },
+      "hotel": {
+        "recall": 1.0,
+        "n": 16
+      },
+      "id_card": {
+        "recall": 1.0,
+        "n": 20
+      },
+      "income": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "insurance_id": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "lawfirm": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "marriage_years": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "medical_record_no": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "name": {
+        "recall": 1.0,
+        "n": 66
+      },
+      "occupation": {
+        "recall": 1.0,
+        "n": 15
+      },
+      "passport": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "phone": {
+        "recall": 1.0,
+        "n": 30
+      },
+      "plate": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "room_no": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "visit_date": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "work_years": {
+        "recall": 1.0,
+        "n": 5
+      }
+    },
+    "holdout80_v2": {
+      "address": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "age": {
+        "recall": 1.0,
+        "n": 30
+      },
+      "allergy": {
+        "recall": 0.3333333333333333,
+        "n": 15
+      },
+      "amount": {
+        "recall": 0.0,
+        "n": 50
+      },
+      "bank": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "bank_card": {
+        "recall": 1.0,
+        "n": 15
+      },
+      "card_tail": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "case_type": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "charge": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "children_count": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "city": {
+        "recall": 0.0,
+        "n": 25
+      },
+      "court": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "date": {
+        "recall": 1.0,
+        "n": 20
+      },
+      "deposit_no": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "disease": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "drug": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "duration": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "email": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "employer": {
+        "recall": 0.0,
+        "n": 15
+      },
+      "flight_no": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "hospital": {
+        "recall": 0.0,
+        "n": 15
+      },
+      "hotel": {
+        "recall": 0.0,
+        "n": 15
+      },
+      "id_card": {
+        "recall": 1.0,
+        "n": 20
+      },
+      "income": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "insurance_id": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "lawfirm": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "marriage_years": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "medical_record_no": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "name": {
+        "recall": 0.6428571428571429,
+        "n": 70
+      },
+      "occupation": {
+        "recall": 0.0,
+        "n": 15
+      },
+      "passport": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "phone": {
+        "recall": 1.0,
+        "n": 30
+      },
+      "plate": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "room_no": {
+        "recall": 1.0,
+        "n": 5
+      },
+      "visit_date": {
+        "recall": 1.0,
+        "n": 10
+      },
+      "work_years": {
+        "recall": 1.0,
+        "n": 5
+      }
+    }
+  },
+  "audit_coverage": {
+    "n_instances": 40,
+    "n_attackers": 2,
+    "n_strategies": 2,
+    "n_attacker_strategy_combos": 4,
+    "n_attack_calls": 960,
+    "n_judge_calls": 240,
+    "n_total_records": 1200,
+    "n_question_evaluations": 5832,
+    "n_unique_instance_question_pairs": 243,
+    "n_unique_question_texts": 36,
+    "total_hit_evaluations": 1591,
+    "note": "hits are counted across repeated attack evaluations, not distinct leaked values"
+  },
+  "online_stratified": {
+    "closed_loop": {
+      "ALL": {
+        "n": 40,
+        "external_hit_instances": 29,
+        "FalseRelease_external": 0.725,
+        "mean_external_L_max": 0.13047619047619047,
+        "mean_external_L_max_ci": {
+          "estimate": 0.13047619047619047,
+          "ci95": [
+            0.10321130952380951,
+            0.15904761904761905
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.3625,
+        "mean_judge_U_ci": {
+          "estimate": 0.3625,
+          "ci95": [
+            0.25,
+            0.475
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "PASS": {
+        "n": 23,
+        "external_hit_instances": 19,
+        "FalseRelease_external": 0.8260869565217391,
+        "mean_external_L_max": 0.15859213250517598,
+        "mean_external_L_max_ci": {
+          "estimate": 0.15859213250517598,
+          "ci95": [
+            0.1198654244306418,
+            0.1958592132505176
+          ],
+          "n_instances": 23,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.5217391304347826,
+        "mean_judge_U_ci": {
+          "estimate": 0.5217391304347826,
+          "ci95": [
+            0.3690217391304348,
+            0.6739130434782609
+          ],
+          "n_instances": 23,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "INFEASIBLE": {
+        "n": 17,
+        "external_hit_instances": 10,
+        "FalseRelease_external": 0.5882352941176471,
+        "mean_external_L_max": 0.09243697478991597,
+        "mean_external_L_max_ci": {
+          "estimate": 0.09243697478991597,
+          "ci95": [
+            0.0546218487394958,
+            0.12885154061624648
+          ],
+          "n_instances": 17,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.14705882352941177,
+        "mean_judge_U_ci": {
+          "estimate": 0.14705882352941177,
+          "ci95": [
+            0.058823529411764705,
+            0.2647058823529412
+          ],
+          "n_instances": 17,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      }
+    },
+    "direct_forward": {
+      "ALL": {
+        "n": 40,
+        "external_hit_instances": 40,
+        "FalseRelease_external": 1.0,
+        "mean_external_L_max": 1.0,
+        "mean_external_L_max_ci": {
+          "estimate": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 1.0,
+        "mean_judge_U_ci": {
+          "estimate": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "PASS": {
+        "n": 0
+      },
+      "INFEASIBLE": {
+        "n": 40,
+        "external_hit_instances": 40,
+        "FalseRelease_external": 1.0,
+        "mean_external_L_max": 1.0,
+        "mean_external_L_max_ci": {
+          "estimate": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 1.0,
+        "mean_judge_U_ci": {
+          "estimate": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      }
+    },
+    "generalization_only": {
+      "ALL": {
+        "n": 40,
+        "external_hit_instances": 29,
+        "FalseRelease_external": 0.725,
+        "mean_external_L_max": 0.13047619047619047,
+        "mean_external_L_max_ci": {
+          "estimate": 0.13047619047619047,
+          "ci95": [
+            0.10321130952380951,
+            0.15904761904761905
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.4375,
+        "mean_judge_U_ci": {
+          "estimate": 0.4375,
+          "ci95": [
+            0.3125,
+            0.5625
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "PASS": {
+        "n": 23,
+        "external_hit_instances": 19,
+        "FalseRelease_external": 0.8260869565217391,
+        "mean_external_L_max": 0.15859213250517598,
+        "mean_external_L_max_ci": {
+          "estimate": 0.15859213250517598,
+          "ci95": [
+            0.1198654244306418,
+            0.1958592132505176
+          ],
+          "n_instances": 23,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.5652173913043478,
+        "mean_judge_U_ci": {
+          "estimate": 0.5652173913043478,
+          "ci95": [
+            0.391304347826087,
+            0.717391304347826
+          ],
+          "n_instances": 23,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "INFEASIBLE": {
+        "n": 17,
+        "external_hit_instances": 10,
+        "FalseRelease_external": 0.5882352941176471,
+        "mean_external_L_max": 0.09243697478991597,
+        "mean_external_L_max_ci": {
+          "estimate": 0.09243697478991597,
+          "ci95": [
+            0.0546218487394958,
+            0.12885154061624648
+          ],
+          "n_instances": 17,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.2647058823529412,
+        "mean_judge_U_ci": {
+          "estimate": 0.2647058823529412,
+          "ci95": [
+            0.11764705882352941,
+            0.4411764705882353
+          ],
+          "n_instances": 17,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      }
+    },
+    "hardline_only": {
+      "ALL": {
+        "n": 40,
+        "external_hit_instances": 29,
+        "FalseRelease_external": 0.725,
+        "mean_external_L_max": 0.13047619047619047,
+        "mean_external_L_max_ci": {
+          "estimate": 0.13047619047619047,
+          "ci95": [
+            0.10321130952380951,
+            0.15904761904761905
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.425,
+        "mean_judge_U_ci": {
+          "estimate": 0.425,
+          "ci95": [
+            0.3121875,
+            0.55
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "PASS": {
+        "n": 21,
+        "external_hit_instances": 19,
+        "FalseRelease_external": 0.9047619047619048,
+        "mean_external_L_max": 0.17369614512471654,
+        "mean_external_L_max_ci": {
+          "estimate": 0.17369614512471654,
+          "ci95": [
+            0.13785147392290248,
+            0.2081689342403628
+          ],
+          "n_instances": 21,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.5952380952380952,
+        "mean_judge_U_ci": {
+          "estimate": 0.5952380952380952,
+          "ci95": [
+            0.42857142857142855,
+            0.7619047619047619
+          ],
+          "n_instances": 21,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "INFEASIBLE": {
+        "n": 19,
+        "external_hit_instances": 10,
+        "FalseRelease_external": 0.5263157894736842,
+        "mean_external_L_max": 0.08270676691729323,
+        "mean_external_L_max_ci": {
+          "estimate": 0.08270676691729324,
+          "ci95": [
+            0.048872180451127824,
+            0.11779448621553885
+          ],
+          "n_instances": 19,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.23684210526315788,
+        "mean_judge_U_ci": {
+          "estimate": 0.23684210526315788,
+          "ci95": [
+            0.07894736842105263,
+            0.39473684210526316
+          ],
+          "n_instances": 19,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      }
+    },
+    "intact_style": {
+      "ALL": {
+        "n": 40,
+        "external_hit_instances": 29,
+        "FalseRelease_external": 0.725,
+        "mean_external_L_max": 0.13047619047619047,
+        "mean_external_L_max_ci": {
+          "estimate": 0.13047619047619047,
+          "ci95": [
+            0.10321130952380951,
+            0.15904761904761905
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.4125,
+        "mean_judge_U_ci": {
+          "estimate": 0.4125,
+          "ci95": [
+            0.3,
+            0.5375
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "PASS": {
+        "n": 23,
+        "external_hit_instances": 19,
+        "FalseRelease_external": 0.8260869565217391,
+        "mean_external_L_max": 0.15859213250517598,
+        "mean_external_L_max_ci": {
+          "estimate": 0.15859213250517598,
+          "ci95": [
+            0.1198654244306418,
+            0.1958592132505176
+          ],
+          "n_instances": 23,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.5217391304347826,
+        "mean_judge_U_ci": {
+          "estimate": 0.5217391304347826,
+          "ci95": [
+            0.3695652173913043,
+            0.6739130434782609
+          ],
+          "n_instances": 23,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "INFEASIBLE": {
+        "n": 17,
+        "external_hit_instances": 10,
+        "FalseRelease_external": 0.5882352941176471,
+        "mean_external_L_max": 0.09243697478991597,
+        "mean_external_L_max_ci": {
+          "estimate": 0.09243697478991597,
+          "ci95": [
+            0.0546218487394958,
+            0.12885154061624648
+          ],
+          "n_instances": 17,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.2647058823529412,
+        "mean_judge_U_ci": {
+          "estimate": 0.2647058823529412,
+          "ci95": [
+            0.11764705882352941,
+            0.4411764705882353
+          ],
+          "n_instances": 17,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      }
+    },
+    "prism_random": {
+      "ALL": {
+        "n": 40,
+        "external_hit_instances": 29,
+        "FalseRelease_external": 0.725,
+        "mean_external_L_max": 0.1388095238095238,
+        "mean_external_L_max_ci": {
+          "estimate": 0.1388095238095238,
+          "ci95": [
+            0.10821428571428571,
+            0.16941369047619043
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.125,
+        "mean_judge_U_ci": {
+          "estimate": 0.125,
+          "ci95": [
+            0.05,
+            0.2125
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "PASS": {
+        "n": 21,
+        "external_hit_instances": 19,
+        "FalseRelease_external": 0.9047619047619048,
+        "mean_external_L_max": 0.17369614512471654,
+        "mean_external_L_max_ci": {
+          "estimate": 0.17369614512471654,
+          "ci95": [
+            0.13785147392290248,
+            0.2081689342403628
+          ],
+          "n_instances": 21,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.21428571428571427,
+        "mean_judge_U_ci": {
+          "estimate": 0.21428571428571427,
+          "ci95": [
+            0.07142857142857142,
+            0.38095238095238093
+          ],
+          "n_instances": 21,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "INFEASIBLE": {
+        "n": 19,
+        "external_hit_instances": 10,
+        "FalseRelease_external": 0.5263157894736842,
+        "mean_external_L_max": 0.10025062656641603,
+        "mean_external_L_max_ci": {
+          "estimate": 0.10025062656641605,
+          "ci95": [
+            0.05639097744360902,
+            0.15162907268170425
+          ],
+          "n_instances": 19,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mean_judge_U": 0.02631578947368421,
+        "mean_judge_U_ci": {
+          "estimate": 0.02631578947368421,
+          "ci95": [
+            0.0,
+            0.07894736842105263
+          ],
+          "n_instances": 19,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      }
+    }
+  },
+  "calibration": {
+    "overall": {
+      "rho": {
+        "estimate": 0.35630840771019284,
+        "ci95": [
+          0.2538459086477162,
+          0.6463594839870997
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "mae": {
+        "estimate": 0.3516666666666666,
+        "ci95": [
+          0.26458333333333334,
+          0.44833333333333336
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "threshold_agreement": {
+        "estimate": 0.68,
+        "ci95": [
+          0.565,
+          0.79
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      }
+    },
+    "by_method": {
+      "closed_loop": {
+        "n": 40,
+        "point": {
+          "rho": 0.50093808630394,
+          "mae": 0.3125,
+          "threshold_agreement": 0.725
+        },
+        "rho_ci": {
+          "estimate": 0.50093808630394,
+          "ci95": [
+            0.2961538461538462,
+            0.7686772983114447
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mae_ci": {
+          "estimate": 0.3125,
+          "ci95": [
+            0.2125,
+            0.4125
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "agreement_ci": {
+          "estimate": 0.725,
+          "ci95": [
+            0.6,
+            0.85
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "threshold_confusion": {
+          "local_1_judge_1": 17,
+          "local_1_judge_0": 6,
+          "local_0_judge_1": 5,
+          "local_0_judge_0": 12
+        }
+      },
+      "generalization_only": {
+        "n": 40,
+        "point": {
+          "rho": 0.5647279549718576,
+          "mae": 0.32708333333333334,
+          "threshold_agreement": 0.675
+        },
+        "rho_ci": {
+          "estimate": 0.5647279549718576,
+          "ci95": [
+            0.2026031894934334,
+            0.6971998123827392
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mae_ci": {
+          "estimate": 0.32708333333333334,
+          "ci95": [
+            0.23229166666666665,
+            0.4239583333333333
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "agreement_ci": {
+          "estimate": 0.675,
+          "ci95": [
+            0.525,
+            0.825
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "threshold_confusion": {
+          "local_1_judge_1": 17,
+          "local_1_judge_0": 6,
+          "local_0_judge_1": 7,
+          "local_0_judge_0": 10
+        }
+      },
+      "hardline_only": {
+        "n": 40,
+        "point": {
+          "rho": 0.48217636022514077,
+          "mae": 0.325,
+          "threshold_agreement": 0.725
+        },
+        "rho_ci": {
+          "estimate": 0.48217636022514077,
+          "ci95": [
+            0.16151031894934334,
+            0.7319652908067539
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mae_ci": {
+          "estimate": 0.325,
+          "ci95": [
+            0.2125,
+            0.4375
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "agreement_ci": {
+          "estimate": 0.725,
+          "ci95": [
+            0.575,
+            0.85
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "threshold_confusion": {
+          "local_1_judge_1": 17,
+          "local_1_judge_0": 4,
+          "local_0_judge_1": 7,
+          "local_0_judge_0": 12
+        }
+      },
+      "intact_style": {
+        "n": 40,
+        "point": {
+          "rho": 0.5347091932457787,
+          "mae": 0.35208333333333336,
+          "threshold_agreement": 0.675
+        },
+        "rho_ci": {
+          "estimate": 0.5347091932457787,
+          "ci95": [
+            0.1809615384615385,
+            0.6743105065666041
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mae_ci": {
+          "estimate": 0.35208333333333336,
+          "ci95": [
+            0.25833333333333336,
+            0.4458333333333333
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "agreement_ci": {
+          "estimate": 0.675,
+          "ci95": [
+            0.525,
+            0.825
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "threshold_confusion": {
+          "local_1_judge_1": 17,
+          "local_1_judge_0": 6,
+          "local_0_judge_1": 7,
+          "local_0_judge_0": 10
+        }
+      },
+      "prism_random": {
+        "n": 40,
+        "point": {
+          "rho": -0.07091932457786117,
+          "mae": 0.4416666666666667,
+          "threshold_agreement": 0.6
+        },
+        "rho_ci": {
+          "estimate": -0.07091932457786117,
+          "ci95": [
+            0.11293151969981241,
+            0.6623264540337714
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "mae_ci": {
+          "estimate": 0.4416666666666667,
+          "ci95": [
+            0.3123958333333333,
+            0.5791666666666667
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "agreement_ci": {
+          "estimate": 0.6,
+          "ci95": [
+            0.45,
+            0.75
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "threshold_confusion": {
+          "local_1_judge_0": 15,
+          "local_1_judge_1": 6,
+          "local_0_judge_1": 1,
+          "local_0_judge_0": 18
+        }
+      }
+    },
+    "pooled_threshold_confusion": {
+      "local_1_judge_1": 74,
+      "local_1_judge_0": 37,
+      "local_0_judge_1": 27,
+      "local_0_judge_0": 62
+    },
+    "judge_pairs": [
+      {
+        "id": "DRSL-HOLD-BAN-0001",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0001",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0001",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0001",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0002",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0002",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0002",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0002",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0003",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0003",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0003",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0003",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0004",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0004",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0004",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0004",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0005",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0005",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0005",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0005",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0006",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0006",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0006",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0006",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0007",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0007",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0007",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0007",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0008",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0008",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0008",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0008",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0009",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0009",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0009",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0009",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0010",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0010",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0010",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0010",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0001",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0001",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0001",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0001",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0002",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0002",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0002",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0002",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0003",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0003",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 1.0,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0003",
+        "method": "intact_style",
+        "local_U": 0.16666666666666666,
+        "judge_U": 1.0,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0003",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0004",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0004",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0004",
+        "method": "intact_style",
+        "local_U": 0.25,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0004",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0005",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0005",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0005",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0005",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0006",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0006",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0006",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0007",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0006",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0007",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 1.0,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0007",
+        "method": "intact_style",
+        "local_U": 0.3333333333333333,
+        "judge_U": 1.0,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0007",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0008",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0008",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0008",
+        "method": "intact_style",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0008",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0009",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0009",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0009",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0009",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0010",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0010",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0010",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0010",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0001",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0001",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0001",
+        "method": "intact_style",
+        "local_U": 0.16666666666666666,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0001",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0002",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0002",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0002",
+        "method": "intact_style",
+        "local_U": 0.16666666666666666,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0002",
+        "method": "prism_random",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0003",
+        "method": "closed_loop",
+        "local_U": 0.5,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0003",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0003",
+        "method": "intact_style",
+        "local_U": 0.5,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0003",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0004",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0004",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0004",
+        "method": "intact_style",
+        "local_U": 0.125,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0004",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0005",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0005",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0005",
+        "method": "intact_style",
+        "local_U": 0.16666666666666666,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0005",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0006",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0006",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0006",
+        "method": "intact_style",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0006",
+        "method": "prism_random",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0007",
+        "method": "closed_loop",
+        "local_U": 0.5,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0007",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0007",
+        "method": "intact_style",
+        "local_U": 0.5,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0007",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0008",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0008",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0008",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0009",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0008",
+        "method": "intact_style",
+        "local_U": 0.125,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0009",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0009",
+        "method": "intact_style",
+        "local_U": 0.16666666666666666,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0009",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0010",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0010",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0010",
+        "method": "intact_style",
+        "local_U": 0.25,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0010",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0001",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0001",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0001",
+        "method": "intact_style",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0001",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0002",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0002",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0002",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0002",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0003",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0003",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0003",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0003",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0004",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0004",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0004",
+        "method": "intact_style",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0004",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0005",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0005",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0005",
+        "method": "intact_style",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0005",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0006",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0006",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0006",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0006",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0007",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0007",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0007",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0007",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0008",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0008",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0008",
+        "method": "intact_style",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0008",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0009",
+        "method": "closed_loop",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0009",
+        "method": "hardline_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0009",
+        "method": "intact_style",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0009",
+        "method": "prism_random",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0010",
+        "method": "closed_loop",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0010",
+        "method": "hardline_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0010",
+        "method": "intact_style",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0010",
+        "method": "prism_random",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0001",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0002",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0003",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0004",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0005",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0006",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0007",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0008",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0009",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-BAN-0010",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0001",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0002",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0003",
+        "method": "generalization_only",
+        "local_U": 0.16666666666666666,
+        "judge_U": 1.0,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0004",
+        "method": "generalization_only",
+        "local_U": 0.25,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0005",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0006",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0007",
+        "method": "generalization_only",
+        "local_U": 0.3333333333333333,
+        "judge_U": 1.0,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0008",
+        "method": "generalization_only",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0009",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-LEG-0010",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.5,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0001",
+        "method": "generalization_only",
+        "local_U": 0.16666666666666666,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0002",
+        "method": "generalization_only",
+        "local_U": 0.16666666666666666,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0003",
+        "method": "generalization_only",
+        "local_U": 0.5,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0004",
+        "method": "generalization_only",
+        "local_U": 0.125,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0005",
+        "method": "generalization_only",
+        "local_U": 0.16666666666666666,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0006",
+        "method": "generalization_only",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-MED-0007",
+        "method": "generalization_only",
+        "local_U": 0.5,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0008",
+        "method": "generalization_only",
+        "local_U": 0.125,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0009",
+        "method": "generalization_only",
+        "local_U": 0.16666666666666666,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-MED-0010",
+        "method": "generalization_only",
+        "local_U": 0.25,
+        "judge_U": 0.5,
+        "local_release": false,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0001",
+        "method": "generalization_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0002",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0003",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0004",
+        "method": "generalization_only",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0005",
+        "method": "generalization_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0006",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0007",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 0.0,
+        "local_release": true,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0008",
+        "method": "generalization_only",
+        "local_U": 0.3333333333333333,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0009",
+        "method": "generalization_only",
+        "local_U": 0.0,
+        "judge_U": 0.0,
+        "local_release": false,
+        "judge_release": false
+      },
+      {
+        "id": "DRSL-HOLD-TRA-0010",
+        "method": "generalization_only",
+        "local_U": 1.0,
+        "judge_U": 1.0,
+        "local_release": true,
+        "judge_release": true
+      }
+    ]
+  },
+  "holdout2_online": {
+    "coverage": {
+      "n_instances": 20,
+      "n_attackers": 2,
+      "n_strategies": 2,
+      "n_attacker_strategy_combos": 4,
+      "n_attack_calls": 160,
+      "n_judge_calls": 40,
+      "n_total_records": 200,
+      "n_question_evaluations": 1000,
+      "n_unique_instance_question_pairs": 125,
+      "n_unique_question_texts": 36,
+      "total_hit_evaluations": 448,
+      "note": "hits are counted across repeated attack evaluations, not distinct leaked values"
+    },
+    "stratified": {
+      "closed_loop": {
+        "ALL": {
+          "n": 20,
+          "external_hit_instances": 20,
+          "FalseRelease_external": 1.0,
+          "mean_external_L_max": 0.45738095238095233,
+          "mean_external_L_max_ci": {
+            "estimate": 0.45738095238095244,
+            "ci95": [
+              0.40928571428571436,
+              0.5078571428571428
+            ],
+            "n_instances": 20,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_judge_U": 0.575,
+          "mean_judge_U_ci": {
+            "estimate": 0.575,
+            "ci95": [
+              0.4,
+              0.75
+            ],
+            "n_instances": 20,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          }
+        },
+        "PASS": {
+          "n": 18,
+          "external_hit_instances": 18,
+          "FalseRelease_external": 1.0,
+          "mean_external_L_max": 0.45264550264550263,
+          "mean_external_L_max_ci": {
+            "estimate": 0.45264550264550274,
+            "ci95": [
+              0.3983994708994709,
+              0.508994708994709
+            ],
+            "n_instances": 18,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_judge_U": 0.6111111111111112,
+          "mean_judge_U_ci": {
+            "estimate": 0.6111111111111112,
+            "ci95": [
+              0.4166666666666667,
+              0.8055555555555556
+            ],
+            "n_instances": 18,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          }
+        },
+        "INFEASIBLE": {
+          "n": 2,
+          "external_hit_instances": 2,
+          "FalseRelease_external": 1.0,
+          "mean_external_L_max": 0.5,
+          "mean_external_L_max_ci": {
+            "estimate": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "n_instances": 2,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_judge_U": 0.25,
+          "mean_judge_U_ci": {
+            "estimate": 0.25,
+            "ci95": [
+              0.0,
+              0.5
+            ],
+            "n_instances": 2,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          }
+        }
+      },
+      "generalization_only": {
+        "ALL": {
+          "n": 20,
+          "external_hit_instances": 20,
+          "FalseRelease_external": 1.0,
+          "mean_external_L_max": 0.45738095238095233,
+          "mean_external_L_max_ci": {
+            "estimate": 0.45738095238095244,
+            "ci95": [
+              0.40928571428571436,
+              0.5078571428571428
+            ],
+            "n_instances": 20,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_judge_U": 0.5,
+          "mean_judge_U_ci": {
+            "estimate": 0.5,
+            "ci95": [
+              0.35,
+              0.65
+            ],
+            "n_instances": 20,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          }
+        },
+        "PASS": {
+          "n": 18,
+          "external_hit_instances": 18,
+          "FalseRelease_external": 1.0,
+          "mean_external_L_max": 0.45264550264550263,
+          "mean_external_L_max_ci": {
+            "estimate": 0.45264550264550274,
+            "ci95": [
+              0.3983994708994709,
+              0.508994708994709
+            ],
+            "n_instances": 18,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_judge_U": 0.5277777777777778,
+          "mean_judge_U_ci": {
+            "estimate": 0.5277777777777778,
+            "ci95": [
+              0.3611111111111111,
+              0.6944444444444444
+            ],
+            "n_instances": 18,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          }
+        },
+        "INFEASIBLE": {
+          "n": 2,
+          "external_hit_instances": 2,
+          "FalseRelease_external": 1.0,
+          "mean_external_L_max": 0.5,
+          "mean_external_L_max_ci": {
+            "estimate": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "n_instances": 2,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "mean_judge_U": 0.25,
+          "mean_judge_U_ci": {
+            "estimate": 0.25,
+            "ci95": [
+              0.0,
+              0.5
+            ],
+            "n_instances": 2,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          }
+        }
+      }
+    }
+  }
+}

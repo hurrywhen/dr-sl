@@ -225,6 +225,41 @@ TEMPLATES = {
     "legal": [legal1, legal2, legal3, legal4],
 }
 
+# Explicit task per template (round-3 P0 fix: downstream task construction must
+# not be inferred from the last sentence, which returned the full prompt for
+# single-sentence field-list templates).  For dialogue templates without an
+# explicit request utterance, the task is the authored user request; it contains
+# no sensitive value.  See revision_protocol_v3.md §2.
+TASKS = {
+    "med1": "请评估近期指标波动是否需要调整方案。",
+    "med2": "想了解长期管理建议。",
+    "med3": "请判断反复低烧的常见原因。",
+    "med4": "请根据患者描述的症状给出初步分析和建议。",
+    "bank1": "请评估经营贷通过率。",
+    "bank2": "请核对大额转账风控要求。",
+    "bank3": "希望尽快冻结并追回。",
+    "bank4": "家属能否代办提前支取？",
+    "trav1": "请检查衔接是否合理。",
+    "trav2": "请推荐轻松路线。",
+    "trav3": "超标住宿能否报销？",
+    "trav4": "请给出证件和钱包遗失后的应急处理与补办步骤。",
+    "legal1": "请整理证据清单。",
+    "legal2": "请问仲裁时效如何计算？",
+    "legal3": "请说明财产分割的一般原则。",
+    "legal4": "请说明理赔材料。",
+}
+# Templates whose task is authored (dialogue without an explicit request line).
+AUTHORED_TASK_TEMPLATES = {"med4", "trav4"}
+
+
+def check_task(task, text, ents, tid):
+    assert task and task != text, f"task equals prompt for {tid}"
+    assert len(task) <= 0.5 * len(text), f"task too long for {tid}"
+    for e in ents:
+        assert e["value"] not in task, f"task leaks gold value for {tid}: {e['value']}"
+    if tid not in AUTHORED_TASK_TEMPLATES:
+        assert task in text, f"verbatim task not found in prompt for {tid}"
+
 
 def load_existing_texts():
     texts = []
@@ -264,6 +299,8 @@ def main():
             accepted.append((text, ents, fn.__name__))
         assert len(accepted) == PER_DOMAIN, domain
         for i, (text, ents, tid) in enumerate(accepted, 1):
+            task = TASKS[tid]
+            check_task(task, text, ents, tid)
             ann = {
                 "explicit_identifiers": [e for e in ents if e["category"] == "explicit"],
                 "quasi_identifiers": [e for e in ents if e["category"] == "quasi"],
@@ -277,6 +314,10 @@ def main():
                 "domain": domain,
                 "split": "holdout_frozen",
                 "prompt": text,
+                "task": task,
+                "task_meta": {"source": ("authored_dialogue_request"
+                                         if tid in AUTHORED_TASK_TEMPLATES
+                                         else "verbatim_request")},
                 "template_id": f"holdout_{tid}",
                 "annotations": ann,
                 "coupling_ratio": round(n_crit / n_qi, 3) if n_qi else 0.0,

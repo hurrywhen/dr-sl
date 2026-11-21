@@ -229,6 +229,36 @@ TEMPLATES = {
     "legal": [legal1, legal2, legal3, legal4],
 }
 
+# Explicit task per template (round-3 P0 fix; see revision_protocol_v3.md §2).
+TASKS = {
+    "med1": "请评估当前方案是否需要调整。",
+    "med2": "请给出长期管理建议。",
+    "med3": "请分析反复低烧的可能原因。",
+    "med4": "请根据患者描述的症状给出初步分析和建议。",
+    "bank1": "请评估经营贷通过率。",
+    "bank2": "请核对大额转账风控要求。",
+    "bank3": "希望尽快冻结并追回。",
+    "bank4": "家属能否代办提前支取？",
+    "trav1": "请检查衔接是否合理。",
+    "trav2": "请推荐轻松路线。",
+    "trav3": "超标住宿能否报销？",
+    "trav4": "请给出证件和钱包遗失后的应急处理与补办步骤。",
+    "legal1": "请整理证据清单。",
+    "legal2": "请问仲裁时效如何计算？",
+    "legal3": "请说明财产分割的一般原则。",
+    "legal4": "请说明理赔材料。",
+}
+AUTHORED_TASK_TEMPLATES = {"med4", "trav4"}
+
+
+def check_task(task, text, ents, tid):
+    assert task and task != text, f"task equals prompt for {tid}"
+    assert len(task) <= 0.5 * len(text), f"task too long for {tid}"
+    for e in ents:
+        assert e["value"] not in task, f"task leaks gold value for {tid}: {e['value']}"
+    if tid not in AUTHORED_TASK_TEMPLATES:
+        assert task in text, f"verbatim task not found in prompt for {tid}"
+
 
 def load_existing_texts():
     texts = []
@@ -269,6 +299,8 @@ def main():
             accepted.append((text, ents, fn.__name__))
         assert len(accepted) == PER_DOMAIN, domain
         for i, (text, ents, tid) in enumerate(accepted, 1):
+            task = TASKS[tid]
+            check_task(task, text, ents, tid)
             template_counts[f"{domain}/{tid}"] += 1
             ann = {
                 "explicit_identifiers": [e for e in ents if e["category"] == "explicit"],
@@ -283,6 +315,10 @@ def main():
                 "domain": domain,
                 "split": "holdout2_frozen",
                 "prompt": text,
+                "task": task,
+                "task_meta": {"source": ("authored_dialogue_request"
+                                         if tid in AUTHORED_TASK_TEMPLATES
+                                         else "verbatim_request")},
                 "template_id": f"holdout2_{tid}",
                 "annotations": ann,
                 "coupling_ratio": round(n_crit / n_qi, 3) if n_qi else 0.0,

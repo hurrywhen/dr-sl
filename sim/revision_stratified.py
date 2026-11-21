@@ -31,12 +31,33 @@ def _mean(xs):
     return sum(xs) / len(xs) if xs else None
 
 
+def average_ranks(xs):
+    """1-based average ranks for tied values (standard Spearman convention).
+
+    Double argsort assigns distinct ranks to equal values and is NOT valid when
+    ties exist (round-2 bug; see revision_protocol_v3.md §1).
+    """
+    xs = list(xs)
+    order = sorted(range(len(xs)), key=lambda i: xs[i])
+    ranks = [0.0] * len(xs)
+    i = 0
+    while i < len(order):
+        j = i
+        while j + 1 < len(order) and xs[order[j + 1]] == xs[order[i]]:
+            j += 1
+        avg = (i + j) / 2.0 + 1.0  # mean of 1-based positions i+1 .. j+1
+        for k in range(i, j + 1):
+            ranks[order[k]] = avg
+        i = j + 1
+    return ranks
+
+
 def spearman(x, y):
     x = np.asarray(x, float); y = np.asarray(y, float)
     if len(x) < 3 or x.std() == 0 or y.std() == 0:
         return None
-    rx = np.argsort(np.argsort(x)).astype(float)
-    ry = np.argsort(np.argsort(y)).astype(float)
+    rx = np.asarray(average_ranks(x.tolist()))
+    ry = np.asarray(average_ranks(y.tolist()))
     return float(np.corrcoef(rx, ry)[0, 1])
 
 

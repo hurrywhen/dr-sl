@@ -1,0 +1,2357 @@
+{
+  "n_skipped_no_clean_injection_site": 0,
+  "design": "constructed two-type residue probe; type a = extracted value re-inserted (simulated scrub failure), type b = never-extracted gold residue; mode exact = verbatim re-insertion, mode evasion = normalized-equivalent variant that exact replacement misses",
+  "note_pass": "PASS instances have no residual report by construction; the round-2 PASS-stratum recall of 0 is definitional, not evidence about report quality",
+  "exact": {
+    "n_probes": 55,
+    "type_a_detected_first_eval": 1.0,
+    "type_a_present_at_loop_exit": 0.07272727272727272,
+    "type_a_removed_by_scrub": 1.0,
+    "n_infeasible_exits": 19,
+    "type_a_report_coverage_among_infeasible": 0.0,
+    "type_b_persistence_fraction": 1.0,
+    "type_b_report_coverage": 0.0
+  },
+  "evasion": {
+    "n_probes": 55,
+    "type_a_detected_first_eval": 1.0,
+    "type_a_present_at_loop_exit": 0.7272727272727273,
+    "type_a_removed_by_scrub": 0.2727272727272727,
+    "n_infeasible_exits": 55,
+    "type_a_report_coverage_among_infeasible": 0.6545454545454545,
+    "type_b_persistence_fraction": 1.0,
+    "type_b_report_coverage": 0.0
+  },
+  "probes": [
+    {
+      "id": "DRSL-HOLD-MED-0002",
+      "domain": "medical",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "段雨桐",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "芒果"
+      ],
+      "type_b_persist_after_scrub": [
+        "芒果"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-MED-0002",
+      "domain": "medical",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "段雨桐",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "芒果"
+      ],
+      "type_b_persist_after_scrub": [
+        "芒果"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-MED-0006",
+      "domain": "medical",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "侯欣怡",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "海鲜"
+      ],
+      "type_b_persist_after_scrub": [
+        "海鲜"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-MED-0006",
+      "domain": "medical",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "侯欣怡",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "海鲜"
+      ],
+      "type_b_persist_after_scrub": [
+        "海鲜"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-MED-0010",
+      "domain": "medical",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "彭静姝",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "芒果"
+      ],
+      "type_b_persist_after_scrub": [
+        "芒果"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-MED-0010",
+      "domain": "medical",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "彭静姝",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "芒果"
+      ],
+      "type_b_persist_after_scrub": [
+        "芒果"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-MED-0014",
+      "domain": "medical",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "程雅雯",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "芒果"
+      ],
+      "type_b_persist_after_scrub": [
+        "芒果"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-MED-0014",
+      "domain": "medical",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "程雅雯",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "芒果"
+      ],
+      "type_b_persist_after_scrub": [
+        "芒果"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-MED-0018",
+      "domain": "medical",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "魏浩然",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "海鲜"
+      ],
+      "type_b_persist_after_scrub": [
+        "海鲜"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-MED-0018",
+      "domain": "medical",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "魏浩然",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "海鲜"
+      ],
+      "type_b_persist_after_scrub": [
+        "海鲜"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0001",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "叶云飞",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "31000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "31000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0001",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "叶云飞",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "31000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "31000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 4
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0002",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "贾博文",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "9000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "9000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0002",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "贾博文",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "9000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "9000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0003",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "冯梓涵",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "312000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "312000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0003",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "冯梓涵",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "312000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "312000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0004",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "丁俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "499000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "499000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0004",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "丁俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "499000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "499000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0005",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "史宇航",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "263000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "263000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0005",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "史宇航",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "263000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "263000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 4
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0006",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "邓明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "2000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "2000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0006",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "邓明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "2000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "2000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0007",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "蒋雅雯",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "323000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "323000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0007",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "蒋雅雯",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "323000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "323000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0008",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "陶子墨",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "435000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "435000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0008",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "陶子墨",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "435000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "435000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0009",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "毛志强",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "166000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "166000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0009",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "毛志强",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "166000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "166000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 4
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0010",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "史俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "15000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "15000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0010",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "史俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "15000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "15000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0011",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "陶梓涵",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "356000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "356000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0011",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "陶梓涵",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "356000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "356000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0012",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "侯志强",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "209000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "209000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0012",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "侯志强",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "209000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "209000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0013",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "雷浩然",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "247000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "247000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0013",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "雷浩然",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "247000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "247000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 4
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0014",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "龙一诺",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "16000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "16000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0014",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "龙一诺",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "16000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "16000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0015",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "曹俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "245000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "245000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0015",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "曹俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "245000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "245000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0016",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "程梦琪",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "371000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "371000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0016",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "程梦琪",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "371000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "371000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0017",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "史静姝",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "161000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "161000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0017",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "史静姝",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "161000元",
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "161000元",
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 4
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0018",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "龙明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "17000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "17000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0018",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "龙明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "17000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "17000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0019",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "程梓涵",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "427000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "427000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0019",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "程梓涵",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "427000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "427000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0020",
+      "domain": "banking",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "彭晓岚",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "388000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "388000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-BAN-0020",
+      "domain": "banking",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "彭晓岚",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "388000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "388000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0001",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "city",
+      "injected_value": "澄湖区",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "30000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "30000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0001",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "city",
+      "injected_value": "澄湖区",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "30000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "30000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0002",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "袁俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "3000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "3000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0002",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "袁俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "3000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "3000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0005",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "city",
+      "injected_value": "澄湖区",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "15000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "15000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0005",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "city",
+      "injected_value": "澄湖区",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "15000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "15000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0006",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "史明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "2000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "2000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0006",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "史明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "2000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "2000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0009",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "city",
+      "injected_value": "松口市",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "12000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "12000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0009",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "city",
+      "injected_value": "松口市",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "12000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "12000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0010",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "叶明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "2000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "2000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0010",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "叶明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "2000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "2000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0013",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "city",
+      "injected_value": "澄湖区",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "9000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "9000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0013",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "city",
+      "injected_value": "澄湖区",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "9000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "9000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0014",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "沈志强",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "3000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "3000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0014",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "沈志强",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "3000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "3000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0017",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "邓静姝",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0017",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "邓静姝",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "0元"
+      ],
+      "type_b_persist_after_scrub": [
+        "0元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0020",
+      "domain": "travel",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "魏诗涵",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "1000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "1000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-TRA-0020",
+      "domain": "travel",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "魏诗涵",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "1000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "1000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0001",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "occupation",
+      "injected_value": "货车司机",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "200000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "200000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0001",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "occupation",
+      "injected_value": "货车司机",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "200000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "200000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0002",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "傅若曦",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "918000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "918000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0002",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "傅若曦",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "918000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "918000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0003",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "曹浩然",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "39000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "39000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0003",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "曹浩然",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "39000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "39000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0004",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "陆俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "83000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "83000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0004",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "陆俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "83000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "83000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0005",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "occupation",
+      "injected_value": "护士",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "112000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "112000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0005",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "occupation",
+      "injected_value": "护士",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "112000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "112000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0006",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "冯明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "168000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "168000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0006",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "冯明轩",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "168000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "168000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0007",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "沈志强",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "34000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "34000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0007",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "沈志强",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "34000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "34000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0008",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "侯晓岚",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "364000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "364000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0008",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "侯晓岚",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "364000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "364000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0009",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "occupation",
+      "injected_value": "会计",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "23000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "23000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0009",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "occupation",
+      "injected_value": "会计",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "23000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "23000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0010",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "邓浩然",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "314000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "314000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0010",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "邓浩然",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "314000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "314000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0011",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "傅静姝",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "19000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "19000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0011",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "傅静姝",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "19000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "19000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0012",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "顾子墨",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "780000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "780000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0012",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "顾子墨",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "780000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "780000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0013",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "occupation",
+      "injected_value": "个体商户",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "59000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "59000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0013",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "occupation",
+      "injected_value": "个体商户",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "59000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "59000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0014",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "陶晨曦",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "607000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "607000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0014",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "陶晨曦",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "607000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "607000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0015",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "侯一诺",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "33000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "33000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0015",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "侯一诺",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "33000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "33000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0016",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "陆雨桐",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "336000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "336000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0016",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "陆雨桐",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "336000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "336000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0017",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "occupation",
+      "injected_value": "外卖骑手",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "37000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "37000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0017",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "occupation",
+      "injected_value": "外卖骑手",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "37000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "37000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 6
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0018",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "苏晨曦",
+      "type_a_detected_first_eval": true,
+      "loop_status": "PASS",
+      "final_status": "PASS",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "832000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "832000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 0
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0018",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "苏晨曦",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": true,
+      "type_a_in_report_positive": true,
+      "type_a_removed_by_scrub": false,
+      "type_b_values": [
+        "832000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "832000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 5
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0019",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "许欣怡",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "7000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "7000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0019",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "许欣怡",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "7000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "7000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0020",
+      "domain": "legal",
+      "mode": "exact",
+      "injected_type": "name",
+      "injected_value": "魏俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "323000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "323000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    },
+    {
+      "id": "DRSL-HOLD-LEG-0020",
+      "domain": "legal",
+      "mode": "evasion",
+      "injected_type": "name",
+      "injected_value": "魏俊杰",
+      "type_a_detected_first_eval": true,
+      "loop_status": "INFEASIBLE",
+      "final_status": "INFEASIBLE",
+      "type_a_present_at_loop_exit": false,
+      "type_a_in_report_positive": false,
+      "type_a_removed_by_scrub": true,
+      "type_b_values": [
+        "323000元"
+      ],
+      "type_b_persist_after_scrub": [
+        "323000元"
+      ],
+      "type_b_in_report_positive": false,
+      "report_size": 7
+    }
+  ]
+}

@@ -25,78 +25,85 @@ See the caption package documentation for explanation.
 (/home/worker06/.TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/worker06/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/home/worker06/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (./main.out) (./main.out) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd)
-Underfull \hbox (badness 1400) in paragraph at lines 64--65
-\T1/ptm/m/n/10 task util-ity eval-u-a-tion, and a re-pro-ducible syn-thetic
-[1{/home/worker06/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/worker06/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \vbox (badness 10000) has occurred while \output is active [1{/home/worker06/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/worker06/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
  \T1/ptm/m/it/10 a) Cloud-local del-e-ga-tion.: [][] \T1/ptm/m/n/10 PA-PIL-LON for-mu-lates
 
-Underfull \hbox (badness 2401) in paragraph at lines 70--71
+Underfull \hbox (badness 2401) in paragraph at lines 71--72
 \T1/ptm/m/n/10 what to for-ward [[]]; hy-brid and col-lab-o-ra-tive sys-tems
 (/home/worker06/.TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd)
-Underfull \hbox (badness 4859) in paragraph at lines 86--87
+Underfull \hbox (badness 4859) in paragraph at lines 87--88
 []\T1/ptm/m/n/10 All meth-ods share the same run-time en-ti-ties, task
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 \T1/ptm/m/n/10 pro-file, lo-cal at-tack strate-gies, util-ity sur-ro-gate, and
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 \T1/ptm/m/n/10 re-lease rule: \T1/pcr/m/n/10 hardline_only \T1/ptm/m/n/10 (typed place-hold-ers),
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 \T1/ptm/m/n/10 and \T1/pcr/m/n/10 prism_random \T1/ptm/m/n/10 (con-sis-tent ran-dom same-type
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
- \T1/ptm/m/it/10 a) Data and freeze.: [][] \T1/ptm/m/n/10 The pro-to-col is frozen
+Underfull \hbox (badness 3977) in paragraph at lines 124--126
+ \T1/ptm/m/it/10 a) Data and freeze.: [][] \T1/ptm/m/n/10 Pro-to-cols are frozen be-fore
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
-\T1/ptm/m/n/10 be-fore eval-u-a-tion (\T1/pcr/m/n/10 revision_protocol.md\T1/ptm/m/n/10 ,
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
+\T1/ptm/m/n/10 eval-u-a-tion ($\T1/pcr/m/n/10 revision _ protocol . md$\T1/ptm/m/n/10 , $\T1/pcr/m/n/10 revision _
 
-Underfull \hbox (badness 5475) in paragraph at lines 119--121
-\T1/pcr/m/n/10 revision_protocol_v2.md\T1/ptm/m/n/10 ); de-vi-a-tions are logged
-
-Underfull \hbox (badness 7326) in paragraph at lines 126--127
-\T1/ptm/m/n/10 ods above share gates and in-puts. Oracle-S is re-
-
-Underfull \hbox (badness 1661) in paragraph at lines 126--127
-\T1/ptm/m/n/10 ported sep-a-rately on de-vel-op-ment sets. On-line, we add
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
+\T1/pcr/m/n/10 protocol _ v2 . md$\T1/ptm/m/n/10 , $\T1/pcr/m/n/10 revision _ protocol _ v3 . md$\T1/ptm/m/n/10 );
+[3]
+Underfull \hbox (badness 3746) in paragraph at lines 128--129
+[]\T1/ptm/b/n/10 Holdout-3 \T1/ptm/m/n/10 (nat-u-ral vo-cab-u-lary mix): 80 in-stances,
 (./revision_results.tex
-Underfull \hbox (badness 1609) in paragraph at lines 45--45
-[]\T1/ptm/m/n/10 TABLE V: |Paired closed-loop mi-nus generalization-only
+Underfull \hbox (badness 5475) in paragraph at lines 25--25
+[]\T1/ptm/m/n/10 TABLE III: |Holdout-1 method com-par-i-son un-der the
 
-Underfull \hbox (badness 3417) in paragraph at lines 67--67
-[]\T1/ptm/m/n/10 TABLE VII: |Holdout-1 controlled-disclosure au-dit (40-
-) [3] [4]
-Underfull \hbox (badness 2846) in paragraph at lines 158--159
-\T1/ptm/m/n/10 sup-ported (val-i-da-tion rounds 2.82$\OMS/cmsy/m/n/10 !$\T1/ptm/m/n/10 2.90); the extractor-
-[5]
-Underfull \hbox (badness 1755) in paragraph at lines 181--182
-\T1/ptm/m/n/10 / / gitee . com / jiangsu-[]yunhefeng-[]intelligent _ 0 / dr-[]sl$[][]. De-pen-den-
+Underfull \hbox (badness 2932) in paragraph at lines 25--25
+\T1/ptm/m/n/10 same lo-cal gate (40-instance au-dited sub-set for ex-ter-
+) [4] [5]
+Underfull \hbox (badness 2617) in paragraph at lines 170--171
+\T1/ptm/m/n/10 only; PASS sub-sets are 0.826 for both, IN-FEA-SI-BLE
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 2846) in paragraph at lines 179--180
+\T1/ptm/m/n/10 sup-ported (val-i-da-tion rounds 2.82$\OMS/cmsy/m/n/10 !$\T1/ptm/m/n/10 2.90); the extractor-
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+ \T1/ptm/m/it/10 c) What a re-li-able gate would need.: [][] \T1/ptm/m/n/10 (i)
+
+Underfull \hbox (badness 1584) in paragraph at lines 187--188
+\T1/ptm/m/n/10 and real anonymiza-tion bench-marks, with dose--response
+
+Underfull \hbox (badness 1668) in paragraph at lines 197--198
+[]\T1/ptm/b/n/10 Synthetic scope and re-pro-ducibil-ity. \T1/ptm/m/n/10 All hold-outs
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 \T1/ptm/m/n/10 Offline re-sults re-quire no LLM. On-line au-dits use
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 \T1/ptm/m/n/10 syn-thetic ar-ti-facts only and archive raw out-puts in
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-\T1/pcr/m/n/10 results/revision_20261121/\T1/ptm/m/n/10 . Freeze man-i-fests
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+\T1/pcr/m/n/10 results/revision_20261121/ \T1/ptm/m/n/10 (round 2) and
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-\T1/ptm/m/n/10 code, and anal-y-sis scripts. Round-2 reuses round-1
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+\T1/pcr/m/n/10 results/revision_round3/ \T1/ptm/m/n/10 (round 3); the
 
-Underfull \hbox (badness 4505) in paragraph at lines 231--232
-\T1/ptm/m/n/10 raw out-puts for the four pre-vi-ously au-dited meth-ods
+Underfull \hbox (badness 1881) in paragraph at lines 258--259
+\T1/ptm/m/n/10 con-tam-i-nated round-2 down-stream out-puts are pre-served
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-\T1/ptm/m/n/10 (marked \T1/pcr/m/n/10 reused_from\T1/ptm/m/n/10 ); only new method/instance
+Underfull \hbox (badness 2828) in paragraph at lines 258--259
+\T1/ptm/m/n/10 Freeze man-i-fests record SHA-256 hashes of pro-to-cols,
 
-Underfull \hbox (badness 5893) in paragraph at lines 231--232
-\T1/ptm/m/n/10 packet (\T1/pcr/m/n/10 human_study/holdout_utility_packet/\T1/ptm/m/n/10 )
+Underfull \hbox (badness 1383) in paragraph at lines 258--259
+\T1/ptm/m/n/10 orig-i-nal ex-trac-tor's hash is ver-i-fied un-changed. Round-2
 
-Underfull \hbox (badness 4886) in paragraph at lines 240--241
+Underfull \hbox (badness 3058) in paragraph at lines 258--259
+\T1/ptm/m/n/10 au-dited meth-ods (marked \T1/pcr/m/n/10 reused_from\T1/ptm/m/n/10 ). Down-stream
+
+Underfull \hbox (badness 4886) in paragraph at lines 267--268
 []\T1/ptm/m/n/8 data-privacy-stack/presidio. Open-source frame-work for de-tect-ing,
-[7] (./main.aux) )
-(see the transcript file for additional information)</home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 227037 bytes).
+[9] (./main.aux) )
+(see the transcript file for additional information)</home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (9 pages, 251544 bytes).
 Transcript written on main.log.
