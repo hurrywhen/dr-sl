@@ -196,9 +196,10 @@ def main():
             "caution": "20-instance subset; point estimates carry wide Wilson intervals",
         }
 
-    # Round-3 experiment outputs (embedded when present).
+    # Round-3/4 experiment outputs (embedded when present).
     for name in ("offline_h3_summary.json", "downstream_summary.json",
-                 "online_open_summary.json", "residual_probe.json"):
+                 "online_open_summary.json", "residual_probe.json",
+                 "neural_extractor_summary.json"):
         p = OUT / name
         if p.exists():
             key = name.replace(".json", "")
@@ -208,6 +209,8 @@ def main():
             if key == "downstream_summary":
                 data = {k: v for k, v in data.items() if k != "errors"}
             if key == "online_open_summary":
+                data = {k: v for k, v in data.items() if k != "errors"}
+            if key == "neural_extractor_summary":
                 data = {k: v for k, v in data.items() if k != "errors"}
             result[key] = data
 
@@ -236,7 +239,7 @@ def main():
 
     # Freeze manifest for round-3 code/data.
     files = [
-        "revision_protocol_v3.md",
+        "revision_protocol_v3.md", "revision_protocol_v4.md",
         "dataset/generate_holdout.py", "dataset/generate_holdout2.py",
         "dataset/generate_holdout3.py", "dataset/generate_drift_series.py",
         "dataset/vocab_mix.py", "dataset/synth_values.py", "dataset/synth_values_v2.py",
@@ -248,11 +251,14 @@ def main():
         "sim/runtime.py", "sim/runtime_extractor.py", "sim/runtime_extractor_fixed.py",
         "sim/loop.py", "sim/pipeline.py", "sim/revision_stats.py",
         "sim/revision_stratified.py", "sim/revision_stratified_v3.py",
+        "sim/revision_experiment.py",
         "sim/revision_h3_experiment.py", "sim/revision_downstream.py",
         "sim/revision_open_attack.py", "sim/revision_residual_probe.py",
+        "sim/revision_neural_extractor.py",
         "sim/make_revision_tables.py", "sim/make_journal_version.py",
         "sim/test_spearman_ties.py", "sim/test_task_fields.py",
-        "sim/test_extractor_fixed.py",
+        "sim/test_extractor_fixed.py", "sim/test_revision_stats.py",
+        "sim/test_neural_parser.py",
     ]
     result["freeze_manifest"] = {f: sha(ROOT / f) for f in files}
     (OUT / "stratified_summary.json").write_text(json.dumps(result, ensure_ascii=False, indent=2))

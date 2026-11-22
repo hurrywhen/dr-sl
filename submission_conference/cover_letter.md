@@ -1,14 +1,18 @@
-# Cover Letter — Conference Submission (Revised)
+# Cover Letter — Conference Submission (Revised, Round 4)
 
 Dear Program Committee,
 
-We submit the revised condensed manuscript **DR-SL: A Runtime-Sensitive-Set Release Chain for Cloud-Local LLM Inference with Layered Assurance**.
+We submit the revised condensed manuscript **Auditing Local Release Gates for Cloud-Local LLM Inference: Failure Modes of a Runtime-Sensitive-Set De-identification Chain**.
 
-The revision narrows the claim to an auditable cloud-local release workflow. It corrects earlier statistical and trust-boundary overclaims: repeated probes are not independent trials; gold annotations are not runtime inputs; online semantic judges are offline criteria; external re-testing is controlled disclosure. We remove an invalid Fano threshold corollary and keep feasibility statements in mutual-information units.
+This is a failure-analysis and reproducible-audit study, not a claim of a superior automatic sanitizer. The closed loop is an *audited object*; all conclusions are scoped to the audited implementation and our author-constructed synthetic tests, and do not estimate failure rates of other gates or real deployments.
 
-On a frozen 80-instance synthetic holdout, a fully local deterministic runtime-S track releases 57.5% under a heuristic gate, yet external gold-literal auditing finds residual exposure (mean gold hit rate 0.121) because extraction recall is 0.858. We report this negative result explicitly: local release is not zero-leakage evidence. Human-study reanalysis shows overall utility correlation rho=0.839 but lower within-group correlations, and the original combination-risk annotation criterion failed (kappa=-0.083). Self-learning is exploratory.
+Three core findings: (1) missed extraction causes false release — 57.5% of a shared-vocabulary holdout is released, yet 78.3% of released instances (Wilson [64.4,87.7]) retain gold sensitive literals, with banking 20/20; (2) the utility gate rewards unknown task coverage — with no task attribute extracted, utility falls back to unmarked-context retention, so worse extraction makes release easier (65% of releases pass through this harmful fallback, all leaking); a coverage gate cuts releases to 5/80 with 0/5 observed false release (Wilson upper bound 43.4%), too few to validate safety; (3) the closed loop adds no benefit over one-shot deterministic generalization — paired release/leakage deltas are zero on three holdouts, local utility is lower for the loop on all three, and downstream reference-answer preservation shows no detectable mean difference (+0.025 [0,0.0625], primary judge; robustness judge +0.025 [−0.0375,0.0875]; both reported in full).
 
-Code and synthetic artifacts are public at https://github.com/hurrywhen/dr-sl and https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl. Declarations and author-order disclosure are in `declarations.md`.
+Supporting analyses: a constructive fully-disjoint-vocabulary stress test and dose–response series; a fixed-extractor contrast separating repairable software defects (0/46 observed false release on shared vocabulary) from structural blind spots (82.9% under natural drift); and a diagnostic cloud-assisted neural-extractor contrast (extraction itself discloses X, so not a deployable local gate) showing recall 0.965 survives full vocabulary displacement while 13–17% false release persists — the gate inherits even neural misses.
+
+Round 4 corrects two paired-difference direction errors with an explicit-direction API and identity regression tests, scopes all zero-event claims to their sample sizes, and expands related work to anonymization evaluation, NER distribution shift, selective prediction, and LLM-as-judge reliability. Earlier statistical and trust-boundary overclaims (independent-probe pooling, oracle-S as deployment, online judges as release gates, an invalid Fano threshold corollary) were removed in prior rounds and remain removed.
+
+Code, synthetic data, frozen protocols (v1–v4), deviation log (D-R1–D-R24), and raw outputs (including the invalidated round-2 downstream archive) are public at https://github.com/hurrywhen/dr-sl and https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl. Declarations and author-order disclosure are in `declarations.md`. The current draft is 4 pages; the venue page limit is to be confirmed.
 
 Sincerely,
 The Authors

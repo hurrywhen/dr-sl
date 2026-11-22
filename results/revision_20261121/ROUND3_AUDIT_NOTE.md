@@ -20,3 +20,20 @@ Round 3 (protocol v3, `results/revision_round3/`) touches this directory only as
    threshold agreement were unaffected by the bug.
 4. Round-2 online raw outputs (`online_audit_raw.jsonl`) are reused unchanged by round-3
    analyses; round-3 adds open-ended attack records in `results/revision_round3/`.
+
+## Round-4 addendum (protocol v4, D-R18/D-R20)
+
+- `sim/runtime.py` changed by a behavior-preserving rename only (fallback basis
+  `non_sensitive_context` → `unmarked_context`; `_context_retention` →
+  `_unmarked_context_retention`). Its round-2 manifest hash therefore differs by
+  design; round-1 (D, release) reproduction was re-verified 3200/3200 after the
+  rename. No artifact or decision changes.
+- `sim/revision_stats.py` changed by the paired-API replacement
+  (`paired_cluster_delta(a,b)`=b−a → `paired_delta(left,right)`=left−right, with a
+  mean-identity assertion); all other statistics functions are unchanged.
+  `sim/revision_experiment.py` paired call sites swapped arguments to match the new
+  explicit-direction API; the recomputed h1/h2 paired estimates and CIs were
+  verified **identical** to this directory's archived `offline_summary.json` before
+  use. The archive itself was not modified.
+- Round-4 outputs (corrected downstream/h3 summaries, neural-extractor contrast)
+  live in `results/revision_round3/`; see `ROUND4_NOTE.md` there.

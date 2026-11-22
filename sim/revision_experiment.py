@@ -19,7 +19,7 @@ from qi import load_dataset
 from runtime import (build_artifact, external_gold_audit, gold_entities,
                      run_runtime_item, stable_decision)
 from runtime_extractor import runtime_extract
-from revision_stats import cluster_bootstrap, paired_cluster_delta, wilson_interval
+from revision_stats import cluster_bootstrap, paired_delta, wilson_interval
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "results" / os.environ.get("REVISION_OUT", "revision_20261121")
@@ -101,13 +101,16 @@ def summarize(rows):
             b = {r["id"]: r for r in rows if r["dataset"] == dataset and r["sensitive_set"] == sset and r["method"] == "closed_loop"}
             common = sorted(set(a) & set(b))
             if common:
+                # left=CL, right=GEN (protocol v4 §1: paired_delta is left−right;
+                # the archived round-2 values used (GEN, CL) under the old b−a
+                # semantics and must remain identical after this swap).
                 paired[f"{dataset}/{sset}/closed_loop_minus_generalization"] = {
-                    "release_delta": paired_cluster_delta({i: int(a[i]["release"]) for i in common},
-                                                          {i: int(b[i]["release"]) for i in common}),
-                    "U_delta": paired_cluster_delta({i: a[i]["U_local"] for i in common},
-                                                    {i: b[i]["U_local"] for i in common}),
-                    "gold_L_delta": paired_cluster_delta({i: a[i]["gold_L"] for i in common},
-                                                         {i: b[i]["gold_L"] for i in common}),
+                    "release_delta": paired_delta({i: int(b[i]["release"]) for i in common},
+                                                  {i: int(a[i]["release"]) for i in common}),
+                    "U_delta": paired_delta({i: b[i]["U_local"] for i in common},
+                                            {i: a[i]["U_local"] for i in common}),
+                    "gold_L_delta": paired_delta({i: b[i]["gold_L"] for i in common},
+                                                 {i: a[i]["gold_L"] for i in common}),
                 }
     return {"methods": summary, "paired": paired}
 

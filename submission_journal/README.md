@@ -1,36 +1,38 @@
-# Submission Package — Journal Version (≤20 pages, two-column IEEE)
+# Submission Package — Journal Version (two-column IEEE, 11 pages)
 
-Manuscript: **Reversibility-Verified De-identification for Cloud-Local LLM Inference: A Locally Certified Dehydrate-Rehydrate Loop with Layered Assurance (DR-SL)**
-Author order: **Wen Hu, Ya Yu, Xutong Wang**; **corresponding author: Ya Yu**. Derived from the arXiv preprint version (`../latex/main.tex`, 40 pp. single-column) by restructuring and condensation into IEEE journal format; extends the accepted conference version (`../submission_conference/`, order Y. Yu, W. Hu, X. Wang), which it cites.
+Manuscript: **Auditing Local Release Gates for Cloud-Local LLM Inference: Failure Modes of a Runtime-Sensitive-Set De-identification Chain**
+
+Generated from the authoritative main version (`../latex/main.tex`, 18 pp. single-column, round 4) by `sim/make_journal_version.py` (IEEE journal format). Author block follows the main version; author-order/corresponding-author disclosures and any fields requiring author confirmation are in `declarations.md` and the signed memo `../authorship_contribution_memo.md`. This is a failure-analysis and reproducible-audit study; all conclusions are scoped to the audited implementation and author-constructed synthetic tests.
 
 ## Contents
 
 | File | Purpose |
 |---|---|
-| `main.tex` | Manuscript source (IEEEtran `[journal]`, two columns) |
-| `main.pdf` | Compiled manuscript, **16 pages** incl. references and appendices (limit 20), verified |
-| `figures/` | fig1.pdf, fig2.pdf (vector, cropped in-document); extractor_recall.png, delta_hist.png, fig_train_loop.png, fig_privacy_gain.png, k_vs_population.png |
-| `cover_letter.md` | Cover letter to the Editor-in-Chief (fill placeholders; states preprint + conference-version relationship) |
-| `declarations.md` | CRediT contributions, COI, funding, data/code availability, ethics, prior-publication & version-relationship disclosure, checklist |
-| `highlights.md` | Optional highlights bullets (≤85 chars each) |
+| `main.tex` | Manuscript source (IEEEtran `[journal]`, two columns; regenerated — do not edit by hand) |
+| `main.pdf` | Compiled manuscript, **11 pages** incl. references and appendices, 0 overfull, 0 undefined references |
+| `revision_results.tex` | Auto-generated merged result tables (10 tables; from `sim/make_revision_tables.py` — do not edit by hand) |
+| `cover_letter.md` | Cover letter to the Editor-in-Chief (round 4; fill journal-name placeholder) |
+| `declarations.md` | CRediT contributions, COI, funding, data/code availability, ethics, prior-version disclosure, checklist |
+| `highlights.md` | Optional highlights bullets (≤85 chars each, round-4 findings) |
+| `figures/` | Legacy figures from the pre-revision method paper; **not referenced** by the current manuscript |
 | `build.log` | Last compile log (for reference; not part of submission) |
 
 ## Build
 
 ```bash
-pdflatex main.tex && pdflatex main.tex   # requires TeX Live with IEEEtran, cite, booktabs, algorithm2e, psnfss/courier
+python3 ../sim/make_journal_version.py     # regenerate main.tex from ../latex/main.tex
+cp ../latex/revision_results.tex .         # refresh auto-generated tables
+pdflatex main.tex && pdflatex main.tex     # requires TeX Live with IEEEtran, cite, booktabs, algorithm2e
 ```
 
-Verified: 16 pages, 0 overfull boxes; Algorithm 1 (lexicographic loop) set single-column; Appendices A (condensed proofs), B (executable proof-verification methodology), C (frozen semantic-utility judge rubric).
+## Scope of this version
 
-## Scope of this version (relative to the preprint and to the conference version)
+- Retains the complete round-4 audit record in journal format: release chain and trust boundaries, audit framework (conditional FalseRelease with gold/LLM/open scopes, stratification, instance-cluster inference, tied-rank Spearman), all results (false release, fallback mechanism, no-loop-benefit with corrected paired deltas, vocabulary stress and dose–response, fixed-extractor contrast, diagnostic neural-extractor contrast, external audit and calibration, dual-judge downstream reference-answer preservation, scoped residual reports and two-type probe, human-study reanalysis, exploratory self-learning), discussion, limitations, and appendices (revision history, theory positioning with proof sketches, reproducibility).
+- Versus the 4-page conference version (`../submission_conference/`): adds the full framework, mechanism and probe tables, open-ended attack, human-study reanalysis, theory appendix, revision-history appendix, and reproducibility appendix.
 
-- Retains the complete scientific record in journal-condensed form: full method (formalization, cascade extractor + recall ceiling, two-branch verification, lexicographic algorithm), self-learning loop and operationalized distribution-shift framework, five-layer theory and security model with the calibrated-certificate transfer assumption made explicit, layered assurance, limitations, the complete experimental narrative T1–T25 (extraction/annotation reliability and human audits, baseline leakage and calibration, main loop, release-chain audit and probe-format analysis, operating points and human utility anchor, mixed-coupling Pareto comparison, ablations, self-learning tests incl. honest negatives, cost, applicability boundary), condensed proofs, proof-verification methodology, and the judge rubric.
-- Versus the 4-page conference version (`../submission_conference/`): adds complete proofs, the full experimental record, the shift framework, the applicability-boundary analysis, extended related work, and the rubric (well beyond the customary ≥30% extension).
+## Before submitting (see `declarations.md`)
 
-## Before submitting (see `declarations.md` §8)
-
-1. Insert the arXiv identifier (manuscript footnote + declarations) and the journal name (cover letter, `\markboth`).
-2. Confirm funding, IRB-exemption wording, COI signatures.
-3. **Submission order policy:** the conference version is accepted ([venue to be inserted]); this journal manuscript is submitted after the conference outcome, citing the conference paper and describing the extension. The author-order difference between versions (and vs preprint v1) is contribution-based per manuscript and is disclosed in the cover letter, `declarations.md` §6, and the signed memo `../authorship_contribution_memo.md`. No simultaneous review of overlapping content.
-4. **Preprint versioning:** arXiv v1 (posted first) intentionally carries no conference/journal markings; do not add venue names to the preprint while any version is under review. Update the arXiv record only upon acceptance (v2 = conference acceptance note; v3 = journal reference/DOI), using the ready-to-paste texts in `declarations.md` §6.
+1. Insert the journal name (cover letter, `\markboth`) and confirm the page limit (current draft 11 pages).
+2. Confirm funding, IRB-exemption wording, COI signatures, and author-order/corresponding-author fields marked for confirmation.
+3. **Venue/acceptance status is to be confirmed**; no acceptance is claimed by this package. Do not submit overlapping content simultaneously elsewhere (see `declarations.md`).
+4. **Preprint versioning:** do not add venue names to the arXiv preprint while any version is under review; update the arXiv record only upon acceptance.

@@ -101,7 +101,13 @@ def local_literal_attack(view, D):
             "statistical_unit": "instance_cluster"}
 
 
-def _context_retention(view, D):
+def _unmarked_context_retention(view, D):
+    """Retention of context the extractor did NOT mark (round-4 rename).
+
+    This is NOT 'non-sensitive' context: it may contain sensitive values the
+    extractor missed, which is exactly the failure mechanism audited in the
+    paper.  Behavior is unchanged from the former _context_retention.
+    """
     spans = sorted(e["span"] for e in view["runtime_entities"])
     text = view["prompt"]
     segments, cur = [], 0
@@ -123,8 +129,8 @@ def local_utility(view, D):
     task = [e for e in view["runtime_entities"] if e.get("task_relevant")]
     detail = []
     if not task:
-        u = _context_retention(view, D)
-        return {"U": u, "n": 0, "detail": [], "basis": "non_sensitive_context"}
+        u = _unmarked_context_retention(view, D)
+        return {"U": u, "n": 0, "detail": [], "basis": "unmarked_context"}
     for e in task:
         typ, val = e["type"], e["value"]
         if val and val in D:

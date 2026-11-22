@@ -22,7 +22,7 @@ travel & 55.0 & 11 & 54.5 & [.280,.787] & 0.091 \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\setlength{\tabcolsep}{2pt}\footnotesize
-\caption{Holdout-1 method comparison under the same local gate (40-instance audited subset for external columns). HL=hardline-only, GEN=generalization-only, CL=closed loop, INT=INTACT-style proxy, PRISM=random replacement, DF=direct-forward reference. ext=external max hit rate; judge=offline artifact-judge utility; task=reference-answer preservation. Paired rows: CL$-$GEN; the task-$U$ delta uses the round-3 rerun. Local-utility delta sign varies by dataset; release/leakage deltas are zero throughout.}
+\caption{Holdout-1 method comparison under the same local gate (40-instance audited subset for external columns). HL=hardline-only, GEN=generalization-only, CL=closed loop, INT=INTACT-style proxy, PRISM=random replacement, DF=direct-forward reference. ext=external max hit rate; judge=offline artifact-judge utility; task=reference-answer preservation (primary judge). Paired rows: CL$-$GEN; the task-$U$ delta uses the round-3 rerun. Local-utility delta is negative on all three holdouts; release/leakage deltas are zero throughout.}
 \label{tab:methods}
 \begin{tabular}{@{}lcccccc@{}}\toprule
 Method & rel.\ \% & $U_{loc}$ & gold $L$ & ext $L$ & judge $U$ & task $U$ \\ \midrule
@@ -33,9 +33,9 @@ INT & 57.5 & 0.632 & 0.121 & 0.130 & 0.412 & -- \\
 PRISM & 51.2 & 0.537 & 0.132 & 0.139 & 0.125 & -- \\
 DF & -- & -- & -- & 1.000 & 1.000 & -- \\
 \multicolumn{7}{@{}l@{}}{\emph{Paired $\Delta$ CL$-$GEN; release/gold-$L$ deltas 0; CIs in text}} \\
-$\Delta$ h1 & 0.0 & -0.089 & 0.0 & 0.0 & -0.075 & -0.025 \\
+$\Delta$ h1 & 0.0 & -0.089 & 0.0 & 0.0 & -0.075 & 0.025 \\
 $\Delta$ h2 & 0.0 & -0.017 & 0.0 & -- & -- & -- \\
-$\Delta$ h3 & 0.0 & 0.101 & 0.0 & -- & -- & -- \\
+$\Delta$ h3 & 0.0 & -0.101 & 0.0 & -- & -- & -- \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\footnotesize
@@ -53,21 +53,34 @@ drift p100 & 1.000 & 0.845 & 57.5 & 82.6 & [.629,.930] \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\setlength{\tabcolsep}{3pt}\footnotesize
-\caption{Fixed-extractor contrast (Wilson intervals in text). The fixed variant repairs clear defects only (money pattern wiring, ASCII email local part, allergy label/collision); no lexicon additions. Holdout-3 (natural 50/50 vocabulary mix, new templates) is confirmatory. CG = coverage gate (UNSCORABLE$\to$human when no task attribute extracted). Fixing defects removes gold false release on shared-vocabulary h1 but not under vocabulary shift.}
+\caption{Fixed-extractor contrast. The fixed variant repairs clear defects only (money pattern wiring, ASCII email local part, allergy label/collision); no lexicon additions. Holdout-3 (natural 50/50 vocabulary mix, new templates) is confirmatory. CG = coverage gate (UNSCORABLE$\to$human when no task attribute extracted). FB = fallback \% all/benign/harmful (benign: no gold task attributes either). Fixing defects leaves no observed gold false release on shared-vocabulary h1 (0/46) but not under vocabulary shift. Task recall: h1 1.000, h2 0.750, h3 0.427$\to$0.792.}
 \label{tab:fixcontrast}
-\begin{tabular}{@{}lccccc@{}}\toprule
-Config & recall & task rec. & rel.\ \% & FR$_{gold}$ \% & fallb.\ \% \\ \midrule
-h3 original & 0.542 & 0.427 & 55.0 & 100.0 & 30.0 \\
-h3 fixed & 0.713 & 0.792 & 51.2 & 82.9 & 5.0 \\
-h3 orig.+CG & 0.542 & 0.427 & 25.0 & 100.0 & 30.0 \\
-h3 fixed+CG & 0.713 & 0.792 & 46.2 & 81.1 & 5.0 \\
-\multicolumn{6}{@{}l@{}}{\emph{Diagnostic (defects discovered on these sets; not confirmatory)}} \\
-h1 fixed & 1.000 & 1.000 & 57.5 & 0.0 & 13.8 \\
-h2 fixed & 0.668 & 0.750 & 87.5 & 100.0 & 18.8 \\
+\begin{tabular}{@{}lcccc@{}}\toprule
+Config & recall & rel.\ \% & FR$_{gold}$ \% [95\% CI] & FB \% a/b/h \\ \midrule
+h3 original & 0.542 & 55.0 & 100.0 [.920,1.000] & 30.0/0.0/30.0 \\
+h3 fixed & 0.713 & 51.2 & 82.9 [.687,.915] & 5.0/0.0/5.0 \\
+h3 orig.+CG & 0.542 & 25.0 & 100.0 [.839,1.000] & 30.0/0.0/30.0 \\
+h3 fixed+CG & 0.713 & 46.2 & 81.1 [.658,.905] & 5.0/0.0/5.0 \\
+\multicolumn{5}{@{}l@{}}{\emph{Diagnostic (defects discovered on these sets; not confirmatory)}} \\
+h1 fixed & 1.000 & 57.5 & 0.0 [.000,.077] & 13.8/13.8/0.0 \\
+h2 fixed & 0.668 & 87.5 & 100.0 [.948,1.000] & 18.8/12.5/6.2 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!t]\centering\setlength{\tabcolsep}{3pt}\footnotesize
+\caption{Cloud-assisted neural-extractor contrast (qwen3.8-max, frozen prompt; DIAGNOSTIC ONLY---extraction itself discloses $X$ to the cloud, so this is not a deployable local gate). Same gates/methods as the deterministic track. det.=original deterministic extractor. Neural recall survives full vocabulary displacement; false release drops sharply but persists (13--17\%): the gate inherits even neural misses. The frozen taxonomy omitted two gold types (room number, marriage duration), so neural numbers are a lower bound.}
+\label{tab:neural}
+\begin{tabular}{@{}lcccc@{}}\toprule
+Data & recall & task rec. & rel.\ \% & FR$_{gold}$ \% [95\% CI] \\ \midrule
+h1 det. & 0.858 & 0.493 & 57.5 & 78.3 [.644,.877] \\
+h1 neural & 0.965 & 1.000 & 38.8 & 16.1 [.071,.326] \\
+h3 det. & 0.542 & 0.427 & 55.0 & 100.0 [.920,1.000] \\
+h3 neural & 0.973 & 0.971 & 30.0 & 16.7 [.067,.359] \\
+drift p0 det. & 0.522 & 0.229 & 92.5 & 100.0 [.906,1.000] \\
+drift p0 neural & 0.965 & 1.000 & 37.5 & 13.3 [.037,.379] \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\footnotesize
-\caption{Utility-gate fallback mechanism (closed loop, original extractor). Harmful fallback: gold task-relevant attributes exist but none were extracted, so local utility scores non-sensitive context retention instead. FR$_{gold}$ among released harmful-fallback instances vs 0.375 among other released instances on h1: worse extraction makes release easier.}
+\caption{Utility-gate fallback mechanism (closed loop, original extractor). Harmful fallback: gold task-relevant attributes exist but none were extracted, so local utility scores unmarked-context retention instead (context the extractor did not flag, which may contain missed sensitive values). FR$_{gold}$ among released harmful-fallback instances vs 0.375 among other released instances on h1: worse extraction makes release easier.}
 \label{tab:mechanism}
 \begin{tabular}{@{}lccccc@{}}\toprule
 Data & attr rec. & task rec. & harmful FB \% & rel.\ via FB & FR$_{gold}$|FB \\ \midrule
@@ -77,7 +90,7 @@ h3 & 0.542 & 0.427 & 30.0 & 24/44 & 1.000 \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\footnotesize
-\caption{Utility measurement (round-3 corrected). Calibration: local surrogate vs offline artifact judge, instance-cluster 95\% CIs, average tied ranks. Task $U$ = reference-answer preservation (agreement with the answer from full $X$; not absolute correctness), explicit tasks, hash-cached answers, two judges. The surrogate is uncalibrated in absolute error and threshold decisions; rank correlation is moderate with wide intervals.}
+\caption{Utility measurement (round-3 corrected, round-4 direction fix). Calibration: local surrogate vs offline artifact judge, instance-cluster 95\% CIs, average tied ranks. Task $U$ = reference-answer preservation (agreement with the answer from full $X$; not absolute correctness), explicit tasks, hash-cached answers; primary judge online\_alt, robustness judge online\_fast, both reported. The surrogate is uncalibrated in absolute error and threshold decisions; rank correlation is moderate with wide intervals.}
 \label{tab:utility}
 \begin{tabular}{@{}lcc@{}}\toprule
 Quantity & estimate & 95\% CI \\ \midrule
@@ -89,7 +102,9 @@ task $U$: CL (ALL) & 0.725 & [0.613,0.838] \\
 task $U$: CL (PASS / INFEAS) & 0.826 / 0.588 & -- \\
 task $U$: GEN (ALL) & 0.700 & [0.575,0.825] \\
 task $U$: GEN (PASS / INFEAS) & 0.826 / 0.529 & -- \\
-task $U$ paired $\Delta$ CL$-$GEN & -0.025 & [-0.062,0.000] \\
+paired $\Delta$ CL$-$GEN, primary & 0.025 & [0.0000,0.0625] \\
+paired $\Delta$ CL$-$GEN, robust. & 0.025 & [-0.0375,0.0875] \\
+score disagreement (prim./robust.) & 2/40 vs 8/40 & -- \\
 judge exact agreement / MAE & 0.725 / 0.138 & -- \\
 \bottomrule\end{tabular}\end{table}
 

@@ -56,11 +56,21 @@ def cluster_bootstrap(values_by_id, n_boot=2000, seed=20261118, statistic="mean"
             "unit": "instance_cluster"}
 
 
-def paired_cluster_delta(a_by_id, b_by_id, n_boot=2000, seed=20261118):
-    common = sorted(set(a_by_id) & set(b_by_id))
+def paired_delta(left_by_id, right_by_id, n_boot=2000, seed=20261118):
+    """Instance-cluster paired difference **left − right** (direction explicit).
+
+    Round-4 correction: the former ``paired_cluster_delta(a, b)`` computed b−a,
+    which two call sites mislabelled as CL−GEN (protocol v4 §1).  The estimate
+    must equal mean(left) − mean(right) on the common instances; this identity
+    is asserted here and at every call site.
+    """
+    common = sorted(set(left_by_id) & set(right_by_id))
     if not common:
         return None
-    diffs = [float(b_by_id[i]) - float(a_by_id[i]) for i in common]
+    diffs = [float(left_by_id[i]) - float(right_by_id[i]) for i in common]
+    ml = sum(float(left_by_id[i]) for i in common) / len(common)
+    mr = sum(float(right_by_id[i]) for i in common) / len(common)
+    assert abs(sum(diffs) / len(diffs) - (ml - mr)) < 1e-9, "paired direction identity violated"
     return cluster_bootstrap({i: d for i, d in zip(common, diffs)},
                              n_boot=n_boot, seed=seed)
 

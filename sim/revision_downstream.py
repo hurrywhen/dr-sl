@@ -34,7 +34,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "dataset"))
 
 from backends import make_backend
 from qi import load_dataset
-from revision_stats import cluster_bootstrap, paired_cluster_delta
+from revision_stats import cluster_bootstrap, paired_delta
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "results" / "revision_round3"
@@ -42,7 +42,7 @@ METHODS = ("closed_loop", "generalization_only")
 MAX_WORKERS = int(os.environ.get("REVISION_AUDIT_WORKERS", "4"))
 ANSWER_SEED = 20261121
 ANSWER_MODEL_ROLE = "online_strong"
-JUDGE_ROLES = ("online_alt", "online_fast")  # primary, secondary
+JUDGE_ROLES = ("online_alt", "online_fast")  # primary (headline), robustness; protocol v4 §2
 
 ANSWER_SYSTEM = ("你是专业助手。请仅根据给定材料，回应材料中提出的请求或问题。"
                  "给出具体、可操作的回答；材料中缺失的信息不臆造。")
@@ -202,7 +202,9 @@ def main():
         for r in judged:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
-    # Summary.
+    # Summary.  Protocol v4 §2: primary judge online_alt (pre-specified in the
+    # round-3 JUDGE_ROLES order), robustness judge online_fast; BOTH are reported
+    # in full (per-method strata, paired CL−GEN delta + CI, disagreement counts).
     local = {(r["id"], r["method"]): r for r in offline
              if r["dataset"] == "holdout80" and r["sensitive_set"] == "runtime"}
     prim, sec = JUDGE_ROLES
@@ -211,6 +213,27 @@ def main():
         return {(r["id"], r["method"]): r[f"judge_{role}"]["score"] for r in judged
                 if r.get(f"judge_{role}", {}).get("score") is not None}
 
+    def judge_block(sc):
+        block = {"by_method": {}, "n_instances_score_disagreement": None,
+                 "paired_closed_minus_generalization": None}
+        for m in METHODS:
+            byid = {i: sc[(i, m)] for i in subset if (i, m) in sc}
+            pass_ids = [i for i in byid if local.get((i, m), {}).get("release")]
+            inf_ids = [i for i in byid if not local.get((i, m), {}).get("release")]
+            block["by_method"][m] = {
+                "ALL": cluster_bootstrap(byid),
+                "PASS": cluster_bootstrap({i: byid[i] for i in pass_ids}),
+                "INFEASIBLE": cluster_bootstrap({i: byid[i] for i in inf_ids}),
+                "n": len(byid),
+            }
+        ids = [i for i in subset if (i, "closed_loop") in sc and (i, "generalization_only") in sc]
+        left = {i: sc[(i, "closed_loop")] for i in ids}    # CL
+        right = {i: sc[(i, "generalization_only")] for i in ids}  # GEN
+        block["paired_closed_minus_generalization"] = paired_delta(left, right)
+        block["n_instances_score_disagreement"] = sum(1 for i in ids if left[i] != right[i])
+        block["n_paired_instances"] = len(ids)
+        return block
+
     sp, ss = scores(prim), scores(sec)
     summary = {"metric": "reference_answer_preservation",
                "note": "agreement with the answer from full X; NOT absolute task correctness",
@@ -218,19 +241,15 @@ def main():
                "n_judge_calls": (len(done) + len(judge_tasks)) * len(JUDGE_ROLES),
                "answer_model": answer_model, "answer_seed_submitted": ANSWER_SEED,
                "judge_models": {role: judges[role].config.model for role in JUDGE_ROLES},
-               "n_errors": len(errors) + len(jerrors), "by_method": {}}
-    for m in METHODS:
-        byid = {i: sp[(i, m)] for i in subset if (i, m) in sp}
-        pass_ids = [i for i in byid if local.get((i, m), {}).get("release")]
-        inf_ids = [i for i in byid if not local.get((i, m), {}).get("release")]
-        sec_byid = {i: ss[(i, m)] for i in subset if (i, m) in ss}
-        summary["by_method"][m] = {
-            "ALL": cluster_bootstrap(byid),
-            "PASS": cluster_bootstrap({i: byid[i] for i in pass_ids}),
-            "INFEASIBLE": cluster_bootstrap({i: byid[i] for i in inf_ids}),
-            "secondary_judge_ALL": cluster_bootstrap(sec_byid),
-            "n": len(byid),
-        }
+               "judge_roles": {"primary": prim, "robustness": sec},
+               "n_errors": len(errors) + len(jerrors),
+               "by_judge": {prim: judge_block(sp), sec: judge_block(ss)}}
+    # Top-level by_method / paired fields mirror the PRIMARY judge (compatibility).
+    summary["by_method"] = summary["by_judge"][prim]["by_method"]
+    summary["paired_closed_minus_generalization"] = \
+        summary["by_judge"][prim]["paired_closed_minus_generalization"]
+    summary["n_instances_score_disagreement"] = \
+        summary["by_judge"][prim]["n_instances_score_disagreement"]
     # Multi-judge agreement (all candidate scores).
     both = [(sp[k], ss[k]) for k in sp if k in ss]
     summary["judge_agreement"] = {
@@ -238,12 +257,6 @@ def main():
         "exact_agreement": sum(1 for a, b in both if a == b) / len(both) if both else None,
         "mae": sum(abs(a - b) for a, b in both) / len(both) if both else None,
     }
-    # Paired per-instance difference closed_loop - generalization_only.
-    ids = [i for i in subset if (i, "closed_loop") in sp and (i, "generalization_only") in sp]
-    a = {i: sp[(i, "closed_loop")] for i in ids}
-    b = {i: sp[(i, "generalization_only")] for i in ids}
-    summary["paired_closed_minus_generalization"] = paired_cluster_delta(a, b)
-    summary["n_instances_score_disagreement"] = sum(1 for i in ids if a[i] != b[i])
     summary["n_identical_artifacts"] = sum(
         1 for i in subset if off[(i, "closed_loop")]["D"] == off[(i, "generalization_only")]["D"])
     summary["errors"] = errors + jerrors

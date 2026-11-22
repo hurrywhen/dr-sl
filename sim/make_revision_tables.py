@@ -146,9 +146,10 @@ def main():
             "subset for external columns). HL=hardline-only, GEN=generalization-only, "
             "CL=closed loop, INT=INTACT-style proxy, PRISM=random replacement, "
             "DF=direct-forward reference. ext=external max hit rate; judge=offline "
-            "artifact-judge utility; task=reference-answer preservation. Paired rows: "
-            "CL$-$GEN; the task-$U$ delta uses the round-3 rerun. Local-utility delta "
-            "sign varies by dataset; release/leakage deltas are zero throughout.",
+            "artifact-judge utility; task=reference-answer preservation (primary judge). "
+            "Paired rows: CL$-$GEN; the task-$U$ delta uses the round-3 rerun. "
+            "Local-utility delta is negative on all three holdouts; release/leakage "
+            "deltas are zero throughout.",
             ["Method", "rel.\\ \\%", "$U_{loc}$", "gold $L$", "ext $L$", "judge $U$", "task $U$"],
             rows, tabcolsep=2)
     full.append(t); conf.append(t)
@@ -184,30 +185,70 @@ def main():
                            ("original", "closed_loop_covgate", "h3 orig.+CG"),
                            ("fixed", "closed_loop_covgate", "h3 fixed+CG")):
             v = h3["methods"][f"holdout80_v3/{ex}/{m}"]
-            rows.append([lab, num(v["recall"]["estimate"]),
-                         num(v["task_recall"]["estimate"]) if v["task_recall"] else "--",
-                         pct(v["release_rate"]), pct(v["FalseRelease_gold"]),
-                         pct(v["utility_fallback_fraction"])])
-        rows.append(["\\multicolumn{6}{@{}l@{}}{\\emph{Diagnostic (defects discovered on these sets; not confirmatory)}}"])
+            rows.append([lab, num(v["recall"]["estimate"]), pct(v["release_rate"]),
+                         pct(v["FalseRelease_gold"]) + " " + wil(v["FalseRelease_gold_wilson95"]),
+                         f"{pct(v['utility_fallback_fraction'])}/{pct(v['utility_fallback_benign_fraction'])}/{pct(v['utility_fallback_harmful_fraction'])}"])
+        rows.append(["\\multicolumn{5}{@{}l@{}}{\\emph{Diagnostic (defects discovered on these sets; not confirmatory)}}"])
         for ds, lab in (("holdout80_diag_fixed", "h1 fixed"), ("holdout80_v2_diag_fixed", "h2 fixed")):
             v = h3["methods"][f"{ds}/fixed/closed_loop"]
-            rows.append([lab, num(v["recall"]["estimate"]),
-                         num(v["task_recall"]["estimate"]) if v["task_recall"] else "--",
-                         pct(v["release_rate"]), pct(v["FalseRelease_gold"]),
-                         pct(v["utility_fallback_fraction"])])
+            rows.append([lab, num(v["recall"]["estimate"]), pct(v["release_rate"]),
+                         pct(v["FalseRelease_gold"]) + " " + wil(v["FalseRelease_gold_wilson95"]),
+                         f"{pct(v['utility_fallback_fraction'])}/{pct(v['utility_fallback_benign_fraction'])}/{pct(v['utility_fallback_harmful_fraction'])}"])
         t = tbl("tab:fixcontrast",
-                "Fixed-extractor contrast (Wilson intervals in text). The fixed variant "
-                "repairs clear defects only (money pattern wiring, ASCII email local part, "
-                "allergy label/collision); no lexicon additions. Holdout-3 (natural 50/50 "
-                "vocabulary mix, new templates) is confirmatory. CG = coverage gate "
-                "(UNSCORABLE$\\to$human when no task attribute extracted). Fixing defects "
-                "removes gold false release on shared-vocabulary h1 but not under "
-                "vocabulary shift.",
-                ["Config", "recall", "task rec.", "rel.\\ \\%", "FR$_{gold}$ \\%", "fallb.\\ \\%"],
+                "Fixed-extractor contrast. The fixed variant repairs clear defects only "
+                "(money pattern wiring, ASCII email local part, allergy label/collision); "
+                "no lexicon additions. Holdout-3 (natural 50/50 vocabulary mix, new "
+                "templates) is confirmatory. CG = coverage gate (UNSCORABLE$\\to$human "
+                "when no task attribute extracted). FB = fallback \\% all/benign/harmful "
+                "(benign: no gold task attributes either). Fixing defects leaves no "
+                "observed gold false release on shared-vocabulary h1 (0/46) but not "
+                "under vocabulary shift. Task recall: h1 1.000, h2 0.750, h3 0.427$\\to$0.792.",
+                ["Config", "recall", "rel.\\ \\%", "FR$_{gold}$ \\% [95\\% CI]", "FB \\% a/b/h"],
                 rows, tabcolsep=3)
         full.append(t); conf.append(t)
 
-    # 6. Fallback mechanism.
+    # 6. Neural-extractor contrast (diagnostic, cloud-assisted).
+    neural = load(R3, "neural_extractor_summary.json")
+    if neural and h3:
+        rows = []
+        det_ref = {
+            "holdout80": (num(cl1["ALL"]["mean_recall"]),
+                          num(strat["mechanism"]["holdout80"]["closed_loop"]["mean_task_relevant_recall"]),
+                          pct(off2["methods"]["holdout80/runtime/closed_loop"]["release_rate"]),
+                          pct(cl1["FalseRelease_gold"]), wil(cl1["PASS"].get("gold_residue_fraction_wilson95"))),
+            "holdout80_v3": None, "drift_p000": None,
+        }
+        v3 = h3["methods"]["holdout80_v3/original/closed_loop"]
+        det_ref["holdout80_v3"] = (num(v3["recall"]["estimate"]),
+                                   num(v3["task_recall"]["estimate"]), pct(v3["release_rate"]),
+                                   pct(v3["FalseRelease_gold"]), wil(v3["FalseRelease_gold_wilson95"]))
+        dp = h3["dose_response"]["p000"]
+        det_ref["drift_p000"] = (num(dp["recall"]), num(dp["task_recall"]),
+                                 pct(dp["release_rate"]), pct(dp["FalseRelease_gold"]),
+                                 wil(dp["FalseRelease_gold_wilson95"]))
+        for ds, lab in (("holdout80", "h1"), ("holdout80_v3", "h3"), ("drift_p000", "drift p0")):
+            r, tr, rel, fr, w = det_ref[ds]
+            rows.append([lab + " det.", r, tr, rel, fr + " " + w])
+            nv = neural["methods"][f"{ds}/closed_loop"]
+            rows.append([lab + " neural", num(nv["recall"]["estimate"]),
+                         num(nv["task_recall"]["estimate"]) if nv["task_recall"] else "--",
+                         pct(nv["release_rate"]), pct(nv["FalseRelease_gold"]),
+                         ])
+            rows[-1][4] = pct(nv["FalseRelease_gold"]) + " " + wil(nv["FalseRelease_gold_wilson95"])
+        t = tbl("tab:neural",
+                "Cloud-assisted neural-extractor contrast (qwen3.8-max, frozen prompt; "
+                "DIAGNOSTIC ONLY---extraction itself discloses $X$ to the cloud, so this "
+                "is not a deployable local gate). Same gates/methods as the deterministic "
+                "track. det.=original deterministic extractor. Neural recall survives "
+                "full vocabulary displacement; false release drops sharply but persists "
+                "(13--17\\%): the gate inherits even neural misses. The frozen taxonomy "
+                "omitted two gold types (room number, marriage duration), so neural "
+                "numbers are a lower bound.",
+                ["Data", "recall", "task rec.", "rel.\\ \\%", "FR$_{gold}$ \\% [95\\% CI]"],
+                rows, tabcolsep=3)
+        full.append(t); conf.append(t)
+
+    # 7. Fallback mechanism.
     rows = []
     for ds, lab in (("holdout80", "h1"), ("holdout80_v2", "h2")):
         m = strat["mechanism"][ds]["closed_loop"]
@@ -231,8 +272,9 @@ def main():
     t = tbl("tab:mechanism",
             "Utility-gate fallback mechanism (closed loop, original extractor). Harmful "
             "fallback: gold task-relevant attributes exist but none were extracted, so "
-            "local utility scores non-sensitive context retention instead. FR$_{gold}$ "
-            "among released harmful-fallback instances vs "
+            "local utility scores unmarked-context retention instead (context the "
+            "extractor did not flag, which may contain missed sensitive values). "
+            "FR$_{gold}$ among released harmful-fallback instances vs "
             f"{num(m1['FalseRelease_gold_other_released'])} among other released "
             "instances on h1: worse extraction makes release easier.",
             ["Data", "attr rec.", "task rec.", "harmful FB \\%", "rel.\\ via FB", "FR$_{gold}$|FB"], rows)
@@ -256,17 +298,27 @@ def main():
             rows.append([lab + " (PASS / INFEAS)",
                          f"{num(d['PASS']['estimate'])} / {num(d['INFEASIBLE']['estimate'])}", "--"])
         pd = down["paired_closed_minus_generalization"]
-        rows.append(["task $U$ paired $\\Delta$ CL$-$GEN", num(pd["estimate"]), ci(pd)])
+        ci4 = lambda o: f"[{o['ci95'][0]:.4f},{o['ci95'][1]:.4f}]"
+        rows.append(["paired $\\Delta$ CL$-$GEN, primary", num(pd["estimate"]), ci4(pd)])
+        rj = down.get("by_judge", {}).get("online_fast", {})
+        if rj:
+            rpd = rj["paired_closed_minus_generalization"]
+            rows.append(["paired $\\Delta$ CL$-$GEN, robust.", num(rpd["estimate"]), ci4(rpd)])
+            rows.append(["score disagreement (prim./robust.)",
+                         f"{down['n_instances_score_disagreement']}/40 vs "
+                         f"{rj['n_instances_score_disagreement']}/40", "--"])
         rows.append(["judge exact agreement / MAE",
                      f"{num(down['judge_agreement']['exact_agreement'])} / "
                      f"{num(down['judge_agreement']['mae'])}", "--"])
     t = tbl("tab:utility",
-            "Utility measurement (round-3 corrected). Calibration: local surrogate vs "
-            "offline artifact judge, instance-cluster 95\\% CIs, average tied ranks. "
-            "Task $U$ = reference-answer preservation (agreement with the answer from full "
-            "$X$; not absolute correctness), explicit tasks, hash-cached answers, two "
-            "judges. The surrogate is uncalibrated in absolute error and threshold "
-            "decisions; rank correlation is moderate with wide intervals.",
+            "Utility measurement (round-3 corrected, round-4 direction fix). Calibration: "
+            "local surrogate vs offline artifact judge, instance-cluster 95\\% CIs, "
+            "average tied ranks. Task $U$ = reference-answer preservation (agreement with "
+            "the answer from full $X$; not absolute correctness), explicit tasks, "
+            "hash-cached answers; primary judge online\\_alt, robustness judge "
+            "online\\_fast, both reported. The surrogate is uncalibrated in absolute "
+            "error and threshold decisions; rank correlation is moderate with wide "
+            "intervals.",
             ["Quantity", "estimate", "95\\% CI"], rows)
     full.append(t)
 

@@ -3,7 +3,7 @@
 Manuscript: **Auditing Local Release Gates for Cloud-Local LLM Inference: Failure Modes of a Runtime-Sensitive-Set De-identification Chain**
 Authors: Wen Hu, Ya Yu, Xutong Wang
 
-> **Positioning note (round 3).** This condensed manuscript is a failure-analysis and reproducible-audit study of a runtime-S release chain, not a claim of a superior automatic sanitizer. The closed loop is an audited object; the title no longer uses "Reversibility-Verified". The audited artifact retains the legacy repository name DR-SL; self-learning is exploratory and excluded from the confirmatory release path. **All conclusions are scoped to the audited implementation and the author-constructed synthetic tests, not to other gates or real deployments.** Round 3 corrects the tied-rank Spearman error, reruns the contaminated downstream experiment (invalid outputs archived), and adds the utility-fallback mechanism, fixed-extractor contrast on holdout-3, dose–response series, two-type residual probe, and open-ended attack. The venue and acceptance status are to be confirmed before submission.
+> **Positioning note (round 4).** This condensed manuscript is a failure-analysis and reproducible-audit study of a runtime-S release chain, not a claim of a superior automatic sanitizer. The closed loop is an audited object; the title no longer uses "Reversibility-Verified". The audited artifact retains the legacy repository name DR-SL; self-learning is exploratory and excluded from the confirmatory release path. **All conclusions are scoped to the audited implementation and the author-constructed synthetic tests, not to other gates or real deployments.** Round 3 corrected the tied-rank Spearman error and reran the contaminated downstream experiment (invalid outputs archived). Round 4 corrects two paired-difference direction errors (downstream CL−GEN +0.025 [0,0.0625]; h3 local utility −0.101/−0.116), reports both judges in full (2/40 vs 8/40 disagreeing instances), scopes zero-event claims (coverage gate 0/5, Wilson upper bound 43.4%; fixed extractor 0/46, upper bound 7.7%), renames the fallback to unmarked-context retention, and adds a diagnostic cloud-assisted neural-extractor contrast (extraction itself discloses X; not a deployable local gate). The venue and acceptance status are to be confirmed before submission.
 
 ## 1. Author contributions (CRediT) — conference manuscript (author order: Ya Yu, Wen Hu, Xutong Wang)
 
@@ -25,7 +25,7 @@ Wen Hu holds a position at Jiangsu Yunhefeng Intelligent Technology Co., Ltd. (s
 
 ## 4. Data and code availability
 
-All artifacts are public at https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl and https://github.com/hurrywhen/dr-sl : simulation pipeline and test suite (MIT), fully synthetic datasets including the development sets, the shared-vocabulary holdout-1, the constructive disjoint-vocabulary holdout-2, the natural-mix holdout-3 and the vocabulary dose–response series (CC-BY-4.0), the pre-registered experimental protocols (v1–v3) with the complete deviation log (D1–D18 and D-R1–D-R17), the human-study package (scoring sheets, annotation sheets, analysis scripts, and a prepared-but-not-collected holdout utility packet), the controlled-disclosure raw audit outputs and freeze manifests (including the explicitly invalidated round-2 downstream archive), and the proof-verification suite. All sensitive values in all datasets are synthetic and fictional; no real personal data are included. MedQA-derived consultation stems are used under the MIT license (Jin et al., Appl. Sci. 11(14):6421, 2021) with every concrete value replaced by synthetic values.
+All artifacts are public at https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl and https://github.com/hurrywhen/dr-sl : simulation pipeline and test suite (MIT), fully synthetic datasets including the development sets, the shared-vocabulary holdout-1, the constructive disjoint-vocabulary holdout-2, the natural-mix holdout-3 and the vocabulary dose–response series (CC-BY-4.0), the pre-registered experimental protocols (v1–v4) with the complete deviation log (D1–D18 and D-R1–D-R24), the human-study package (scoring sheets, annotation sheets, analysis scripts, and a prepared-but-not-collected holdout utility packet), the controlled-disclosure raw audit outputs and freeze manifests (including the explicitly invalidated round-2 downstream archive and the round-4 neural-extractor raw responses), and the proof-verification suite. All sensitive values in all datasets are synthetic and fictional; no real personal data are included. MedQA-derived consultation stems are used under the MIT license (Jin et al., Appl. Sci. 11(14):6421, 2021) with every concrete value replaced by synthetic values.
 
 ## 5. Ethics statement
 
@@ -51,7 +51,7 @@ Large language models appear in this work **as the object of study** (local eval
 ## 8. Compliance checklist
 
 - [ ] Insert arXiv identifier in manuscript footnote and this document.
-- [ ] Insert conference name/year in cover letter; confirm page limit (current condensed draft 3 pages).
+- [ ] Insert conference name/year in cover letter; confirm page limit (current condensed draft 4 pages; references fill the fourth page).
 - [ ] Confirm funding statement.
 - [ ] Confirm IRB-exemption wording with institution.
 - [ ] All authors sign COI and contribution statements.

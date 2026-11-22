@@ -10,7 +10,177 @@
     "online_alt": "glm-5.2",
     "online_fast": "qwen3.8-flash"
   },
+  "judge_roles": {
+    "primary": "online_alt",
+    "robustness": "online_fast"
+  },
   "n_errors": 0,
+  "by_judge": {
+    "online_alt": {
+      "by_method": {
+        "closed_loop": {
+          "ALL": {
+            "estimate": 0.725,
+            "ci95": [
+              0.6125,
+              0.8375
+            ],
+            "n_instances": 40,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "PASS": {
+            "estimate": 0.8260869565217391,
+            "ci95": [
+              0.6739130434782609,
+              0.9347826086956522
+            ],
+            "n_instances": 23,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "INFEASIBLE": {
+            "estimate": 0.5882352941176471,
+            "ci95": [
+              0.4117647058823529,
+              0.7647058823529411
+            ],
+            "n_instances": 17,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n": 40
+        },
+        "generalization_only": {
+          "ALL": {
+            "estimate": 0.7,
+            "ci95": [
+              0.575,
+              0.825
+            ],
+            "n_instances": 40,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "PASS": {
+            "estimate": 0.8260869565217391,
+            "ci95": [
+              0.6739130434782609,
+              0.9347826086956522
+            ],
+            "n_instances": 23,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "INFEASIBLE": {
+            "estimate": 0.5294117647058824,
+            "ci95": [
+              0.3235294117647059,
+              0.7352941176470589
+            ],
+            "n_instances": 17,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n": 40
+        }
+      },
+      "n_instances_score_disagreement": 2,
+      "paired_closed_minus_generalization": {
+        "estimate": 0.025,
+        "ci95": [
+          0.0,
+          0.0625
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n_paired_instances": 40
+    },
+    "online_fast": {
+      "by_method": {
+        "closed_loop": {
+          "ALL": {
+            "estimate": 0.725,
+            "ci95": [
+              0.625,
+              0.825
+            ],
+            "n_instances": 40,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "PASS": {
+            "estimate": 0.8260869565217391,
+            "ci95": [
+              0.717391304347826,
+              0.9130434782608695
+            ],
+            "n_instances": 23,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "INFEASIBLE": {
+            "estimate": 0.5882352941176471,
+            "ci95": [
+              0.4117647058823529,
+              0.7647058823529411
+            ],
+            "n_instances": 17,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n": 40
+        },
+        "generalization_only": {
+          "ALL": {
+            "estimate": 0.7,
+            "ci95": [
+              0.5875,
+              0.8003124999999983
+            ],
+            "n_instances": 40,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "PASS": {
+            "estimate": 0.8043478260869565,
+            "ci95": [
+              0.6739130434782609,
+              0.9130434782608695
+            ],
+            "n_instances": 23,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "INFEASIBLE": {
+            "estimate": 0.5588235294117647,
+            "ci95": [
+              0.38235294117647056,
+              0.7352941176470589
+            ],
+            "n_instances": 17,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n": 40
+        }
+      },
+      "n_instances_score_disagreement": 8,
+      "paired_closed_minus_generalization": {
+        "estimate": 0.025,
+        "ci95": [
+          -0.0375,
+          0.0875
+        ],
+        "n_instances": 40,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "n_paired_instances": 40
+    }
+  },
   "by_method": {
     "closed_loop": {
       "ALL": {
@@ -40,16 +210,6 @@
           0.7647058823529411
         ],
         "n_instances": 17,
-        "n_boot": 2000,
-        "unit": "instance_cluster"
-      },
-      "secondary_judge_ALL": {
-        "estimate": 0.725,
-        "ci95": [
-          0.625,
-          0.825
-        ],
-        "n_instances": 40,
         "n_boot": 2000,
         "unit": "instance_cluster"
       },
@@ -86,35 +246,25 @@
         "n_boot": 2000,
         "unit": "instance_cluster"
       },
-      "secondary_judge_ALL": {
-        "estimate": 0.7,
-        "ci95": [
-          0.5875,
-          0.8003124999999983
-        ],
-        "n_instances": 40,
-        "n_boot": 2000,
-        "unit": "instance_cluster"
-      },
       "n": 40
     }
   },
-  "judge_agreement": {
-    "n": 80,
-    "exact_agreement": 0.725,
-    "mae": 0.1375
-  },
   "paired_closed_minus_generalization": {
-    "estimate": -0.025,
+    "estimate": 0.025,
     "ci95": [
-      -0.0625,
-      0.0
+      0.0,
+      0.0625
     ],
     "n_instances": 40,
     "n_boot": 2000,
     "unit": "instance_cluster"
   },
   "n_instances_score_disagreement": 2,
+  "judge_agreement": {
+    "n": 80,
+    "exact_agreement": 0.725,
+    "mae": 0.1375
+  },
   "n_identical_artifacts": 23,
   "errors": []
 }

@@ -1,0 +1,14 @@
+neural extraction: 200 new calls (0 cached); model qwen3.8-max, seed 20261124 submitted
+extraction progress 40/200 errors=0
+extraction progress 80/200 errors=0
+extraction progress 120/200 errors=0
+extraction progress 160/200 errors=0
+extraction progress 200/200 errors=0
+drift_p000/closed_loop: recall=0.965 task_recall=1.0 release=0.375 FR=0.13333333333333333 FB_harmful=0.000
+drift_p000/generalization_only: recall=0.965 task_recall=1.0 release=0.375 FR=0.13333333333333333 FB_harmful=0.000
+holdout80/closed_loop: recall=0.965 task_recall=1.0 release=0.388 FR=0.16129032258064516 FB_harmful=0.000
+holdout80/generalization_only: recall=0.965 task_recall=1.0 release=0.388 FR=0.16129032258064516 FB_harmful=0.000
+holdout80_v3/closed_loop: recall=0.973 task_recall=0.971 release=0.300 FR=0.16666666666666666 FB_harmful=0.000
+holdout80_v3/generalization_only: recall=0.973 task_recall=0.971 release=0.300 FR=0.16666666666666666 FB_harmful=0.000
+extraction stats: {'n_proposed_total': 1318, 'n_unlocatable_total': 0, 'n_unknown_type_total': 0} errors: 0
+wrote /home/worker06/20260825tuoshuipaper/results/revision_round3/neural_extractor_summary.json

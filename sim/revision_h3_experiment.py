@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "dataset"))
 
 from qi import load_dataset
-from revision_stats import cluster_bootstrap, paired_cluster_delta, wilson_interval
+from revision_stats import cluster_bootstrap, paired_delta, wilson_interval
 from runtime import (MIXED_TASK_TYPES, build_artifact, external_gold_audit,
                      gold_entities, local_utility, runtime_view,
                      run_runtime_item, stable_decision)
@@ -59,7 +59,7 @@ def run_row(item, method, extract_fn, extractor_name, dataset):
     row = {"dataset": dataset, "extractor": extractor_name, "sensitive_set": "runtime",
            **r, **audit,
            "U_basis": util["basis"],
-           "utility_fallback": util["basis"] == "non_sensitive_context",
+           "utility_fallback": util["basis"] == "unmarked_context",
            "artifact_sha256": sha(r["D"])}
     # Coverage-gate variant: declared task profile expects attributes, but none
     # extracted -> UNSCORABLE, no automatic release (human routing).
@@ -97,6 +97,10 @@ def summarize(rows):
                                               for r in rs if r["task_recall"] is not None}) if tr else None,
             "U_local": cluster_bootstrap({r["id"]: r["U_local"] for r in rs}),
             "utility_fallback_fraction": sum(1 for r in rs if r["utility_fallback"]) / n,
+            "utility_fallback_benign_fraction": sum(
+                1 for r in rs if r["utility_fallback"] and r["n_gold_task"] == 0) / n,
+            "utility_fallback_harmful_fraction": sum(
+                1 for r in rs if r["utility_fallback"] and r["n_gold_task"] > 0) / n,
             "n_pass": len(rel),
             "pass_with_gold_residue": with_res_pass,
             "FalseRelease_gold": with_res_pass / len(rel) if rel else None,
@@ -143,6 +147,8 @@ def main():
             "FalseRelease_gold_wilson95": list(wilson_interval(wr, len(rel))) if rel else None,
             "gold_L": sum(r["gold_L"] for r in rs) / len(rs),
             "utility_fallback_fraction": sum(1 for r in rs if r["utility_fallback"]) / len(rs),
+            "utility_fallback_harmful_fraction": sum(
+                1 for r in rs if r["utility_fallback"] and r["n_gold_task"] > 0) / len(rs),
         }
     with (OUT / "offline_h3.jsonl").open("w", encoding="utf-8") as f:
         for r in rows:
@@ -160,12 +166,12 @@ def main():
                  and r["extractor"] == ex and r["method"] == m_pair[1]}
             ids = sorted(set(a) & set(b))
             paired[f"holdout80_v3/{ex}"] = {
-                "release_delta": paired_cluster_delta({i: float(a[i]["release"]) for i in ids},
-                                                      {i: float(b[i]["release"]) for i in ids}),
-                "gold_L_delta": paired_cluster_delta({i: a[i]["gold_L"] for i in ids},
-                                                     {i: b[i]["gold_L"] for i in ids}),
-                "U_delta": paired_cluster_delta({i: a[i]["U_local"] for i in ids},
-                                                {i: b[i]["U_local"] for i in ids}),
+                "release_delta": paired_delta({i: float(a[i]["release"]) for i in ids},
+                                              {i: float(b[i]["release"]) for i in ids}),
+                "gold_L_delta": paired_delta({i: a[i]["gold_L"] for i in ids},
+                                             {i: b[i]["gold_L"] for i in ids}),
+                "U_delta": paired_delta({i: a[i]["U_local"] for i in ids},
+                                        {i: b[i]["U_local"] for i in ids}),
             }
     summary["paired"] = paired
     (OUT / "offline_h3_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2))
