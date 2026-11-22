@@ -31,5 +31,21 @@ if m:
 # IEEEtran uses \appendices for multiple appendices.
 src = src.replace("\\appendix\n", "\\appendices\n")
 
+# Wide tables (7 columns with CIs) must span both IEEE columns.  The result
+# tables live in the \input'd revision_results.tex, so copy and convert it too.
+def widen_tables(text):
+    blocks = re.split(r"(\\begin\{table\}\[!t\].*?\\end\{table\})", text, flags=re.S)
+    for i, b in enumerate(blocks):
+        if b.startswith("\\begin{table}") and "\\label{tab:neural}" in b:
+            blocks[i] = b.replace("\\begin{table}[!t]", "\\begin{table*}[!t]", 1) \
+                         .replace("\\end{table}", "\\end{table*}", 1)
+    return "".join(blocks)
+
+
+src = widen_tables(src)
+tables = (ROOT / "latex" / "revision_results.tex").read_text(encoding="utf-8")
+(ROOT / "submission_journal" / "revision_results.tex").write_text(
+    widen_tables(tables), encoding="utf-8")
+
 (ROOT / "submission_journal" / "main.tex").write_text(src, encoding="utf-8")
 print("regenerated submission_journal/main.tex from latex/main.tex")

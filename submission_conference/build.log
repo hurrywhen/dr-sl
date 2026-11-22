@@ -18,7 +18,11 @@ For additional information on amsmath, use the `?' option.
 -- Lines per column: 56 (exact).
 (/home/worker06/.TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/worker06/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/psnfss/ot1pcr.fd) [1{/home/worker06/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/worker06/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}] (/home/worker06/.TinyTeX/texmf-dist/tex/latex/psnfss/omspcr.fd) (./revision_results_conf.tex) [2] [3]
+) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/home/worker06/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/home/worker06/.TinyTeX/texmf-dist/tex/latex/psnfss/ot1pcr.fd) [1{/home/worker06/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/worker06/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}] (/home/worker06/.TinyTeX/texmf-dist/tex/latex/psnfss/omspcr.fd) (./revision_results_conf.tex)
+
+LaTeX Warning: Text page 2 contains only floats.
+
+[2] [3]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -31,5 +35,5 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [4] (./main.aux) )</home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></home/worker06/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 197207 bytes).
+Output written on main.pdf (4 pages, 198817 bytes).
 Transcript written on main.log.

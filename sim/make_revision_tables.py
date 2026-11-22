@@ -207,10 +207,13 @@ def main():
                 rows, tabcolsep=3)
         full.append(t); conf.append(t)
 
-    # 6. Neural-extractor contrast (diagnostic, cloud-assisted).
+    # 6. Neural-extractor contrast (diagnostic, cloud-assisted; rounds 4-5).
     neural = load(R3, "neural_extractor_summary.json")
-    if neural and h3:
-        rows = []
+    nan = load(R3, "neural_extractor_analysis.json")
+    nr5 = load(R3, "neural_round5_summary.json")
+    h4 = load(R3, "offline_h4_summary.json")
+    if neural and h3 and nan:
+        rows, conf_rows = [], []
         det_ref = {
             "holdout80": (num(cl1["ALL"]["mean_recall"]),
                           num(strat["mechanism"]["holdout80"]["closed_loop"]["mean_task_relevant_recall"]),
@@ -226,27 +229,65 @@ def main():
         det_ref["drift_p000"] = (num(dp["recall"]), num(dp["task_recall"]),
                                  pct(dp["release_rate"]), pct(dp["FalseRelease_gold"]),
                                  wil(dp["FalseRelease_gold_wilson95"]))
+
+        def det_row(lab, r, tr, rel, fr, w):
+            rows.append([lab, r, tr, rel, fr + " " + w, "--", "--"])
+            conf_rows.append([lab, r, rel, fr + " " + w, "--"])
+
+        def neural_row(lab, nv, dec):
+            fr = pct(nv["FalseRelease_gold"]) + " " + wil(nv["FalseRelease_gold_wilson95"])
+            g, d = dec["FR_taxonomy_gap"], dec["FR_declared_type_miss"]
+            rows.append([lab, num(nv["recall"]["estimate"]),
+                         num(nv["task_recall"]["estimate"]) if nv["task_recall"] else "--",
+                         pct(nv["release_rate"]), fr,
+                         pct(g["rate"]) + " " + wil(g["wilson95"]),
+                         pct(d["rate"]) + " " + wil(d["wilson95"])])
+            conf_rows.append([lab, num(nv["recall"]["estimate"]), pct(nv["release_rate"]), fr,
+                              f"{g['k']}/{d['k']} of {dec['n_pass']}"])
+
         for ds, lab in (("holdout80", "h1"), ("holdout80_v3", "h3"), ("drift_p000", "drift p0")):
             r, tr, rel, fr, w = det_ref[ds]
-            rows.append([lab + " det.", r, tr, rel, fr + " " + w])
-            nv = neural["methods"][f"{ds}/closed_loop"]
-            rows.append([lab + " neural", num(nv["recall"]["estimate"]),
-                         num(nv["task_recall"]["estimate"]) if nv["task_recall"] else "--",
-                         pct(nv["release_rate"]), pct(nv["FalseRelease_gold"]),
-                         ])
-            rows[-1][4] = pct(nv["FalseRelease_gold"]) + " " + wil(nv["FalseRelease_gold_wilson95"])
-        t = tbl("tab:neural",
-                "Cloud-assisted neural-extractor contrast (qwen3.8-max, frozen prompt; "
-                "DIAGNOSTIC ONLY---extraction itself discloses $X$ to the cloud, so this "
-                "is not a deployable local gate). Same gates/methods as the deterministic "
-                "track. det.=original deterministic extractor. Neural recall survives "
-                "full vocabulary displacement; false release drops sharply but persists "
-                "(13--17\\%): the gate inherits even neural misses. The frozen taxonomy "
-                "omitted two gold types (room number, marriage duration), so neural "
-                "numbers are a lower bound.",
-                ["Data", "recall", "task rec.", "rel.\\ \\%", "FR$_{gold}$ \\% [95\\% CI]"],
-                rows, tabcolsep=3)
-        full.append(t); conf.append(t)
+            det_row(lab + " det.", r, tr, rel, fr, w)
+            neural_row(lab + " neural", neural["methods"][f"{ds}/closed_loop"],
+                       nan["datasets"][ds]["fr_decomposition"])
+        if nr5 and h4:
+            v4 = h4["methods"]["holdout80_v4/original/closed_loop"]
+            det_row("h4 det.", num(v4["recall"]["estimate"]),
+                    num(v4["task_recall"]["estimate"]) if v4["task_recall"] else "--",
+                    pct(v4["release_rate"]), pct(v4["FalseRelease_gold"]),
+                    wil(v4["FalseRelease_gold_wilson95"]))
+            c4 = nr5["conditions"]["h4_complete"]
+            neural_row("h4 neural v2", c4["methods"]["holdout80_v4/closed_loop"],
+                       c4["fr_decomposition"])
+        cap_common = ("Cloud-assisted neural-extractor contrast (qwen3.8-max, frozen prompt; "
+                      "DIAGNOSTIC ONLY---extraction discloses $X$; single-run, instance-level "
+                      "intervals). Same gates/methods; det.=original deterministic extractor "
+                      "(decomposition n/a). FR split by residual gold type: gap=undeclared type "
+                      "(room\\_no, marriage\\_years, work\\_years omitted on h1/drift; h3 fully "
+                      "declared); decl=within-taxonomy miss. h1/drift-p0 residue is entirely "
+                      "room\\_no gap; only h3 evidences declared-type neural misses. ")
+        cap_full = cap_common + (
+            "h4 neural v2 uses the complete 43-type taxonomy (prompt v2, round 5) on NEW "
+            "holdout-4 (template family \\#4, natural mix). Coverage layers and bound "
+            "scoping in text: exact-span recall is conservative under the prompt/taxonomy; "
+            "FR is conditional on the incomplete taxonomy, with no general bound direction.")
+        cap_conf = cap_common + (
+            "gap/decl column: instance counts of releases (component Wilson CIs in text). "
+            "h4 neural v2 uses the complete 43-type taxonomy on NEW holdout-4 (round 5). "
+            "FR is conditional on the incomplete taxonomy (no bound direction).")
+        t = tbl("tab:neural", cap_full,
+                ["Data", "recall", "task rec.", "rel.\\ \\%", "FR$_{gold}$ \\% [95\\% CI]",
+                 "FR$_{gap}$ \\% [95\\% CI]", "FR$_{decl}$ \\% [95\\% CI]"],
+                rows, tabcolsep=2.5)
+        full.append(t)
+        tc = tbl("tab:neural", cap_conf,
+                 ["Data", "recall", "rel.\\ \\%", "FR$_{gold}$ \\% [95\\% CI]", "gap/decl (k/n)"],
+                 conf_rows, tabcolsep=2.5)
+        conf.append(tc)
+
+    # 6b. Round-5 stability / second-family subset metrics are archived in
+    # neural_round5_subset.json and reported in the §res-neural prose; no
+    # separate table (length control, protocol v5 §7).
 
     # 7. Fallback mechanism.
     rows = []

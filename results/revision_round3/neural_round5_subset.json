@@ -1,0 +1,254 @@
+{
+  "subset_rule": "first 5 per domain in sorted-id order, 20/dataset, 60 total",
+  "note": "descriptive subset estimates; instance-level intervals; not population CIs",
+  "conditions": {
+    "round4_ref": {
+      "n": 60,
+      "recall": {
+        "estimate": 0.9726190476190477,
+        "ci95": [
+          0.9571428571428572,
+          0.9873015873015873
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "char_coverage": {
+        "estimate": 0.986109840878458,
+        "ci95": [
+          0.9783666362462032,
+          0.9936354542014646
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "release_rate": 0.3333333333333333,
+      "FalseRelease_gold": {
+        "k": 3,
+        "n": 20,
+        "rate": 0.15,
+        "wilson95": [
+          0.052368745896216595,
+          0.36041886474075696
+        ]
+      },
+      "FR_taxonomy_gap_k": 2,
+      "FR_declared_type_miss_k": 1,
+      "residual_value_types": {
+        "room_no": 2,
+        "city": 1
+      },
+      "fr_ids": [
+        "DRSL-DRIFT-P000-TRA-0003",
+        "DRSL-H3-TRA-0004",
+        "DRSL-HOLD-TRA-0003"
+      ],
+      "model": "qwen3.8-max",
+      "seed_submitted": 20261124
+    },
+    "stability_r1": {
+      "n": 60,
+      "recall": {
+        "estimate": 0.96984126984127,
+        "ci95": [
+          0.9535714285714286,
+          0.9845238095238095
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "char_coverage": {
+        "estimate": 0.9852765075451246,
+        "ci95": [
+          0.9772391485877386,
+          0.9926527258709692
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "release_rate": 0.3333333333333333,
+      "FalseRelease_gold": {
+        "k": 3,
+        "n": 20,
+        "rate": 0.15,
+        "wilson95": [
+          0.052368745896216595,
+          0.36041886474075696
+        ]
+      },
+      "FR_taxonomy_gap_k": 2,
+      "FR_declared_type_miss_k": 1,
+      "residual_value_types": {
+        "room_no": 2,
+        "city": 1
+      },
+      "fr_ids": [
+        "DRSL-DRIFT-P000-TRA-0003",
+        "DRSL-H3-TRA-0004",
+        "DRSL-HOLD-TRA-0003"
+      ],
+      "model": "qwen3.8-max",
+      "seed_submitted": 20261126,
+      "stability_vs_round4": {
+        "n": 60,
+        "exact_entity_set_agreement": 0.95,
+        "mean_jaccard": 0.9905092592592593,
+        "by_dataset": {
+          "holdout80": {
+            "exact": 19,
+            "n": 20
+          },
+          "holdout80_v3": {
+            "exact": 18,
+            "n": 20
+          },
+          "drift_p000": {
+            "exact": 20,
+            "n": 20
+          }
+        }
+      }
+    },
+    "stability_r2": {
+      "n": 60,
+      "recall": {
+        "estimate": 0.9726190476190477,
+        "ci95": [
+          0.9575297619047618,
+          0.9857142857142857
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "char_coverage": {
+        "estimate": 0.9876454450276029,
+        "ci95": [
+          0.9798738627980854,
+          0.994392202803107
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "release_rate": 0.3333333333333333,
+      "FalseRelease_gold": {
+        "k": 3,
+        "n": 20,
+        "rate": 0.15,
+        "wilson95": [
+          0.052368745896216595,
+          0.36041886474075696
+        ]
+      },
+      "FR_taxonomy_gap_k": 2,
+      "FR_declared_type_miss_k": 1,
+      "residual_value_types": {
+        "room_no": 2,
+        "city": 1
+      },
+      "fr_ids": [
+        "DRSL-DRIFT-P000-TRA-0003",
+        "DRSL-H3-TRA-0004",
+        "DRSL-HOLD-TRA-0003"
+      ],
+      "model": "qwen3.8-max",
+      "seed_submitted": 20261127,
+      "stability_vs_round4": {
+        "n": 60,
+        "exact_entity_set_agreement": 0.9166666666666666,
+        "mean_jaccard": 0.9847222222222223,
+        "by_dataset": {
+          "holdout80": {
+            "exact": 19,
+            "n": 20
+          },
+          "holdout80_v3": {
+            "exact": 17,
+            "n": 20
+          },
+          "drift_p000": {
+            "exact": 19,
+            "n": 20
+          }
+        }
+      }
+    },
+    "family_glm": {
+      "n": 60,
+      "recall": {
+        "estimate": 0.9587301587301588,
+        "ci95": [
+          0.9412698412698413,
+          0.975
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "char_coverage": {
+        "estimate": 0.9872235922175391,
+        "ci95": [
+          0.9796653364905626,
+          0.9941172411647852
+        ],
+        "n_instances": 60,
+        "n_boot": 2000,
+        "unit": "instance_cluster"
+      },
+      "release_rate": 0.4166666666666667,
+      "FalseRelease_gold": {
+        "k": 5,
+        "n": 25,
+        "rate": 0.2,
+        "wilson95": [
+          0.08860584686802572,
+          0.3913095036954033
+        ]
+      },
+      "FR_taxonomy_gap_k": 2,
+      "FR_declared_type_miss_k": 3,
+      "residual_value_types": {
+        "room_no": 2,
+        "charge": 3
+      },
+      "fr_ids": [
+        "DRSL-DRIFT-P000-TRA-0003",
+        "DRSL-H3-BAN-0001",
+        "DRSL-H3-BAN-0003",
+        "DRSL-H3-BAN-0005",
+        "DRSL-HOLD-TRA-0003"
+      ],
+      "model": "glm-5.2",
+      "seed_submitted": 20261128,
+      "stability_vs_round4": {
+        "n": 60,
+        "exact_entity_set_agreement": 0.6833333333333333,
+        "mean_jaccard": 0.925,
+        "by_dataset": {
+          "holdout80": {
+            "exact": 16,
+            "n": 20
+          },
+          "holdout80_v3": {
+            "exact": 11,
+            "n": 20
+          },
+          "drift_p000": {
+            "exact": 14,
+            "n": 20
+          }
+        }
+      }
+    }
+  },
+  "r1_vs_r2": {
+    "n": 60,
+    "exact_entity_set_agreement": 0.95,
+    "mean_jaccard": 0.9905092592592593
+  }
+}

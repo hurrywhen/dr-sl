@@ -47,6 +47,11 @@ def test_holdout3_tasks():
     print(f"test_holdout3_tasks OK ({n} instances)")
 
 
+def test_holdout4_tasks():
+    n = check_file(ROOT / "dataset/output/dr_sl_holdout_v4.jsonl")
+    print(f"test_holdout4_tasks OK ({n} instances)")
+
+
 def test_drift_series_tasks():
     total = 0
     for tag in ("p000", "p025", "p050", "p075", "p100"):
@@ -75,6 +80,7 @@ if __name__ == "__main__":
     test_holdout1_tasks()
     test_holdout2_tasks()
     test_holdout3_tasks()
+    test_holdout4_tasks()
     test_drift_series_tasks()
     test_last_sentence_heuristic_was_unsafe()
     print("ALL TASK-FIELD TESTS PASSED")

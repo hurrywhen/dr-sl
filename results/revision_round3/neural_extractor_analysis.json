@@ -1,0 +1,457 @@
+{
+  "protocol": "revision_protocol_v5.md §1 (P0 re-analysis; no new calls)",
+  "archive": "round-4 neural_extractor_* kept byte-intact",
+  "taxonomy_declared_n": 40,
+  "bound_scoping": "exact-span recall is conservative under the current prompt/taxonomy; FR is conditional on the incomplete taxonomy with no general bound direction",
+  "datasets": {
+    "holdout80": {
+      "gold_types_not_declared": [
+        "marriage_years",
+        "room_no",
+        "work_years"
+      ],
+      "fr_decomposition": {
+        "n_pass": 31,
+        "FalseRelease_gold": {
+          "k": 5,
+          "n": 31,
+          "rate": 0.16129032258064516,
+          "wilson95": [
+            0.070926244433653,
+            0.3263435395879326
+          ]
+        },
+        "FR_taxonomy_gap": {
+          "k": 5,
+          "n": 31,
+          "rate": 0.16129032258064516,
+          "wilson95": [
+            0.070926244433653,
+            0.3263435395879326
+          ],
+          "ids": [
+            "DRSL-HOLD-TRA-0003",
+            "DRSL-HOLD-TRA-0007",
+            "DRSL-HOLD-TRA-0011",
+            "DRSL-HOLD-TRA-0015",
+            "DRSL-HOLD-TRA-0018"
+          ]
+        },
+        "FR_declared_type_miss": {
+          "k": 0,
+          "n": 31,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.11025539546043596
+          ],
+          "ids": []
+        },
+        "both_sources": [],
+        "residual_value_types": {
+          "room_no": 5
+        },
+        "declared_miss_detail": []
+      },
+      "coverage_layers": {
+        "exact_span_recall": {
+          "estimate": 0.9654761904761905,
+          "ci95": [
+            0.9511904761904763,
+            0.9791666666666666
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "sensitive_char_coverage": {
+          "estimate": 0.9827548635955337,
+          "ci95": [
+            0.9757556507880855,
+            0.9899564076187533
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.016666666666666666,
+          "ci95": [
+            0.00625,
+            0.029166666666666664
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "n_gold_values": 490,
+        "n_partial_span_only_values": 10,
+        "partial_span_detail": [
+          {
+            "id": "DRSL-HOLD-BAN-0004",
+            "n_partial": 1,
+            "values": [
+              "月收入约1.2万元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-BAN-0008",
+            "n_partial": 1,
+            "values": [
+              "月收入约4000元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-BAN-0012",
+            "n_partial": 1,
+            "values": [
+              "月收入约4000元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-BAN-0016",
+            "n_partial": 1,
+            "values": [
+              "月收入约4000元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-BAN-0020",
+            "n_partial": 1,
+            "values": [
+              "月收入约1.2万元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-LEG-0001",
+            "n_partial": 1,
+            "values": [
+              "月收入约1.2万元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-LEG-0005",
+            "n_partial": 1,
+            "values": [
+              "月收入约8000元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-LEG-0009",
+            "n_partial": 1,
+            "values": [
+              "月收入约4000元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-LEG-0013",
+            "n_partial": 1,
+            "values": [
+              "月收入约1.2万元"
+            ]
+          },
+          {
+            "id": "DRSL-HOLD-LEG-0017",
+            "n_partial": 1,
+            "values": [
+              "年收入约30万元"
+            ]
+          }
+        ]
+      },
+      "n_unlocatable": 0,
+      "n_unknown_type": 0
+    },
+    "holdout80_v3": {
+      "gold_types_not_declared": [],
+      "fr_decomposition": {
+        "n_pass": 24,
+        "FalseRelease_gold": {
+          "k": 4,
+          "n": 24,
+          "rate": 0.16666666666666666,
+          "wilson95": [
+            0.06678676328632951,
+            0.3585307064969906
+          ]
+        },
+        "FR_taxonomy_gap": {
+          "k": 0,
+          "n": 24,
+          "rate": 0.0,
+          "wilson95": [
+            1.3877787807814457e-17,
+            0.13797620467498017
+          ],
+          "ids": []
+        },
+        "FR_declared_type_miss": {
+          "k": 4,
+          "n": 24,
+          "rate": 0.16666666666666666,
+          "wilson95": [
+            0.06678676328632951,
+            0.3585307064969906
+          ],
+          "ids": [
+            "DRSL-H3-TRA-0004",
+            "DRSL-H3-TRA-0008",
+            "DRSL-H3-TRA-0010",
+            "DRSL-H3-TRA-0012"
+          ]
+        },
+        "both_sources": [],
+        "residual_value_types": {
+          "city": 4
+        },
+        "declared_miss_detail": [
+          {
+            "id": "DRSL-H3-TRA-0004",
+            "value": "望海县",
+            "type": "city",
+            "kind": "never_proposed"
+          },
+          {
+            "id": "DRSL-H3-TRA-0008",
+            "value": "望海县",
+            "type": "city",
+            "kind": "never_proposed"
+          },
+          {
+            "id": "DRSL-H3-TRA-0010",
+            "value": "望海县",
+            "type": "city",
+            "kind": "never_proposed"
+          },
+          {
+            "id": "DRSL-H3-TRA-0012",
+            "value": "望海县",
+            "type": "city",
+            "kind": "never_proposed"
+          }
+        ]
+      },
+      "coverage_layers": {
+        "exact_span_recall": {
+          "estimate": 0.9732142857142858,
+          "ci95": [
+            0.9607142857142857,
+            0.9839285714285715
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "sensitive_char_coverage": {
+          "estimate": 0.9883070255209307,
+          "ci95": [
+            0.9824632383725196,
+            0.9934370271292307
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.007142857142857143,
+          "ci95": [
+            0.0017857142857142857,
+            0.014285714285714285
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "n_gold_values": 550,
+        "n_partial_span_only_values": 10,
+        "partial_span_detail": [
+          {
+            "id": "DRSL-H3-BAN-0002",
+            "n_partial": 1,
+            "values": [
+              "月收入约9000元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0004",
+            "n_partial": 1,
+            "values": [
+              "月收入约1.5万元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0006",
+            "n_partial": 1,
+            "values": [
+              "月收入约5000元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0008",
+            "n_partial": 1,
+            "values": [
+              "月收入约1.5万元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0010",
+            "n_partial": 1,
+            "values": [
+              "年收入约25万元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0012",
+            "n_partial": 1,
+            "values": [
+              "年收入约25万元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0014",
+            "n_partial": 1,
+            "values": [
+              "年收入约25万元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0016",
+            "n_partial": 1,
+            "values": [
+              "月收入约9000元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0018",
+            "n_partial": 1,
+            "values": [
+              "月收入约9000元"
+            ]
+          },
+          {
+            "id": "DRSL-H3-BAN-0020",
+            "n_partial": 1,
+            "values": [
+              "月收入约9000元"
+            ]
+          }
+        ]
+      },
+      "n_unlocatable": 0,
+      "n_unknown_type": 0
+    },
+    "drift_p000": {
+      "gold_types_not_declared": [
+        "marriage_years",
+        "room_no",
+        "work_years"
+      ],
+      "fr_decomposition": {
+        "n_pass": 15,
+        "FalseRelease_gold": {
+          "k": 2,
+          "n": 15,
+          "rate": 0.13333333333333333,
+          "wilson95": [
+            0.03736125910306537,
+            0.37881982832322364
+          ]
+        },
+        "FR_taxonomy_gap": {
+          "k": 2,
+          "n": 15,
+          "rate": 0.13333333333333333,
+          "wilson95": [
+            0.03736125910306537,
+            0.37881982832322364
+          ],
+          "ids": [
+            "DRSL-DRIFT-P000-TRA-0003",
+            "DRSL-DRIFT-P000-TRA-0007"
+          ]
+        },
+        "FR_declared_type_miss": {
+          "k": 0,
+          "n": 15,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.20388330103584862
+          ],
+          "ids": []
+        },
+        "both_sources": [],
+        "residual_value_types": {
+          "room_no": 2
+        },
+        "declared_miss_detail": []
+      },
+      "coverage_layers": {
+        "exact_span_recall": {
+          "estimate": 0.9648809523809524,
+          "ci95": [
+            0.9428571428571428,
+            0.9845238095238095
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "sensitive_char_coverage": {
+          "estimate": 0.9827302791883394,
+          "ci95": [
+            0.9718504393753269,
+            0.9925329735001345
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.020833333333333332,
+          "ci95": [
+            0.004166666666666667,
+            0.041666666666666664
+          ],
+          "n_instances": 40,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "n_gold_values": 248,
+        "n_partial_span_only_values": 4,
+        "partial_span_detail": [
+          {
+            "id": "DRSL-DRIFT-P000-BAN-0008",
+            "n_partial": 1,
+            "values": [
+              "年收入约25万元"
+            ]
+          },
+          {
+            "id": "DRSL-DRIFT-P000-LEG-0001",
+            "n_partial": 1,
+            "values": [
+              "月收入约1.5万元"
+            ]
+          },
+          {
+            "id": "DRSL-DRIFT-P000-LEG-0005",
+            "n_partial": 1,
+            "values": [
+              "年收入约25万元"
+            ]
+          },
+          {
+            "id": "DRSL-DRIFT-P000-LEG-0009",
+            "n_partial": 1,
+            "values": [
+              "月收入约9000元"
+            ]
+          }
+        ]
+      },
+      "n_unlocatable": 0,
+      "n_unknown_type": 0
+    }
+  }
+}

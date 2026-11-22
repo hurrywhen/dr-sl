@@ -1,0 +1,19 @@
+round-5 neural: 260 new calls (0 cached); conditions ['stability_r1', 'stability_r2', 'family_glm', 'h4_complete']
+progress 40/260 errors=0
+progress 80/260 errors=0
+progress 120/260 errors=0
+progress 160/260 errors=0
+progress 200/260 errors=0
+progress 240/260 errors=0
+stability_r1 drift_p000/closed_loop: recall=0.969 charcov=0.985 rel=0.350 FR=3/20 gap=2 decl=1
+stability_r1 holdout80/closed_loop: recall=0.962 charcov=0.985 rel=0.350 FR=3/20 gap=2 decl=1
+stability_r1 holdout80_v3/closed_loop: recall=0.979 charcov=0.985 rel=0.300 FR=3/20 gap=2 decl=1
+stability_r2 drift_p000/closed_loop: recall=0.977 charcov=0.988 rel=0.350 FR=3/20 gap=2 decl=1
+stability_r2 holdout80/closed_loop: recall=0.962 charcov=0.988 rel=0.350 FR=3/20 gap=2 decl=1
+stability_r2 holdout80_v3/closed_loop: recall=0.979 charcov=0.988 rel=0.300 FR=3/20 gap=2 decl=1
+family_glm drift_p000/closed_loop: recall=0.970 charcov=0.987 rel=0.500 FR=5/25 gap=2 decl=3
+family_glm holdout80/closed_loop: recall=0.970 charcov=0.987 rel=0.500 FR=5/25 gap=2 decl=3
+family_glm holdout80_v3/closed_loop: recall=0.936 charcov=0.987 rel=0.250 FR=5/25 gap=2 decl=3
+h4_complete holdout80_v4/closed_loop: recall=0.986 charcov=0.993 rel=0.400 FR=1/32 gap=0 decl=1
+stability: {"stability_r1": {"vs_round4_seed20261124": {"n": 60, "exact_entity_set_agreement": 0.95, "mean_jaccard": 0.9905092592592593, "by_dataset": {"holdout80": {"exact": 19, "n": 20}, "holdout80_v3": {"exact": 18, "n": 20}, "drift_p000": {"exact": 20, "n": 20}}}}, "stability_r2": {"vs_round4_seed20261124": {"n": 60, "exact_entity_set_agreement": 0.9166666666666666, "mean_jaccard": 0.9847222222222223, "by_dataset": {"holdout80": {"exact": 19, "n": 20}, "holdout80_v3": {"exact": 17, "n": 20}, "drift_p000": {"exact": 19, "n": 20}}}}, "family_glm": {"vs_round4_seed20261124": {"n": 60, "exact_entity_set_agreement": 0.6833333333333333, "mean_jaccard": 0.925, "by_dataset": {"holdout80": {"exact": 16, "n": 20}, "holdout80_v3": {"exact": 11, "n": 20}, "drift_p000": {"exact": 14, "n": 20}}}}, "r1_vs_r2": {"n": 60, "exact_entity_set_agreement": 0.95, "mean_jaccard": 0.9905092592592593}}
+errors: 0 | wrote /home/worker06/20260825tuoshuipaper/results/revision_round3/neural_round5_summary.json

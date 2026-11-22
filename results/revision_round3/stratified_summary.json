@@ -7859,6 +7859,5279 @@
       }
     }
   },
+  "neural_extractor_analysis": {
+    "protocol": "revision_protocol_v5.md §1 (P0 re-analysis; no new calls)",
+    "archive": "round-4 neural_extractor_* kept byte-intact",
+    "taxonomy_declared_n": 40,
+    "bound_scoping": "exact-span recall is conservative under the current prompt/taxonomy; FR is conditional on the incomplete taxonomy with no general bound direction",
+    "datasets": {
+      "holdout80": {
+        "gold_types_not_declared": [
+          "marriage_years",
+          "room_no",
+          "work_years"
+        ],
+        "fr_decomposition": {
+          "n_pass": 31,
+          "FalseRelease_gold": {
+            "k": 5,
+            "n": 31,
+            "rate": 0.16129032258064516,
+            "wilson95": [
+              0.070926244433653,
+              0.3263435395879326
+            ]
+          },
+          "FR_taxonomy_gap": {
+            "k": 5,
+            "n": 31,
+            "rate": 0.16129032258064516,
+            "wilson95": [
+              0.070926244433653,
+              0.3263435395879326
+            ],
+            "ids": [
+              "DRSL-HOLD-TRA-0003",
+              "DRSL-HOLD-TRA-0007",
+              "DRSL-HOLD-TRA-0011",
+              "DRSL-HOLD-TRA-0015",
+              "DRSL-HOLD-TRA-0018"
+            ]
+          },
+          "FR_declared_type_miss": {
+            "k": 0,
+            "n": 31,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.11025539546043596
+            ],
+            "ids": []
+          },
+          "both_sources": [],
+          "residual_value_types": {
+            "room_no": 5
+          },
+          "declared_miss_detail": []
+        },
+        "coverage_layers": {
+          "exact_span_recall": {
+            "estimate": 0.9654761904761905,
+            "ci95": [
+              0.9511904761904763,
+              0.9791666666666666
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "sensitive_char_coverage": {
+            "estimate": 0.9827548635955337,
+            "ci95": [
+              0.9757556507880855,
+              0.9899564076187533
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "gold_L": {
+            "estimate": 0.016666666666666666,
+            "ci95": [
+              0.00625,
+              0.029166666666666664
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n_gold_values": 490,
+          "n_partial_span_only_values": 10,
+          "partial_span_detail": [
+            {
+              "id": "DRSL-HOLD-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-BAN-0008",
+              "n_partial": 1,
+              "values": [
+                "月收入约4000元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-BAN-0012",
+              "n_partial": 1,
+              "values": [
+                "月收入约4000元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-BAN-0016",
+              "n_partial": 1,
+              "values": [
+                "月收入约4000元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-BAN-0020",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0001",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0005",
+              "n_partial": 1,
+              "values": [
+                "月收入约8000元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0009",
+              "n_partial": 1,
+              "values": [
+                "月收入约4000元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0013",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0017",
+              "n_partial": 1,
+              "values": [
+                "年收入约30万元"
+              ]
+            }
+          ]
+        },
+        "n_unlocatable": 0,
+        "n_unknown_type": 0
+      },
+      "holdout80_v3": {
+        "gold_types_not_declared": [],
+        "fr_decomposition": {
+          "n_pass": 24,
+          "FalseRelease_gold": {
+            "k": 4,
+            "n": 24,
+            "rate": 0.16666666666666666,
+            "wilson95": [
+              0.06678676328632951,
+              0.3585307064969906
+            ]
+          },
+          "FR_taxonomy_gap": {
+            "k": 0,
+            "n": 24,
+            "rate": 0.0,
+            "wilson95": [
+              1.3877787807814457e-17,
+              0.13797620467498017
+            ],
+            "ids": []
+          },
+          "FR_declared_type_miss": {
+            "k": 4,
+            "n": 24,
+            "rate": 0.16666666666666666,
+            "wilson95": [
+              0.06678676328632951,
+              0.3585307064969906
+            ],
+            "ids": [
+              "DRSL-H3-TRA-0004",
+              "DRSL-H3-TRA-0008",
+              "DRSL-H3-TRA-0010",
+              "DRSL-H3-TRA-0012"
+            ]
+          },
+          "both_sources": [],
+          "residual_value_types": {
+            "city": 4
+          },
+          "declared_miss_detail": [
+            {
+              "id": "DRSL-H3-TRA-0004",
+              "value": "望海县",
+              "type": "city",
+              "kind": "never_proposed"
+            },
+            {
+              "id": "DRSL-H3-TRA-0008",
+              "value": "望海县",
+              "type": "city",
+              "kind": "never_proposed"
+            },
+            {
+              "id": "DRSL-H3-TRA-0010",
+              "value": "望海县",
+              "type": "city",
+              "kind": "never_proposed"
+            },
+            {
+              "id": "DRSL-H3-TRA-0012",
+              "value": "望海县",
+              "type": "city",
+              "kind": "never_proposed"
+            }
+          ]
+        },
+        "coverage_layers": {
+          "exact_span_recall": {
+            "estimate": 0.9732142857142858,
+            "ci95": [
+              0.9607142857142857,
+              0.9839285714285715
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "sensitive_char_coverage": {
+            "estimate": 0.9883070255209307,
+            "ci95": [
+              0.9824632383725196,
+              0.9934370271292307
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "gold_L": {
+            "estimate": 0.007142857142857143,
+            "ci95": [
+              0.0017857142857142857,
+              0.014285714285714285
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n_gold_values": 550,
+          "n_partial_span_only_values": 10,
+          "partial_span_detail": [
+            {
+              "id": "DRSL-H3-BAN-0002",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0006",
+              "n_partial": 1,
+              "values": [
+                "月收入约5000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0008",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0010",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0012",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0014",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0016",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0018",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0020",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            }
+          ]
+        },
+        "n_unlocatable": 0,
+        "n_unknown_type": 0
+      },
+      "drift_p000": {
+        "gold_types_not_declared": [
+          "marriage_years",
+          "room_no",
+          "work_years"
+        ],
+        "fr_decomposition": {
+          "n_pass": 15,
+          "FalseRelease_gold": {
+            "k": 2,
+            "n": 15,
+            "rate": 0.13333333333333333,
+            "wilson95": [
+              0.03736125910306537,
+              0.37881982832322364
+            ]
+          },
+          "FR_taxonomy_gap": {
+            "k": 2,
+            "n": 15,
+            "rate": 0.13333333333333333,
+            "wilson95": [
+              0.03736125910306537,
+              0.37881982832322364
+            ],
+            "ids": [
+              "DRSL-DRIFT-P000-TRA-0003",
+              "DRSL-DRIFT-P000-TRA-0007"
+            ]
+          },
+          "FR_declared_type_miss": {
+            "k": 0,
+            "n": 15,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.20388330103584862
+            ],
+            "ids": []
+          },
+          "both_sources": [],
+          "residual_value_types": {
+            "room_no": 2
+          },
+          "declared_miss_detail": []
+        },
+        "coverage_layers": {
+          "exact_span_recall": {
+            "estimate": 0.9648809523809524,
+            "ci95": [
+              0.9428571428571428,
+              0.9845238095238095
+            ],
+            "n_instances": 40,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "sensitive_char_coverage": {
+            "estimate": 0.9827302791883394,
+            "ci95": [
+              0.9718504393753269,
+              0.9925329735001345
+            ],
+            "n_instances": 40,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "gold_L": {
+            "estimate": 0.020833333333333332,
+            "ci95": [
+              0.004166666666666667,
+              0.041666666666666664
+            ],
+            "n_instances": 40,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n_gold_values": 248,
+          "n_partial_span_only_values": 4,
+          "partial_span_detail": [
+            {
+              "id": "DRSL-DRIFT-P000-BAN-0008",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0001",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0005",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0009",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            }
+          ]
+        },
+        "n_unlocatable": 0,
+        "n_unknown_type": 0
+      }
+    }
+  },
+  "neural_round5_summary": {
+    "protocol": "revision_protocol_v5.md §2–§4",
+    "design": "cloud-assisted DIAGNOSTIC conditions; single-run per condition; instance-level intervals only (sampling variation characterized on the 60-instance subset, not population CIs)",
+    "subset_rule": "first 5 per domain in sorted-id order, 20/dataset, 60 total",
+    "prompt_v2": "你是中文合成记录的个人敏感信息抽取器。请从给定文本中抽取所有出现的个人敏感信息实体，输出且仅输出 JSON：{\"entities\":[{\"type\":\"类型\",\"value\":\"原文值\"}]}。value 必须是输入文本中逐字出现的子串，不得改写、归一化或编造；同一值多次出现只列一次。可用类型（仅限这些）：name(人名), phone(手机号), email(邮箱), id_card(身份证号), bank_card(银行卡号/账号), address(住址), medical_record_no(病历号), passport(护照号), plate(车牌), case_no(案号), deposit_no(存单号), order_no(订单号), card_tail(卡尾号), ticket_no(票据号), insurance_id(保单号), fund_account(资金账号), city(城市), hospital(医院), bank(银行), employer(单位/公司), school(学校), airline(航空公司), hotel(酒店), lawfirm(律所), court(法院), disease(疾病), drug(药品), allergy(过敏原), occupation(职业), insurance_type(险种), case_type(案由), amount(金额), charge(手续费/费用), income(收入), date(日期), visit_date(就诊/手术/入住日期), age(年龄), flight_no(航班号), duration(天数), children_count(孩子个数), room_no(房间号), marriage_years(婚龄), work_years(工作年限)。注意：金额/费用/收入要带单位（如\"150000元\"）；年龄带\"岁\"；日期按原文形式。没有可抽取实体时输出 {\"entities\":[]}。",
+    "taxonomy_v2_n": 43,
+    "conditions": {
+      "stability_r1": {
+        "model": "qwen3.8-max",
+        "seed_submitted": 20261126,
+        "prompt_version": "v1_round4",
+        "taxonomy_n": 40,
+        "n_instances": 60,
+        "n_extracted": 60,
+        "extraction_stats": {
+          "n_proposed_total": 391,
+          "n_unlocatable_total": 0,
+          "n_unknown_type_total": 0
+        },
+        "methods": {
+          "drift_p000/closed_loop": {
+            "n": 20,
+            "release_rate": 0.35,
+            "release_rate_wilson95": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "recall": {
+              "estimate": 0.9690476190476189,
+              "ci95": [
+                0.9392857142857144,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.15,
+                0.7
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.225,
+              "ci95": [
+                0.09937500000000005,
+                0.375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 7,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.14285714285714285,
+            "FalseRelease_gold_wilson95": [
+              0.02567962434474355,
+              0.5131278292743189
+            ]
+          },
+          "drift_p000/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9690476190476189,
+              "ci95": [
+                0.9392857142857144,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.15,
+                0.7
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.225,
+              "ci95": [
+                0.09937500000000005,
+                0.375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "drift_p000/generalization_only": {
+            "n": 20,
+            "release_rate": 0.35,
+            "release_rate_wilson95": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "recall": {
+              "estimate": 0.9690476190476189,
+              "ci95": [
+                0.9392857142857144,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.15,
+                0.7
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.36333333333333334,
+              "ci95": [
+                0.2499895833333333,
+                0.48917708333333326
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 7,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.14285714285714285,
+            "FalseRelease_gold_wilson95": [
+              0.02567962434474355,
+              0.5131278292743189
+            ]
+          },
+          "drift_p000/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9690476190476189,
+              "ci95": [
+                0.9392857142857144,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.15,
+                0.7
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.36333333333333334,
+              "ci95": [
+                0.2499895833333333,
+                0.48917708333333326
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "holdout80/closed_loop": {
+            "n": 20,
+            "release_rate": 0.35,
+            "release_rate_wilson95": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "recall": {
+              "estimate": 0.9619047619047618,
+              "ci95": [
+                0.930952380952381,
+                0.9858630952380945
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.45,
+              "ci95": [
+                0.15,
+                0.8
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.225,
+              "ci95": [
+                0.09937500000000005,
+                0.375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 7,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.14285714285714285,
+            "FalseRelease_gold_wilson95": [
+              0.02567962434474355,
+              0.5131278292743189
+            ]
+          },
+          "holdout80/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9619047619047618,
+              "ci95": [
+                0.930952380952381,
+                0.9858630952380945
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.45,
+              "ci95": [
+                0.15,
+                0.8
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.225,
+              "ci95": [
+                0.09937500000000005,
+                0.375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "holdout80/generalization_only": {
+            "n": 20,
+            "release_rate": 0.35,
+            "release_rate_wilson95": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "recall": {
+              "estimate": 0.9619047619047618,
+              "ci95": [
+                0.930952380952381,
+                0.9858630952380945
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.45,
+              "ci95": [
+                0.15,
+                0.8
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.3633333333333333,
+              "ci95": [
+                0.25083333333333335,
+                0.4883333333333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 7,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.14285714285714285,
+            "FalseRelease_gold_wilson95": [
+              0.02567962434474355,
+              0.5131278292743189
+            ]
+          },
+          "holdout80/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9619047619047618,
+              "ci95": [
+                0.930952380952381,
+                0.9858630952380945
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.45,
+              "ci95": [
+                0.15,
+                0.8
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.3633333333333333,
+              "ci95": [
+                0.25083333333333335,
+                0.4883333333333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "holdout80_v3/closed_loop": {
+            "n": 20,
+            "release_rate": 0.3,
+            "release_rate_wilson95": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "recall": {
+              "estimate": 0.9785714285714286,
+              "ci95": [
+                0.9571428571428571,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.975,
+              "ci95": [
+                0.925,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.15,
+              "ci95": [
+                0.05,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.007142857142857143,
+              "ci95": [
+                0.0,
+                0.02142857142857143
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 6,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.16666666666666666,
+            "FalseRelease_gold_wilson95": [
+              0.030053369748306635,
+              0.5635028221864702
+            ]
+          },
+          "holdout80_v3/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.3,
+            "release_rate_wilson95": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "recall": {
+              "estimate": 0.9785714285714286,
+              "ci95": [
+                0.9571428571428571,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.975,
+              "ci95": [
+                0.925,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.15,
+              "ci95": [
+                0.05,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.007142857142857143,
+              "ci95": [
+                0.0,
+                0.02142857142857143
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 6,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.16666666666666666,
+            "FalseRelease_gold_wilson95": [
+              0.030053369748306635,
+              0.5635028221864702
+            ]
+          },
+          "holdout80_v3/generalization_only": {
+            "n": 20,
+            "release_rate": 0.3,
+            "release_rate_wilson95": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "recall": {
+              "estimate": 0.9785714285714286,
+              "ci95": [
+                0.9571428571428571,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.975,
+              "ci95": [
+                0.925,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.28375,
+              "ci95": [
+                0.20416666666666666,
+                0.36375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.007142857142857143,
+              "ci95": [
+                0.0,
+                0.02142857142857143
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 6,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.16666666666666666,
+            "FalseRelease_gold_wilson95": [
+              0.030053369748306635,
+              0.5635028221864702
+            ]
+          },
+          "holdout80_v3/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.3,
+            "release_rate_wilson95": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "recall": {
+              "estimate": 0.9785714285714286,
+              "ci95": [
+                0.9571428571428571,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.975,
+              "ci95": [
+                0.925,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.28375,
+              "ci95": [
+                0.20416666666666666,
+                0.36375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.007142857142857143,
+              "ci95": [
+                0.0,
+                0.02142857142857143
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 6,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.16666666666666666,
+            "FalseRelease_gold_wilson95": [
+              0.030053369748306635,
+              0.5635028221864702
+            ]
+          }
+        },
+        "fr_decomposition": {
+          "n_pass": 20,
+          "FalseRelease_gold": {
+            "k": 3,
+            "n": 20,
+            "rate": 0.15,
+            "wilson95": [
+              0.052368745896216595,
+              0.36041886474075696
+            ]
+          },
+          "FR_taxonomy_gap": {
+            "k": 2,
+            "n": 20,
+            "rate": 0.1,
+            "wilson95": [
+              0.027866481213768224,
+              0.3010336452284873
+            ],
+            "ids": [
+              "DRSL-DRIFT-P000-TRA-0003",
+              "DRSL-HOLD-TRA-0003"
+            ]
+          },
+          "FR_declared_type_miss": {
+            "k": 1,
+            "n": 20,
+            "rate": 0.05,
+            "wilson95": [
+              0.008881448800795402,
+              0.23613119344674205
+            ],
+            "ids": [
+              "DRSL-H3-TRA-0004"
+            ]
+          },
+          "both_sources": [],
+          "residual_value_types": {
+            "room_no": 2,
+            "city": 1
+          },
+          "declared_miss_detail": [
+            {
+              "id": "DRSL-H3-TRA-0004",
+              "value": "望海县",
+              "type": "city",
+              "kind": "never_proposed"
+            }
+          ]
+        },
+        "coverage_layers": {
+          "exact_span_recall": {
+            "estimate": 0.96984126984127,
+            "ci95": [
+              0.9535714285714286,
+              0.9845238095238095
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "sensitive_char_coverage": {
+            "estimate": 0.9852765075451246,
+            "ci95": [
+              0.9772391485877386,
+              0.9926527258709692
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "gold_L": {
+            "estimate": 0.013492063492063491,
+            "ci95": [
+              0.0027777777777777775,
+              0.026587301587301587
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n_gold_values": 383,
+          "n_partial_span_only_values": 7,
+          "partial_span_detail": [
+            {
+              "id": "DRSL-HOLD-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0001",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0005",
+              "n_partial": 1,
+              "values": [
+                "月收入约8000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0002",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0001",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0005",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            }
+          ]
+        },
+        "paired": {
+          "drift_p000": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.13833333333333334,
+              "ci95": [
+                -0.20417708333333337,
+                -0.07458333333333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          },
+          "holdout80": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.13833333333333334,
+              "ci95": [
+                -0.20251041666666666,
+                -0.07666666666666667
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          },
+          "holdout80_v3": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.13375,
+              "ci95": [
+                -0.1975,
+                -0.07082291666666672
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          }
+        }
+      },
+      "stability_r2": {
+        "model": "qwen3.8-max",
+        "seed_submitted": 20261127,
+        "prompt_version": "v1_round4",
+        "taxonomy_n": 40,
+        "n_instances": 60,
+        "n_extracted": 60,
+        "extraction_stats": {
+          "n_proposed_total": 392,
+          "n_unlocatable_total": 0,
+          "n_unknown_type_total": 0
+        },
+        "methods": {
+          "drift_p000/closed_loop": {
+            "n": 20,
+            "release_rate": 0.35,
+            "release_rate_wilson95": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "recall": {
+              "estimate": 0.9773809523809524,
+              "ci95": [
+                0.9535714285714285,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.15,
+                0.7
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.225,
+              "ci95": [
+                0.09937500000000005,
+                0.375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 7,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.14285714285714285,
+            "FalseRelease_gold_wilson95": [
+              0.02567962434474355,
+              0.5131278292743189
+            ]
+          },
+          "drift_p000/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9773809523809524,
+              "ci95": [
+                0.9535714285714285,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.15,
+                0.7
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.225,
+              "ci95": [
+                0.09937500000000005,
+                0.375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "drift_p000/generalization_only": {
+            "n": 20,
+            "release_rate": 0.35,
+            "release_rate_wilson95": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "recall": {
+              "estimate": 0.9773809523809524,
+              "ci95": [
+                0.9535714285714285,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.15,
+                0.7
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.36333333333333334,
+              "ci95": [
+                0.2499895833333333,
+                0.48917708333333326
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 7,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.14285714285714285,
+            "FalseRelease_gold_wilson95": [
+              0.02567962434474355,
+              0.5131278292743189
+            ]
+          },
+          "drift_p000/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9773809523809524,
+              "ci95": [
+                0.9535714285714285,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.15,
+                0.7
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.36333333333333334,
+              "ci95": [
+                0.2499895833333333,
+                0.48917708333333326
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "holdout80/closed_loop": {
+            "n": 20,
+            "release_rate": 0.35,
+            "release_rate_wilson95": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "recall": {
+              "estimate": 0.9619047619047618,
+              "ci95": [
+                0.930952380952381,
+                0.9858630952380945
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.45,
+              "ci95": [
+                0.15,
+                0.8
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.225,
+              "ci95": [
+                0.09937500000000005,
+                0.375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 7,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.14285714285714285,
+            "FalseRelease_gold_wilson95": [
+              0.02567962434474355,
+              0.5131278292743189
+            ]
+          },
+          "holdout80/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9619047619047618,
+              "ci95": [
+                0.930952380952381,
+                0.9858630952380945
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.45,
+              "ci95": [
+                0.15,
+                0.8
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.225,
+              "ci95": [
+                0.09937500000000005,
+                0.375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "holdout80/generalization_only": {
+            "n": 20,
+            "release_rate": 0.35,
+            "release_rate_wilson95": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "recall": {
+              "estimate": 0.9619047619047618,
+              "ci95": [
+                0.930952380952381,
+                0.9858630952380945
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.45,
+              "ci95": [
+                0.15,
+                0.8
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.3633333333333333,
+              "ci95": [
+                0.25083333333333335,
+                0.4883333333333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 7,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.14285714285714285,
+            "FalseRelease_gold_wilson95": [
+              0.02567962434474355,
+              0.5131278292743189
+            ]
+          },
+          "holdout80/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9619047619047618,
+              "ci95": [
+                0.930952380952381,
+                0.9858630952380945
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.45,
+              "ci95": [
+                0.15,
+                0.8
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.3633333333333333,
+              "ci95": [
+                0.25083333333333335,
+                0.4883333333333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.016666666666666666,
+              "ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "holdout80_v3/closed_loop": {
+            "n": 20,
+            "release_rate": 0.3,
+            "release_rate_wilson95": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "recall": {
+              "estimate": 0.9785714285714286,
+              "ci95": [
+                0.9571428571428571,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.9583333333333333,
+              "ci95": [
+                0.8916666666666666,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.15,
+              "ci95": [
+                0.05,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.007142857142857143,
+              "ci95": [
+                0.0,
+                0.02142857142857143
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 6,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.16666666666666666,
+            "FalseRelease_gold_wilson95": [
+              0.030053369748306635,
+              0.5635028221864702
+            ]
+          },
+          "holdout80_v3/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.3,
+            "release_rate_wilson95": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "recall": {
+              "estimate": 0.9785714285714286,
+              "ci95": [
+                0.9571428571428571,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.9583333333333333,
+              "ci95": [
+                0.8916666666666666,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.15,
+              "ci95": [
+                0.05,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.007142857142857143,
+              "ci95": [
+                0.0,
+                0.02142857142857143
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 6,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.16666666666666666,
+            "FalseRelease_gold_wilson95": [
+              0.030053369748306635,
+              0.5635028221864702
+            ]
+          },
+          "holdout80_v3/generalization_only": {
+            "n": 20,
+            "release_rate": 0.3,
+            "release_rate_wilson95": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "recall": {
+              "estimate": 0.9785714285714286,
+              "ci95": [
+                0.9571428571428571,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.9583333333333333,
+              "ci95": [
+                0.8916666666666666,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.28375,
+              "ci95": [
+                0.20416666666666666,
+                0.36375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.007142857142857143,
+              "ci95": [
+                0.0,
+                0.02142857142857143
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 6,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.16666666666666666,
+            "FalseRelease_gold_wilson95": [
+              0.030053369748306635,
+              0.5635028221864702
+            ]
+          },
+          "holdout80_v3/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.3,
+            "release_rate_wilson95": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "recall": {
+              "estimate": 0.9785714285714286,
+              "ci95": [
+                0.9571428571428571,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.9583333333333333,
+              "ci95": [
+                0.8916666666666666,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.28375,
+              "ci95": [
+                0.20416666666666666,
+                0.36375
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.007142857142857143,
+              "ci95": [
+                0.0,
+                0.02142857142857143
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 6,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.16666666666666666,
+            "FalseRelease_gold_wilson95": [
+              0.030053369748306635,
+              0.5635028221864702
+            ]
+          }
+        },
+        "fr_decomposition": {
+          "n_pass": 20,
+          "FalseRelease_gold": {
+            "k": 3,
+            "n": 20,
+            "rate": 0.15,
+            "wilson95": [
+              0.052368745896216595,
+              0.36041886474075696
+            ]
+          },
+          "FR_taxonomy_gap": {
+            "k": 2,
+            "n": 20,
+            "rate": 0.1,
+            "wilson95": [
+              0.027866481213768224,
+              0.3010336452284873
+            ],
+            "ids": [
+              "DRSL-DRIFT-P000-TRA-0003",
+              "DRSL-HOLD-TRA-0003"
+            ]
+          },
+          "FR_declared_type_miss": {
+            "k": 1,
+            "n": 20,
+            "rate": 0.05,
+            "wilson95": [
+              0.008881448800795402,
+              0.23613119344674205
+            ],
+            "ids": [
+              "DRSL-H3-TRA-0004"
+            ]
+          },
+          "both_sources": [],
+          "residual_value_types": {
+            "room_no": 2,
+            "city": 1
+          },
+          "declared_miss_detail": [
+            {
+              "id": "DRSL-H3-TRA-0004",
+              "value": "望海县",
+              "type": "city",
+              "kind": "never_proposed"
+            }
+          ]
+        },
+        "coverage_layers": {
+          "exact_span_recall": {
+            "estimate": 0.9726190476190477,
+            "ci95": [
+              0.9575297619047618,
+              0.9857142857142857
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "sensitive_char_coverage": {
+            "estimate": 0.9876454450276029,
+            "ci95": [
+              0.9798738627980854,
+              0.994392202803107
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "gold_L": {
+            "estimate": 0.010714285714285713,
+            "ci95": [
+              0.0023809523809523807,
+              0.021825396825396824
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n_gold_values": 383,
+          "n_partial_span_only_values": 6,
+          "partial_span_detail": [
+            {
+              "id": "DRSL-HOLD-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0001",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0005",
+              "n_partial": 1,
+              "values": [
+                "月收入约8000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0001",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0005",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            }
+          ]
+        },
+        "paired": {
+          "drift_p000": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.13833333333333334,
+              "ci95": [
+                -0.20417708333333337,
+                -0.07458333333333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          },
+          "holdout80": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.13833333333333334,
+              "ci95": [
+                -0.20251041666666666,
+                -0.07666666666666667
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          },
+          "holdout80_v3": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.13375,
+              "ci95": [
+                -0.1975,
+                -0.07082291666666672
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          }
+        }
+      },
+      "family_glm": {
+        "model": "glm-5.2",
+        "seed_submitted": 20261128,
+        "prompt_version": "v1_round4",
+        "taxonomy_n": 40,
+        "n_instances": 60,
+        "n_extracted": 60,
+        "extraction_stats": {
+          "n_proposed_total": 385,
+          "n_unlocatable_total": 0,
+          "n_unknown_type_total": 0
+        },
+        "methods": {
+          "drift_p000/closed_loop": {
+            "n": 20,
+            "release_rate": 0.5,
+            "release_rate_wilson95": [
+              0.2992980081982123,
+              0.7007019918017877
+            ],
+            "recall": {
+              "estimate": 0.9702380952380952,
+              "ci95": [
+                0.9416666666666667,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.2,
+              "ci95": [
+                0.05,
+                0.4
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.3,
+              "ci95": [
+                0.15,
+                0.45
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 10,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.1,
+            "FalseRelease_gold_wilson95": [
+              0.017876213095072896,
+              0.4041500267952385
+            ]
+          },
+          "drift_p000/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.4,
+            "release_rate_wilson95": [
+              0.21880653237281705,
+              0.6134184992377469
+            ],
+            "recall": {
+              "estimate": 0.9702380952380952,
+              "ci95": [
+                0.9416666666666667,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.2,
+              "ci95": [
+                0.05,
+                0.4
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.3,
+              "ci95": [
+                0.15,
+                0.45
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 8,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.32440756488388023
+            ]
+          },
+          "drift_p000/generalization_only": {
+            "n": 20,
+            "release_rate": 0.5,
+            "release_rate_wilson95": [
+              0.2992980081982123,
+              0.7007019918017877
+            ],
+            "recall": {
+              "estimate": 0.9702380952380952,
+              "ci95": [
+                0.9416666666666667,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.2,
+              "ci95": [
+                0.05,
+                0.4
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.38541666666666663,
+              "ci95": [
+                0.26869791666666665,
+                0.5083854166666665
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 10,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.1,
+            "FalseRelease_gold_wilson95": [
+              0.017876213095072896,
+              0.4041500267952385
+            ]
+          },
+          "drift_p000/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.4,
+            "release_rate_wilson95": [
+              0.21880653237281705,
+              0.6134184992377469
+            ],
+            "recall": {
+              "estimate": 0.9702380952380952,
+              "ci95": [
+                0.9416666666666667,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.2,
+              "ci95": [
+                0.05,
+                0.4
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.38541666666666663,
+              "ci95": [
+                0.26869791666666665,
+                0.5083854166666665
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 8,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.32440756488388023
+            ]
+          },
+          "holdout80/closed_loop": {
+            "n": 20,
+            "release_rate": 0.5,
+            "release_rate_wilson95": [
+              0.2992980081982123,
+              0.7007019918017877
+            ],
+            "recall": {
+              "estimate": 0.9702380952380952,
+              "ci95": [
+                0.9416666666666667,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.3,
+              "ci95": [
+                0.1,
+                0.55
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.3,
+              "ci95": [
+                0.15,
+                0.45
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 10,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.1,
+            "FalseRelease_gold_wilson95": [
+              0.017876213095072896,
+              0.4041500267952385
+            ]
+          },
+          "holdout80/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.4,
+            "release_rate_wilson95": [
+              0.21880653237281705,
+              0.6134184992377469
+            ],
+            "recall": {
+              "estimate": 0.9702380952380952,
+              "ci95": [
+                0.9416666666666667,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.3,
+              "ci95": [
+                0.1,
+                0.55
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.3,
+              "ci95": [
+                0.15,
+                0.45
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 8,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.32440756488388023
+            ]
+          },
+          "holdout80/generalization_only": {
+            "n": 20,
+            "release_rate": 0.5,
+            "release_rate_wilson95": [
+              0.2992980081982123,
+              0.7007019918017877
+            ],
+            "recall": {
+              "estimate": 0.9702380952380952,
+              "ci95": [
+                0.9416666666666667,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.3,
+              "ci95": [
+                0.1,
+                0.55
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.38416666666666666,
+              "ci95": [
+                0.26746875,
+                0.5091666666666665
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 10,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.1,
+            "FalseRelease_gold_wilson95": [
+              0.017876213095072896,
+              0.4041500267952385
+            ]
+          },
+          "holdout80/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.4,
+            "release_rate_wilson95": [
+              0.21880653237281705,
+              0.6134184992377469
+            ],
+            "recall": {
+              "estimate": 0.9702380952380952,
+              "ci95": [
+                0.9416666666666667,
+                0.9928571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_instances": 18,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.3,
+              "ci95": [
+                0.1,
+                0.55
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.38416666666666666,
+              "ci95": [
+                0.26746875,
+                0.5091666666666665
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.008333333333333333,
+              "ci95": [
+                0.0,
+                0.025
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.1,
+            "utility_fallback_benign_fraction": 0.1,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 8,
+            "pass_with_gold_residue": 0,
+            "FalseRelease_gold": 0.0,
+            "FalseRelease_gold_wilson95": [
+              0.0,
+              0.32440756488388023
+            ]
+          },
+          "holdout80_v3/closed_loop": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9357142857142856,
+              "ci95": [
+                0.9011904761904763,
+                0.9678571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.925,
+              "ci95": [
+                0.85,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.2,
+                0.6
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.125,
+              "ci95": [
+                0.025,
+                0.225
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.025,
+              "ci95": [
+                0.0,
+                0.05
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 3,
+            "FalseRelease_gold": 0.6,
+            "FalseRelease_gold_wilson95": [
+              0.2307242812760128,
+              0.882379225767352
+            ]
+          },
+          "holdout80_v3/closed_loop_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9357142857142856,
+              "ci95": [
+                0.9011904761904763,
+                0.9678571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.925,
+              "ci95": [
+                0.85,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.2,
+                0.6
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.125,
+              "ci95": [
+                0.025,
+                0.225
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.025,
+              "ci95": [
+                0.0,
+                0.05
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 3,
+            "FalseRelease_gold": 0.6,
+            "FalseRelease_gold_wilson95": [
+              0.2307242812760128,
+              0.882379225767352
+            ]
+          },
+          "holdout80_v3/generalization_only": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9357142857142856,
+              "ci95": [
+                0.9011904761904763,
+                0.9678571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.925,
+              "ci95": [
+                0.85,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.2,
+                0.6
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.2816666666666666,
+              "ci95": [
+                0.2049895833333333,
+                0.3566770833333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.025,
+              "ci95": [
+                0.0,
+                0.05
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 3,
+            "FalseRelease_gold": 0.6,
+            "FalseRelease_gold_wilson95": [
+              0.2307242812760128,
+              0.882379225767352
+            ]
+          },
+          "holdout80_v3/generalization_only_covgate": {
+            "n": 20,
+            "release_rate": 0.25,
+            "release_rate_wilson95": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "recall": {
+              "estimate": 0.9357142857142856,
+              "ci95": [
+                0.9011904761904763,
+                0.9678571428571429
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.925,
+              "ci95": [
+                0.85,
+                1.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.4,
+              "ci95": [
+                0.2,
+                0.6
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.2816666666666666,
+              "ci95": [
+                0.2049895833333333,
+                0.3566770833333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.025,
+              "ci95": [
+                0.0,
+                0.05
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0,
+            "n_pass": 5,
+            "pass_with_gold_residue": 3,
+            "FalseRelease_gold": 0.6,
+            "FalseRelease_gold_wilson95": [
+              0.2307242812760128,
+              0.882379225767352
+            ]
+          }
+        },
+        "fr_decomposition": {
+          "n_pass": 25,
+          "FalseRelease_gold": {
+            "k": 5,
+            "n": 25,
+            "rate": 0.2,
+            "wilson95": [
+              0.08860584686802572,
+              0.3913095036954033
+            ]
+          },
+          "FR_taxonomy_gap": {
+            "k": 2,
+            "n": 25,
+            "rate": 0.08,
+            "wilson95": [
+              0.022220401284847563,
+              0.24966108950395313
+            ],
+            "ids": [
+              "DRSL-DRIFT-P000-TRA-0003",
+              "DRSL-HOLD-TRA-0003"
+            ]
+          },
+          "FR_declared_type_miss": {
+            "k": 3,
+            "n": 25,
+            "rate": 0.12,
+            "wilson95": [
+              0.04166817150440358,
+              0.2995579392092732
+            ],
+            "ids": [
+              "DRSL-H3-BAN-0001",
+              "DRSL-H3-BAN-0003",
+              "DRSL-H3-BAN-0005"
+            ]
+          },
+          "both_sources": [],
+          "residual_value_types": {
+            "room_no": 2,
+            "charge": 3
+          },
+          "declared_miss_detail": [
+            {
+              "id": "DRSL-H3-BAN-0001",
+              "value": "0元",
+              "type": "charge",
+              "kind": "never_proposed"
+            },
+            {
+              "id": "DRSL-H3-BAN-0003",
+              "value": "0元",
+              "type": "charge",
+              "kind": "never_proposed"
+            },
+            {
+              "id": "DRSL-H3-BAN-0005",
+              "value": "0元",
+              "type": "charge",
+              "kind": "never_proposed"
+            }
+          ]
+        },
+        "coverage_layers": {
+          "exact_span_recall": {
+            "estimate": 0.9587301587301588,
+            "ci95": [
+              0.9412698412698413,
+              0.975
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "sensitive_char_coverage": {
+            "estimate": 0.9872235922175391,
+            "ci95": [
+              0.9796653364905626,
+              0.9941172411647852
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "gold_L": {
+            "estimate": 0.013888888888888888,
+            "ci95": [
+              0.0027777777777777775,
+              0.025
+            ],
+            "n_instances": 60,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n_gold_values": 383,
+          "n_partial_span_only_values": 8,
+          "partial_span_detail": [
+            {
+              "id": "DRSL-HOLD-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0001",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.2万元"
+              ]
+            },
+            {
+              "id": "DRSL-HOLD-LEG-0005",
+              "n_partial": 1,
+              "values": [
+                "月收入约8000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0002",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H3-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-BAN-0004",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0001",
+              "n_partial": 1,
+              "values": [
+                "月收入约1.5万元"
+              ]
+            },
+            {
+              "id": "DRSL-DRIFT-P000-LEG-0005",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            }
+          ]
+        },
+        "paired": {
+          "drift_p000": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.08541666666666667,
+              "ci95": [
+                -0.14166666666666666,
+                -0.03333333333333333
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          },
+          "holdout80": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.08416666666666665,
+              "ci95": [
+                -0.1391770833333333,
+                -0.035406250000000056
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          },
+          "holdout80_v3": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.15666666666666668,
+              "ci95": [
+                -0.2266875,
+                -0.09122916666666676
+              ],
+              "n_instances": 20,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          }
+        }
+      },
+      "h4_complete": {
+        "model": "qwen3.8-max",
+        "seed_submitted": 20261129,
+        "prompt_version": "v2_complete",
+        "taxonomy_n": 43,
+        "n_instances": 80,
+        "n_extracted": 80,
+        "extraction_stats": {
+          "n_proposed_total": 592,
+          "n_unlocatable_total": 0,
+          "n_unknown_type_total": 0
+        },
+        "methods": {
+          "holdout80_v4/closed_loop": {
+            "n": 80,
+            "release_rate": 0.4,
+            "release_rate_wilson95": [
+              0.2996182759587093,
+              0.509545349948396
+            ],
+            "recall": {
+              "estimate": 0.9859375,
+              "ci95": [
+                0.9765625,
+                0.99375
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.99375,
+              "ci95": [
+                0.98125,
+                1.0
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1125,
+              "ci95": [
+                0.0375,
+                0.2
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.20625,
+              "ci95": [
+                0.15,
+                0.2625
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.0015625,
+              "ci95": [
+                0.0,
+                0.0046875
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0125,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0125,
+            "n_pass": 32,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.03125,
+            "FalseRelease_gold_wilson95": [
+              0.005537860164003122,
+              0.15744263820012558
+            ]
+          },
+          "holdout80_v4/closed_loop_covgate": {
+            "n": 80,
+            "release_rate": 0.3875,
+            "release_rate_wilson95": [
+              0.2882456512530507,
+              0.49706342789244284
+            ],
+            "recall": {
+              "estimate": 0.9859375,
+              "ci95": [
+                0.9765625,
+                0.99375
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.99375,
+              "ci95": [
+                0.98125,
+                1.0
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1125,
+              "ci95": [
+                0.0375,
+                0.2
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.20625,
+              "ci95": [
+                0.15,
+                0.2625
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.0015625,
+              "ci95": [
+                0.0,
+                0.0046875
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0125,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0125,
+            "n_pass": 31,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.03225806451612903,
+            "FalseRelease_gold_wilson95": [
+              0.005717221525416816,
+              0.16194105164724906
+            ]
+          },
+          "holdout80_v4/generalization_only": {
+            "n": 80,
+            "release_rate": 0.4,
+            "release_rate_wilson95": [
+              0.2996182759587093,
+              0.509545349948396
+            ],
+            "recall": {
+              "estimate": 0.9859375,
+              "ci95": [
+                0.9765625,
+                0.99375
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.99375,
+              "ci95": [
+                0.98125,
+                1.0
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1125,
+              "ci95": [
+                0.0375,
+                0.2
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.32500000000000007,
+              "ci95": [
+                0.2816588541666667,
+                0.3686484375
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.0015625,
+              "ci95": [
+                0.0,
+                0.0046875
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0125,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0125,
+            "n_pass": 32,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.03125,
+            "FalseRelease_gold_wilson95": [
+              0.005537860164003122,
+              0.15744263820012558
+            ]
+          },
+          "holdout80_v4/generalization_only_covgate": {
+            "n": 80,
+            "release_rate": 0.3875,
+            "release_rate_wilson95": [
+              0.2882456512530507,
+              0.49706342789244284
+            ],
+            "recall": {
+              "estimate": 0.9859375,
+              "ci95": [
+                0.9765625,
+                0.99375
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "task_recall": {
+              "estimate": 0.99375,
+              "ci95": [
+                0.98125,
+                1.0
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "over_extraction": {
+              "estimate": 0.1125,
+              "ci95": [
+                0.0375,
+                0.2
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_local": {
+              "estimate": 0.32500000000000007,
+              "ci95": [
+                0.2816588541666667,
+                0.3686484375
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L": {
+              "estimate": 0.0015625,
+              "ci95": [
+                0.0,
+                0.0046875
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "utility_fallback_fraction": 0.0125,
+            "utility_fallback_benign_fraction": 0.0,
+            "utility_fallback_harmful_fraction": 0.0125,
+            "n_pass": 31,
+            "pass_with_gold_residue": 1,
+            "FalseRelease_gold": 0.03225806451612903,
+            "FalseRelease_gold_wilson95": [
+              0.005717221525416816,
+              0.16194105164724906
+            ]
+          }
+        },
+        "fr_decomposition": {
+          "n_pass": 32,
+          "FalseRelease_gold": {
+            "k": 1,
+            "n": 32,
+            "rate": 0.03125,
+            "wilson95": [
+              0.005537860164003122,
+              0.15744263820012558
+            ]
+          },
+          "FR_taxonomy_gap": {
+            "k": 0,
+            "n": 32,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.1071791982550706
+            ],
+            "ids": []
+          },
+          "FR_declared_type_miss": {
+            "k": 1,
+            "n": 32,
+            "rate": 0.03125,
+            "wilson95": [
+              0.005537860164003122,
+              0.15744263820012558
+            ],
+            "ids": [
+              "DRSL-H4-TRA-0004"
+            ]
+          },
+          "both_sources": [],
+          "residual_value_types": {
+            "city": 1
+          },
+          "declared_miss_detail": [
+            {
+              "id": "DRSL-H4-TRA-0004",
+              "value": "望海县",
+              "type": "city",
+              "kind": "never_proposed"
+            }
+          ]
+        },
+        "coverage_layers": {
+          "exact_span_recall": {
+            "estimate": 0.9859375,
+            "ci95": [
+              0.9765625,
+              0.99375
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "sensitive_char_coverage": {
+            "estimate": 0.9926893419971027,
+            "ci95": [
+              0.9878344095409418,
+              0.9967789745304729
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "gold_L": {
+            "estimate": 0.0015625,
+            "ci95": [
+              0.0,
+              0.0046875
+            ],
+            "n_instances": 80,
+            "n_boot": 2000,
+            "unit": "instance_cluster"
+          },
+          "n_gold_values": 590,
+          "n_partial_span_only_values": 8,
+          "partial_span_detail": [
+            {
+              "id": "DRSL-H4-BAN-0002",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H4-BAN-0006",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H4-BAN-0008",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H4-BAN-0010",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H4-BAN-0012",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            },
+            {
+              "id": "DRSL-H4-BAN-0014",
+              "n_partial": 1,
+              "values": [
+                "月收入约9000元"
+              ]
+            },
+            {
+              "id": "DRSL-H4-BAN-0016",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            },
+            {
+              "id": "DRSL-H4-BAN-0020",
+              "n_partial": 1,
+              "values": [
+                "年收入约25万元"
+              ]
+            }
+          ]
+        },
+        "paired": {
+          "holdout80_v4": {
+            "release_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "gold_L_delta": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            },
+            "U_delta": {
+              "estimate": -0.11875,
+              "ci95": [
+                -0.15052083333333333,
+                -0.08718229166666669
+              ],
+              "n_instances": 80,
+              "n_boot": 2000,
+              "unit": "instance_cluster"
+            }
+          }
+        }
+      }
+    },
+    "stability": {
+      "stability_r1": {
+        "vs_round4_seed20261124": {
+          "n": 60,
+          "exact_entity_set_agreement": 0.95,
+          "mean_jaccard": 0.9905092592592593,
+          "by_dataset": {
+            "holdout80": {
+              "exact": 19,
+              "n": 20
+            },
+            "holdout80_v3": {
+              "exact": 18,
+              "n": 20
+            },
+            "drift_p000": {
+              "exact": 20,
+              "n": 20
+            }
+          }
+        }
+      },
+      "stability_r2": {
+        "vs_round4_seed20261124": {
+          "n": 60,
+          "exact_entity_set_agreement": 0.9166666666666666,
+          "mean_jaccard": 0.9847222222222223,
+          "by_dataset": {
+            "holdout80": {
+              "exact": 19,
+              "n": 20
+            },
+            "holdout80_v3": {
+              "exact": 17,
+              "n": 20
+            },
+            "drift_p000": {
+              "exact": 19,
+              "n": 20
+            }
+          }
+        }
+      },
+      "family_glm": {
+        "vs_round4_seed20261124": {
+          "n": 60,
+          "exact_entity_set_agreement": 0.6833333333333333,
+          "mean_jaccard": 0.925,
+          "by_dataset": {
+            "holdout80": {
+              "exact": 16,
+              "n": 20
+            },
+            "holdout80_v3": {
+              "exact": 11,
+              "n": 20
+            },
+            "drift_p000": {
+              "exact": 14,
+              "n": 20
+            }
+          }
+        }
+      },
+      "r1_vs_r2": {
+        "n": 60,
+        "exact_entity_set_agreement": 0.95,
+        "mean_jaccard": 0.9905092592592593
+      }
+    },
+    "n_errors": 0
+  },
+  "neural_round5_subset": {
+    "subset_rule": "first 5 per domain in sorted-id order, 20/dataset, 60 total",
+    "note": "descriptive subset estimates; instance-level intervals; not population CIs",
+    "conditions": {
+      "round4_ref": {
+        "n": 60,
+        "recall": {
+          "estimate": 0.9726190476190477,
+          "ci95": [
+            0.9571428571428572,
+            0.9873015873015873
+          ],
+          "n_instances": 60,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "char_coverage": {
+          "estimate": 0.986109840878458,
+          "ci95": [
+            0.9783666362462032,
+            0.9936354542014646
+          ],
+          "n_instances": 60,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "release_rate": 0.3333333333333333,
+        "FalseRelease_gold": {
+          "k": 3,
+          "n": 20,
+          "rate": 0.15,
+          "wilson95": [
+            0.052368745896216595,
+            0.36041886474075696
+          ]
+        },
+        "FR_taxonomy_gap_k": 2,
+        "FR_declared_type_miss_k": 1,
+        "residual_value_types": {
+          "room_no": 2,
+          "city": 1
+        },
+        "fr_ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-TRA-0004",
+          "DRSL-HOLD-TRA-0003"
+        ],
+        "model": "qwen3.8-max",
+        "seed_submitted": 20261124
+      },
+      "stability_r1": {
+        "n": 60,
+        "recall": {
+          "estimate": 0.96984126984127,
+          "ci95": [
+            0.9535714285714286,
+            0.9845238095238095
+          ],
+          "n_instances": 60,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "char_coverage": {
+          "estimate": 0.9852765075451246,
+          "ci95": [
+            0.9772391485877386,
+            0.9926527258709692
+          ],
+          "n_instances": 60,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "release_rate": 0.3333333333333333,
+        "FalseRelease_gold": {
+          "k": 3,
+          "n": 20,
+          "rate": 0.15,
+          "wilson95": [
+            0.052368745896216595,
+            0.36041886474075696
+          ]
+        },
+        "FR_taxonomy_gap_k": 2,
+        "FR_declared_type_miss_k": 1,
+        "residual_value_types": {
+          "room_no": 2,
+          "city": 1
+        },
+        "fr_ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-TRA-0004",
+          "DRSL-HOLD-TRA-0003"
+        ],
+        "model": "qwen3.8-max",
+        "seed_submitted": 20261126,
+        "stability_vs_round4": {
+          "n": 60,
+          "exact_entity_set_agreement": 0.95,
+          "mean_jaccard": 0.9905092592592593,
+          "by_dataset": {
+            "holdout80": {
+              "exact": 19,
+              "n": 20
+            },
+            "holdout80_v3": {
+              "exact": 18,
+              "n": 20
+            },
+            "drift_p000": {
+              "exact": 20,
+              "n": 20
+            }
+          }
+        }
+      },
+      "stability_r2": {
+        "n": 60,
+        "recall": {
+          "estimate": 0.9726190476190477,
+          "ci95": [
+            0.9575297619047618,
+            0.9857142857142857
+          ],
+          "n_instances": 60,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "char_coverage": {
+          "estimate": 0.9876454450276029,
+          "ci95": [
+            0.9798738627980854,
+            0.994392202803107
+          ],
+          "n_instances": 60,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "release_rate": 0.3333333333333333,
+        "FalseRelease_gold": {
+          "k": 3,
+          "n": 20,
+          "rate": 0.15,
+          "wilson95": [
+            0.052368745896216595,
+            0.36041886474075696
+          ]
+        },
+        "FR_taxonomy_gap_k": 2,
+        "FR_declared_type_miss_k": 1,
+        "residual_value_types": {
+          "room_no": 2,
+          "city": 1
+        },
+        "fr_ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-TRA-0004",
+          "DRSL-HOLD-TRA-0003"
+        ],
+        "model": "qwen3.8-max",
+        "seed_submitted": 20261127,
+        "stability_vs_round4": {
+          "n": 60,
+          "exact_entity_set_agreement": 0.9166666666666666,
+          "mean_jaccard": 0.9847222222222223,
+          "by_dataset": {
+            "holdout80": {
+              "exact": 19,
+              "n": 20
+            },
+            "holdout80_v3": {
+              "exact": 17,
+              "n": 20
+            },
+            "drift_p000": {
+              "exact": 19,
+              "n": 20
+            }
+          }
+        }
+      },
+      "family_glm": {
+        "n": 60,
+        "recall": {
+          "estimate": 0.9587301587301588,
+          "ci95": [
+            0.9412698412698413,
+            0.975
+          ],
+          "n_instances": 60,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "char_coverage": {
+          "estimate": 0.9872235922175391,
+          "ci95": [
+            0.9796653364905626,
+            0.9941172411647852
+          ],
+          "n_instances": 60,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "release_rate": 0.4166666666666667,
+        "FalseRelease_gold": {
+          "k": 5,
+          "n": 25,
+          "rate": 0.2,
+          "wilson95": [
+            0.08860584686802572,
+            0.3913095036954033
+          ]
+        },
+        "FR_taxonomy_gap_k": 2,
+        "FR_declared_type_miss_k": 3,
+        "residual_value_types": {
+          "room_no": 2,
+          "charge": 3
+        },
+        "fr_ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-BAN-0001",
+          "DRSL-H3-BAN-0003",
+          "DRSL-H3-BAN-0005",
+          "DRSL-HOLD-TRA-0003"
+        ],
+        "model": "glm-5.2",
+        "seed_submitted": 20261128,
+        "stability_vs_round4": {
+          "n": 60,
+          "exact_entity_set_agreement": 0.6833333333333333,
+          "mean_jaccard": 0.925,
+          "by_dataset": {
+            "holdout80": {
+              "exact": 16,
+              "n": 20
+            },
+            "holdout80_v3": {
+              "exact": 11,
+              "n": 20
+            },
+            "drift_p000": {
+              "exact": 14,
+              "n": 20
+            }
+          }
+        }
+      }
+    },
+    "r1_vs_r2": {
+      "n": 60,
+      "exact_entity_set_agreement": 0.95,
+      "mean_jaccard": 0.9905092592592593
+    }
+  },
+  "offline_h4_summary": {
+    "dataset": "holdout80_v4",
+    "n": 80,
+    "realized_old_vocab_fraction": 0.3758,
+    "methods": {
+      "holdout80_v4/original/closed_loop": {
+        "n": 80,
+        "release_rate": 0.6375,
+        "release_rate_wilson95": [
+          0.5281079450222215,
+          0.7342920693555084
+        ],
+        "recall": {
+          "estimate": 0.5530753968253969,
+          "ci95": [
+            0.511109871031746,
+            0.5947941468253968
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "task_recall": {
+          "estimate": 0.359375,
+          "ci95": [
+            0.28020833333333334,
+            0.4395833333333333
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "over_extraction": {
+          "estimate": 1.0375,
+          "ci95": [
+            0.8,
+            1.275
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_local": {
+          "estimate": 0.5375,
+          "ci95": [
+            0.4375,
+            0.63125
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.36716269841269844,
+          "ci95": [
+            0.33541294642857133,
+            0.3988845486111111
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "utility_fallback_fraction": 0.4375,
+        "utility_fallback_benign_fraction": 0.0,
+        "utility_fallback_harmful_fraction": 0.4375,
+        "n_pass": 51,
+        "pass_with_gold_residue": 51,
+        "FalseRelease_gold": 1.0,
+        "FalseRelease_gold_wilson95": [
+          0.9299533801014687,
+          1.0
+        ]
+      },
+      "holdout80_v4/original/closed_loop_covgate": {
+        "n": 80,
+        "release_rate": 0.2,
+        "release_rate_wilson95": [
+          0.12702844043960787,
+          0.30046243728170835
+        ],
+        "recall": {
+          "estimate": 0.5530753968253969,
+          "ci95": [
+            0.511109871031746,
+            0.5947941468253968
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "task_recall": {
+          "estimate": 0.359375,
+          "ci95": [
+            0.28020833333333334,
+            0.4395833333333333
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "over_extraction": {
+          "estimate": 1.0375,
+          "ci95": [
+            0.8,
+            1.275
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_local": {
+          "estimate": 0.5375,
+          "ci95": [
+            0.4375,
+            0.63125
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.36716269841269844,
+          "ci95": [
+            0.33541294642857133,
+            0.3988845486111111
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "utility_fallback_fraction": 0.4375,
+        "utility_fallback_benign_fraction": 0.0,
+        "utility_fallback_harmful_fraction": 0.4375,
+        "n_pass": 16,
+        "pass_with_gold_residue": 16,
+        "FalseRelease_gold": 1.0,
+        "FalseRelease_gold_wilson95": [
+          0.8063923194655637,
+          1.0
+        ]
+      },
+      "holdout80_v4/original/generalization_only": {
+        "n": 80,
+        "release_rate": 0.6375,
+        "release_rate_wilson95": [
+          0.5281079450222215,
+          0.7342920693555084
+        ],
+        "recall": {
+          "estimate": 0.5530753968253969,
+          "ci95": [
+            0.511109871031746,
+            0.5947941468253968
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "task_recall": {
+          "estimate": 0.359375,
+          "ci95": [
+            0.28020833333333334,
+            0.4395833333333333
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "over_extraction": {
+          "estimate": 1.0375,
+          "ci95": [
+            0.8,
+            1.275
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_local": {
+          "estimate": 0.6130208333333333,
+          "ci95": [
+            0.5333203125000001,
+            0.6901041666666666
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.36716269841269844,
+          "ci95": [
+            0.33541294642857133,
+            0.3988845486111111
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "utility_fallback_fraction": 0.4375,
+        "utility_fallback_benign_fraction": 0.0,
+        "utility_fallback_harmful_fraction": 0.4375,
+        "n_pass": 51,
+        "pass_with_gold_residue": 51,
+        "FalseRelease_gold": 1.0,
+        "FalseRelease_gold_wilson95": [
+          0.9299533801014687,
+          1.0
+        ]
+      },
+      "holdout80_v4/original/generalization_only_covgate": {
+        "n": 80,
+        "release_rate": 0.2,
+        "release_rate_wilson95": [
+          0.12702844043960787,
+          0.30046243728170835
+        ],
+        "recall": {
+          "estimate": 0.5530753968253969,
+          "ci95": [
+            0.511109871031746,
+            0.5947941468253968
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "task_recall": {
+          "estimate": 0.359375,
+          "ci95": [
+            0.28020833333333334,
+            0.4395833333333333
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "over_extraction": {
+          "estimate": 1.0375,
+          "ci95": [
+            0.8,
+            1.275
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_local": {
+          "estimate": 0.6130208333333333,
+          "ci95": [
+            0.5333203125000001,
+            0.6901041666666666
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.36716269841269844,
+          "ci95": [
+            0.33541294642857133,
+            0.3988845486111111
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "utility_fallback_fraction": 0.4375,
+        "utility_fallback_benign_fraction": 0.0,
+        "utility_fallback_harmful_fraction": 0.4375,
+        "n_pass": 16,
+        "pass_with_gold_residue": 16,
+        "FalseRelease_gold": 1.0,
+        "FalseRelease_gold_wilson95": [
+          0.8063923194655637,
+          1.0
+        ]
+      },
+      "holdout80_v4/fixed/closed_loop": {
+        "n": 80,
+        "release_rate": 0.625,
+        "release_rate_wilson95": [
+          0.5154872546314301,
+          0.7230582129846882
+        ],
+        "recall": {
+          "estimate": 0.7135416666666667,
+          "ci95": [
+            0.683358134920635,
+            0.7441511656746032
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "task_recall": {
+          "estimate": 0.8072916666666667,
+          "ci95": [
+            0.738515625,
+            0.8708333333333332
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "over_extraction": {
+          "estimate": 0.7875,
+          "ci95": [
+            0.575,
+            1.0
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_local": {
+          "estimate": 0.34375,
+          "ci95": [
+            0.28125,
+            0.40625
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.24538690476190475,
+          "ci95": [
+            0.21150731646825394,
+            0.2800601438492063
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "utility_fallback_fraction": 0.0625,
+        "utility_fallback_benign_fraction": 0.0,
+        "utility_fallback_harmful_fraction": 0.0625,
+        "n_pass": 50,
+        "pass_with_gold_residue": 42,
+        "FalseRelease_gold": 0.84,
+        "FalseRelease_gold_wilson95": [
+          0.7148578393696501,
+          0.916625793219666
+        ]
+      },
+      "holdout80_v4/fixed/closed_loop_covgate": {
+        "n": 80,
+        "release_rate": 0.5625,
+        "release_rate_wilson95": [
+          0.4534113429694972,
+          0.6658613908385618
+        ],
+        "recall": {
+          "estimate": 0.7135416666666667,
+          "ci95": [
+            0.683358134920635,
+            0.7441511656746032
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "task_recall": {
+          "estimate": 0.8072916666666667,
+          "ci95": [
+            0.738515625,
+            0.8708333333333332
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "over_extraction": {
+          "estimate": 0.7875,
+          "ci95": [
+            0.575,
+            1.0
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_local": {
+          "estimate": 0.34375,
+          "ci95": [
+            0.28125,
+            0.40625
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.24538690476190475,
+          "ci95": [
+            0.21150731646825394,
+            0.2800601438492063
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "utility_fallback_fraction": 0.0625,
+        "utility_fallback_benign_fraction": 0.0,
+        "utility_fallback_harmful_fraction": 0.0625,
+        "n_pass": 45,
+        "pass_with_gold_residue": 37,
+        "FalseRelease_gold": 0.8222222222222222,
+        "FalseRelease_gold_wilson95": [
+          0.6867017537354023,
+          0.9070561048589585
+        ]
+      },
+      "holdout80_v4/fixed/generalization_only": {
+        "n": 80,
+        "release_rate": 0.625,
+        "release_rate_wilson95": [
+          0.5154872546314301,
+          0.7230582129846882
+        ],
+        "recall": {
+          "estimate": 0.7135416666666667,
+          "ci95": [
+            0.683358134920635,
+            0.7441511656746032
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "task_recall": {
+          "estimate": 0.8072916666666667,
+          "ci95": [
+            0.738515625,
+            0.8708333333333332
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "over_extraction": {
+          "estimate": 0.7875,
+          "ci95": [
+            0.575,
+            1.0
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_local": {
+          "estimate": 0.42281250000000004,
+          "ci95": [
+            0.37780989583333335,
+            0.46844010416666665
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.24538690476190475,
+          "ci95": [
+            0.21150731646825394,
+            0.2800601438492063
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "utility_fallback_fraction": 0.0625,
+        "utility_fallback_benign_fraction": 0.0,
+        "utility_fallback_harmful_fraction": 0.0625,
+        "n_pass": 50,
+        "pass_with_gold_residue": 42,
+        "FalseRelease_gold": 0.84,
+        "FalseRelease_gold_wilson95": [
+          0.7148578393696501,
+          0.916625793219666
+        ]
+      },
+      "holdout80_v4/fixed/generalization_only_covgate": {
+        "n": 80,
+        "release_rate": 0.5625,
+        "release_rate_wilson95": [
+          0.4534113429694972,
+          0.6658613908385618
+        ],
+        "recall": {
+          "estimate": 0.7135416666666667,
+          "ci95": [
+            0.683358134920635,
+            0.7441511656746032
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "task_recall": {
+          "estimate": 0.8072916666666667,
+          "ci95": [
+            0.738515625,
+            0.8708333333333332
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "over_extraction": {
+          "estimate": 0.7875,
+          "ci95": [
+            0.575,
+            1.0
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_local": {
+          "estimate": 0.42281250000000004,
+          "ci95": [
+            0.37780989583333335,
+            0.46844010416666665
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L": {
+          "estimate": 0.24538690476190475,
+          "ci95": [
+            0.21150731646825394,
+            0.2800601438492063
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "utility_fallback_fraction": 0.0625,
+        "utility_fallback_benign_fraction": 0.0,
+        "utility_fallback_harmful_fraction": 0.0625,
+        "n_pass": 45,
+        "pass_with_gold_residue": 37,
+        "FalseRelease_gold": 0.8222222222222222,
+        "FalseRelease_gold_wilson95": [
+          0.6867017537354023,
+          0.9070561048589585
+        ]
+      }
+    },
+    "paired": {
+      "original": {
+        "release_delta": {
+          "estimate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L_delta": {
+          "estimate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_delta": {
+          "estimate": -0.07552083333333333,
+          "ci95": [
+            -0.10364583333333333,
+            -0.0494661458333334
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      },
+      "fixed": {
+        "release_delta": {
+          "estimate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "gold_L_delta": {
+          "estimate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        },
+        "U_delta": {
+          "estimate": -0.0790625,
+          "ci95": [
+            -0.1086484375,
+            -0.052601562500000004
+          ],
+          "n_instances": 80,
+          "n_boot": 2000,
+          "unit": "instance_cluster"
+        }
+      }
+    },
+    "fr_decomposition": {
+      "original": {
+        "n_pass": 51,
+        "FalseRelease_gold": {
+          "k": 51,
+          "n": 51,
+          "rate": 1.0,
+          "wilson95": [
+            0.9299533801014687,
+            1.0
+          ]
+        },
+        "FR_taxonomy_gap": {
+          "k": 51,
+          "n": 51,
+          "rate": 1.0,
+          "wilson95": [
+            0.9299533801014687,
+            1.0
+          ],
+          "ids": [
+            "DRSL-H4-BAN-0001",
+            "DRSL-H4-BAN-0002",
+            "DRSL-H4-BAN-0003",
+            "DRSL-H4-BAN-0004",
+            "DRSL-H4-BAN-0005",
+            "DRSL-H4-BAN-0006",
+            "DRSL-H4-BAN-0007",
+            "DRSL-H4-BAN-0008",
+            "DRSL-H4-BAN-0009",
+            "DRSL-H4-BAN-0010",
+            "DRSL-H4-BAN-0011",
+            "DRSL-H4-BAN-0012",
+            "DRSL-H4-BAN-0013",
+            "DRSL-H4-BAN-0014",
+            "DRSL-H4-BAN-0015",
+            "DRSL-H4-BAN-0016",
+            "DRSL-H4-BAN-0017",
+            "DRSL-H4-BAN-0018",
+            "DRSL-H4-BAN-0019",
+            "DRSL-H4-BAN-0020",
+            "DRSL-H4-LEG-0001",
+            "DRSL-H4-LEG-0003",
+            "DRSL-H4-LEG-0005",
+            "DRSL-H4-LEG-0006",
+            "DRSL-H4-LEG-0007",
+            "DRSL-H4-LEG-0009",
+            "DRSL-H4-LEG-0011",
+            "DRSL-H4-LEG-0013",
+            "DRSL-H4-LEG-0014",
+            "DRSL-H4-LEG-0015",
+            "DRSL-H4-LEG-0016",
+            "DRSL-H4-LEG-0017",
+            "DRSL-H4-LEG-0019",
+            "DRSL-H4-LEG-0020",
+            "DRSL-H4-MED-0007",
+            "DRSL-H4-MED-0009",
+            "DRSL-H4-MED-0011",
+            "DRSL-H4-MED-0013",
+            "DRSL-H4-MED-0017",
+            "DRSL-H4-MED-0020",
+            "DRSL-H4-TRA-0001",
+            "DRSL-H4-TRA-0003",
+            "DRSL-H4-TRA-0006",
+            "DRSL-H4-TRA-0008",
+            "DRSL-H4-TRA-0009",
+            "DRSL-H4-TRA-0011",
+            "DRSL-H4-TRA-0013",
+            "DRSL-H4-TRA-0015",
+            "DRSL-H4-TRA-0016",
+            "DRSL-H4-TRA-0017",
+            "DRSL-H4-TRA-0020"
+          ]
+        },
+        "FR_declared_type_miss": {
+          "k": 0,
+          "n": 51,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.07004661989853143
+          ],
+          "ids": []
+        },
+        "both_sources": [],
+        "residual_value_types": {
+          "name": 7,
+          "city": 22,
+          "disease": 6,
+          "occupation": 5,
+          "drug": 6,
+          "allergy": 1,
+          "amount": 39,
+          "charge": 10,
+          "bank": 7,
+          "employer": 5,
+          "duration": 5,
+          "children_count": 5,
+          "hotel": 3,
+          "lawfirm": 5,
+          "address": 3,
+          "case_type": 4,
+          "court": 3
+        },
+        "declared_miss_detail": []
+      },
+      "fixed": {
+        "n_pass": 50,
+        "FalseRelease_gold": {
+          "k": 42,
+          "n": 50,
+          "rate": 0.84,
+          "wilson95": [
+            0.7148578393696501,
+            0.916625793219666
+          ]
+        },
+        "FR_taxonomy_gap": {
+          "k": 42,
+          "n": 50,
+          "rate": 0.84,
+          "wilson95": [
+            0.7148578393696501,
+            0.916625793219666
+          ],
+          "ids": [
+            "DRSL-H4-BAN-0002",
+            "DRSL-H4-BAN-0003",
+            "DRSL-H4-BAN-0004",
+            "DRSL-H4-BAN-0005",
+            "DRSL-H4-BAN-0006",
+            "DRSL-H4-BAN-0007",
+            "DRSL-H4-BAN-0009",
+            "DRSL-H4-BAN-0010",
+            "DRSL-H4-BAN-0011",
+            "DRSL-H4-BAN-0013",
+            "DRSL-H4-BAN-0014",
+            "DRSL-H4-BAN-0015",
+            "DRSL-H4-BAN-0018",
+            "DRSL-H4-BAN-0020",
+            "DRSL-H4-LEG-0003",
+            "DRSL-H4-LEG-0005",
+            "DRSL-H4-LEG-0006",
+            "DRSL-H4-LEG-0007",
+            "DRSL-H4-LEG-0009",
+            "DRSL-H4-LEG-0011",
+            "DRSL-H4-LEG-0013",
+            "DRSL-H4-LEG-0014",
+            "DRSL-H4-LEG-0015",
+            "DRSL-H4-LEG-0016",
+            "DRSL-H4-LEG-0019",
+            "DRSL-H4-LEG-0020",
+            "DRSL-H4-MED-0007",
+            "DRSL-H4-MED-0009",
+            "DRSL-H4-MED-0011",
+            "DRSL-H4-MED-0013",
+            "DRSL-H4-MED-0017",
+            "DRSL-H4-TRA-0001",
+            "DRSL-H4-TRA-0003",
+            "DRSL-H4-TRA-0006",
+            "DRSL-H4-TRA-0008",
+            "DRSL-H4-TRA-0009",
+            "DRSL-H4-TRA-0011",
+            "DRSL-H4-TRA-0013",
+            "DRSL-H4-TRA-0015",
+            "DRSL-H4-TRA-0016",
+            "DRSL-H4-TRA-0017",
+            "DRSL-H4-TRA-0020"
+          ]
+        },
+        "FR_declared_type_miss": {
+          "k": 0,
+          "n": 50,
+          "rate": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.07134759913335872
+          ],
+          "ids": []
+        },
+        "both_sources": [],
+        "residual_value_types": {
+          "name": 7,
+          "city": 22,
+          "disease": 5,
+          "occupation": 5,
+          "drug": 5,
+          "bank": 7,
+          "employer": 5,
+          "duration": 5,
+          "children_count": 5,
+          "hotel": 3,
+          "lawfirm": 5,
+          "address": 3,
+          "case_type": 4,
+          "court": 3
+        },
+        "declared_miss_detail": []
+      }
+    }
+  },
   "open_attack_stratified": {
     "closed_loop": {
       "ALL": {
@@ -7953,9 +13226,11 @@
   "freeze_manifest": {
     "revision_protocol_v3.md": "4f45e63552ee950969a7f5eea02249119ff022d80f28a82778eb4c6e4df46ebe",
     "revision_protocol_v4.md": "c136bf9ae94ee29bea61e83324b3693501f2aba1a36ef3c33bc139f1d53da7eb",
+    "revision_protocol_v5.md": "564268726fbe1e899bf29b3ae4aa5b264f83be54c154d975f8e3c24805d7ca59",
     "dataset/generate_holdout.py": "f31bf09840f385ccd8e1fdb1a202cb2e093656f04115962f9acd06290086630e",
     "dataset/generate_holdout2.py": "e9827260a09901d826847366ef050bbb2a0ed7914252dc5b4862b74a4dc5c059",
     "dataset/generate_holdout3.py": "d3d1a17aeff1cb71cbf91badf9227d2ec5a23bafbcb99f867bb470c072942c04",
+    "dataset/generate_holdout4.py": "4f8756b4fb63ac2f3476b6d0b553f72817e5b54241d678df6c1930c18482d060",
     "dataset/generate_drift_series.py": "8d9e7bc51621b695ea2613faa2e16b9e50d841c9d6293fc1d0d0d1befb1e365b",
     "dataset/vocab_mix.py": "16b79fab0a094b304cd753a7cf4fe4e2fc13f0618a7b567d6d45a2f47fcd7696",
     "dataset/synth_values.py": "4996817742ee65345c4032a465d5e8d7402d3d3e7548135d84f560cbab0131ea",
@@ -7963,6 +13238,7 @@
     "dataset/output/dr_sl_holdout_v1.jsonl": "ae06bce47d044924d645e909d03241f54a1e5a3db7b4a20af95248418f969ce8",
     "dataset/output/dr_sl_holdout_v2.jsonl": "439ec94571977f9d6961d165192eccc440f789f42a37af6c362163a0896c99a3",
     "dataset/output/dr_sl_holdout_v3.jsonl": "0d10699ef5ab7c461e215e145e57ef50fd97708e4290468264e48a2be7ce5f0a",
+    "dataset/output/dr_sl_holdout_v4.jsonl": "17c5aad77db585d3dcc840020b360e66a1cdaa3e806662d5e812d4fc8ffa91be",
     "dataset/output/dr_sl_drift_p000.jsonl": "1d28894961520e1a036569e144788dc493d3389091bcad28d9a7d2b6fd81ff7e",
     "dataset/output/dr_sl_drift_p025.jsonl": "39b5083bdf550a049724e5ce6ac81bc132853902fe9a2e605840d7bd033f1072",
     "dataset/output/dr_sl_drift_p050.jsonl": "2013b6064cdbad9135d7092244d603c6970b833e07d0205fcce0fc9a4e9d1312",
@@ -7975,19 +13251,23 @@
     "sim/pipeline.py": "584649ae205ff5fad3c1778a4089c55efc31dac012f91fdaacbbb38c4a5e5fdc",
     "sim/revision_stats.py": "6330847d53180f804bf315925329fbdf3de91f0e69c82c8f410be15d5574a472",
     "sim/revision_stratified.py": "ba74f643288b5a9f04ee6f2020037df7b13531331b768a26a3a263128191160f",
-    "sim/revision_stratified_v3.py": "233adc19a1b3a8faa5e1a55da2e58753ddf13971a14b1a456adca28ea5e73401",
+    "sim/revision_stratified_v3.py": "cc28fe5d8cd40200256e2e21d14cadac933e5ee9e12c2fce096f56965bc8fce1",
     "sim/revision_experiment.py": "13ee8b85df44517bd4a92fc1d7ac7c89389769c93938578becd4419980320292",
     "sim/revision_h3_experiment.py": "bbd261a71b68588e82c55c07191ff38b31c240be61c13186fbdadc83260b6877",
     "sim/revision_downstream.py": "47e1afea43e5c253af915572dd792bb429722d141b4bcc5754d81e86485dbb03",
     "sim/revision_open_attack.py": "7d24b9b3fbf3506f1c0c2947ecb491ad23d681f97ed6ce1774f34603293479e4",
     "sim/revision_residual_probe.py": "16ca7ef3c144021abf4d735a93b2eee9113cdf344a6c72c73aaaa6dc6fa622f5",
     "sim/revision_neural_extractor.py": "d4056a7b5e6c2bfad334946fb0eb2bca606778fdad4d32f7341b49df1b30a371",
-    "sim/make_revision_tables.py": "7ea3cd56ae3adf34e205cf439b8ef4d1840a9ffa9e78f8553e185d08e74acefc",
-    "sim/make_journal_version.py": "0e04b445ad6d5b6daf57e3d6f6f43a95112bc3876032b3fbc5268589d8947279",
+    "sim/revision_neural_analysis.py": "3cac4397ae8351f5587facc4f23e0110ad07346607fa839bc3868ecaa2811136",
+    "sim/revision_neural_round5.py": "40974c3e6bd2daa4572114b5fc2d9c67e04a780134c674a69997ee82b4df808e",
+    "sim/revision_neural_subset.py": "e89cc14adf83e479839d92744426cafa181c6ca1663dcc028e9d316f8cd0d180",
+    "sim/make_revision_tables.py": "106d184beafd4a0bd733fb0c70065e3f373c67fe01f981635ce85c29ef876717",
+    "sim/make_journal_version.py": "c7ed771195b5d6b54b0070d6d451ab8bee2d077615cbd56366b4ccb0ed9112c5",
     "sim/test_spearman_ties.py": "10411922d4ff861a21d1313e7711e1cd7a7728e6a366197322b108ba256590f2",
-    "sim/test_task_fields.py": "1740e9f73ed0e0e84e7372f2d4dbcf916b492e47beb34479b2366d061ca55786",
+    "sim/test_task_fields.py": "49e6ae5b812bf1b2e2103643ec2ac50c2dfef7539a2e3a88a0a5eb4b480e0de8",
     "sim/test_extractor_fixed.py": "ac2044297bcf202e449cd95bfdb8c043a1bedac7bd5377aabbb87be608fe5928",
     "sim/test_revision_stats.py": "312fd191464b7dc667fac4a2c8953762f15d5a10ff5d389148d3c95d76dbbcc5",
-    "sim/test_neural_parser.py": "0e30942dbc37f1770fa642ca958c885e921f5f521815f24c7afa054c4a9dcd59"
+    "sim/test_neural_parser.py": "0e30942dbc37f1770fa642ca958c885e921f5f521815f24c7afa054c4a9dcd59",
+    "sim/test_neural_taxonomy.py": "2b16fadd61331bf433b282c7157685b607f6af6b268a30fcfe259c0fb6eb9810"
   }
 }

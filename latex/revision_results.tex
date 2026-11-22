@@ -66,17 +66,19 @@ h1 fixed & 1.000 & 57.5 & 0.0 [.000,.077] & 13.8/13.8/0.0 \\
 h2 fixed & 0.668 & 87.5 & 100.0 [.948,1.000] & 18.8/12.5/6.2 \\
 \bottomrule\end{tabular}\end{table}
 
-\begin{table}[!t]\centering\setlength{\tabcolsep}{3pt}\footnotesize
-\caption{Cloud-assisted neural-extractor contrast (qwen3.8-max, frozen prompt; DIAGNOSTIC ONLY---extraction itself discloses $X$ to the cloud, so this is not a deployable local gate). Same gates/methods as the deterministic track. det.=original deterministic extractor. Neural recall survives full vocabulary displacement; false release drops sharply but persists (13--17\%): the gate inherits even neural misses. The frozen taxonomy omitted two gold types (room number, marriage duration), so neural numbers are a lower bound.}
+\begin{table}[!t]\centering\setlength{\tabcolsep}{2.5pt}\footnotesize
+\caption{Cloud-assisted neural-extractor contrast (qwen3.8-max, frozen prompt; DIAGNOSTIC ONLY---extraction discloses $X$; single-run, instance-level intervals). Same gates/methods; det.=original deterministic extractor (decomposition n/a). FR split by residual gold type: gap=undeclared type (room\_no, marriage\_years, work\_years omitted on h1/drift; h3 fully declared); decl=within-taxonomy miss. h1/drift-p0 residue is entirely room\_no gap; only h3 evidences declared-type neural misses. h4 neural v2 uses the complete 43-type taxonomy (prompt v2, round 5) on NEW holdout-4 (template family \#4, natural mix). Coverage layers and bound scoping in text: exact-span recall is conservative under the prompt/taxonomy; FR is conditional on the incomplete taxonomy, with no general bound direction.}
 \label{tab:neural}
-\begin{tabular}{@{}lcccc@{}}\toprule
-Data & recall & task rec. & rel.\ \% & FR$_{gold}$ \% [95\% CI] \\ \midrule
-h1 det. & 0.858 & 0.493 & 57.5 & 78.3 [.644,.877] \\
-h1 neural & 0.965 & 1.000 & 38.8 & 16.1 [.071,.326] \\
-h3 det. & 0.542 & 0.427 & 55.0 & 100.0 [.920,1.000] \\
-h3 neural & 0.973 & 0.971 & 30.0 & 16.7 [.067,.359] \\
-drift p0 det. & 0.522 & 0.229 & 92.5 & 100.0 [.906,1.000] \\
-drift p0 neural & 0.965 & 1.000 & 37.5 & 13.3 [.037,.379] \\
+\begin{tabular}{@{}lcccccc@{}}\toprule
+Data & recall & task rec. & rel.\ \% & FR$_{gold}$ \% [95\% CI] & FR$_{gap}$ \% [95\% CI] & FR$_{decl}$ \% [95\% CI] \\ \midrule
+h1 det. & 0.858 & 0.493 & 57.5 & 78.3 [.644,.877] & -- & -- \\
+h1 neural & 0.965 & 1.000 & 38.8 & 16.1 [.071,.326] & 16.1 [.071,.326] & 0.0 [.000,.110] \\
+h3 det. & 0.542 & 0.427 & 55.0 & 100.0 [.920,1.000] & -- & -- \\
+h3 neural & 0.973 & 0.971 & 30.0 & 16.7 [.067,.359] & 0.0 [.000,.138] & 16.7 [.067,.359] \\
+drift p0 det. & 0.522 & 0.229 & 92.5 & 100.0 [.906,1.000] & -- & -- \\
+drift p0 neural & 0.965 & 1.000 & 37.5 & 13.3 [.037,.379] & 13.3 [.037,.379] & 0.0 [.000,.204] \\
+h4 det. & 0.553 & 0.359 & 63.7 & 100.0 [.930,1.000] & -- & -- \\
+h4 neural v2 & 0.986 & 0.994 & 40.0 & 3.1 [.006,.157] & 0.0 [.000,.107] & 3.1 [.006,.157] \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\footnotesize

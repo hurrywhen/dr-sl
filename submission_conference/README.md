@@ -2,7 +2,7 @@
 
 Manuscript: **Auditing Local Release Gates for Cloud-Local LLM Inference: Failure Modes of a Runtime-Sensitive-Set De-identification Chain**
 
-Condensed from the authoritative main version (`../latex/main.tex`, 18 pp. single-column, round 4). This is a failure-analysis and reproducible-audit study; the closed loop is an audited object, and all conclusions are scoped to the audited implementation and author-constructed synthetic tests.
+Condensed from the authoritative main version (`../latex/main.tex`, 19 pp. single-column, round 5). This is a failure-analysis and reproducible-audit study; the closed loop is an audited object, and all conclusions are scoped to the audited implementation and author-constructed synthetic tests.
 
 ## Contents
 
@@ -11,7 +11,7 @@ Condensed from the authoritative main version (`../latex/main.tex`, 18 pp. singl
 | `main.tex` | Manuscript source (IEEEtran `[conference]`, two columns) |
 | `main.pdf` | Compiled manuscript, **4 pages** (body 3 pp.; references fill p. 4), 0 overfull, 0 undefined references |
 | `revision_results_conf.tex` | Auto-generated condensed result tables (6 tables; from `sim/make_revision_tables.py` — do not edit by hand) |
-| `cover_letter.md` | Cover letter to the TPC chairs (round 4; fill venue placeholders) |
+| `cover_letter.md` | Cover letter to the TPC chairs (round 5; fill venue placeholders) |
 | `declarations.md` | CRediT contributions, COI, funding, data/code availability, ethics, prior-version disclosure, checklist |
 | `figures/` | Legacy figure from the pre-revision method paper; **not referenced** by the current manuscript |
 | `build.log` | Last compile log (for reference; not part of submission) |
@@ -24,7 +24,7 @@ pdflatex main.tex && pdflatex main.tex   # requires TeX Live with IEEEtran, cite
 
 ## Scope of this version (what was condensed vs the main version)
 
-- Kept: the three core findings (false release with Wilson intervals; unmarked-context fallback mechanism and coverage-gate audit; no closed-loop increment with corrected paired deltas and full dual-judge reporting), vocabulary stress/dose–response, fixed-extractor contrast, diagnostic neural-extractor contrast, external audit and corrected calibration, downstream reference-answer preservation, scoped residual-report finding, and the merged result tables.
+- Kept: the three core findings (false release with Wilson intervals; unmarked-context fallback mechanism and coverage-gate audit; no closed-loop increment with corrected paired deltas and full dual-judge reporting), vocabulary stress/dose–response, fixed-extractor contrast, diagnostic neural-extractor contrast with FR source decomposition and round-5 credibility checks (stability repeats, second family, complete-taxonomy holdout-4), external audit and corrected calibration, downstream reference-answer preservation, scoped residual-report finding, and the merged result tables.
 - Omitted or reduced to statements: full proof sketches and theory appendix, human-study details, two-type residual probe table, open-ended attack table, reproducibility appendix, and the revision-history appendix (all in `../latex/main.tex` and `../submission_journal/`).
 
 ## Before submitting (see `declarations.md`)
