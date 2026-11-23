@@ -1,8 +1,8 @@
-# Submission Package — Conference Version (4 pages, two-column IEEE)
+# Camera-Ready Package — IEEE ISAICS 2026 Accepted Version (4 pages, two-column IEEE)
 
 Manuscript: **Auditing Local Release Gates for Cloud-Local LLM Inference: Failure Modes of a Runtime-Sensitive-Set De-identification Chain**
 
-Condensed from the authoritative main version (`../latex/main.tex`, 19 pp. single-column, round 6). This is a failure-analysis and reproducible-audit study; the closed loop is an audited object, and all conclusions are scoped to the audited implementation and author-constructed synthetic tests.
+Condensed from the authoritative main version (`../latex/main.tex`, submission-final). **Accepted to IEEE ISAICS 2026**; proceedings DOI/pages remain pending. Author order is Ya Yu, Wen Hu, Xutong Wang. This is a failure-analysis and reproducible-audit study; the closed loop is an audited object, and all conclusions are scoped to the audited implementation and author-constructed synthetic tests. Earlier preprint: arXiv:2609.14883v1 (different title and earlier claims). See `../SUBMISSION_STATUS.md`.
 
 ## Contents
 
@@ -10,8 +10,8 @@ Condensed from the authoritative main version (`../latex/main.tex`, 19 pp. singl
 |---|---|
 | `main.tex` | Manuscript source (IEEEtran `[conference]`, two columns) |
 | `main.pdf` | Compiled manuscript, **4 pages** (body 3 pp.; references fill p. 4), 0 overfull, 0 undefined references |
-| `revision_results_conf.tex` | Auto-generated condensed result tables (6 tables; from `sim/make_revision_tables.py` — do not edit by hand) |
-| `cover_letter.md` | Cover letter to the TPC chairs (round 6; fill venue placeholders) |
+| `revision_results_conf.tex` | Auto-generated four core result tables (domain/dose values in prose; from `sim/make_revision_tables.py` — do not edit by hand) |
+| `cover_letter.md` | Cover note for the accepted IEEE ISAICS 2026 version |
 | `declarations.md` | CRediT contributions, COI, funding, data/code availability, ethics, prior-version disclosure, checklist |
 | `figures/` | Legacy figure from the pre-revision method paper; **not referenced** by the current manuscript |
 | `build.log` | Last compile log (for reference; not part of submission) |
@@ -31,6 +31,6 @@ pdflatex main.tex && pdflatex main.tex   # requires TeX Live with IEEEtran, cite
 
 1. Insert the target conference name/year in the cover letter; confirm the page limit (current draft 4 pages).
 2. Confirm funding, IRB-exemption wording, COI signatures, and the venue's double-blind/preprint policy.
-3. Author order and any corresponding-author designation follow `declarations.md` and the signed memo `../authorship_contribution_memo.md`; fields requiring author confirmation are marked there.
-4. **Venue/acceptance status is to be confirmed**; no acceptance is claimed by this package. Do not submit overlapping content simultaneously elsewhere (see `declarations.md`).
-5. **Preprint versioning:** do not add venue names to the arXiv preprint while any version is under review; update the arXiv record only upon acceptance.
+3. Author order and any corresponding-author designation follow `declarations.md` and the per-version memo `../authorship_contribution_memo.md` (signatures pending); fields requiring author confirmation are marked there.
+4. **Conference acceptance is confirmed for IEEE ISAICS 2026**; insert proceedings DOI/pages when assigned. The journal package is prepared separately; do not hold overlapping versions under simultaneous review (see `declarations.md`).
+5. **Preprint versioning:** arXiv:2609.14883v1 is the earlier record. Any update should distinguish that text from the revised audit manuscript and follow publisher policy; no upload is claimed by this package.

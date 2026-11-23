@@ -16,9 +16,9 @@ src = src.replace("\\usepackage{float}\n", "")
 
 author = r"""\author{Wen~Hu, Ya~Yu, and Xutong~Wang
 \thanks{W. Hu is with the College of Electronic and Information Engineering, Nanjing University of Aeronautics and Astronautics, Nanjing, China, and with Jiangsu Yunhefeng Intelligent Technology Co., Ltd., Jiangsu, China (e-mail: huwen@nuaa.edu.cn). Y. Yu and X. Wang are with the College of Electronic and Information Engineering, Nanjing University of Aeronautics and Astronautics, Nanjing, China (e-mail: 15949116139@163.com; wsgxt@outlook.com). Corresponding author: Y. Yu.}
-\thanks{A condensed conference version uses author order Y. Yu, W. Hu, X. Wang; the difference is disclosed in the submission declarations. Code and synthetic artifacts are public at \url{https://github.com/hurrywhen/dr-sl} and \url{https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl}.}
-\thanks{This revision uses fully synthetic data and co-author scoring of synthetic artifacts; a holdout human-utility packet is prepared but not collected. Funding, ethics-review status, and venue-specific declarations must be finalized by the authors before submission.}}
-\markboth{Manuscript under review}{Hu \MakeLowercase{\textit{et al.}}: Auditing Local Release Gates for Cloud-Local LLM Inference}
+\thanks{An earlier preprint is available as arXiv:2609.14883 (v1, 2026); it has a different title and predates this audit-case-study revision. A condensed conference version was accepted to IEEE ISAICS 2026 with author order Y. Yu, W. Hu, X. Wang; the contribution-based order difference is disclosed in the submission declarations. Code and synthetic artifacts are public at \url{https://github.com/hurrywhen/dr-sl} and \url{https://gitee.com/jiangsu-yunhefeng-intelligent_0/dr-sl}.}
+\thanks{This journal package is prepared for submission. It uses fully synthetic data and co-author scoring of synthetic artifacts; a holdout human-utility packet is prepared but not collected. Funding, ethics-review status, conflicts and AI-assistance wording remain author-confirmation items before submission.}}
+\markboth{Journal manuscript prepared for submission}{Hu \MakeLowercase{\textit{et al.}}: Auditing Local Release Gates for Cloud-Local LLM Inference}
 """
 src = re.sub(r"\\author\{.*?\\date\{\}\n", lambda m: author, src, flags=re.S)
 

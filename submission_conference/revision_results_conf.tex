@@ -1,4 +1,4 @@
-% Auto-generated (condensed, round 3). Do not edit by hand.
+% Auto-generated: four core conference tables. Do not edit by hand.
 
 \begin{table}[!t]\centering\footnotesize
 \caption{Holdout-1 closed loop stratified by local decision (Wilson 95\% intervals). The primary safety metric is the conditional residue rate given local PASS (FR$_{gold}$); whole-set averages mask the released subgroup.}
@@ -10,19 +10,8 @@ PASS & 46 & 78.3 & [.644,.877] & 0.147 \\
 INFEASIBLE & 34 & 55.9 & [.395,.711] & 0.086 \\
 \bottomrule\end{tabular}\end{table}
 
-\begin{table}[!t]\centering\footnotesize
-\caption{Holdout-1 closed loop by domain. Banking releases 20/20 with residue in every released instance; legal PASS is 10/10 with residue. All 20 banking instances enter the harmful utility fallback (mechanism analysis in text).}
-\label{tab:domain}
-\begin{tabular}{@{}lccccc@{}}\toprule
-Domain & rel.\ \% & PASS $n$ & FR$_{gold}$ \% & 95\% CI & PASS gold $L$ \\ \midrule
-banking & 100.0 & 20 & 100.0 & [.839,1.000] & 0.211 \\
-legal & 50.0 & 10 & 100.0 & [.722,1.000] & 0.155 \\
-medical & 25.0 & 5 & 0.0 & [.000,.434] & 0.000 \\
-travel & 55.0 & 11 & 54.5 & [.280,.787] & 0.091 \\
-\bottomrule\end{tabular}\end{table}
-
 \begin{table}[!t]\centering\setlength{\tabcolsep}{2pt}\footnotesize
-\caption{Holdout-1 method comparison under the same local gate (40-instance audited subset for external columns). HL=hardline-only, GEN=generalization-only, CL=closed loop, INT=INTACT-style proxy, PRISM=random replacement, DF=direct-forward reference. ext=external max hit rate; judge=offline artifact-judge utility; task=reference-answer preservation (primary judge). Paired rows: CL$-$GEN; the task-$U$ delta uses the round-3 rerun. Local-utility delta is negative on all three holdouts; release/leakage deltas are zero throughout.}
+\caption{Holdout-1 method comparison under the same local gate (40-instance audited subset for external columns). HL=hardline-only, GEN=generalization-only, CL=closed loop, INT=INTACT-style proxy, PRISM=random replacement, DF=direct-forward reference. ext=external max hit rate; judge=offline artifact-judge utility; task=reference-answer preservation (primary judge). Paired rows: CL$-$GEN; the task-$U$ delta uses the round-3 rerun. Local-utility delta is negative on all three holdouts; release-rate and gold-$L$ residue deltas are zero throughout.}
 \label{tab:methods}
 \begin{tabular}{@{}lcccccc@{}}\toprule
 Method & rel.\ \% & $U_{loc}$ & gold $L$ & ext $L$ & judge $U$ & task $U$ \\ \midrule
@@ -36,20 +25,6 @@ DF & -- & -- & -- & 1.000 & 1.000 & -- \\
 $\Delta$ h1 & 0.0 & -0.089 & 0.0 & 0.0 & -0.075 & 0.025 \\
 $\Delta$ h2 & 0.0 & -0.017 & 0.0 & -- & -- & -- \\
 $\Delta$ h3 & 0.0 & -0.101 & 0.0 & -- & -- & -- \\
-\bottomrule\end{tabular}\end{table}
-
-\begin{table}[!t]\centering\footnotesize
-\caption{Vocabulary-shift stress and dose--response (closed loop, original extractor). overlap = realized fraction of lexicon-dependent gold values from the old vocabulary. holdout-2 is a constructive fully-disjoint lexicon ablation, not a deployment failure rate; the drift series holds templates constant and varies only overlap (40 instances/level).}
-\label{tab:vocab}
-\begin{tabular}{@{}lccccc@{}}\toprule
-Condition & overlap & recall & rel.\ \% & FR$_{gold}$ \% & 95\% CI \\ \midrule
-holdout-1 & 1.000 & 0.858 & 57.5 & 78.3 & [.644,.877] \\
-holdout-2 & 0.000 & 0.526 & 93.8 & 100.0 & [.951,1.000] \\
-drift p000 & 0.000 & 0.522 & 92.5 & 100.0 & [.906,1.000] \\
-drift p025 & 0.163 & 0.582 & 80.0 & 100.0 & [.893,1.000] \\
-drift p050 & 0.408 & 0.675 & 77.5 & 93.5 & [.793,.982] \\
-drift p075 & 0.682 & 0.745 & 65.0 & 92.3 & [.759,.979] \\
-drift p100 & 1.000 & 0.845 & 57.5 & 82.6 & [.629,.930] \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[!t]\centering\setlength{\tabcolsep}{3pt}\footnotesize
