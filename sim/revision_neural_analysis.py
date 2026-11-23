@@ -17,8 +17,9 @@ No API calls.  Reads the byte-intact round-4 archive
 3. Partial-span-only gold value counts and unlocatable/unknown-type counts
    (round 4: n_unlocatable = 0 — income proposals are verbatim proper
    substrings, NOT non-verbatim output).
-4. Declared-type-miss characterization: was the residual gold value ever
-   proposed (under any type), or only a proper substring of it?
+4. Declared-type-miss characterization: symmetric five-way proposal relations
+   (round 6, protocol v6 §1), including gold-as-substring-of-proposal for
+   extended-span/repeated-mention residue such as the GLM zero-charge cases.
 
 Bound scoping (protocol v5 §1.3): exact-span recall is a conservative
 measurement under the current prompt/taxonomy; FR is conditional on the
@@ -101,6 +102,67 @@ def partial_span_values(item, ents):
                   if v not in ev and any(p in v and p != v for p in ev))
 
 
+def _common_substring_length(a, b):
+    """Length of the longest common contiguous substring (small diagnostic inputs)."""
+    if not a or not b:
+        return 0
+    previous = [0] * (len(b) + 1)
+    best = 0
+    for ca in a:
+        current = [0]
+        for j, cb in enumerate(b, 1):
+            n = previous[j - 1] + 1 if ca == cb else 0
+            current.append(n)
+            best = max(best, n)
+        previous = current
+    return best
+
+
+def classify_proposal_relation(gold_type, gold_value, proposals):
+    """Symmetric relation between a residual gold literal and raw proposals.
+
+    Protocol v6 §1.  The old classifier checked only whether a proposal was a
+    substring of gold, and therefore mislabelled gold `0元` inside proposal
+    `0元手续费` as `never_proposed`.  All relations are lexical diagnostics,
+    not proof of a root cause.  `proposals` contains (type, value) pairs before
+    localization and scrubbing.  Matching values are considered across types:
+    a correct value under another type was still proposed.
+    """
+    proposals = [(t, v) for t, v in proposals if v]
+    exact = [(t, v) for t, v in proposals if v == gold_value]
+    extended = [(t, v) for t, v in proposals
+                if v != gold_value and gold_value and gold_value in v]
+    partial = [(t, v) for t, v in proposals
+               if v != gold_value and v in gold_value]
+    related = []
+    for t, v in proposals:
+        if v == gold_value or v in gold_value or gold_value in v:
+            continue
+        common = _common_substring_length(gold_value, v)
+        if t == gold_type or (common >= 2 and 2 * common >= len(gold_value)):
+            related.append((t, v))
+    if exact:
+        kind, matches = "exact_proposal", exact
+    elif extended:
+        kind, matches = "gold_substring_of_proposal", extended
+    elif partial:
+        kind, matches = "proposal_substring_of_gold", partial
+    elif related:
+        kind, matches = "related_but_noncontaining_proposal", related
+    else:
+        kind, matches = "never_proposed", []
+    # Short numeric literals can be incidental substrings of unrelated amounts
+    # (e.g. `0元` inside `160000元`).  Report same-type matches as the primary
+    # mechanistic evidence when available, while retaining all other matches.
+    same_type = [(t, v) for t, v in matches if t == gold_type]
+    primary = same_type or matches
+    primary_set = set(primary)
+    other = [(t, v) for t, v in matches if (t, v) not in primary_set]
+    return {"kind": kind,
+            "matched_proposals": [{"type": t, "value": v} for t, v in primary],
+            "other_matching_proposals": [{"type": t, "value": v} for t, v in other]}
+
+
 def fr_decomposition(cl_rows, items, types, proposals_by_id=None):
     """Instance-level FR split among releases: taxonomy-gap vs declared-type miss.
 
@@ -129,17 +191,11 @@ def fr_decomposition(cl_rows, items, types, proposals_by_id=None):
             both.append(r["id"])
         if d and proposals_by_id is not None:
             props = proposals_by_id.get(r["id"], [])
-            pvals = {v for _, v in props}
             for v in r["gold_literal_hit_values"]:
                 if tm[v] in types:
-                    if v in pvals:
-                        kind = "proposed_but_residue"  # should not happen (scrub)
-                    elif any(p in v and p != v for p in pvals):
-                        kind = "partial_substring_proposed"
-                    else:
-                        kind = "never_proposed"
+                    relation = classify_proposal_relation(tm[v], v, props)
                     decl_detail.append({"id": r["id"], "value": v,
-                                        "type": tm[v], "kind": kind})
+                                        "type": tm[v], **relation})
     wr = sum(1 for r in rel if r["gold_literal_hits"] > 0)
 
     def block(ids):
@@ -185,7 +241,7 @@ def analyze_round4():
     for l in (R3 / "neural_extraction_cache.jsonl").open(encoding="utf-8"):
         r = json.loads(l)
         cache[r["prompt_sha256"]] = r
-    out = {"protocol": "revision_protocol_v5.md §1 (P0 re-analysis; no new calls)",
+    out = {"protocol": "revision_protocol_v5.md §1 + revision_protocol_v6.md §1 (archived re-analysis; no new calls)",
            "archive": "round-4 neural_extractor_* kept byte-intact",
            "taxonomy_declared_n": len(TYPES),
            "bound_scoping": ("exact-span recall is conservative under the current "

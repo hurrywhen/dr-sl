@@ -196,12 +196,12 @@ def main():
             "caution": "20-instance subset; point estimates carry wide Wilson intervals",
         }
 
-    # Round-3/4/5 experiment outputs (embedded when present).
+    # Round-3/4/5/6 experiment outputs (embedded when present).
     for name in ("offline_h3_summary.json", "downstream_summary.json",
                  "online_open_summary.json", "residual_probe.json",
                  "neural_extractor_summary.json", "neural_extractor_analysis.json",
                  "neural_round5_summary.json", "neural_round5_subset.json",
-                 "offline_h4_summary.json"):
+                 "neural_round6_analysis.json", "offline_h4_summary.json"):
         p = OUT / name
         if p.exists():
             key = name.replace(".json", "")
@@ -239,6 +239,7 @@ def main():
     # Freeze manifest for round-3 code/data.
     files = [
         "revision_protocol_v3.md", "revision_protocol_v4.md", "revision_protocol_v5.md",
+        "revision_protocol_v6.md",
         "dataset/generate_holdout.py", "dataset/generate_holdout2.py",
         "dataset/generate_holdout3.py", "dataset/generate_holdout4.py",
         "dataset/generate_drift_series.py",
@@ -256,10 +257,12 @@ def main():
         "sim/revision_open_attack.py", "sim/revision_residual_probe.py",
         "sim/revision_neural_extractor.py", "sim/revision_neural_analysis.py",
         "sim/revision_neural_round5.py", "sim/revision_neural_subset.py",
+        "sim/revision_neural_round6.py",
         "sim/make_revision_tables.py", "sim/make_journal_version.py",
         "sim/test_spearman_ties.py", "sim/test_task_fields.py",
         "sim/test_extractor_fixed.py", "sim/test_revision_stats.py",
         "sim/test_neural_parser.py", "sim/test_neural_taxonomy.py",
+        "sim/test_neural_residue.py",
     ]
     result["freeze_manifest"] = {f: sha(ROOT / f) for f in files}
     (OUT / "stratified_summary.json").write_text(json.dumps(result, ensure_ascii=False, indent=2))

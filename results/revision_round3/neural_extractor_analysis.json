@@ -1,5 +1,5 @@
 {
-  "protocol": "revision_protocol_v5.md §1 (P0 re-analysis; no new calls)",
+  "protocol": "revision_protocol_v5.md §1 + revision_protocol_v6.md §1 (archived re-analysis; no new calls)",
   "archive": "round-4 neural_extractor_* kept byte-intact",
   "taxonomy_declared_n": 40,
   "bound_scoping": "exact-span recall is conservative under the current prompt/taxonomy; FR is conditional on the incomplete taxonomy with no general bound direction",
@@ -209,25 +209,38 @@
             "id": "DRSL-H3-TRA-0004",
             "value": "望海县",
             "type": "city",
-            "kind": "never_proposed"
+            "kind": "never_proposed",
+            "matched_proposals": [],
+            "other_matching_proposals": []
           },
           {
             "id": "DRSL-H3-TRA-0008",
             "value": "望海县",
             "type": "city",
-            "kind": "never_proposed"
+            "kind": "related_but_noncontaining_proposal",
+            "matched_proposals": [
+              {
+                "type": "hotel",
+                "value": "望海海景度假村"
+              }
+            ],
+            "other_matching_proposals": []
           },
           {
             "id": "DRSL-H3-TRA-0010",
             "value": "望海县",
             "type": "city",
-            "kind": "never_proposed"
+            "kind": "never_proposed",
+            "matched_proposals": [],
+            "other_matching_proposals": []
           },
           {
             "id": "DRSL-H3-TRA-0012",
             "value": "望海县",
             "type": "city",
-            "kind": "never_proposed"
+            "kind": "never_proposed",
+            "matched_proposals": [],
+            "other_matching_proposals": []
           }
         ]
       },

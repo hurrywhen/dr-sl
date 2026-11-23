@@ -1,5 +1,7 @@
 # Round-5 note (protocol v5) — outputs in this directory
 
+> **Round-6 erratum (protocol v6):** the zero-charge “never proposed” label and the h4 performance/causal wording below are superseded by `ROUND6_NOTE.md` and D-R32–D-R34. Raw responses are unchanged; derived relation labels have been regenerated with symmetric containment logic. Complete-taxonomy FR_gap=0 is definitional, and the repeated city literal has unresolved value/template and type-boundary explanations.
+
 Round 5 corrects the round-4 neural contrast's interpretation (P0, recomputation
 from the byte-intact round-4 archive) and adds pre-registered credibility
 experiments (P1). No round-4 artifact, decision, threshold or prompt was altered;
@@ -9,8 +11,9 @@ the round-4 neural archive (`neural_extraction_cache.jsonl`,
 1. **D-R25/D-R26 P0 re-analysis.** `neural_extractor_analysis.json`: taxonomy
    omission is THREE types (room_no, marriage_years, work_years) on h1/drift
    (h3 fully declared); FR decomposition — h1 5/31 and drift-p0 2/15 entirely
-   room_no taxonomy gap, h3 4/24 entirely declared city misses (never proposed);
-   three coverage layers (exact-span recall 0.965/0.973/0.965; sensitive char
+   room_no taxonomy gap, h3 4/24 entirely declared city misses (round-6 relations:
+   3 never_proposed + 1 related_but_noncontaining_proposal);
+   three coverage layers (exact-span recall 0.965/0.973/0.965; gold-entity char
    coverage 0.983/0.988/0.983; literal residue = FR); partial-span-only gold
    values 10/10/4 (all income, verbatim locatable substrings); n_unlocatable=0.
    Bound scoping: recall conservative under prompt/taxonomy; FR conditional, no
@@ -21,13 +24,17 @@ the round-4 neural archive (`neural_extraction_cache.jsonl`,
    FR instance sets identical across all three qwen runs (FR 3/20 [5.2,36.0]).
 3. **D-R28 second family (60 calls).** Condition family_glm (glm-5.2, seed
    20261128, same subset/prompt). Agreement 68.3% (Jaccard 0.925); recall 0.959;
-   FR 5/25 = same 2 room_no gap + 3 zero-valued charge misses (never proposed).
+   FR 5/25 = same 2 room_no gap + 3 zero-charge short-form residues. Round-6
+   correction: `0元手续费` WAS proposed and scrubbed; repeated `0元` remains
+   (gold_substring_of_proposal), not never_proposed.
 4. **D-R29 holdout-4 + complete taxonomy (80 calls).** New dataset
    `dataset/output/dr_sl_holdout_v4.jsonl` (template family #4, MixRng seed
    20261125 p_old 0.5, realized old fraction 0.393; contains the three omitted
    types, 10 instances each). Condition h4_complete: prompt v2 (43-type complete
-   taxonomy, minimal delta), seed 20261129. Gap FR 0/32 [0,10.7] as
-   pre-registered; total FR 1/32 [0.6,15.7] (one city miss, same literal as h3);
+   taxonomy, minimal delta), seed 20261129. Gap FR 0/32 [0,10.7] is a
+   DEFINITIONAL IDENTITY (round-6 interpretation), not safety evidence; direct
+   evidence is 10/10 extraction and zero released residue for each added type;
+   total FR 1/32 [0.6,15.7] (one city miss, same literal as h3, cause unresolved);
    recall 0.986, char coverage 0.993, release 40.0%, U delta −0.119.
    Deterministic reference: `offline_h4.jsonl` / `offline_h4_summary.json`
    (original FR 100% [93.0,100]; fixed 84.0% [71.5,91.7]; U deltas negative).
@@ -36,7 +43,7 @@ the round-4 neural archive (`neural_extraction_cache.jsonl`,
    `neural_round5.log` (260/260 calls, 0 errors), `neural_round5_rerun.log`
    (D-R30 grouping fix rerun, 0 new calls). `stratified_summary.json`
    regenerated: embeds the round-5 analyses and extends the freeze manifest to
-   45 entries (protocol v5, h4 generator/dataset, new scripts/tests). The
+   45 entries at round 5; round 6 extends it to 48 entries. The
    round-4 manifest (38 entries) is preserved in git history at commit 12846b7.
 6. **Trust.** All round-5 neural conditions remain cloud-assisted DIAGNOSTIC
    contrasts (extraction discloses X); none is a deployable local gate. The

@@ -207,7 +207,7 @@ def main():
                 rows, tabcolsep=3)
         full.append(t); conf.append(t)
 
-    # 6. Neural-extractor contrast (diagnostic, cloud-assisted; rounds 4-5).
+    # 6. Neural-extractor contrast (diagnostic, cloud-assisted; rounds 4-6).
     neural = load(R3, "neural_extractor_summary.json")
     nan = load(R3, "neural_extractor_analysis.json")
     nr5 = load(R3, "neural_round5_summary.json")
@@ -267,14 +267,17 @@ def main():
                       "declared); decl=within-taxonomy miss. h1/drift-p0 residue is entirely "
                       "room\\_no gap; only h3 evidences declared-type neural misses. ")
         cap_full = cap_common + (
-            "h4 neural v2 uses the complete 43-type taxonomy (prompt v2, round 5) on NEW "
-            "holdout-4 (template family \\#4, natural mix). Coverage layers and bound "
-            "scoping in text: exact-span recall is conservative under the prompt/taxonomy; "
-            "FR is conditional on the incomplete taxonomy, with no general bound direction.")
+            "h4 neural v2 uses the complete 43-type taxonomy on NEW holdout-4; its "
+            "FR$_{gap}$=0 is DEFINITIONAL, not safety evidence. Direct evidence: each "
+            "added type is exactly extracted 10/10 with zero released residue (round 6). "
+            "FR$_{gold}$ is a literal-residue audit proxy, not demonstrated privacy harm; "
+            "exact-span recall is conservative under the prompt/taxonomy, while FR has no "
+            "general bound direction.")
         cap_conf = cap_common + (
-            "gap/decl column: instance counts of releases (component Wilson CIs in text). "
-            "h4 neural v2 uses the complete 43-type taxonomy on NEW holdout-4 (round 5). "
-            "FR is conditional on the incomplete taxonomy (no bound direction).")
+            "gap/decl column: released-instance counts. h4 FR$_{gap}$=0 is definitional, "
+            "not safety evidence; each added type extracts 10/10 with zero released "
+            "residue. FR$_{gold}$ is a literal audit proxy, not demonstrated privacy harm; "
+            "FR has no general bound direction.")
         t = tbl("tab:neural", cap_full,
                 ["Data", "recall", "task rec.", "rel.\\ \\%", "FR$_{gold}$ \\% [95\\% CI]",
                  "FR$_{gap}$ \\% [95\\% CI]", "FR$_{decl}$ \\% [95\\% CI]"],

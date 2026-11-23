@@ -1,0 +1,2109 @@
+{
+  "protocol": "revision_protocol_v6.md; archived outputs only; no API calls",
+  "primary_metric_unchanged": true,
+  "gold_literal_construct": "FR_gold is a gold-annotated literal-residue audit proxy, not demonstrated privacy damage or re-identification; explicit identifiers, quasi-identifiers and context-dependent task-critical values are not equated in construct",
+  "zero_charge_annotation": {
+    "basis": "conservative personal-financial quasi-identifier and banking task-relevance rule",
+    "not_claimed": "a zero fee alone is private or identifying",
+    "generator_disclosure": "whole-thousand quantization makes money(r,5,200) return 0元",
+    "frozen_data_changed": false
+  },
+  "glm_zero_charge_repeated_mention": [
+    {
+      "id": "DRSL-H3-BAN-0001",
+      "gold_value": "0元",
+      "gold_type": "charge",
+      "relation": {
+        "kind": "gold_substring_of_proposal",
+        "matched_proposals": [
+          {
+            "type": "charge",
+            "value": "0元手续费"
+          }
+        ],
+        "other_matching_proposals": [
+          {
+            "type": "amount",
+            "value": "160000元"
+          }
+        ]
+      },
+      "extended_span_in_artifact": false,
+      "short_form_in_artifact": true,
+      "artifact": "电话银行记录\n客户：我是〔姓名〕，账号〔卡号〕，〔日期〕转了金额约100000至200000，开户行〔银行〕，被收了费用约0至1。\n客服：请问有什么可以帮您？\n客户：请帮我核对这笔大额转账的风控要求。补充说明：前述0元情况请以本记录为准。",
+      "mechanism": "extended fee span proposed and scrubbed; short form in appended clarification remains"
+    },
+    {
+      "id": "DRSL-H3-BAN-0003",
+      "gold_value": "0元",
+      "gold_type": "charge",
+      "relation": {
+        "kind": "gold_substring_of_proposal",
+        "matched_proposals": [
+          {
+            "type": "charge",
+            "value": "0元手续费"
+          }
+        ],
+        "other_matching_proposals": [
+          {
+            "type": "amount",
+            "value": "155000元"
+          }
+        ]
+      },
+      "extended_span_in_artifact": false,
+      "short_form_in_artifact": true,
+      "artifact": "电话银行记录\n客户：我是〔姓名〕，账号〔卡号〕，〔日期〕转了金额约100000至200000，开户行〔银行〕，被收了费用约0至1。\n客服：请问有什么可以帮您？\n客户：请帮我核对这笔大额转账的风控要求。补充说明：前述0元情况请以本记录为准。",
+      "mechanism": "extended fee span proposed and scrubbed; short form in appended clarification remains"
+    },
+    {
+      "id": "DRSL-H3-BAN-0005",
+      "gold_value": "0元",
+      "gold_type": "charge",
+      "relation": {
+        "kind": "gold_substring_of_proposal",
+        "matched_proposals": [
+          {
+            "type": "charge",
+            "value": "0元手续费"
+          }
+        ],
+        "other_matching_proposals": [
+          {
+            "type": "amount",
+            "value": "11000元"
+          }
+        ]
+      },
+      "extended_span_in_artifact": false,
+      "short_form_in_artifact": true,
+      "artifact": "电话银行记录\n客户：我是〔姓名〕，账号〔卡号〕，〔日期〕转了金额约10000至20000，开户行〔银行〕，被收了费用约0至1。\n客服：请问有什么可以帮您？\n客户：请帮我核对这笔大额转账的风控要求。补充说明：前述0元情况请以本记录为准。",
+      "mechanism": "extended fee span proposed and scrubbed; short form in appended clarification remains"
+    }
+  ],
+  "holdout4": {
+    "FR_gap_zero_interpretation": "definitional identity: all h4 gold types are declared",
+    "FR_gap_zero_is_performance_evidence": false,
+    "FR_taxonomy_gap": {
+      "k": 0,
+      "n": 32,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.1071791982550706
+      ],
+      "ids": []
+    },
+    "per_type_extraction_and_residue": {
+      "address": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "age": {
+        "n_gold": 30,
+        "value_exact": 30,
+        "type_value_exact": 30,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "allergy": {
+        "n_gold": 20,
+        "value_exact": 20,
+        "type_value_exact": 20,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "amount": {
+        "n_gold": 50,
+        "value_exact": 50,
+        "type_value_exact": 50,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "bank": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "bank_card": {
+        "n_gold": 20,
+        "value_exact": 20,
+        "type_value_exact": 20,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "card_tail": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "case_type": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "charge": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "children_count": {
+        "n_gold": 20,
+        "value_exact": 20,
+        "type_value_exact": 20,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "city": {
+        "n_gold": 60,
+        "value_exact": 59,
+        "type_value_exact": 54,
+        "released_residue_instances": 1,
+        "released_residue_ids": [
+          "DRSL-H4-TRA-0004"
+        ]
+      },
+      "court": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "date": {
+        "n_gold": 30,
+        "value_exact": 30,
+        "type_value_exact": 30,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "disease": {
+        "n_gold": 20,
+        "value_exact": 20,
+        "type_value_exact": 20,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "drug": {
+        "n_gold": 20,
+        "value_exact": 20,
+        "type_value_exact": 20,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "duration": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "email": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "employer": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "flight_no": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "hospital": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "hotel": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "id_card": {
+        "n_gold": 20,
+        "value_exact": 20,
+        "type_value_exact": 20,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "income": {
+        "n_gold": 10,
+        "value_exact": 2,
+        "type_value_exact": 2,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "lawfirm": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "marriage_years": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "name": {
+        "n_gold": 70,
+        "value_exact": 70,
+        "type_value_exact": 70,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "occupation": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "passport": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "phone": {
+        "n_gold": 30,
+        "value_exact": 30,
+        "type_value_exact": 30,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "room_no": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "visit_date": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      },
+      "work_years": {
+        "n_gold": 10,
+        "value_exact": 10,
+        "type_value_exact": 10,
+        "released_residue_instances": 0,
+        "released_residue_ids": []
+      }
+    },
+    "city_value_misses": [
+      {
+        "id": "DRSL-H4-TRA-0004",
+        "value": "望海县"
+      }
+    ],
+    "city_type_label_variation": [
+      {
+        "id": "DRSL-H4-MED-0009",
+        "value": "望海县",
+        "proposed_types": [
+          "address"
+        ]
+      },
+      {
+        "id": "DRSL-H4-BAN-0012",
+        "value": "青山区",
+        "proposed_types": [
+          "address"
+        ]
+      },
+      {
+        "id": "DRSL-H4-BAN-0016",
+        "value": "望海县",
+        "proposed_types": [
+          "address"
+        ]
+      },
+      {
+        "id": "DRSL-H4-TRA-0010",
+        "value": "青山区",
+        "proposed_types": [
+          "address"
+        ]
+      },
+      {
+        "id": "DRSL-H4-LEG-0009",
+        "value": "青山区",
+        "proposed_types": [
+          "address"
+        ]
+      }
+    ],
+    "city_explanations": [
+      "value/template-specific omission",
+      "city/county/administrative-region versus address type-boundary mismatch"
+    ],
+    "city_explanation_identified": false,
+    "minimal_control_status": "future work; no new calls in round 6"
+  },
+  "zero_charge_sensitivity": {
+    "det_h1_original": {
+      "primary_FR_gold": {
+        "k": 36,
+        "n": 46,
+        "rate": 0.782608695652174,
+        "wilson95": [
+          0.6442631262842105,
+          0.8773909467543746
+        ],
+        "ids": [
+          "DRSL-HOLD-BAN-0001",
+          "DRSL-HOLD-BAN-0002",
+          "DRSL-HOLD-BAN-0003",
+          "DRSL-HOLD-BAN-0004",
+          "DRSL-HOLD-BAN-0005",
+          "DRSL-HOLD-BAN-0006",
+          "DRSL-HOLD-BAN-0007",
+          "DRSL-HOLD-BAN-0008",
+          "DRSL-HOLD-BAN-0009",
+          "DRSL-HOLD-BAN-0010",
+          "DRSL-HOLD-BAN-0011",
+          "DRSL-HOLD-BAN-0012",
+          "DRSL-HOLD-BAN-0013",
+          "DRSL-HOLD-BAN-0014",
+          "DRSL-HOLD-BAN-0015",
+          "DRSL-HOLD-BAN-0016",
+          "DRSL-HOLD-BAN-0017",
+          "DRSL-HOLD-BAN-0018",
+          "DRSL-HOLD-BAN-0019",
+          "DRSL-HOLD-BAN-0020",
+          "DRSL-HOLD-LEG-0001",
+          "DRSL-HOLD-LEG-0002",
+          "DRSL-HOLD-LEG-0005",
+          "DRSL-HOLD-LEG-0006",
+          "DRSL-HOLD-LEG-0009",
+          "DRSL-HOLD-LEG-0010",
+          "DRSL-HOLD-LEG-0013",
+          "DRSL-HOLD-LEG-0014",
+          "DRSL-HOLD-LEG-0017",
+          "DRSL-HOLD-LEG-0018",
+          "DRSL-HOLD-TRA-0002",
+          "DRSL-HOLD-TRA-0006",
+          "DRSL-HOLD-TRA-0010",
+          "DRSL-HOLD-TRA-0014",
+          "DRSL-HOLD-TRA-0017",
+          "DRSL-HOLD-TRA-0020"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 36,
+        "n": 46,
+        "rate": 0.782608695652174,
+        "wilson95": [
+          0.6442631262842105,
+          0.8773909467543746
+        ],
+        "ids": [
+          "DRSL-HOLD-BAN-0001",
+          "DRSL-HOLD-BAN-0002",
+          "DRSL-HOLD-BAN-0003",
+          "DRSL-HOLD-BAN-0004",
+          "DRSL-HOLD-BAN-0005",
+          "DRSL-HOLD-BAN-0006",
+          "DRSL-HOLD-BAN-0007",
+          "DRSL-HOLD-BAN-0008",
+          "DRSL-HOLD-BAN-0009",
+          "DRSL-HOLD-BAN-0010",
+          "DRSL-HOLD-BAN-0011",
+          "DRSL-HOLD-BAN-0012",
+          "DRSL-HOLD-BAN-0013",
+          "DRSL-HOLD-BAN-0014",
+          "DRSL-HOLD-BAN-0015",
+          "DRSL-HOLD-BAN-0016",
+          "DRSL-HOLD-BAN-0017",
+          "DRSL-HOLD-BAN-0018",
+          "DRSL-HOLD-BAN-0019",
+          "DRSL-HOLD-BAN-0020",
+          "DRSL-HOLD-LEG-0001",
+          "DRSL-HOLD-LEG-0002",
+          "DRSL-HOLD-LEG-0005",
+          "DRSL-HOLD-LEG-0006",
+          "DRSL-HOLD-LEG-0009",
+          "DRSL-HOLD-LEG-0010",
+          "DRSL-HOLD-LEG-0013",
+          "DRSL-HOLD-LEG-0014",
+          "DRSL-HOLD-LEG-0017",
+          "DRSL-HOLD-LEG-0018",
+          "DRSL-HOLD-TRA-0002",
+          "DRSL-HOLD-TRA-0006",
+          "DRSL-HOLD-TRA-0010",
+          "DRSL-HOLD-TRA-0014",
+          "DRSL-HOLD-TRA-0017",
+          "DRSL-HOLD-TRA-0020"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 46,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.07707356308558039
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_h1_fixed": {
+      "primary_FR_gold": {
+        "k": 0,
+        "n": 46,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.07707356308558039
+        ],
+        "ids": []
+      },
+      "FR_excluding_zero_charge": {
+        "k": 0,
+        "n": 46,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.07707356308558039
+        ],
+        "ids": []
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 46,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.07707356308558039
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_h2_original": {
+      "primary_FR_gold": {
+        "k": 75,
+        "n": 75,
+        "rate": 1.0,
+        "wilson95": [
+          0.9512761575171942,
+          1.0
+        ],
+        "ids": [
+          "DRSL-H2-BAN-0001",
+          "DRSL-H2-BAN-0002",
+          "DRSL-H2-BAN-0003",
+          "DRSL-H2-BAN-0004",
+          "DRSL-H2-BAN-0005",
+          "DRSL-H2-BAN-0006",
+          "DRSL-H2-BAN-0007",
+          "DRSL-H2-BAN-0008",
+          "DRSL-H2-BAN-0009",
+          "DRSL-H2-BAN-0010",
+          "DRSL-H2-BAN-0011",
+          "DRSL-H2-BAN-0012",
+          "DRSL-H2-BAN-0013",
+          "DRSL-H2-BAN-0014",
+          "DRSL-H2-BAN-0015",
+          "DRSL-H2-BAN-0016",
+          "DRSL-H2-BAN-0017",
+          "DRSL-H2-BAN-0018",
+          "DRSL-H2-BAN-0019",
+          "DRSL-H2-BAN-0020",
+          "DRSL-H2-LEG-0001",
+          "DRSL-H2-LEG-0002",
+          "DRSL-H2-LEG-0003",
+          "DRSL-H2-LEG-0004",
+          "DRSL-H2-LEG-0005",
+          "DRSL-H2-LEG-0006",
+          "DRSL-H2-LEG-0007",
+          "DRSL-H2-LEG-0008",
+          "DRSL-H2-LEG-0009",
+          "DRSL-H2-LEG-0010",
+          "DRSL-H2-LEG-0011",
+          "DRSL-H2-LEG-0012",
+          "DRSL-H2-LEG-0013",
+          "DRSL-H2-LEG-0014",
+          "DRSL-H2-LEG-0015",
+          "DRSL-H2-LEG-0016",
+          "DRSL-H2-LEG-0017",
+          "DRSL-H2-LEG-0018",
+          "DRSL-H2-LEG-0019",
+          "DRSL-H2-LEG-0020",
+          "DRSL-H2-MED-0002",
+          "DRSL-H2-MED-0003",
+          "DRSL-H2-MED-0004",
+          "DRSL-H2-MED-0006",
+          "DRSL-H2-MED-0007",
+          "DRSL-H2-MED-0008",
+          "DRSL-H2-MED-0010",
+          "DRSL-H2-MED-0011",
+          "DRSL-H2-MED-0012",
+          "DRSL-H2-MED-0014",
+          "DRSL-H2-MED-0015",
+          "DRSL-H2-MED-0016",
+          "DRSL-H2-MED-0018",
+          "DRSL-H2-MED-0019",
+          "DRSL-H2-MED-0020",
+          "DRSL-H2-TRA-0001",
+          "DRSL-H2-TRA-0002",
+          "DRSL-H2-TRA-0003",
+          "DRSL-H2-TRA-0004",
+          "DRSL-H2-TRA-0005",
+          "DRSL-H2-TRA-0006",
+          "DRSL-H2-TRA-0007",
+          "DRSL-H2-TRA-0008",
+          "DRSL-H2-TRA-0009",
+          "DRSL-H2-TRA-0010",
+          "DRSL-H2-TRA-0011",
+          "DRSL-H2-TRA-0012",
+          "DRSL-H2-TRA-0013",
+          "DRSL-H2-TRA-0014",
+          "DRSL-H2-TRA-0015",
+          "DRSL-H2-TRA-0016",
+          "DRSL-H2-TRA-0017",
+          "DRSL-H2-TRA-0018",
+          "DRSL-H2-TRA-0019",
+          "DRSL-H2-TRA-0020"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 75,
+        "n": 75,
+        "rate": 1.0,
+        "wilson95": [
+          0.9512761575171942,
+          1.0
+        ],
+        "ids": [
+          "DRSL-H2-BAN-0001",
+          "DRSL-H2-BAN-0002",
+          "DRSL-H2-BAN-0003",
+          "DRSL-H2-BAN-0004",
+          "DRSL-H2-BAN-0005",
+          "DRSL-H2-BAN-0006",
+          "DRSL-H2-BAN-0007",
+          "DRSL-H2-BAN-0008",
+          "DRSL-H2-BAN-0009",
+          "DRSL-H2-BAN-0010",
+          "DRSL-H2-BAN-0011",
+          "DRSL-H2-BAN-0012",
+          "DRSL-H2-BAN-0013",
+          "DRSL-H2-BAN-0014",
+          "DRSL-H2-BAN-0015",
+          "DRSL-H2-BAN-0016",
+          "DRSL-H2-BAN-0017",
+          "DRSL-H2-BAN-0018",
+          "DRSL-H2-BAN-0019",
+          "DRSL-H2-BAN-0020",
+          "DRSL-H2-LEG-0001",
+          "DRSL-H2-LEG-0002",
+          "DRSL-H2-LEG-0003",
+          "DRSL-H2-LEG-0004",
+          "DRSL-H2-LEG-0005",
+          "DRSL-H2-LEG-0006",
+          "DRSL-H2-LEG-0007",
+          "DRSL-H2-LEG-0008",
+          "DRSL-H2-LEG-0009",
+          "DRSL-H2-LEG-0010",
+          "DRSL-H2-LEG-0011",
+          "DRSL-H2-LEG-0012",
+          "DRSL-H2-LEG-0013",
+          "DRSL-H2-LEG-0014",
+          "DRSL-H2-LEG-0015",
+          "DRSL-H2-LEG-0016",
+          "DRSL-H2-LEG-0017",
+          "DRSL-H2-LEG-0018",
+          "DRSL-H2-LEG-0019",
+          "DRSL-H2-LEG-0020",
+          "DRSL-H2-MED-0002",
+          "DRSL-H2-MED-0003",
+          "DRSL-H2-MED-0004",
+          "DRSL-H2-MED-0006",
+          "DRSL-H2-MED-0007",
+          "DRSL-H2-MED-0008",
+          "DRSL-H2-MED-0010",
+          "DRSL-H2-MED-0011",
+          "DRSL-H2-MED-0012",
+          "DRSL-H2-MED-0014",
+          "DRSL-H2-MED-0015",
+          "DRSL-H2-MED-0016",
+          "DRSL-H2-MED-0018",
+          "DRSL-H2-MED-0019",
+          "DRSL-H2-MED-0020",
+          "DRSL-H2-TRA-0001",
+          "DRSL-H2-TRA-0002",
+          "DRSL-H2-TRA-0003",
+          "DRSL-H2-TRA-0004",
+          "DRSL-H2-TRA-0005",
+          "DRSL-H2-TRA-0006",
+          "DRSL-H2-TRA-0007",
+          "DRSL-H2-TRA-0008",
+          "DRSL-H2-TRA-0009",
+          "DRSL-H2-TRA-0010",
+          "DRSL-H2-TRA-0011",
+          "DRSL-H2-TRA-0012",
+          "DRSL-H2-TRA-0013",
+          "DRSL-H2-TRA-0014",
+          "DRSL-H2-TRA-0015",
+          "DRSL-H2-TRA-0016",
+          "DRSL-H2-TRA-0017",
+          "DRSL-H2-TRA-0018",
+          "DRSL-H2-TRA-0019",
+          "DRSL-H2-TRA-0020"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 75,
+        "rate": 0.0,
+        "wilson95": [
+          3.469446951953614e-18,
+          0.04872384248280587
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_h2_fixed": {
+      "primary_FR_gold": {
+        "k": 70,
+        "n": 70,
+        "rate": 1.0,
+        "wilson95": [
+          0.9479769375897331,
+          1.0
+        ],
+        "ids": [
+          "DRSL-H2-BAN-0001",
+          "DRSL-H2-BAN-0002",
+          "DRSL-H2-BAN-0003",
+          "DRSL-H2-BAN-0004",
+          "DRSL-H2-BAN-0005",
+          "DRSL-H2-BAN-0006",
+          "DRSL-H2-BAN-0007",
+          "DRSL-H2-BAN-0008",
+          "DRSL-H2-BAN-0009",
+          "DRSL-H2-BAN-0010",
+          "DRSL-H2-BAN-0011",
+          "DRSL-H2-BAN-0012",
+          "DRSL-H2-BAN-0013",
+          "DRSL-H2-BAN-0014",
+          "DRSL-H2-BAN-0015",
+          "DRSL-H2-BAN-0016",
+          "DRSL-H2-BAN-0017",
+          "DRSL-H2-BAN-0018",
+          "DRSL-H2-BAN-0019",
+          "DRSL-H2-BAN-0020",
+          "DRSL-H2-LEG-0001",
+          "DRSL-H2-LEG-0002",
+          "DRSL-H2-LEG-0003",
+          "DRSL-H2-LEG-0004",
+          "DRSL-H2-LEG-0005",
+          "DRSL-H2-LEG-0006",
+          "DRSL-H2-LEG-0007",
+          "DRSL-H2-LEG-0008",
+          "DRSL-H2-LEG-0009",
+          "DRSL-H2-LEG-0010",
+          "DRSL-H2-LEG-0011",
+          "DRSL-H2-LEG-0012",
+          "DRSL-H2-LEG-0013",
+          "DRSL-H2-LEG-0014",
+          "DRSL-H2-LEG-0015",
+          "DRSL-H2-LEG-0016",
+          "DRSL-H2-LEG-0017",
+          "DRSL-H2-LEG-0018",
+          "DRSL-H2-LEG-0019",
+          "DRSL-H2-LEG-0020",
+          "DRSL-H2-MED-0003",
+          "DRSL-H2-MED-0004",
+          "DRSL-H2-MED-0007",
+          "DRSL-H2-MED-0008",
+          "DRSL-H2-MED-0011",
+          "DRSL-H2-MED-0012",
+          "DRSL-H2-MED-0015",
+          "DRSL-H2-MED-0016",
+          "DRSL-H2-MED-0019",
+          "DRSL-H2-MED-0020",
+          "DRSL-H2-TRA-0001",
+          "DRSL-H2-TRA-0002",
+          "DRSL-H2-TRA-0003",
+          "DRSL-H2-TRA-0004",
+          "DRSL-H2-TRA-0005",
+          "DRSL-H2-TRA-0006",
+          "DRSL-H2-TRA-0007",
+          "DRSL-H2-TRA-0008",
+          "DRSL-H2-TRA-0009",
+          "DRSL-H2-TRA-0010",
+          "DRSL-H2-TRA-0011",
+          "DRSL-H2-TRA-0012",
+          "DRSL-H2-TRA-0013",
+          "DRSL-H2-TRA-0014",
+          "DRSL-H2-TRA-0015",
+          "DRSL-H2-TRA-0016",
+          "DRSL-H2-TRA-0017",
+          "DRSL-H2-TRA-0018",
+          "DRSL-H2-TRA-0019",
+          "DRSL-H2-TRA-0020"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 70,
+        "n": 70,
+        "rate": 1.0,
+        "wilson95": [
+          0.9479769375897331,
+          1.0
+        ],
+        "ids": [
+          "DRSL-H2-BAN-0001",
+          "DRSL-H2-BAN-0002",
+          "DRSL-H2-BAN-0003",
+          "DRSL-H2-BAN-0004",
+          "DRSL-H2-BAN-0005",
+          "DRSL-H2-BAN-0006",
+          "DRSL-H2-BAN-0007",
+          "DRSL-H2-BAN-0008",
+          "DRSL-H2-BAN-0009",
+          "DRSL-H2-BAN-0010",
+          "DRSL-H2-BAN-0011",
+          "DRSL-H2-BAN-0012",
+          "DRSL-H2-BAN-0013",
+          "DRSL-H2-BAN-0014",
+          "DRSL-H2-BAN-0015",
+          "DRSL-H2-BAN-0016",
+          "DRSL-H2-BAN-0017",
+          "DRSL-H2-BAN-0018",
+          "DRSL-H2-BAN-0019",
+          "DRSL-H2-BAN-0020",
+          "DRSL-H2-LEG-0001",
+          "DRSL-H2-LEG-0002",
+          "DRSL-H2-LEG-0003",
+          "DRSL-H2-LEG-0004",
+          "DRSL-H2-LEG-0005",
+          "DRSL-H2-LEG-0006",
+          "DRSL-H2-LEG-0007",
+          "DRSL-H2-LEG-0008",
+          "DRSL-H2-LEG-0009",
+          "DRSL-H2-LEG-0010",
+          "DRSL-H2-LEG-0011",
+          "DRSL-H2-LEG-0012",
+          "DRSL-H2-LEG-0013",
+          "DRSL-H2-LEG-0014",
+          "DRSL-H2-LEG-0015",
+          "DRSL-H2-LEG-0016",
+          "DRSL-H2-LEG-0017",
+          "DRSL-H2-LEG-0018",
+          "DRSL-H2-LEG-0019",
+          "DRSL-H2-LEG-0020",
+          "DRSL-H2-MED-0003",
+          "DRSL-H2-MED-0004",
+          "DRSL-H2-MED-0007",
+          "DRSL-H2-MED-0008",
+          "DRSL-H2-MED-0011",
+          "DRSL-H2-MED-0012",
+          "DRSL-H2-MED-0015",
+          "DRSL-H2-MED-0016",
+          "DRSL-H2-MED-0019",
+          "DRSL-H2-MED-0020",
+          "DRSL-H2-TRA-0001",
+          "DRSL-H2-TRA-0002",
+          "DRSL-H2-TRA-0003",
+          "DRSL-H2-TRA-0004",
+          "DRSL-H2-TRA-0005",
+          "DRSL-H2-TRA-0006",
+          "DRSL-H2-TRA-0007",
+          "DRSL-H2-TRA-0008",
+          "DRSL-H2-TRA-0009",
+          "DRSL-H2-TRA-0010",
+          "DRSL-H2-TRA-0011",
+          "DRSL-H2-TRA-0012",
+          "DRSL-H2-TRA-0013",
+          "DRSL-H2-TRA-0014",
+          "DRSL-H2-TRA-0015",
+          "DRSL-H2-TRA-0016",
+          "DRSL-H2-TRA-0017",
+          "DRSL-H2-TRA-0018",
+          "DRSL-H2-TRA-0019",
+          "DRSL-H2-TRA-0020"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 70,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.05202306241026692
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_h3_original": {
+      "primary_FR_gold": {
+        "k": 44,
+        "n": 44,
+        "rate": 1.0,
+        "wilson95": [
+          0.9197043962415192,
+          1.0
+        ],
+        "ids": [
+          "DRSL-H3-BAN-0001",
+          "DRSL-H3-BAN-0002",
+          "DRSL-H3-BAN-0003",
+          "DRSL-H3-BAN-0004",
+          "DRSL-H3-BAN-0005",
+          "DRSL-H3-BAN-0006",
+          "DRSL-H3-BAN-0007",
+          "DRSL-H3-BAN-0008",
+          "DRSL-H3-BAN-0009",
+          "DRSL-H3-BAN-0010",
+          "DRSL-H3-BAN-0011",
+          "DRSL-H3-BAN-0012",
+          "DRSL-H3-BAN-0013",
+          "DRSL-H3-BAN-0014",
+          "DRSL-H3-BAN-0015",
+          "DRSL-H3-BAN-0016",
+          "DRSL-H3-BAN-0017",
+          "DRSL-H3-BAN-0018",
+          "DRSL-H3-BAN-0019",
+          "DRSL-H3-BAN-0020",
+          "DRSL-H3-LEG-0001",
+          "DRSL-H3-LEG-0002",
+          "DRSL-H3-LEG-0003",
+          "DRSL-H3-LEG-0006",
+          "DRSL-H3-LEG-0007",
+          "DRSL-H3-LEG-0011",
+          "DRSL-H3-LEG-0012",
+          "DRSL-H3-LEG-0014",
+          "DRSL-H3-LEG-0016",
+          "DRSL-H3-MED-0002",
+          "DRSL-H3-MED-0010",
+          "DRSL-H3-MED-0016",
+          "DRSL-H3-MED-0017",
+          "DRSL-H3-MED-0019",
+          "DRSL-H3-TRA-0001",
+          "DRSL-H3-TRA-0002",
+          "DRSL-H3-TRA-0005",
+          "DRSL-H3-TRA-0006",
+          "DRSL-H3-TRA-0009",
+          "DRSL-H3-TRA-0014",
+          "DRSL-H3-TRA-0016",
+          "DRSL-H3-TRA-0018",
+          "DRSL-H3-TRA-0019",
+          "DRSL-H3-TRA-0020"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 44,
+        "n": 44,
+        "rate": 1.0,
+        "wilson95": [
+          0.9197043962415192,
+          1.0
+        ],
+        "ids": [
+          "DRSL-H3-BAN-0001",
+          "DRSL-H3-BAN-0002",
+          "DRSL-H3-BAN-0003",
+          "DRSL-H3-BAN-0004",
+          "DRSL-H3-BAN-0005",
+          "DRSL-H3-BAN-0006",
+          "DRSL-H3-BAN-0007",
+          "DRSL-H3-BAN-0008",
+          "DRSL-H3-BAN-0009",
+          "DRSL-H3-BAN-0010",
+          "DRSL-H3-BAN-0011",
+          "DRSL-H3-BAN-0012",
+          "DRSL-H3-BAN-0013",
+          "DRSL-H3-BAN-0014",
+          "DRSL-H3-BAN-0015",
+          "DRSL-H3-BAN-0016",
+          "DRSL-H3-BAN-0017",
+          "DRSL-H3-BAN-0018",
+          "DRSL-H3-BAN-0019",
+          "DRSL-H3-BAN-0020",
+          "DRSL-H3-LEG-0001",
+          "DRSL-H3-LEG-0002",
+          "DRSL-H3-LEG-0003",
+          "DRSL-H3-LEG-0006",
+          "DRSL-H3-LEG-0007",
+          "DRSL-H3-LEG-0011",
+          "DRSL-H3-LEG-0012",
+          "DRSL-H3-LEG-0014",
+          "DRSL-H3-LEG-0016",
+          "DRSL-H3-MED-0002",
+          "DRSL-H3-MED-0010",
+          "DRSL-H3-MED-0016",
+          "DRSL-H3-MED-0017",
+          "DRSL-H3-MED-0019",
+          "DRSL-H3-TRA-0001",
+          "DRSL-H3-TRA-0002",
+          "DRSL-H3-TRA-0005",
+          "DRSL-H3-TRA-0006",
+          "DRSL-H3-TRA-0009",
+          "DRSL-H3-TRA-0014",
+          "DRSL-H3-TRA-0016",
+          "DRSL-H3-TRA-0018",
+          "DRSL-H3-TRA-0019",
+          "DRSL-H3-TRA-0020"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 44,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.08029560375848066
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_h3_fixed": {
+      "primary_FR_gold": {
+        "k": 34,
+        "n": 41,
+        "rate": 0.8292682926829268,
+        "wilson95": [
+          0.6873738759959581,
+          0.91474748022405
+        ],
+        "ids": [
+          "DRSL-H3-BAN-0001",
+          "DRSL-H3-BAN-0003",
+          "DRSL-H3-BAN-0007",
+          "DRSL-H3-BAN-0008",
+          "DRSL-H3-BAN-0009",
+          "DRSL-H3-BAN-0012",
+          "DRSL-H3-BAN-0013",
+          "DRSL-H3-BAN-0014",
+          "DRSL-H3-BAN-0015",
+          "DRSL-H3-BAN-0016",
+          "DRSL-H3-BAN-0017",
+          "DRSL-H3-BAN-0018",
+          "DRSL-H3-BAN-0020",
+          "DRSL-H3-LEG-0001",
+          "DRSL-H3-LEG-0002",
+          "DRSL-H3-LEG-0003",
+          "DRSL-H3-LEG-0006",
+          "DRSL-H3-LEG-0007",
+          "DRSL-H3-LEG-0011",
+          "DRSL-H3-LEG-0012",
+          "DRSL-H3-LEG-0014",
+          "DRSL-H3-LEG-0016",
+          "DRSL-H3-MED-0017",
+          "DRSL-H3-MED-0019",
+          "DRSL-H3-TRA-0001",
+          "DRSL-H3-TRA-0002",
+          "DRSL-H3-TRA-0005",
+          "DRSL-H3-TRA-0006",
+          "DRSL-H3-TRA-0009",
+          "DRSL-H3-TRA-0014",
+          "DRSL-H3-TRA-0016",
+          "DRSL-H3-TRA-0018",
+          "DRSL-H3-TRA-0019",
+          "DRSL-H3-TRA-0020"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 34,
+        "n": 41,
+        "rate": 0.8292682926829268,
+        "wilson95": [
+          0.6873738759959581,
+          0.91474748022405
+        ],
+        "ids": [
+          "DRSL-H3-BAN-0001",
+          "DRSL-H3-BAN-0003",
+          "DRSL-H3-BAN-0007",
+          "DRSL-H3-BAN-0008",
+          "DRSL-H3-BAN-0009",
+          "DRSL-H3-BAN-0012",
+          "DRSL-H3-BAN-0013",
+          "DRSL-H3-BAN-0014",
+          "DRSL-H3-BAN-0015",
+          "DRSL-H3-BAN-0016",
+          "DRSL-H3-BAN-0017",
+          "DRSL-H3-BAN-0018",
+          "DRSL-H3-BAN-0020",
+          "DRSL-H3-LEG-0001",
+          "DRSL-H3-LEG-0002",
+          "DRSL-H3-LEG-0003",
+          "DRSL-H3-LEG-0006",
+          "DRSL-H3-LEG-0007",
+          "DRSL-H3-LEG-0011",
+          "DRSL-H3-LEG-0012",
+          "DRSL-H3-LEG-0014",
+          "DRSL-H3-LEG-0016",
+          "DRSL-H3-MED-0017",
+          "DRSL-H3-MED-0019",
+          "DRSL-H3-TRA-0001",
+          "DRSL-H3-TRA-0002",
+          "DRSL-H3-TRA-0005",
+          "DRSL-H3-TRA-0006",
+          "DRSL-H3-TRA-0009",
+          "DRSL-H3-TRA-0014",
+          "DRSL-H3-TRA-0016",
+          "DRSL-H3-TRA-0018",
+          "DRSL-H3-TRA-0019",
+          "DRSL-H3-TRA-0020"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 41,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.08566757018443186
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_h4_original": {
+      "primary_FR_gold": {
+        "k": 51,
+        "n": 51,
+        "rate": 1.0,
+        "wilson95": [
+          0.9299533801014687,
+          1.0
+        ],
+        "ids": [
+          "DRSL-H4-BAN-0001",
+          "DRSL-H4-BAN-0002",
+          "DRSL-H4-BAN-0003",
+          "DRSL-H4-BAN-0004",
+          "DRSL-H4-BAN-0005",
+          "DRSL-H4-BAN-0006",
+          "DRSL-H4-BAN-0007",
+          "DRSL-H4-BAN-0008",
+          "DRSL-H4-BAN-0009",
+          "DRSL-H4-BAN-0010",
+          "DRSL-H4-BAN-0011",
+          "DRSL-H4-BAN-0012",
+          "DRSL-H4-BAN-0013",
+          "DRSL-H4-BAN-0014",
+          "DRSL-H4-BAN-0015",
+          "DRSL-H4-BAN-0016",
+          "DRSL-H4-BAN-0017",
+          "DRSL-H4-BAN-0018",
+          "DRSL-H4-BAN-0019",
+          "DRSL-H4-BAN-0020",
+          "DRSL-H4-LEG-0001",
+          "DRSL-H4-LEG-0003",
+          "DRSL-H4-LEG-0005",
+          "DRSL-H4-LEG-0006",
+          "DRSL-H4-LEG-0007",
+          "DRSL-H4-LEG-0009",
+          "DRSL-H4-LEG-0011",
+          "DRSL-H4-LEG-0013",
+          "DRSL-H4-LEG-0014",
+          "DRSL-H4-LEG-0015",
+          "DRSL-H4-LEG-0016",
+          "DRSL-H4-LEG-0017",
+          "DRSL-H4-LEG-0019",
+          "DRSL-H4-LEG-0020",
+          "DRSL-H4-MED-0007",
+          "DRSL-H4-MED-0009",
+          "DRSL-H4-MED-0011",
+          "DRSL-H4-MED-0013",
+          "DRSL-H4-MED-0017",
+          "DRSL-H4-MED-0020",
+          "DRSL-H4-TRA-0001",
+          "DRSL-H4-TRA-0003",
+          "DRSL-H4-TRA-0006",
+          "DRSL-H4-TRA-0008",
+          "DRSL-H4-TRA-0009",
+          "DRSL-H4-TRA-0011",
+          "DRSL-H4-TRA-0013",
+          "DRSL-H4-TRA-0015",
+          "DRSL-H4-TRA-0016",
+          "DRSL-H4-TRA-0017",
+          "DRSL-H4-TRA-0020"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 51,
+        "n": 51,
+        "rate": 1.0,
+        "wilson95": [
+          0.9299533801014687,
+          1.0
+        ],
+        "ids": [
+          "DRSL-H4-BAN-0001",
+          "DRSL-H4-BAN-0002",
+          "DRSL-H4-BAN-0003",
+          "DRSL-H4-BAN-0004",
+          "DRSL-H4-BAN-0005",
+          "DRSL-H4-BAN-0006",
+          "DRSL-H4-BAN-0007",
+          "DRSL-H4-BAN-0008",
+          "DRSL-H4-BAN-0009",
+          "DRSL-H4-BAN-0010",
+          "DRSL-H4-BAN-0011",
+          "DRSL-H4-BAN-0012",
+          "DRSL-H4-BAN-0013",
+          "DRSL-H4-BAN-0014",
+          "DRSL-H4-BAN-0015",
+          "DRSL-H4-BAN-0016",
+          "DRSL-H4-BAN-0017",
+          "DRSL-H4-BAN-0018",
+          "DRSL-H4-BAN-0019",
+          "DRSL-H4-BAN-0020",
+          "DRSL-H4-LEG-0001",
+          "DRSL-H4-LEG-0003",
+          "DRSL-H4-LEG-0005",
+          "DRSL-H4-LEG-0006",
+          "DRSL-H4-LEG-0007",
+          "DRSL-H4-LEG-0009",
+          "DRSL-H4-LEG-0011",
+          "DRSL-H4-LEG-0013",
+          "DRSL-H4-LEG-0014",
+          "DRSL-H4-LEG-0015",
+          "DRSL-H4-LEG-0016",
+          "DRSL-H4-LEG-0017",
+          "DRSL-H4-LEG-0019",
+          "DRSL-H4-LEG-0020",
+          "DRSL-H4-MED-0007",
+          "DRSL-H4-MED-0009",
+          "DRSL-H4-MED-0011",
+          "DRSL-H4-MED-0013",
+          "DRSL-H4-MED-0017",
+          "DRSL-H4-MED-0020",
+          "DRSL-H4-TRA-0001",
+          "DRSL-H4-TRA-0003",
+          "DRSL-H4-TRA-0006",
+          "DRSL-H4-TRA-0008",
+          "DRSL-H4-TRA-0009",
+          "DRSL-H4-TRA-0011",
+          "DRSL-H4-TRA-0013",
+          "DRSL-H4-TRA-0015",
+          "DRSL-H4-TRA-0016",
+          "DRSL-H4-TRA-0017",
+          "DRSL-H4-TRA-0020"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 51,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.07004661989853143
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_h4_fixed": {
+      "primary_FR_gold": {
+        "k": 42,
+        "n": 50,
+        "rate": 0.84,
+        "wilson95": [
+          0.7148578393696501,
+          0.916625793219666
+        ],
+        "ids": [
+          "DRSL-H4-BAN-0002",
+          "DRSL-H4-BAN-0003",
+          "DRSL-H4-BAN-0004",
+          "DRSL-H4-BAN-0005",
+          "DRSL-H4-BAN-0006",
+          "DRSL-H4-BAN-0007",
+          "DRSL-H4-BAN-0009",
+          "DRSL-H4-BAN-0010",
+          "DRSL-H4-BAN-0011",
+          "DRSL-H4-BAN-0013",
+          "DRSL-H4-BAN-0014",
+          "DRSL-H4-BAN-0015",
+          "DRSL-H4-BAN-0018",
+          "DRSL-H4-BAN-0020",
+          "DRSL-H4-LEG-0003",
+          "DRSL-H4-LEG-0005",
+          "DRSL-H4-LEG-0006",
+          "DRSL-H4-LEG-0007",
+          "DRSL-H4-LEG-0009",
+          "DRSL-H4-LEG-0011",
+          "DRSL-H4-LEG-0013",
+          "DRSL-H4-LEG-0014",
+          "DRSL-H4-LEG-0015",
+          "DRSL-H4-LEG-0016",
+          "DRSL-H4-LEG-0019",
+          "DRSL-H4-LEG-0020",
+          "DRSL-H4-MED-0007",
+          "DRSL-H4-MED-0009",
+          "DRSL-H4-MED-0011",
+          "DRSL-H4-MED-0013",
+          "DRSL-H4-MED-0017",
+          "DRSL-H4-TRA-0001",
+          "DRSL-H4-TRA-0003",
+          "DRSL-H4-TRA-0006",
+          "DRSL-H4-TRA-0008",
+          "DRSL-H4-TRA-0009",
+          "DRSL-H4-TRA-0011",
+          "DRSL-H4-TRA-0013",
+          "DRSL-H4-TRA-0015",
+          "DRSL-H4-TRA-0016",
+          "DRSL-H4-TRA-0017",
+          "DRSL-H4-TRA-0020"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 42,
+        "n": 50,
+        "rate": 0.84,
+        "wilson95": [
+          0.7148578393696501,
+          0.916625793219666
+        ],
+        "ids": [
+          "DRSL-H4-BAN-0002",
+          "DRSL-H4-BAN-0003",
+          "DRSL-H4-BAN-0004",
+          "DRSL-H4-BAN-0005",
+          "DRSL-H4-BAN-0006",
+          "DRSL-H4-BAN-0007",
+          "DRSL-H4-BAN-0009",
+          "DRSL-H4-BAN-0010",
+          "DRSL-H4-BAN-0011",
+          "DRSL-H4-BAN-0013",
+          "DRSL-H4-BAN-0014",
+          "DRSL-H4-BAN-0015",
+          "DRSL-H4-BAN-0018",
+          "DRSL-H4-BAN-0020",
+          "DRSL-H4-LEG-0003",
+          "DRSL-H4-LEG-0005",
+          "DRSL-H4-LEG-0006",
+          "DRSL-H4-LEG-0007",
+          "DRSL-H4-LEG-0009",
+          "DRSL-H4-LEG-0011",
+          "DRSL-H4-LEG-0013",
+          "DRSL-H4-LEG-0014",
+          "DRSL-H4-LEG-0015",
+          "DRSL-H4-LEG-0016",
+          "DRSL-H4-LEG-0019",
+          "DRSL-H4-LEG-0020",
+          "DRSL-H4-MED-0007",
+          "DRSL-H4-MED-0009",
+          "DRSL-H4-MED-0011",
+          "DRSL-H4-MED-0013",
+          "DRSL-H4-MED-0017",
+          "DRSL-H4-TRA-0001",
+          "DRSL-H4-TRA-0003",
+          "DRSL-H4-TRA-0006",
+          "DRSL-H4-TRA-0008",
+          "DRSL-H4-TRA-0009",
+          "DRSL-H4-TRA-0011",
+          "DRSL-H4-TRA-0013",
+          "DRSL-H4-TRA-0015",
+          "DRSL-H4-TRA-0016",
+          "DRSL-H4-TRA-0017",
+          "DRSL-H4-TRA-0020"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 50,
+        "rate": 0.0,
+        "wilson95": [
+          6.938893903907228e-18,
+          0.07134759913335872
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_drift_p000": {
+      "primary_FR_gold": {
+        "k": 37,
+        "n": 37,
+        "rate": 1.0,
+        "wilson95": [
+          0.9059421741627975,
+          1.0
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-BAN-0001",
+          "DRSL-DRIFT-P000-BAN-0002",
+          "DRSL-DRIFT-P000-BAN-0003",
+          "DRSL-DRIFT-P000-BAN-0004",
+          "DRSL-DRIFT-P000-BAN-0005",
+          "DRSL-DRIFT-P000-BAN-0006",
+          "DRSL-DRIFT-P000-BAN-0007",
+          "DRSL-DRIFT-P000-BAN-0008",
+          "DRSL-DRIFT-P000-BAN-0009",
+          "DRSL-DRIFT-P000-BAN-0010",
+          "DRSL-DRIFT-P000-LEG-0001",
+          "DRSL-DRIFT-P000-LEG-0002",
+          "DRSL-DRIFT-P000-LEG-0003",
+          "DRSL-DRIFT-P000-LEG-0004",
+          "DRSL-DRIFT-P000-LEG-0005",
+          "DRSL-DRIFT-P000-LEG-0006",
+          "DRSL-DRIFT-P000-LEG-0007",
+          "DRSL-DRIFT-P000-LEG-0008",
+          "DRSL-DRIFT-P000-LEG-0009",
+          "DRSL-DRIFT-P000-LEG-0010",
+          "DRSL-DRIFT-P000-MED-0002",
+          "DRSL-DRIFT-P000-MED-0003",
+          "DRSL-DRIFT-P000-MED-0004",
+          "DRSL-DRIFT-P000-MED-0006",
+          "DRSL-DRIFT-P000-MED-0007",
+          "DRSL-DRIFT-P000-MED-0008",
+          "DRSL-DRIFT-P000-MED-0010",
+          "DRSL-DRIFT-P000-TRA-0001",
+          "DRSL-DRIFT-P000-TRA-0002",
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-DRIFT-P000-TRA-0004",
+          "DRSL-DRIFT-P000-TRA-0005",
+          "DRSL-DRIFT-P000-TRA-0006",
+          "DRSL-DRIFT-P000-TRA-0007",
+          "DRSL-DRIFT-P000-TRA-0008",
+          "DRSL-DRIFT-P000-TRA-0009",
+          "DRSL-DRIFT-P000-TRA-0010"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 37,
+        "n": 37,
+        "rate": 1.0,
+        "wilson95": [
+          0.9059421741627975,
+          1.0
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-BAN-0001",
+          "DRSL-DRIFT-P000-BAN-0002",
+          "DRSL-DRIFT-P000-BAN-0003",
+          "DRSL-DRIFT-P000-BAN-0004",
+          "DRSL-DRIFT-P000-BAN-0005",
+          "DRSL-DRIFT-P000-BAN-0006",
+          "DRSL-DRIFT-P000-BAN-0007",
+          "DRSL-DRIFT-P000-BAN-0008",
+          "DRSL-DRIFT-P000-BAN-0009",
+          "DRSL-DRIFT-P000-BAN-0010",
+          "DRSL-DRIFT-P000-LEG-0001",
+          "DRSL-DRIFT-P000-LEG-0002",
+          "DRSL-DRIFT-P000-LEG-0003",
+          "DRSL-DRIFT-P000-LEG-0004",
+          "DRSL-DRIFT-P000-LEG-0005",
+          "DRSL-DRIFT-P000-LEG-0006",
+          "DRSL-DRIFT-P000-LEG-0007",
+          "DRSL-DRIFT-P000-LEG-0008",
+          "DRSL-DRIFT-P000-LEG-0009",
+          "DRSL-DRIFT-P000-LEG-0010",
+          "DRSL-DRIFT-P000-MED-0002",
+          "DRSL-DRIFT-P000-MED-0003",
+          "DRSL-DRIFT-P000-MED-0004",
+          "DRSL-DRIFT-P000-MED-0006",
+          "DRSL-DRIFT-P000-MED-0007",
+          "DRSL-DRIFT-P000-MED-0008",
+          "DRSL-DRIFT-P000-MED-0010",
+          "DRSL-DRIFT-P000-TRA-0001",
+          "DRSL-DRIFT-P000-TRA-0002",
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-DRIFT-P000-TRA-0004",
+          "DRSL-DRIFT-P000-TRA-0005",
+          "DRSL-DRIFT-P000-TRA-0006",
+          "DRSL-DRIFT-P000-TRA-0007",
+          "DRSL-DRIFT-P000-TRA-0008",
+          "DRSL-DRIFT-P000-TRA-0009",
+          "DRSL-DRIFT-P000-TRA-0010"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 37,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.09405782583720251
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_drift_p025": {
+      "primary_FR_gold": {
+        "k": 32,
+        "n": 32,
+        "rate": 1.0,
+        "wilson95": [
+          0.8928208017449293,
+          1.0
+        ],
+        "ids": [
+          "DRSL-DRIFT-P025-BAN-0001",
+          "DRSL-DRIFT-P025-BAN-0002",
+          "DRSL-DRIFT-P025-BAN-0003",
+          "DRSL-DRIFT-P025-BAN-0004",
+          "DRSL-DRIFT-P025-BAN-0005",
+          "DRSL-DRIFT-P025-BAN-0006",
+          "DRSL-DRIFT-P025-BAN-0007",
+          "DRSL-DRIFT-P025-BAN-0008",
+          "DRSL-DRIFT-P025-BAN-0009",
+          "DRSL-DRIFT-P025-BAN-0010",
+          "DRSL-DRIFT-P025-LEG-0001",
+          "DRSL-DRIFT-P025-LEG-0002",
+          "DRSL-DRIFT-P025-LEG-0004",
+          "DRSL-DRIFT-P025-LEG-0005",
+          "DRSL-DRIFT-P025-LEG-0006",
+          "DRSL-DRIFT-P025-LEG-0007",
+          "DRSL-DRIFT-P025-LEG-0008",
+          "DRSL-DRIFT-P025-LEG-0009",
+          "DRSL-DRIFT-P025-LEG-0010",
+          "DRSL-DRIFT-P025-MED-0002",
+          "DRSL-DRIFT-P025-MED-0003",
+          "DRSL-DRIFT-P025-MED-0004",
+          "DRSL-DRIFT-P025-MED-0006",
+          "DRSL-DRIFT-P025-MED-0007",
+          "DRSL-DRIFT-P025-MED-0008",
+          "DRSL-DRIFT-P025-TRA-0002",
+          "DRSL-DRIFT-P025-TRA-0003",
+          "DRSL-DRIFT-P025-TRA-0004",
+          "DRSL-DRIFT-P025-TRA-0006",
+          "DRSL-DRIFT-P025-TRA-0007",
+          "DRSL-DRIFT-P025-TRA-0008",
+          "DRSL-DRIFT-P025-TRA-0010"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 32,
+        "n": 32,
+        "rate": 1.0,
+        "wilson95": [
+          0.8928208017449293,
+          1.0
+        ],
+        "ids": [
+          "DRSL-DRIFT-P025-BAN-0001",
+          "DRSL-DRIFT-P025-BAN-0002",
+          "DRSL-DRIFT-P025-BAN-0003",
+          "DRSL-DRIFT-P025-BAN-0004",
+          "DRSL-DRIFT-P025-BAN-0005",
+          "DRSL-DRIFT-P025-BAN-0006",
+          "DRSL-DRIFT-P025-BAN-0007",
+          "DRSL-DRIFT-P025-BAN-0008",
+          "DRSL-DRIFT-P025-BAN-0009",
+          "DRSL-DRIFT-P025-BAN-0010",
+          "DRSL-DRIFT-P025-LEG-0001",
+          "DRSL-DRIFT-P025-LEG-0002",
+          "DRSL-DRIFT-P025-LEG-0004",
+          "DRSL-DRIFT-P025-LEG-0005",
+          "DRSL-DRIFT-P025-LEG-0006",
+          "DRSL-DRIFT-P025-LEG-0007",
+          "DRSL-DRIFT-P025-LEG-0008",
+          "DRSL-DRIFT-P025-LEG-0009",
+          "DRSL-DRIFT-P025-LEG-0010",
+          "DRSL-DRIFT-P025-MED-0002",
+          "DRSL-DRIFT-P025-MED-0003",
+          "DRSL-DRIFT-P025-MED-0004",
+          "DRSL-DRIFT-P025-MED-0006",
+          "DRSL-DRIFT-P025-MED-0007",
+          "DRSL-DRIFT-P025-MED-0008",
+          "DRSL-DRIFT-P025-TRA-0002",
+          "DRSL-DRIFT-P025-TRA-0003",
+          "DRSL-DRIFT-P025-TRA-0004",
+          "DRSL-DRIFT-P025-TRA-0006",
+          "DRSL-DRIFT-P025-TRA-0007",
+          "DRSL-DRIFT-P025-TRA-0008",
+          "DRSL-DRIFT-P025-TRA-0010"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 32,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1071791982550706
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_drift_p050": {
+      "primary_FR_gold": {
+        "k": 29,
+        "n": 31,
+        "rate": 0.9354838709677419,
+        "wilson95": [
+          0.7928136326370188,
+          0.9821252164780854
+        ],
+        "ids": [
+          "DRSL-DRIFT-P050-BAN-0001",
+          "DRSL-DRIFT-P050-BAN-0002",
+          "DRSL-DRIFT-P050-BAN-0003",
+          "DRSL-DRIFT-P050-BAN-0004",
+          "DRSL-DRIFT-P050-BAN-0005",
+          "DRSL-DRIFT-P050-BAN-0006",
+          "DRSL-DRIFT-P050-BAN-0007",
+          "DRSL-DRIFT-P050-BAN-0008",
+          "DRSL-DRIFT-P050-BAN-0009",
+          "DRSL-DRIFT-P050-BAN-0010",
+          "DRSL-DRIFT-P050-LEG-0001",
+          "DRSL-DRIFT-P050-LEG-0002",
+          "DRSL-DRIFT-P050-LEG-0003",
+          "DRSL-DRIFT-P050-LEG-0004",
+          "DRSL-DRIFT-P050-LEG-0005",
+          "DRSL-DRIFT-P050-LEG-0006",
+          "DRSL-DRIFT-P050-LEG-0007",
+          "DRSL-DRIFT-P050-LEG-0009",
+          "DRSL-DRIFT-P050-LEG-0010",
+          "DRSL-DRIFT-P050-MED-0002",
+          "DRSL-DRIFT-P050-MED-0006",
+          "DRSL-DRIFT-P050-TRA-0001",
+          "DRSL-DRIFT-P050-TRA-0002",
+          "DRSL-DRIFT-P050-TRA-0003",
+          "DRSL-DRIFT-P050-TRA-0004",
+          "DRSL-DRIFT-P050-TRA-0005",
+          "DRSL-DRIFT-P050-TRA-0006",
+          "DRSL-DRIFT-P050-TRA-0007",
+          "DRSL-DRIFT-P050-TRA-0010"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 29,
+        "n": 31,
+        "rate": 0.9354838709677419,
+        "wilson95": [
+          0.7928136326370188,
+          0.9821252164780854
+        ],
+        "ids": [
+          "DRSL-DRIFT-P050-BAN-0001",
+          "DRSL-DRIFT-P050-BAN-0002",
+          "DRSL-DRIFT-P050-BAN-0003",
+          "DRSL-DRIFT-P050-BAN-0004",
+          "DRSL-DRIFT-P050-BAN-0005",
+          "DRSL-DRIFT-P050-BAN-0006",
+          "DRSL-DRIFT-P050-BAN-0007",
+          "DRSL-DRIFT-P050-BAN-0008",
+          "DRSL-DRIFT-P050-BAN-0009",
+          "DRSL-DRIFT-P050-BAN-0010",
+          "DRSL-DRIFT-P050-LEG-0001",
+          "DRSL-DRIFT-P050-LEG-0002",
+          "DRSL-DRIFT-P050-LEG-0003",
+          "DRSL-DRIFT-P050-LEG-0004",
+          "DRSL-DRIFT-P050-LEG-0005",
+          "DRSL-DRIFT-P050-LEG-0006",
+          "DRSL-DRIFT-P050-LEG-0007",
+          "DRSL-DRIFT-P050-LEG-0009",
+          "DRSL-DRIFT-P050-LEG-0010",
+          "DRSL-DRIFT-P050-MED-0002",
+          "DRSL-DRIFT-P050-MED-0006",
+          "DRSL-DRIFT-P050-TRA-0001",
+          "DRSL-DRIFT-P050-TRA-0002",
+          "DRSL-DRIFT-P050-TRA-0003",
+          "DRSL-DRIFT-P050-TRA-0004",
+          "DRSL-DRIFT-P050-TRA-0005",
+          "DRSL-DRIFT-P050-TRA-0006",
+          "DRSL-DRIFT-P050-TRA-0007",
+          "DRSL-DRIFT-P050-TRA-0010"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 31,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.11025539546043596
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_drift_p075": {
+      "primary_FR_gold": {
+        "k": 24,
+        "n": 26,
+        "rate": 0.9230769230769231,
+        "wilson95": [
+          0.7585844622837095,
+          0.9786449115277238
+        ],
+        "ids": [
+          "DRSL-DRIFT-P075-BAN-0001",
+          "DRSL-DRIFT-P075-BAN-0002",
+          "DRSL-DRIFT-P075-BAN-0003",
+          "DRSL-DRIFT-P075-BAN-0004",
+          "DRSL-DRIFT-P075-BAN-0005",
+          "DRSL-DRIFT-P075-BAN-0006",
+          "DRSL-DRIFT-P075-BAN-0007",
+          "DRSL-DRIFT-P075-BAN-0008",
+          "DRSL-DRIFT-P075-BAN-0009",
+          "DRSL-DRIFT-P075-BAN-0010",
+          "DRSL-DRIFT-P075-LEG-0001",
+          "DRSL-DRIFT-P075-LEG-0002",
+          "DRSL-DRIFT-P075-LEG-0003",
+          "DRSL-DRIFT-P075-LEG-0005",
+          "DRSL-DRIFT-P075-LEG-0006",
+          "DRSL-DRIFT-P075-LEG-0007",
+          "DRSL-DRIFT-P075-LEG-0009",
+          "DRSL-DRIFT-P075-LEG-0010",
+          "DRSL-DRIFT-P075-MED-0003",
+          "DRSL-DRIFT-P075-MED-0006",
+          "DRSL-DRIFT-P075-TRA-0002",
+          "DRSL-DRIFT-P075-TRA-0006",
+          "DRSL-DRIFT-P075-TRA-0007",
+          "DRSL-DRIFT-P075-TRA-0010"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 24,
+        "n": 26,
+        "rate": 0.9230769230769231,
+        "wilson95": [
+          0.7585844622837095,
+          0.9786449115277238
+        ],
+        "ids": [
+          "DRSL-DRIFT-P075-BAN-0001",
+          "DRSL-DRIFT-P075-BAN-0002",
+          "DRSL-DRIFT-P075-BAN-0003",
+          "DRSL-DRIFT-P075-BAN-0004",
+          "DRSL-DRIFT-P075-BAN-0005",
+          "DRSL-DRIFT-P075-BAN-0006",
+          "DRSL-DRIFT-P075-BAN-0007",
+          "DRSL-DRIFT-P075-BAN-0008",
+          "DRSL-DRIFT-P075-BAN-0009",
+          "DRSL-DRIFT-P075-BAN-0010",
+          "DRSL-DRIFT-P075-LEG-0001",
+          "DRSL-DRIFT-P075-LEG-0002",
+          "DRSL-DRIFT-P075-LEG-0003",
+          "DRSL-DRIFT-P075-LEG-0005",
+          "DRSL-DRIFT-P075-LEG-0006",
+          "DRSL-DRIFT-P075-LEG-0007",
+          "DRSL-DRIFT-P075-LEG-0009",
+          "DRSL-DRIFT-P075-LEG-0010",
+          "DRSL-DRIFT-P075-MED-0003",
+          "DRSL-DRIFT-P075-MED-0006",
+          "DRSL-DRIFT-P075-TRA-0002",
+          "DRSL-DRIFT-P075-TRA-0006",
+          "DRSL-DRIFT-P075-TRA-0007",
+          "DRSL-DRIFT-P075-TRA-0010"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 26,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1287289218592153
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "det_drift_p100": {
+      "primary_FR_gold": {
+        "k": 19,
+        "n": 23,
+        "rate": 0.8260869565217391,
+        "wilson95": [
+          0.6286235235977385,
+          0.9302134643693744
+        ],
+        "ids": [
+          "DRSL-DRIFT-P100-BAN-0001",
+          "DRSL-DRIFT-P100-BAN-0002",
+          "DRSL-DRIFT-P100-BAN-0003",
+          "DRSL-DRIFT-P100-BAN-0004",
+          "DRSL-DRIFT-P100-BAN-0005",
+          "DRSL-DRIFT-P100-BAN-0006",
+          "DRSL-DRIFT-P100-BAN-0007",
+          "DRSL-DRIFT-P100-BAN-0008",
+          "DRSL-DRIFT-P100-BAN-0009",
+          "DRSL-DRIFT-P100-BAN-0010",
+          "DRSL-DRIFT-P100-LEG-0001",
+          "DRSL-DRIFT-P100-LEG-0002",
+          "DRSL-DRIFT-P100-LEG-0005",
+          "DRSL-DRIFT-P100-LEG-0006",
+          "DRSL-DRIFT-P100-LEG-0009",
+          "DRSL-DRIFT-P100-LEG-0010",
+          "DRSL-DRIFT-P100-TRA-0002",
+          "DRSL-DRIFT-P100-TRA-0006",
+          "DRSL-DRIFT-P100-TRA-0010"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 19,
+        "n": 23,
+        "rate": 0.8260869565217391,
+        "wilson95": [
+          0.6286235235977385,
+          0.9302134643693744
+        ],
+        "ids": [
+          "DRSL-DRIFT-P100-BAN-0001",
+          "DRSL-DRIFT-P100-BAN-0002",
+          "DRSL-DRIFT-P100-BAN-0003",
+          "DRSL-DRIFT-P100-BAN-0004",
+          "DRSL-DRIFT-P100-BAN-0005",
+          "DRSL-DRIFT-P100-BAN-0006",
+          "DRSL-DRIFT-P100-BAN-0007",
+          "DRSL-DRIFT-P100-BAN-0008",
+          "DRSL-DRIFT-P100-BAN-0009",
+          "DRSL-DRIFT-P100-BAN-0010",
+          "DRSL-DRIFT-P100-LEG-0001",
+          "DRSL-DRIFT-P100-LEG-0002",
+          "DRSL-DRIFT-P100-LEG-0005",
+          "DRSL-DRIFT-P100-LEG-0006",
+          "DRSL-DRIFT-P100-LEG-0009",
+          "DRSL-DRIFT-P100-LEG-0010",
+          "DRSL-DRIFT-P100-TRA-0002",
+          "DRSL-DRIFT-P100-TRA-0006",
+          "DRSL-DRIFT-P100-TRA-0010"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 23,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.14311661845042686
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "neural_round4_holdout80": {
+      "primary_FR_gold": {
+        "k": 5,
+        "n": 31,
+        "rate": 0.16129032258064516,
+        "wilson95": [
+          0.070926244433653,
+          0.3263435395879326
+        ],
+        "ids": [
+          "DRSL-HOLD-TRA-0003",
+          "DRSL-HOLD-TRA-0007",
+          "DRSL-HOLD-TRA-0011",
+          "DRSL-HOLD-TRA-0015",
+          "DRSL-HOLD-TRA-0018"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 5,
+        "n": 31,
+        "rate": 0.16129032258064516,
+        "wilson95": [
+          0.070926244433653,
+          0.3263435395879326
+        ],
+        "ids": [
+          "DRSL-HOLD-TRA-0003",
+          "DRSL-HOLD-TRA-0007",
+          "DRSL-HOLD-TRA-0011",
+          "DRSL-HOLD-TRA-0015",
+          "DRSL-HOLD-TRA-0018"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 31,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.11025539546043596
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "neural_round4_holdout80_v3": {
+      "primary_FR_gold": {
+        "k": 4,
+        "n": 24,
+        "rate": 0.16666666666666666,
+        "wilson95": [
+          0.06678676328632951,
+          0.3585307064969906
+        ],
+        "ids": [
+          "DRSL-H3-TRA-0004",
+          "DRSL-H3-TRA-0008",
+          "DRSL-H3-TRA-0010",
+          "DRSL-H3-TRA-0012"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 4,
+        "n": 24,
+        "rate": 0.16666666666666666,
+        "wilson95": [
+          0.06678676328632951,
+          0.3585307064969906
+        ],
+        "ids": [
+          "DRSL-H3-TRA-0004",
+          "DRSL-H3-TRA-0008",
+          "DRSL-H3-TRA-0010",
+          "DRSL-H3-TRA-0012"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 24,
+        "rate": 0.0,
+        "wilson95": [
+          1.3877787807814457e-17,
+          0.13797620467498017
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "neural_round4_drift_p000": {
+      "primary_FR_gold": {
+        "k": 2,
+        "n": 15,
+        "rate": 0.13333333333333333,
+        "wilson95": [
+          0.03736125910306537,
+          0.37881982832322364
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-DRIFT-P000-TRA-0007"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 2,
+        "n": 15,
+        "rate": 0.13333333333333333,
+        "wilson95": [
+          0.03736125910306537,
+          0.37881982832322364
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-DRIFT-P000-TRA-0007"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 15,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.20388330103584862
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "neural_round5_stability_r1": {
+      "primary_FR_gold": {
+        "k": 3,
+        "n": 20,
+        "rate": 0.15,
+        "wilson95": [
+          0.052368745896216595,
+          0.36041886474075696
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-TRA-0004",
+          "DRSL-HOLD-TRA-0003"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 3,
+        "n": 20,
+        "rate": 0.15,
+        "wilson95": [
+          0.052368745896216595,
+          0.36041886474075696
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-TRA-0004",
+          "DRSL-HOLD-TRA-0003"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 20,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.16112515805281938
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "neural_round5_stability_r2": {
+      "primary_FR_gold": {
+        "k": 3,
+        "n": 20,
+        "rate": 0.15,
+        "wilson95": [
+          0.052368745896216595,
+          0.36041886474075696
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-TRA-0004",
+          "DRSL-HOLD-TRA-0003"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 3,
+        "n": 20,
+        "rate": 0.15,
+        "wilson95": [
+          0.052368745896216595,
+          0.36041886474075696
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-TRA-0004",
+          "DRSL-HOLD-TRA-0003"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 20,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.16112515805281938
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "neural_round5_family_glm": {
+      "primary_FR_gold": {
+        "k": 5,
+        "n": 25,
+        "rate": 0.2,
+        "wilson95": [
+          0.08860584686802572,
+          0.3913095036954033
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-H3-BAN-0001",
+          "DRSL-H3-BAN-0003",
+          "DRSL-H3-BAN-0005",
+          "DRSL-HOLD-TRA-0003"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 2,
+        "n": 25,
+        "rate": 0.08,
+        "wilson95": [
+          0.022220401284847563,
+          0.24966108950395313
+        ],
+        "ids": [
+          "DRSL-DRIFT-P000-TRA-0003",
+          "DRSL-HOLD-TRA-0003"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 3,
+        "n": 25,
+        "rate": 0.12,
+        "wilson95": [
+          0.04166817150440358,
+          0.2995579392092732
+        ],
+        "ids": [
+          "DRSL-H3-BAN-0001",
+          "DRSL-H3-BAN-0003",
+          "DRSL-H3-BAN-0005"
+        ]
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    },
+    "neural_round5_h4_complete": {
+      "primary_FR_gold": {
+        "k": 1,
+        "n": 32,
+        "rate": 0.03125,
+        "wilson95": [
+          0.005537860164003122,
+          0.15744263820012558
+        ],
+        "ids": [
+          "DRSL-H4-TRA-0004"
+        ]
+      },
+      "FR_excluding_zero_charge": {
+        "k": 1,
+        "n": 32,
+        "rate": 0.03125,
+        "wilson95": [
+          0.005537860164003122,
+          0.15744263820012558
+        ],
+        "ids": [
+          "DRSL-H4-TRA-0004"
+        ]
+      },
+      "residue_only_zero_charge": {
+        "k": 0,
+        "n": 32,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.1071791982550706
+        ],
+        "ids": []
+      },
+      "exclusion_rule": "gold type == charge and gold value == 0元; releases fixed"
+    }
+  }
+}

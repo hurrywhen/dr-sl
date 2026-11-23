@@ -1,5 +1,5 @@
 {
-  "protocol": "revision_protocol_v5.md §2–§4",
+  "protocol": "revision_protocol_v5.md §2–§4; proposal-relation labels corrected under revision_protocol_v6.md §1",
   "design": "cloud-assisted DIAGNOSTIC conditions; single-run per condition; instance-level intervals only (sampling variation characterized on the 60-instance subset, not population CIs)",
   "subset_rule": "first 5 per domain in sorted-id order, 20/dataset, 60 total",
   "prompt_v2": "你是中文合成记录的个人敏感信息抽取器。请从给定文本中抽取所有出现的个人敏感信息实体，输出且仅输出 JSON：{\"entities\":[{\"type\":\"类型\",\"value\":\"原文值\"}]}。value 必须是输入文本中逐字出现的子串，不得改写、归一化或编造；同一值多次出现只列一次。可用类型（仅限这些）：name(人名), phone(手机号), email(邮箱), id_card(身份证号), bank_card(银行卡号/账号), address(住址), medical_record_no(病历号), passport(护照号), plate(车牌), case_no(案号), deposit_no(存单号), order_no(订单号), card_tail(卡尾号), ticket_no(票据号), insurance_id(保单号), fund_account(资金账号), city(城市), hospital(医院), bank(银行), employer(单位/公司), school(学校), airline(航空公司), hotel(酒店), lawfirm(律所), court(法院), disease(疾病), drug(药品), allergy(过敏原), occupation(职业), insurance_type(险种), case_type(案由), amount(金额), charge(手续费/费用), income(收入), date(日期), visit_date(就诊/手术/入住日期), age(年龄), flight_no(航班号), duration(天数), children_count(孩子个数), room_no(房间号), marriage_years(婚龄), work_years(工作年限)。注意：金额/费用/收入要带单位（如\"150000元\"）；年龄带\"岁\"；日期按原文形式。没有可抽取实体时输出 {\"entities\":[]}。",
@@ -881,7 +881,9 @@
             "id": "DRSL-H3-TRA-0004",
             "value": "望海县",
             "type": "city",
-            "kind": "never_proposed"
+            "kind": "never_proposed",
+            "matched_proposals": [],
+            "other_matching_proposals": []
           }
         ]
       },
@@ -1945,7 +1947,9 @@
             "id": "DRSL-H3-TRA-0004",
             "value": "望海县",
             "type": "city",
-            "kind": "never_proposed"
+            "kind": "never_proposed",
+            "matched_proposals": [],
+            "other_matching_proposals": []
           }
         ]
       },
@@ -3004,19 +3008,55 @@
             "id": "DRSL-H3-BAN-0001",
             "value": "0元",
             "type": "charge",
-            "kind": "never_proposed"
+            "kind": "gold_substring_of_proposal",
+            "matched_proposals": [
+              {
+                "type": "charge",
+                "value": "0元手续费"
+              }
+            ],
+            "other_matching_proposals": [
+              {
+                "type": "amount",
+                "value": "160000元"
+              }
+            ]
           },
           {
             "id": "DRSL-H3-BAN-0003",
             "value": "0元",
             "type": "charge",
-            "kind": "never_proposed"
+            "kind": "gold_substring_of_proposal",
+            "matched_proposals": [
+              {
+                "type": "charge",
+                "value": "0元手续费"
+              }
+            ],
+            "other_matching_proposals": [
+              {
+                "type": "amount",
+                "value": "155000元"
+              }
+            ]
           },
           {
             "id": "DRSL-H3-BAN-0005",
             "value": "0元",
             "type": "charge",
-            "kind": "never_proposed"
+            "kind": "gold_substring_of_proposal",
+            "matched_proposals": [
+              {
+                "type": "charge",
+                "value": "0元手续费"
+              }
+            ],
+            "other_matching_proposals": [
+              {
+                "type": "amount",
+                "value": "11000元"
+              }
+            ]
           }
         ]
       },
@@ -3539,7 +3579,9 @@
             "id": "DRSL-H4-TRA-0004",
             "value": "望海县",
             "type": "city",
-            "kind": "never_proposed"
+            "kind": "never_proposed",
+            "matched_proposals": [],
+            "other_matching_proposals": []
           }
         ]
       },

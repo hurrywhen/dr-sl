@@ -385,7 +385,7 @@ def main():
          "methods": det_methods, "paired": det_paired, "fr_decomposition": det_dec},
         ensure_ascii=False, indent=2))
 
-    summary = {"protocol": "revision_protocol_v5.md §2–§4",
+    summary = {"protocol": "revision_protocol_v5.md §2–§4; proposal-relation labels corrected under revision_protocol_v6.md §1",
                "design": "cloud-assisted DIAGNOSTIC conditions; single-run per condition; "
                          "instance-level intervals only (sampling variation characterized "
                          "on the 60-instance subset, not population CIs)",
